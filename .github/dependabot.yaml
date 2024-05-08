@@ -1,0 +1,18 @@
+version: 2
+enable-beta-ecosystems: true
+updates:
+  ### ACTIONS ###
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  ### DART ###
+  - package-ecosystem: "pub"
+    directory: "packages/libcoder"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pub"
+    directory: "packages/native/storage"
+    schedule:
+      interval: "weekly"
