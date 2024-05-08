@@ -1,3 +1,7 @@
+## 0.1.5
+
+- chore: Update `repository` field in `pubspec.yaml`
+
 ## 0.1.4
 
 - fix: Lower Android min API to 21 ([#121](https://github.com/celest-dev/celest/issues/121))
