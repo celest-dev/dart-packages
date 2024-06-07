@@ -7,6 +7,7 @@ import 'package:native_storage/src/secure/secure_storage.android.dart';
 import 'package:native_storage/src/secure/secure_storage.darwin.dart';
 import 'package:native_storage/src/secure/secure_storage.linux.dart';
 import 'package:native_storage/src/secure/secure_storage.windows.dart';
+import 'package:native_storage/src/util/rescope.dart';
 
 abstract base class NativeSecureStoragePlatform
     implements
@@ -61,9 +62,6 @@ abstract base class NativeSecureStoragePlatform
   @override
   NativeSecureStorage scoped(String scope) => NativeSecureStoragePlatform(
         namespace: namespace,
-        scope: switch (this.scope) {
-          final currentScope? => '$currentScope/$scope',
-          null => scope,
-        },
+        scope: rescope(scope),
       );
 }

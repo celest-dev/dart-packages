@@ -2,6 +2,7 @@ import 'package:native_storage/native_storage.dart';
 import 'package:native_storage/src/isolated/isolated_storage_platform.unsupported.dart'
     as unsupported;
 import 'package:native_storage/src/native_storage_extended.dart';
+import 'package:native_storage/src/util/rescope.dart';
 import 'package:web/web.dart' as web;
 
 /// The browser implementation of [NativeLocalStorage].
@@ -75,10 +76,7 @@ final class NativeLocalStoragePlatform
   @override
   NativeLocalStorage scoped(String scope) => NativeLocalStoragePlatform(
         namespace: namespace,
-        scope: switch (this.scope) {
-          final currentScope? => '$currentScope/$scope',
-          null => scope,
-        },
+        scope: rescope(scope),
       );
 }
 
