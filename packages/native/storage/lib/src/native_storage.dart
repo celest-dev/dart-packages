@@ -93,5 +93,24 @@ abstract interface class NativeStorage {
   ///
   /// If the current instance already has a [scope], the new instance will have
   /// a combined scope of both the current and provided scopes.
+  ///
+  /// ```dart
+  /// final parent = NativeStorage(scope: 'parent');
+  /// print(parent.scope); // 'parent'
+  ///
+  /// final child = parent.scoped('child');
+  /// print(child.scope); // 'parent/child'
+  /// ```
+  ///
+  /// If [scope] begins with a `/`, it will be treated as an absolute scope and
+  /// will replace the current scope.
+  ///
+  /// ```dart
+  /// final parent = NativeStorage(scope: 'parent');
+  /// print(parent.scope); // 'parent'
+  ///
+  /// final child = parent.scoped('/child');
+  /// print(child.scope); // 'child'
+  /// ```
   NativeStorage scoped(String scope);
 }

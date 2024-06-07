@@ -7,6 +7,7 @@ import 'package:native_storage/src/local/local_storage.linux.dart';
 import 'package:native_storage/src/local/local_storage.windows.dart';
 import 'package:native_storage/src/local/local_storage_darwin.dart';
 import 'package:native_storage/src/native_storage_extended.dart';
+import 'package:native_storage/src/util/rescope.dart';
 
 /// The VM implementation of [NativeLocalStorage].
 abstract base class NativeLocalStoragePlatform
@@ -66,9 +67,6 @@ abstract base class NativeLocalStoragePlatform
   @override
   NativeLocalStorage scoped(String scope) => NativeLocalStoragePlatform(
         namespace: namespace,
-        scope: switch (this.scope) {
-          final currentScope? => '$currentScope/$scope',
-          null => scope,
-        },
+        scope: rescope(scope),
       );
 }

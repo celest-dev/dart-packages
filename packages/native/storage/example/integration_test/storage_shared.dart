@@ -278,6 +278,26 @@ void sharedTests(String name, NativeStorageExtendedFactory factory) {
 
       parent.clear();
     });
+
+    test('rescope', () {
+      final nested = factory(
+        namespace: 'com.domain',
+        scope: 'scope/child/nested',
+      );
+      expect(nested.scope, 'scope/child/nested');
+
+      final root = nested.scoped('/');
+      expect(root.scope, null);
+
+      final child = nested.scoped('/scope/child');
+      expect(child.scope, 'scope/child');
+
+      final current = nested.scoped('');
+      expect(current.scope, 'scope/child/nested');
+
+      final drill = child.scoped('nested');
+      expect(drill.scope, 'scope/child/nested');
+    });
   });
 }
 

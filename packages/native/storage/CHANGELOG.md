@@ -1,3 +1,7 @@
+## 0.1.6
+
+- feat: Support absolute scopes in `NativeStorage.scoped`
+
 ## 0.1.5
 
 - chore: Update `repository` field in `pubspec.yaml`

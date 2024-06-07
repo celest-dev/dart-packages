@@ -2,6 +2,7 @@ import 'package:native_storage/src/isolated/isolated_storage.dart';
 import 'package:native_storage/src/native_storage.dart';
 import 'package:native_storage/src/native_storage_extended.dart';
 import 'package:native_storage/src/secure/secure_storage.dart';
+import 'package:native_storage/src/util/rescope.dart';
 
 /// An in-memory implementation of [NativeStorage] and [NativeSecureStorage].
 final class NativeMemoryStorage
@@ -71,10 +72,7 @@ final class NativeMemoryStorage
   @override
   NativeMemoryStorage scoped(String scope) => NativeMemoryStorage._(
         namespace: namespace,
-        scope: switch (this.scope) {
-          final currentScope? => '$currentScope/$scope',
-          null => scope,
-        },
+        scope: rescope(scope),
         storage: _storage,
       );
 }
