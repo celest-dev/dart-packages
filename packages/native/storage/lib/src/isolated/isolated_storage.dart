@@ -4,7 +4,7 @@ import 'package:native_storage/src/isolated/isolated_storage_platform.unsupporte
     if (dart.library.isolate) 'package:native_storage/src/isolated/isolated_storage_platform.vm.dart';
 
 /// A [NativeStorage] constructor.
-typedef NativeStorageFactory = NativeStorage Function({
+typedef NativeStorageFactory<T extends NativeStorage> = T Function({
   String? namespace,
   String? scope,
 });

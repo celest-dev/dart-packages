@@ -5,7 +5,7 @@ import 'package:win32_registry/win32_registry.dart';
 final class LocalStorageWindows extends NativeLocalStoragePlatform
     with NativeStorageWindows {
   LocalStorageWindows({
-    String? namespace,
+    super.namespace,
     super.scope,
   })  : namespaceOverride = namespace,
         super.base();

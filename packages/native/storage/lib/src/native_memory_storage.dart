@@ -1,27 +1,37 @@
+import 'package:meta/meta.dart';
 import 'package:native_storage/src/isolated/isolated_storage.dart';
 import 'package:native_storage/src/native_storage.dart';
-import 'package:native_storage/src/native_storage_extended.dart';
+import 'package:native_storage/src/native_storage_base.dart';
 import 'package:native_storage/src/secure/secure_storage.dart';
+import 'package:native_storage/src/util/namespace.dart';
 import 'package:native_storage/src/util/rescope.dart';
 
 /// An in-memory implementation of [NativeStorage] and [NativeSecureStorage].
-final class NativeMemoryStorage
-    implements
-        NativeStorage,
-        NativeSecureStorage,
-        // ignore: invalid_use_of_visible_for_testing_member
-        NativeStorageExtended {
-  NativeMemoryStorage({
+// ignore: invalid_use_of_visible_for_testing_member
+final class NativeMemoryStorage extends NativeStorageBase
+    implements NativeStorage, NativeSecureStorage {
+  factory NativeMemoryStorage({
     String? namespace,
-    this.scope,
-  })  : namespace = namespace ?? '',
-        _storage = {};
+    String? scope,
+  }) {
+    namespace ??= 'default';
+    validateNamespace(namespace);
+    return instances[(namespace, scope)] ??= NativeMemoryStorage._(
+      namespace: namespace,
+      scope: scope,
+    );
+  }
 
   NativeMemoryStorage._({
-    required this.namespace,
+    super.namespace,
     this.scope,
     Map<String, String>? storage,
-  }) : _storage = storage ?? {};
+  })  : namespace = namespace ?? 'default',
+        _storage = storage ?? {};
+
+  @visibleForTesting
+  static final Map<(String namespace, String? scope), NativeMemoryStorage>
+      instances = {};
 
   @override
   final String namespace;
@@ -52,10 +62,10 @@ final class NativeMemoryStorage
       ];
 
   @override
-  void close() {
+  void closeInternal() {
     clear();
     _isolated?.close().ignore();
-    _isolated = null;
+    instances.remove((namespace, scope));
   }
 
   @override
@@ -64,15 +74,18 @@ final class NativeMemoryStorage
   IsolatedNativeStorage? _isolated;
   @override
   IsolatedNativeStorage get isolated => _isolated ??= IsolatedNativeStorage(
-        factory: NativeMemoryStorage.new,
+        factory: NativeMemoryStorage._,
         namespace: namespace,
         scope: scope,
       );
 
   @override
-  NativeMemoryStorage scoped(String scope) => NativeMemoryStorage._(
-        namespace: namespace,
-        scope: rescope(scope),
-        storage: _storage,
-      );
+  NativeMemoryStorage scoped(String scope) {
+    final newScope = rescope(scope);
+    return instances[(namespace, newScope)] ??= NativeMemoryStorage._(
+      namespace: namespace,
+      scope: newScope,
+      storage: _storage,
+    );
+  }
 }

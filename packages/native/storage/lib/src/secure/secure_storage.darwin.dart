@@ -15,7 +15,7 @@ import 'package:path/path.dart' as p;
 
 final class SecureStorageDarwin extends NativeSecureStoragePlatform {
   SecureStorageDarwin({
-    String? namespace,
+    super.namespace,
     super.scope,
   })  : _namespace = namespace,
         super.base();

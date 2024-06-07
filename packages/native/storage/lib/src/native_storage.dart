@@ -1,6 +1,9 @@
+import 'package:meta/meta.dart';
 import 'package:native_storage/src/isolated/isolated_storage.dart';
-import 'package:native_storage/src/local/local_storage.dart';
+import 'package:native_storage/src/local/local_storage_platform.vm.dart'
+    if (dart.library.js_interop) 'package:native_storage/src/local/local_storage_platform.web.dart';
 import 'package:native_storage/src/secure/secure_storage.dart';
+import 'package:native_storage/src/util/namespace.dart';
 
 /// An interface for native storage implementations.
 ///
@@ -20,22 +23,17 @@ abstract interface class NativeStorage {
     String? namespace,
     String? scope,
   }) {
-    final isValidNamespace =
-        namespace == null || _validNamespace.hasMatch(namespace);
-    if (!isValidNamespace) {
-      throw ArgumentError.value(
-        namespace,
-        'namespace',
-        'Invalid namespace. Must match $_validNamespace',
-      );
-    }
-    return NativeLocalStorage(namespace: namespace, scope: scope);
+    validateNamespace(namespace);
+    final instance = NativeLocalStoragePlatform(
+      namespace: namespace,
+      scope: scope,
+    );
+    return instances[(instance.namespace, scope)] ??= instance;
   }
 
-  static final _validNamespace = RegExp(
-    r'^[a-z0-9]+(\.[a-z0-9]+)+$',
-    caseSensitive: false,
-  );
+  @visibleForTesting
+  static final Map<(String namespace, String? scope), NativeStorage> instances =
+      {};
 
   /// {@template native_storage.native_storage.namespace}
   /// The main identifier all values are stored under.
@@ -45,7 +43,7 @@ abstract interface class NativeStorage {
   /// application or bundle identifier, which is the default if not passed.
   ///
   /// If provided, it must match the regular expression
-  /// `^[a-z0-9]+(\.[a-z0-9]+)+$`, which is that of an bundle identifier.
+  /// `^\w+(\.\w+)*$`, which is that of a typical bundle identifier.
   /// {@endtemplate}
   String get namespace;
 

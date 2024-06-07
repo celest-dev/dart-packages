@@ -6,15 +6,14 @@ import 'package:native_storage/src/local/local_storage.android.dart';
 import 'package:native_storage/src/local/local_storage.linux.dart';
 import 'package:native_storage/src/local/local_storage.windows.dart';
 import 'package:native_storage/src/local/local_storage_darwin.dart';
-import 'package:native_storage/src/native_storage_extended.dart';
+import 'package:native_storage/src/native_storage_base.dart';
+import 'package:native_storage/src/secure/secure_storage_platform.vm.dart';
 import 'package:native_storage/src/util/rescope.dart';
 
 /// The VM implementation of [NativeLocalStorage].
-abstract base class NativeLocalStoragePlatform
-    implements
-        NativeLocalStorage,
-        // ignore: invalid_use_of_visible_for_testing_member
-        NativeStorageExtended {
+// ignore: invalid_use_of_visible_for_testing_member
+abstract base class NativeLocalStoragePlatform extends NativeStorageBase
+    implements NativeLocalStorage {
   factory NativeLocalStoragePlatform({
     String? namespace,
     String? scope,
@@ -36,6 +35,7 @@ abstract base class NativeLocalStoragePlatform
 
   @protected
   NativeLocalStoragePlatform.base({
+    required super.namespace,
     this.scope,
   });
 
@@ -44,28 +44,26 @@ abstract base class NativeLocalStoragePlatform
 
   @override
   @mustCallSuper
-  void close() {
+  void closeInternal() {
     _secure?.close();
-    _secure = null;
     _isolated?.close().ignore();
-    _isolated = null;
   }
 
   NativeSecureStorage? _secure;
   @override
-  NativeSecureStorage get secure =>
-      _secure ??= NativeSecureStorage(namespace: namespace, scope: scope);
+  NativeSecureStorage get secure => _secure ??=
+      NativeSecureStoragePlatform(namespace: namespace, scope: scope);
 
   IsolatedNativeStorage? _isolated;
   @override
   IsolatedNativeStorage get isolated => _isolated ??= IsolatedNativeStorage(
-        factory: NativeLocalStoragePlatform.new,
+        factory: NativeLocalStorage.new,
         namespace: namespace,
         scope: scope,
       );
 
   @override
-  NativeLocalStorage scoped(String scope) => NativeLocalStoragePlatform(
+  NativeLocalStorage scoped(String scope) => NativeLocalStorage(
         namespace: namespace,
         scope: rescope(scope),
       );

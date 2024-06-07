@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'dart:isolate';
 
 import 'package:native_storage/native_storage.dart';
@@ -10,6 +11,14 @@ typedef StorageConfig = ({
   String? namespace,
   String? scope,
 });
+
+extension on StorageConfig {
+  String get qualifiedName {
+    final namespace = this.namespace ?? 'default';
+    if (scope == null) return namespace;
+    return '$namespace/$scope';
+  }
+}
 
 /// The VM implementation of [IsolatedNativeStorage] which uses an [Isolate]
 /// to handle storage operations.
@@ -23,7 +32,7 @@ final class IsolatedNativeStoragePlatform implements IsolatedNativeStorage {
           namespace: namespace,
           scope: scope,
         ) {
-    _spawned = spawn().then((_) {
+    _spawned = _spawn().then((_) {
       _listener = _channel!.stream.listen((response) {
         final completer = _pendingRequests.remove(response.id);
         if (completer == null) {
@@ -42,13 +51,37 @@ final class IsolatedNativeStoragePlatform implements IsolatedNativeStorage {
   final _pendingRequests = <int, Completer<IsolatedStorageRequest>>{};
   var _closed = false;
 
-  Future<void> spawn() async {
+  Future<void> _spawn() async {
     final port = ReceivePort();
     _channel = IsolateChannel<IsolatedStorageRequest>.connectReceive(port);
+
+    final isolateName = 'IsolatedNativeStorage(${_config.qualifiedName})';
+    final errorPort = ReceivePort();
+    errorPort.first.then((message) {
+      final [error as String, stackTraceString as String] =
+          message as List<dynamic>;
+      final stackTrace = StackTrace.fromString(stackTraceString);
+      log(
+        'Unexpected error in storage isolate: $error',
+        level: 1000, // SEVERE
+        name: isolateName,
+        error: error,
+        stackTrace: stackTrace,
+      );
+      if (!_closed) {
+        close(
+          force: true,
+          error: error,
+          stackTrace: stackTrace,
+        ).ignore();
+      }
+    });
+
     _isolate = await Isolate.spawn(
       _handleRequests,
       (port.sendPort, _config),
-      debugName: 'IsolatedStoragePlatform',
+      debugName: isolateName,
+      onError: errorPort.sendPort,
     );
   }
 
@@ -67,12 +100,8 @@ final class IsolatedNativeStoragePlatform implements IsolatedNativeStorage {
     final channel =
         IsolateChannel<IsolatedStorageRequest>.connectSend(sendPort);
     final storage = factory(namespace: namespace, scope: scope);
-    try {
-      await for (final request in channel.stream) {
-        channel.sink.add(storage.handle(request));
-      }
-    } finally {
-      storage.close();
+    await for (final request in channel.stream) {
+      channel.sink.add(storage.handle(request));
     }
   }
 
@@ -126,16 +155,25 @@ final class IsolatedNativeStoragePlatform implements IsolatedNativeStorage {
     return writtenValue!;
   }
 
+  final _closeCompleter = Completer<void>();
+
   @override
-  Future<void> close({bool force = false}) async {
+  Future<void> close({
+    bool force = false,
+    Object? error,
+    StackTrace? stackTrace,
+  }) async {
     if (_closed) {
-      return;
+      return _closeCompleter.future;
     }
     _closed = true;
     try {
       if (force) {
         for (final pendingRequest in _pendingRequests.values) {
-          pendingRequest.completeError(StateError('Storage is closed'));
+          pendingRequest.completeError(
+            error ?? StateError('Storage is closed'),
+            stackTrace,
+          );
         }
       } else {
         await Future.wait([
@@ -153,6 +191,11 @@ final class IsolatedNativeStoragePlatform implements IsolatedNativeStorage {
       _isolate = null;
       _spawned?.ignore();
       _spawned = null;
+      if (error != null) {
+        _closeCompleter.completeError(error, stackTrace);
+      } else {
+        _closeCompleter.complete();
+      }
     }
   }
 }

@@ -11,7 +11,7 @@ import 'package:native_storage/src/util/functional.dart';
 
 final class SecureStorageLinux extends NativeSecureStoragePlatform {
   SecureStorageLinux({
-    String? namespace,
+    super.namespace,
     super.scope,
   })  : _namespace = namespace,
         super.base();
