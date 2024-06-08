@@ -1,6 +1,4 @@
 import 'package:native_storage/native_storage.dart';
-import 'package:native_storage/src/local/local_storage_platform.vm.dart'
-    if (dart.library.js_interop) 'package:native_storage/src/local/local_storage_platform.web.dart';
 
 /// {@template native_storage.native_local_storage}
 /// Provides app-local storage of key-value pairs.
@@ -16,7 +14,11 @@ abstract interface class NativeLocalStorage implements NativeStorage {
   factory NativeLocalStorage({
     String? namespace,
     String? scope,
-  }) = NativeLocalStoragePlatform;
+  }) {
+    // Route through [NativeStorage] to ensure de-duplication of instances.
+    return NativeStorage(namespace: namespace, scope: scope)
+        as NativeLocalStorage;
+  }
 
   @override
   NativeLocalStorage scoped(String scope);

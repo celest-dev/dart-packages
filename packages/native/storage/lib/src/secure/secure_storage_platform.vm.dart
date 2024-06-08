@@ -2,18 +2,16 @@ import 'dart:io';
 
 import 'package:meta/meta.dart';
 import 'package:native_storage/native_storage.dart';
-import 'package:native_storage/src/native_storage_extended.dart';
+import 'package:native_storage/src/native_storage_base.dart';
 import 'package:native_storage/src/secure/secure_storage.android.dart';
 import 'package:native_storage/src/secure/secure_storage.darwin.dart';
 import 'package:native_storage/src/secure/secure_storage.linux.dart';
 import 'package:native_storage/src/secure/secure_storage.windows.dart';
 import 'package:native_storage/src/util/rescope.dart';
 
-abstract base class NativeSecureStoragePlatform
-    implements
-        NativeSecureStorage,
-        // ignore: invalid_use_of_visible_for_testing_member
-        NativeStorageExtended {
+// ignore: invalid_use_of_visible_for_testing_member
+abstract base class NativeSecureStoragePlatform extends NativeStorageBase
+    implements NativeSecureStorage {
   factory NativeSecureStoragePlatform({
     String? namespace,
     String? scope,
@@ -35,6 +33,7 @@ abstract base class NativeSecureStoragePlatform
 
   @protected
   NativeSecureStoragePlatform.base({
+    required super.namespace,
     this.scope,
   });
 
@@ -43,24 +42,25 @@ abstract base class NativeSecureStoragePlatform
 
   @override
   @mustCallSuper
-  void close() {
+  void closeInternal() {
     _isolated?.close().ignore();
-    _isolated = null;
   }
 
   @override
+  @nonVirtual
   NativeSecureStorage get secure => this;
 
   IsolatedNativeStorage? _isolated;
   @override
+  @nonVirtual
   IsolatedNativeStorage get isolated => _isolated ??= IsolatedNativeStorage(
-        factory: NativeSecureStoragePlatform.new,
+        factory: NativeSecureStorage.new,
         namespace: namespace,
         scope: scope,
       );
 
   @override
-  NativeSecureStorage scoped(String scope) => NativeSecureStoragePlatform(
+  NativeSecureStorage scoped(String scope) => NativeSecureStorage(
         namespace: namespace,
         scope: rescope(scope),
       );

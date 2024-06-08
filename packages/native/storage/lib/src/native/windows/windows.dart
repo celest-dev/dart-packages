@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:ffi/ffi.dart';
 import 'package:meta/meta.dart';
 import 'package:native_storage/native_storage.dart';
-import 'package:native_storage/src/native_storage_extended.dart';
+import 'package:native_storage/src/native_storage_base.dart';
 import 'package:native_storage/src/util/functional.dart';
 import 'package:path/path.dart' as p;
 import 'package:win32/win32.dart';
@@ -135,7 +135,7 @@ final class WindowsCommon {
 }
 
 // ignore: invalid_use_of_visible_for_testing_member
-mixin NativeStorageWindows on NativeStorage implements NativeStorageExtended {
+mixin NativeStorageWindows on NativeStorageBase {
   @protected
   abstract final String? namespaceOverride;
 
@@ -214,8 +214,8 @@ mixin NativeStorageWindows on NativeStorage implements NativeStorageExtended {
   }
 
   @override
-  void close() {
+  void closeInternal() {
     registry.close();
-    super.close();
+    super.closeInternal();
   }
 }

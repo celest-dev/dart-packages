@@ -1,3 +1,9 @@
+## 0.1.7
+
+- fix: Ensure only one `NativeStorage` instance exists for any namespace/scope pair
+- fix: Buffer calls to `close`
+- chore: Ensure consistent validation of namespaces
+
 ## 0.1.6
 
 - feat: Support absolute scopes in `NativeStorage.scoped`

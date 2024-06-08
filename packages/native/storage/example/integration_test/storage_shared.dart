@@ -1,11 +1,66 @@
+// ignore_for_file: invalid_use_of_internal_member
+
 import 'dart:math';
 
 import 'package:native_storage/native_storage.dart';
-import 'package:native_storage/src/native_storage_extended.dart';
+import 'package:native_storage/src/native_storage_base.dart';
 import 'package:test/test.dart';
 
-void sharedTests(String name, NativeStorageExtendedFactory factory) {
-  group(name, () {
+enum NativeStorageType {
+  memory,
+  secure,
+  local;
+
+  String get name => switch (this) {
+        memory => 'NativeMemoryStorage',
+        secure => 'NativeSecureStorage',
+        local => 'NativeLocalStorage',
+      };
+}
+
+void sharedTests(NativeStorageType type, NativeStorageFactory factory_) {
+  NativeStorageBase factory({
+    String? namespace,
+    String? scope,
+  }) =>
+      factory_(namespace: namespace, scope: scope) as NativeStorageBase;
+
+  const bool isWeb = bool.fromEnvironment('dart.library.js_interop');
+  final isMemoryStorage = type == NativeStorageType.memory;
+  final isSecureStorage = type == NativeStorageType.secure;
+  final hasIsolatedStorage =
+      isWeb ? (isSecureStorage || isMemoryStorage) : true;
+  final hasFullyIsolatedStorage = isWeb ? hasIsolatedStorage : isMemoryStorage;
+
+  // ignore: unused_element
+  void dumpInstances() {
+    String dump(Map<(String, String?), NativeStorage> instances) {
+      return instances
+          .map((k, v) => MapEntry(k, '${v.runtimeType}(${v.hashCode})'))
+          .toString();
+    }
+
+    print('Memory: ${dump(NativeMemoryStorage.instances)}');
+    print('Instances: ${dump(NativeStorage.instances)}');
+  }
+
+  void reset() {
+    for (final instance in List.of(NativeStorage.instances.values)) {
+      instance.close();
+    }
+    for (final instance in List.of(NativeMemoryStorage.instances.values)) {
+      instance.close();
+    }
+  }
+
+  group(type.name, () {
+    const invalidNamespaces = ['com.domain/myapp', 'com.domain.myapp/'];
+    for (final namespace in invalidNamespaces) {
+      test('throws for invalid namespace: $namespace', () {
+        expect(() => factory(namespace: namespace), throwsArgumentError);
+      });
+    }
+
     const allowedNamespaces = [null, 'com.domain.myapp'];
     const allowedScopes = [null, 'scope', 'scope1/scope2'];
     for (final namespace in allowedNamespaces) {
@@ -13,15 +68,16 @@ void sharedTests(String name, NativeStorageExtendedFactory factory) {
         group('namespace=$namespace', () {
           group('scope=$scope', () {
             late String key;
-            late final storage = factory(namespace: namespace, scope: scope);
+            late NativeStorageBase storage;
 
             setUp(() {
+              storage = factory(namespace: namespace, scope: scope);
               storage.clear();
               // Add some randomness to prevent overlap between concurrent tests.
               key = _randomString(10);
             });
 
-            tearDownAll(() {
+            tearDown(() {
               storage.clear();
               storage.close();
             });
@@ -119,23 +175,19 @@ void sharedTests(String name, NativeStorageExtendedFactory factory) {
 
             group('isolated', () {
               late String key;
-              late final isolated = storage.isolated;
+              late IsolatedNativeStorage isolated;
 
               setUp(() async {
+                isolated = storage.isolated;
                 await isolated.clear();
                 // Add some randomness to prevent overlap between concurrent tests.
                 key = _randomString(10);
               });
 
-              tearDownAll(() async {
-                await isolated.clear();
-                await isolated.close();
-              });
-
               test(
                 'shares with non-isolated storage',
                 // The NativeMemoryStorage does not share.
-                skip: storage is NativeMemoryStorage,
+                skip: hasFullyIsolatedStorage,
                 () async {
                   storage.write(key, 'value');
                   expect(await isolated.read(key), 'value');
@@ -145,6 +197,22 @@ void sharedTests(String name, NativeStorageExtendedFactory factory) {
 
                   await isolated.clear();
                   expect(storage.read(key), isNull);
+                },
+              );
+
+              test(
+                'does not share with non-isolated storage',
+                // The NativeMemoryStorage does not share.
+                skip: !hasFullyIsolatedStorage,
+                () async {
+                  storage.write(key, 'value');
+                  expect(await isolated.read(key), null);
+
+                  await isolated.write(key, 'isolated');
+                  expect(storage.read(key), 'value');
+
+                  await isolated.clear();
+                  expect(storage.read(key), 'value');
                 },
               );
 
@@ -233,70 +301,113 @@ void sharedTests(String name, NativeStorageExtendedFactory factory) {
       }
     }
 
-    test('parent clears child', () {
-      final parent = factory(namespace: 'com.domain', scope: 'scope');
-      final child = parent.scoped('child');
+    group('fixes', () {
+      setUp(reset);
 
-      parent.write('key', 'parentValue');
-      child.write('key', 'childValue');
+      test('parent clears child', () {
+        final parent = factory(namespace: 'com.domain', scope: 'scope');
+        final child = parent.scoped('child');
 
-      expect(parent.read('key'), 'parentValue');
-      expect(child.read('key'), 'childValue');
+        parent.write('key', 'parentValue');
+        child.write('key', 'childValue');
 
-      expect(parent.allKeys, unorderedEquals(['key', 'child/key']));
-      expect((child as NativeStorageExtended).allKeys, ['key']);
+        expect(parent.read('key'), 'parentValue');
+        expect(child.read('key'), 'childValue');
 
-      parent.clear();
+        expect(parent.allKeys, unorderedEquals(['key', 'child/key']));
+        expect((child as NativeStorageBase).allKeys, ['key']);
 
-      expect(parent.read('key'), isNull);
-      expect(child.read('key'), isNull);
+        parent.clear();
 
-      expect(parent.allKeys, isEmpty);
-      expect(child.allKeys, isEmpty);
-    });
+        expect(parent.read('key'), isNull);
+        expect(child.read('key'), isNull);
 
-    test('child does not clear parent', () {
-      final parent = factory(namespace: 'com.domain', scope: 'scope');
-      final child = parent.scoped('child');
+        expect(parent.allKeys, isEmpty);
+        expect(child.allKeys, isEmpty);
+      });
 
-      parent.write('key', 'parentValue');
-      child.write('key', 'childValue');
+      test('child does not clear parent', () {
+        final parent = factory(namespace: 'com.domain', scope: 'scope');
+        final child = parent.scoped('child');
 
-      expect(parent.read('key'), 'parentValue');
-      expect(child.read('key'), 'childValue');
+        parent.write('key', 'parentValue');
+        child.write('key', 'childValue');
 
-      expect(parent.allKeys, unorderedEquals(['key', 'child/key']));
-      expect((child as NativeStorageExtended).allKeys, ['key']);
+        expect(parent.read('key'), 'parentValue');
+        expect(child.read('key'), 'childValue');
 
-      child.clear();
+        expect(parent.allKeys, unorderedEquals(['key', 'child/key']));
+        expect((child as NativeStorageBase).allKeys, ['key']);
 
-      expect(parent.read('key'), 'parentValue');
-      expect(child.read('key'), isNull);
+        child.clear();
 
-      expect(parent.allKeys, ['key']);
-      expect(child.allKeys, isEmpty);
+        expect(parent.read('key'), 'parentValue');
+        expect(child.read('key'), isNull);
 
-      parent.clear();
-    });
+        expect(parent.allKeys, ['key']);
+        expect(child.allKeys, isEmpty);
 
-    test('rescope', () {
-      final nested = factory(
-        namespace: 'com.domain',
-        scope: 'scope/child/nested',
-      );
-      expect(nested.scope, 'scope/child/nested');
+        parent.clear();
+      });
 
-      final root = nested.scoped('/');
-      expect(root.scope, null);
+      test('rescope', () {
+        final nested = factory(
+          namespace: 'com.domain',
+          scope: 'scope/child/nested',
+        );
+        expect(nested.scope, 'scope/child/nested');
 
-      final child = nested.scoped('/scope/child');
-      expect(child.scope, 'scope/child');
+        final root = nested.scoped('/');
+        expect(root.scope, null);
 
-      final current = nested.scoped('');
-      expect(current.scope, 'scope/child/nested');
+        final child = nested.scoped('/scope/child');
+        expect(child.scope, 'scope/child');
 
-      final drill = child.scoped('nested');
-      expect(drill.scope, 'scope/child/nested');
+        final current = nested.scoped('');
+        expect(current.scope, 'scope/child/nested');
+
+        final drill = child.scoped('nested');
+        expect(drill.scope, 'scope/child/nested');
+      });
+
+      test('instance caching', () {
+        void compare(NativeStorage instance1, NativeStorage instance2) {
+          expect(instance1, same(instance2));
+
+          final secure1 = instance1.secure;
+          final secure2 = instance2.secure;
+          expect(secure1, same(secure2));
+
+          final isolated1 = instance1.isolated;
+          final isolated2 = instance2.isolated;
+          expect(isolated1, same(isolated2));
+        }
+
+        final instance1 = factory();
+        final instance2 = factory();
+        compare(instance1, instance2);
+
+        final scope1 = factory(namespace: 'com.domain', scope: 'scope');
+        final scope2 = factory(namespace: 'com.domain', scope: 'scope');
+        compare(scope1, scope2);
+
+        final child1 = scope1.scoped('child');
+        final child2 = scope2.scoped('child');
+        compare(child1, child2);
+      });
+
+      test('buffers close calls', skip: !hasIsolatedStorage, () async {
+        final instance = factory();
+        final isolated = instance.isolated;
+        instance.close();
+        expect(isolated, same(instance.isolated));
+        await expectLater(isolated.read('key'), throwsStateError);
+
+        final newInstance = factory();
+        expect(instance, isNot(same(newInstance)));
+        expect(isolated, isNot(same(newInstance.isolated)));
+        await expectLater(newInstance.isolated.read('key'), completion(null));
+      });
     });
   });
 }

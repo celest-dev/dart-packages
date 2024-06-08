@@ -195,10 +195,12 @@ self.postMessage('ready');
     return writtenValue!;
   }
 
+  final _closeCompleter = Completer<void>();
+
   @override
   Future<void> close({bool force = false}) async {
     if (_closed) {
-      return;
+      return _closeCompleter.future;
     }
     _closed = true;
     try {
@@ -218,6 +220,7 @@ self.postMessage('ready');
       _worker = null;
       _spawned?.ignore();
       _spawned = null;
+      _closeCompleter.future;
     }
   }
 }

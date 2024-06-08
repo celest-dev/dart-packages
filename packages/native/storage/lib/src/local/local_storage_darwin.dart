@@ -8,7 +8,7 @@ import 'package:path/path.dart' as p;
 
 final class LocalStoragePlatformDarwin extends NativeLocalStoragePlatform {
   LocalStoragePlatformDarwin({
-    String? namespace,
+    super.namespace,
     super.scope,
   })  : _namespace = namespace,
         super.base();

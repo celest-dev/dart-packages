@@ -1,3 +1,3 @@
-import 'package:native_storage/src/memory_storage.dart';
+import 'package:native_storage/src/native_memory_storage.dart';
 
 typedef NativeSecureStoragePlatform = NativeMemoryStorage;

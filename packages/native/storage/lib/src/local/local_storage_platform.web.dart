@@ -1,17 +1,16 @@
 import 'package:native_storage/native_storage.dart';
 import 'package:native_storage/src/isolated/isolated_storage_platform.unsupported.dart'
     as unsupported;
-import 'package:native_storage/src/native_storage_extended.dart';
+import 'package:native_storage/src/native_storage_base.dart';
+import 'package:native_storage/src/secure/secure_storage_platform.web.dart';
 import 'package:native_storage/src/util/rescope.dart';
 import 'package:web/web.dart' as web;
 
 /// The browser implementation of [NativeLocalStorage].
-final class NativeLocalStoragePlatform
-    implements
-        NativeLocalStorage,
-        // ignore: invalid_use_of_visible_for_testing_member
-        NativeStorageExtended {
-  NativeLocalStoragePlatform({String? namespace, this.scope})
+// ignore: invalid_use_of_visible_for_testing_member
+final class NativeLocalStoragePlatform extends NativeStorageBase
+    implements NativeLocalStorage {
+  NativeLocalStoragePlatform({super.namespace, this.scope})
       : namespace = namespace ?? web.window.location.hostname;
 
   @override
@@ -56,17 +55,15 @@ final class NativeLocalStoragePlatform
       ];
 
   @override
-  void close() {
+  void closeInternal() {
     _secure?.close();
-    _secure = null;
-    _isolated?.close().ignore();
-    _isolated = null;
+    _isolated?.close();
   }
 
   NativeSecureStorage? _secure;
   @override
-  NativeSecureStorage get secure =>
-      _secure ??= NativeSecureStorage(namespace: namespace, scope: scope);
+  NativeSecureStorage get secure => _secure ??=
+      NativeSecureStoragePlatform(namespace: namespace, scope: scope);
 
   IsolatedNativeStorage? _isolated;
   @override
@@ -74,7 +71,7 @@ final class NativeLocalStoragePlatform
       _isolated ??= unsupported.IsolatedNativeStoragePlatform.from(this);
 
   @override
-  NativeLocalStorage scoped(String scope) => NativeLocalStoragePlatform(
+  NativeLocalStorage scoped(String scope) => NativeLocalStorage(
         namespace: namespace,
         scope: rescope(scope),
       );

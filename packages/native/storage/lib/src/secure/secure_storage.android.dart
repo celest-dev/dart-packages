@@ -4,7 +4,7 @@ import 'package:native_storage/src/secure/secure_storage_platform.vm.dart';
 
 final class SecureStorageAndroid extends NativeSecureStoragePlatform {
   SecureStorageAndroid({
-    String? namespace,
+    super.namespace,
     super.scope,
   })  : _namespace = namespace,
         super.base();

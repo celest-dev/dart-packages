@@ -1,6 +1,4 @@
 import 'package:native_storage/native_storage.dart';
-import 'package:native_storage/src/secure/secure_storage_platform.vm.dart'
-    if (dart.library.js_interop) 'package:native_storage/src/secure/secure_storage_platform.web.dart';
 
 /// {@template native_storage.native_secure_storage}
 /// Provides platform-specific secure storage, typically using the OS's secure
@@ -14,7 +12,10 @@ abstract interface class NativeSecureStorage implements NativeStorage {
   factory NativeSecureStorage({
     String? namespace,
     String? scope,
-  }) = NativeSecureStoragePlatform;
+  }) {
+    // Route through [NativeStorage] to ensure de-duplication of instances.
+    return NativeStorage(namespace: namespace, scope: scope).secure;
+  }
 
   @override
   NativeSecureStorage scoped(String scope);

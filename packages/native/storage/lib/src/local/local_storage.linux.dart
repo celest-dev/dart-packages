@@ -7,7 +7,7 @@ import 'package:path/path.dart' as p;
 
 final class LocalStorageLinux extends NativeLocalStoragePlatform {
   LocalStorageLinux({
-    String? namespace,
+    super.namespace,
     super.scope,
   }) : super.base();
 
