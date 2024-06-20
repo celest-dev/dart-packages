@@ -1,5 +1,4 @@
 import 'dart:ffi';
-import 'dart:io';
 
 import 'package:ffi/ffi.dart';
 import 'package:native_storage/src/native/linux/glib.ffi.dart';
@@ -7,7 +6,6 @@ import 'package:native_storage/src/native/linux/libsecret.ffi.dart';
 import 'package:native_storage/src/native/linux/linux.dart';
 import 'package:native_storage/src/secure/secure_storage_exception.dart';
 import 'package:native_storage/src/secure/secure_storage_platform.vm.dart';
-import 'package:native_storage/src/util/functional.dart';
 
 final class SecureStorageLinux extends NativeSecureStoragePlatform {
   SecureStorageLinux({
@@ -18,18 +16,8 @@ final class SecureStorageLinux extends NativeSecureStoragePlatform {
 
   final String? _namespace;
 
-  late final String _appName = lazy(() {
-    final application = linux.gio.g_application_get_default();
-    if (application == nullptr) {
-      return File('/proc/self/exe').resolveSymbolicLinksSync();
-    }
-    return linux.gio
-        .g_application_get_application_id(application)
-        .toDartString();
-  });
-
   @override
-  late final String namespace = _namespace ?? _appName;
+  late final String namespace = _namespace ?? linux.applicationId;
 
   late final String _prefix = scope == null ? '' : '$scope/';
 
@@ -90,6 +78,12 @@ final class SecureStorageLinux extends NativeSecureStoragePlatform {
         if (secrets == nullptr) {
           return;
         }
+        arena.onReleaseAll(
+          () => linux.glib.g_list_free_full(
+            secrets,
+            linux.gObjectUnrefPointer,
+          ),
+        );
         final count = linux.glib.g_list_length(secrets);
         for (var i = 0; i < count; i++) {
           final secret =

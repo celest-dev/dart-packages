@@ -5,7 +5,6 @@ import 'package:native_storage/native_storage.dart';
 import 'package:native_storage/src/local/local_storage.android.dart';
 import 'package:native_storage/src/local/local_storage.linux.dart';
 import 'package:native_storage/src/local/local_storage.windows.dart';
-import 'package:native_storage/src/local/local_storage_darwin.dart';
 import 'package:native_storage/src/native_storage_base.dart';
 import 'package:native_storage/src/secure/secure_storage_platform.vm.dart';
 import 'package:native_storage/src/util/rescope.dart';
@@ -18,16 +17,16 @@ abstract base class NativeLocalStoragePlatform extends NativeStorageBase
     String? namespace,
     String? scope,
   }) {
-    if (Platform.isMacOS || Platform.isIOS) {
-      return LocalStoragePlatformDarwin(namespace: namespace, scope: scope);
-    }
+    // if (Platform.isMacOS || Platform.isIOS) {
+    //   return LocalStoragePlatformDarwin(namespace: namespace, scope: scope);
+    // }
     if (Platform.isAndroid) {
       return LocalStoragePlatformAndroid(namespace: namespace, scope: scope);
     }
     if (Platform.isWindows) {
       return LocalStorageWindows(namespace: namespace, scope: scope);
     }
-    if (Platform.isLinux) {
+    if (Platform.isLinux || Platform.isMacOS) {
       return LocalStorageLinux(namespace: namespace, scope: scope);
     }
     throw UnsupportedError('This platform is not yet supported.');
