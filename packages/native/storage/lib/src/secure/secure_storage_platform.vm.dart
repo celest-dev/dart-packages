@@ -16,14 +16,14 @@ abstract base class NativeSecureStoragePlatform extends NativeStorageBase
     String? namespace,
     String? scope,
   }) {
+    if (Platform.isLinux || Platform.isMacOS) {
+      return SecureStorageLinux(namespace: namespace, scope: scope);
+    }
     if (Platform.isIOS || Platform.isMacOS) {
       return SecureStorageDarwin(namespace: namespace, scope: scope);
     }
     if (Platform.isAndroid) {
       return SecureStorageAndroid(namespace: namespace, scope: scope);
-    }
-    if (Platform.isLinux) {
-      return SecureStorageLinux(namespace: namespace, scope: scope);
     }
     if (Platform.isWindows) {
       return SecureStorageWindows(namespace: namespace, scope: scope);

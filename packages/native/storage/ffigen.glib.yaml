@@ -7,9 +7,14 @@ language: c
 output: lib/src/native/linux/glib.ffi.dart
 headers:
   entry-points:
-    - /usr/include/glib-2.0/glib.h
-    - /usr/include/glib-2.0/glib-object.h
-    - /usr/include/glib-2.0/gio/gio.h
+    - /opt/homebrew/Cellar/glib/2.80.3/include/glib-2.0/glib.h
+    - /opt/homebrew/Cellar/glib/2.80.3/include/glib-2.0/glib-object.h
+    - /opt/homebrew/Cellar/glib/2.80.3/include/glib-2.0/gio/gio.h
+compiler-opts:
+  # Suppress nullability warnings on macOS
+  - "-Wno-nullability-completeness"
+  # Ignore warnings about availability macro
+  - "-Wno-availability"
 preamble: |
   // ignore_for_file: type=lint
   // ignore_for_file: return_of_invalid_type
@@ -31,6 +36,7 @@ functions:
     - g_hash_table_insert
     - g_hash_table_destroy
     - g_list_.*
+    - g_object_unref
     - g_application_get_default
     - g_application_get_application_id
     - g_get_user_config_dir

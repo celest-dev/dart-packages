@@ -778,6 +778,20 @@ class Glib {
   late final _g_list_pop_allocator =
       _g_list_pop_allocatorPtr.asFunction<void Function()>();
 
+  void g_object_unref(
+    gpointer object,
+  ) {
+    return _g_object_unref(
+      object,
+    );
+  }
+
+  late final _g_object_unrefPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+          'g_object_unref');
+  late final _g_object_unref =
+      _g_object_unrefPtr.asFunction<void Function(gpointer)>();
+
   ffi.Pointer<pkg_ffi.Utf8> g_application_get_application_id(
     ffi.Pointer<_GApplication> application,
   ) {
@@ -1151,6 +1165,50 @@ class Glib {
                       gboolean Function(
                           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
               ffi.Pointer<ffi.UnsignedInt>)>();
+
+  int g_list_store_find_with_equal_func_full(
+    ffi.Pointer<_GListStore> store,
+    gpointer item,
+    ffi.Pointer<
+            ffi.NativeFunction<
+                gboolean Function(
+                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, gpointer)>>
+        equal_func,
+    gpointer user_data,
+    ffi.Pointer<ffi.UnsignedInt> position,
+  ) {
+    return _g_list_store_find_with_equal_func_full(
+      store,
+      item,
+      equal_func,
+      user_data,
+      position,
+    );
+  }
+
+  late final _g_list_store_find_with_equal_func_fullPtr = _lookup<
+          ffi.NativeFunction<
+              gboolean Function(
+                  ffi.Pointer<_GListStore>,
+                  gpointer,
+                  ffi.Pointer<
+                      ffi.NativeFunction<
+                          gboolean Function(ffi.Pointer<ffi.Void>,
+                              ffi.Pointer<ffi.Void>, gpointer)>>,
+                  gpointer,
+                  ffi.Pointer<ffi.UnsignedInt>)>>(
+      'g_list_store_find_with_equal_func_full');
+  late final _g_list_store_find_with_equal_func_full =
+      _g_list_store_find_with_equal_func_fullPtr.asFunction<
+          int Function(
+              ffi.Pointer<_GListStore>,
+              gpointer,
+              ffi.Pointer<
+                  ffi.NativeFunction<
+                      gboolean Function(ffi.Pointer<ffi.Void>,
+                          ffi.Pointer<ffi.Void>, gpointer)>>,
+              gpointer,
+              ffi.Pointer<ffi.UnsignedInt>)>();
 }
 
 final class GError extends ffi.Struct {
@@ -1182,20 +1240,6 @@ typedef gboolean = gint;
 
 final class _GAllocator extends ffi.Opaque {}
 
-/// GObject:
-///
-/// The base object type.
-///
-/// All the fields in the `GObject` structure are private to the implementation
-/// and should never be accessed directly.
-///
-/// Since GLib 2.72, all #GObjects are guaranteed to be aligned to at least the
-/// alignment of the largest basic GLib type (typically this is #guint64 or
-/// #gdouble). If you need larger alignment for an element in a #GObject, you
-/// should allocate it on the heap (aligned), or arrange for your #GObject to be
-/// appropriately padded. This guarantee applies to the #GObject (or derived)
-/// struct, the #GObjectClass (or derived) struct, and any private data allocated
-/// by G_ADD_PRIVATE().
 final class GObject extends ffi.Struct {
   external _GTypeInstance g_type_instance;
 
