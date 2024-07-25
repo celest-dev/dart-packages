@@ -16,7 +16,7 @@ abstract base class NativeSecureStoragePlatform extends NativeStorageBase
     String? namespace,
     String? scope,
   }) {
-    if (Platform.isLinux || Platform.isMacOS) {
+    if (Platform.isLinux) {
       return SecureStorageLinux(namespace: namespace, scope: scope);
     }
     if (Platform.isIOS || Platform.isMacOS) {
