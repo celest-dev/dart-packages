@@ -2,6 +2,7 @@
 
 - chore: Updates `ffigen` and `jnigen` to latest versions
 - chore: Bumps min SDK to 3.4
+- fix: Null pointer dereference on Linux `clear`
 
 ## 0.1.7
 

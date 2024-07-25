@@ -2,11 +2,11 @@ import 'dart:ffi';
 import 'dart:io';
 
 import 'package:ffi/ffi.dart';
-import 'package:path/path.dart' as p;
 import 'package:native_storage/src/native/linux/glib.ffi.dart';
 import 'package:native_storage/src/native/linux/libsecret.ffi.dart';
 import 'package:native_storage/src/util/functional.dart';
 import 'package:native_storage/src/util/native.dart';
+import 'package:path/path.dart' as p;
 import 'package:xdg_directories/xdg_directories.dart' as xdg;
 
 final linux = LinuxCommon._();
@@ -15,18 +15,35 @@ final class LinuxCommon {
   LinuxCommon._();
 
   late final Glib glib = Glib(_glibDylib);
-  late final DynamicLibrary _glibDylib =
-      DynamicLibrary.open('libglib-2.0.so.0');
+  late final DynamicLibrary _glibDylib = searchDylib('glib', [
+    'libglib-2.0.so.0',
+    if (Platform.isMacOS) '/opt/homebrew/lib/libglib-2.0.dylib',
+  ]);
   late final gStrHashPointer =
       _glibDylib.lookup<NativeFunction<UnsignedInt Function(Pointer<Void>)>>(
           'g_str_hash');
 
-  late final Glib gio = Glib(DynamicLibrary.open('libgio-2.0.so.0'));
+  late final DynamicLibrary _gobjectDylib = searchDylib('glib', [
+    'libgobject-2.0.so.0',
+    if (Platform.isMacOS) '/opt/homebrew/lib/libgobject-2.0.dylib',
+  ]);
+  late final gObjectUnrefPointer = _gobjectDylib
+      .lookup<NativeFunction<Void Function(gpointer)>>('g_object_unref');
 
-  late final Libsecret libSecret =
-      Libsecret(DynamicLibrary.open('libsecret-1.so.0'));
+  late final Glib gio = Glib(searchDylib('gio', [
+    'libgio-2.0.so.0',
+    if (Platform.isMacOS) '/opt/homebrew/lib/libgio-2.0.dylib',
+  ]));
+
+  late final Libsecret libSecret = Libsecret(searchDylib('libsecret', [
+    'libsecret-1.so.0',
+    if (Platform.isMacOS) '/opt/homebrew/lib/libsecret-1.dylib',
+  ]));
 
   late final String applicationId = lazy(() {
+    if (Platform.isMacOS) {
+      return p.basenameWithoutExtension(Platform.resolvedExecutable);
+    }
     final exeName = p.basenameWithoutExtension(
         File('/proc/self/exe').resolveSymbolicLinksSync());
     try {

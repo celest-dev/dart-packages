@@ -18,6 +18,9 @@ abstract base class NativeLocalStoragePlatform extends NativeStorageBase
     String? namespace,
     String? scope,
   }) {
+    if (Platform.isLinux) {
+      return LocalStorageLinux(namespace: namespace, scope: scope);
+    }
     if (Platform.isMacOS || Platform.isIOS) {
       return LocalStoragePlatformDarwin(namespace: namespace, scope: scope);
     }
@@ -26,9 +29,6 @@ abstract base class NativeLocalStoragePlatform extends NativeStorageBase
     }
     if (Platform.isWindows) {
       return LocalStorageWindows(namespace: namespace, scope: scope);
-    }
-    if (Platform.isLinux) {
-      return LocalStorageLinux(namespace: namespace, scope: scope);
     }
     throw UnsupportedError('This platform is not yet supported.');
   }

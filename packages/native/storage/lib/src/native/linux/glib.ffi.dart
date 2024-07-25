@@ -778,6 +778,20 @@ class Glib {
   late final _g_list_pop_allocator =
       _g_list_pop_allocatorPtr.asFunction<void Function()>();
 
+  void g_object_unref(
+    gpointer object,
+  ) {
+    return _g_object_unref(
+      object,
+    );
+  }
+
+  late final _g_object_unrefPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+          'g_object_unref');
+  late final _g_object_unref =
+      _g_object_unrefPtr.asFunction<void Function(gpointer)>();
+
   ffi.Pointer<pkg_ffi.Utf8> g_application_get_application_id(
     ffi.Pointer<_GApplication> application,
   ) {
@@ -1150,6 +1164,50 @@ class Glib {
                   ffi.NativeFunction<
                       gboolean Function(
                           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
+              ffi.Pointer<ffi.UnsignedInt>)>();
+
+  int g_list_store_find_with_equal_func_full(
+    ffi.Pointer<_GListStore> store,
+    gpointer item,
+    ffi.Pointer<
+            ffi.NativeFunction<
+                gboolean Function(
+                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, gpointer)>>
+        equal_func,
+    gpointer user_data,
+    ffi.Pointer<ffi.UnsignedInt> position,
+  ) {
+    return _g_list_store_find_with_equal_func_full(
+      store,
+      item,
+      equal_func,
+      user_data,
+      position,
+    );
+  }
+
+  late final _g_list_store_find_with_equal_func_fullPtr = _lookup<
+          ffi.NativeFunction<
+              gboolean Function(
+                  ffi.Pointer<_GListStore>,
+                  gpointer,
+                  ffi.Pointer<
+                      ffi.NativeFunction<
+                          gboolean Function(ffi.Pointer<ffi.Void>,
+                              ffi.Pointer<ffi.Void>, gpointer)>>,
+                  gpointer,
+                  ffi.Pointer<ffi.UnsignedInt>)>>(
+      'g_list_store_find_with_equal_func_full');
+  late final _g_list_store_find_with_equal_func_full =
+      _g_list_store_find_with_equal_func_fullPtr.asFunction<
+          int Function(
+              ffi.Pointer<_GListStore>,
+              gpointer,
+              ffi.Pointer<
+                  ffi.NativeFunction<
+                      gboolean Function(ffi.Pointer<ffi.Void>,
+                          ffi.Pointer<ffi.Void>, gpointer)>>,
+              gpointer,
               ffi.Pointer<ffi.UnsignedInt>)>();
 }
 
