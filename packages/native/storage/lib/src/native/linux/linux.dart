@@ -22,7 +22,12 @@ final class LinuxCommon {
   late final gStrHashPointer =
       _glibDylib.lookup<NativeFunction<UnsignedInt Function(Pointer<Void>)>>(
           'g_str_hash');
-  late final gObjectUnrefPointer = _glibDylib
+
+  late final DynamicLibrary _gobjectDylib = searchDylib('glib', [
+    'libgobject-2.0.so.0',
+    if (Platform.isMacOS) '/opt/homebrew/lib/libgobject-2.0.dylib',
+  ]);
+  late final gObjectUnrefPointer = _gobjectDylib
       .lookup<NativeFunction<Void Function(gpointer)>>('g_object_unref');
 
   late final Glib gio = Glib(searchDylib('gio', [
