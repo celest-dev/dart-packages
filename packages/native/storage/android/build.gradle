@@ -2,7 +2,9 @@ group 'dev.celest.native_storage'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.21'
+    // Matches package:jni
+    // https://github.com/dart-lang/native/blob/main/pkgs/jni/android/build.gradle#L7
+    ext.kotlin_version = '1.6.10'
     repositories {
         google()
         mavenCentral()

@@ -1,3 +1,8 @@
+## 0.2.0-wip
+
+- chore: Updates `ffigen` and `jnigen` to latest versions
+- chore: Bumps min SDK to 3.4
+
 ## 0.1.7
 
 - fix: Ensure only one `NativeStorage` instance exists for any namespace/scope pair

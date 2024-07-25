@@ -63,7 +63,7 @@ self.postMessage('ready');
   Future<void> spawn() async {
     final ready = Completer<void>();
     try {
-      _worker = web.Worker(_workerEntrypoint);
+      _worker = web.Worker(_workerEntrypoint.toJS);
     } on Object {
       ready.completeError(NativeStorageException('Failed to spawn worker'));
       return ready.future;
