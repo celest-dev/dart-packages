@@ -1,3 +1,8 @@
+## 0.0.4
+
+- chore: Updates `meta` to `^1.14.0`
+- chore: Bumps min SDK to 3.4.0
+
 ## 0.0.3
 
 - chore: Fix `repository` field in `pubspec.yaml`

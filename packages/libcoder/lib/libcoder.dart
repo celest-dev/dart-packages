@@ -8,6 +8,7 @@ import 'package:libcoder/src/form_data/form_data_coder.dart';
 import 'package:libcoder/src/form_fields/form_fields_coder.dart';
 import 'package:libcoder/src/json/json_coder.dart';
 import 'package:libcoder/src/typeref.dart';
+import 'package:meta/meta.dart';
 
 export 'src/coder.dart';
 export 'src/decoder.dart';
@@ -22,11 +23,11 @@ final GlobalCoder coder = GlobalCoder();
 
 abstract mixin class GlobalCoder implements Map<Typeref, CoderConfig> {
   factory GlobalCoder({
-    /* TODO: @mustBeConst */ Map<Typeref, CoderConfig> staticConfig,
+    @mustBeConst Map<Typeref, CoderConfig> staticConfig,
   }) = _GlobalCoder;
 
   const factory GlobalCoder.static(
-    /* TODO: @mustBeConst */ Map<Typeref, CoderConfig> config,
+    @mustBeConst Map<Typeref, CoderConfig> config,
   ) = _StaticGlobalCoder;
 
   CoderConfig<T> configFor<T extends Object>({Typeref<T>? type});
@@ -62,7 +63,7 @@ final class _StaticGlobalCoder extends UnmodifiableMapBase<Typeref, CoderConfig>
 
 final class _GlobalCoder with GlobalCoder, MapMixin<Typeref, CoderConfig> {
   _GlobalCoder({
-    /* TODO: @mustBeConst */ Map<Typeref, CoderConfig> staticConfig = const {},
+    @mustBeConst Map<Typeref, CoderConfig> staticConfig = const {},
   }) : _staticConfig = staticConfig {
     _runtimeConfig.addAll({
       const Typeref<String>(): CoderConfig.string,
