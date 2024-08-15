@@ -1,7 +1,7 @@
-## 0.2.0-wip
+## 0.2.0
 
 - chore: Updates `ffigen` and `jnigen` to latest versions
-- chore: Bumps min SDK to 3.4
+- chore: Support `web: ">=0.5.0 <2.0.0"`
 - fix: Null pointer dereference on Linux `clear`
 
 ## 0.1.7
