@@ -1,0 +1,48 @@
+name: AuthenticationServicesIos
+description: |
+  Bindings for AuthenticationServices on iOS.
+
+  Regenerate bindings with `dart run ffigen --config=ffigen.ios.yaml`.
+language: "objc"
+output: 
+  bindings: "lib/src/native/ios/authentication_services.ffi.dart"
+  objc-bindings: "ios/Classes/AuthenticationServices.ffi.m"
+compiler-opts:
+  - "-F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Cryptexes/OS/System/Library/Frameworks"
+  - "-F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks"
+  - "-miphonesimulator-version-min=17.5"
+  - "-isysroot"
+  - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk"
+headers:
+  entry-points:
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIApplication.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Cryptexes/OS/System/Library/Frameworks/AuthenticationServices.framework/Headers/ASFoundation.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Cryptexes/OS/System/Library/Frameworks/AuthenticationServices.framework/Headers/ASWebAuthenticationSession.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Cryptexes/OS/System/Library/Frameworks/AuthenticationServices.framework/Headers/ASWebAuthenticationSessionCallback.h"
+  include-directives:
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIApplication.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Cryptexes/OS/System/Library/Frameworks/AuthenticationServices.framework/Headers/ASFoundation.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Cryptexes/OS/System/Library/Frameworks/AuthenticationServices.framework/Headers/ASWebAuthenticationSession.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Cryptexes/OS/System/Library/Frameworks/AuthenticationServices.framework/Headers/ASWebAuthenticationSessionCallback.h"
+preamble: |
+  // ignore_for_file: type=lint
+  // ignore_for_file: return_of_invalid_type
+comments:
+  style: any
+  length: full
+
+exclude-all-by-default: true
+objc-interfaces:
+  include:
+    - UIApplication
+    - UIWindow
+    - AS.*
+objc-protocols:
+  include:
+    - AS.*
+enums:
+  include:
+    - AS.*
