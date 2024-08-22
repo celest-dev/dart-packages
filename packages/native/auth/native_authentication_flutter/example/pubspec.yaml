@@ -1,0 +1,24 @@
+name: native_auth_flutter_example
+description: "Demonstrates how to use the native_auth_flutter plugin."
+publish_to: 'none'
+
+environment:
+  sdk: ^3.3.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  logging: ^1.2.0
+  native_authentication_flutter:
+    path: ../
+
+dependency_overrides: 
+  web: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,41 @@
+name: native_authentication_flutter
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/native_authentication_flutter.yaml"
+      - "packages/native/auth/native_authentication_flutter/**"
+
+# Prevent duplicate runs due to Graphite
+# https://graphite.dev/docs/troubleshooting#why-are-my-actions-running-twice
+concurrency:
+  group: ${{ github.repository }}-${{ github.workflow }}-${{ github.ref }}-${{ github.ref == 'refs/heads/main' && github.sha || ''}}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: packages/native/auth/native_authentication_flutter
+
+jobs:
+  build:
+    runs-on: macos-latest-xlarge
+    timeout-minutes: 25
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # 4.1.7
+      - name: Setup Flutter
+        uses: subosito/flutter-action@44ac965b96f18d999802d4b807e3256d5a3f9fa1 # 2.16.0
+        with:
+          channel: stable
+          cache: true
+      - name: Get Packages
+        run: flutter pub get
+      - name: Analyze
+        run: dart analyze --fatal-infos --fatal-warnings
+      - name: Format
+        run: dart format --set-exit-if-changed .
+      - name: Build Example (iOS)
+        run: flutter build ios --no-codesign
+        working-directory: packages/native/auth/native_authentication_flutter/example
+      - name: Build Example (Web)
+        run: flutter build web
+        working-directory: packages/native/auth/native_authentication_flutter/example
