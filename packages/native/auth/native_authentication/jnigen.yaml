@@ -1,0 +1,29 @@
+# Regenerate bindings with `dart run jnigen --config jnigen.yaml`.
+
+android_sdk_config:
+  add_gradle_deps: true
+  android_example: "example/"
+
+suspend_fun_to_async: true
+enable_experiment:
+  - "interface_implementation"
+
+output:
+  dart:
+    path: "lib/src/native/android/jni_bindings.ffi.dart"
+    structure: single_file
+
+classes:
+  - dev.celest.native_authentication.NativeAuthentication
+  - dev.celest.native_authentication.Callback
+  - dev.celest.native_authentication.CallbackSession
+  - dev.celest.native_authentication.CallbackResult
+  
+  - java.lang.Runnable
+  - java.lang.Exception
+  - java.lang.Throwable
+  - android.app.Activity
+  - android.content.Context
+  - android.net.Uri
+  - android.os.Bundle
+  - android.os.CancellationSignal
