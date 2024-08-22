@@ -3,7 +3,7 @@ on:
   pull_request:
     paths:
       - ".github/workflows/native_authentication.yaml"
-      - "packages/native/auth/native_authentication/**"
+      - "packages/native/authentication/**"
 
 # Prevent duplicate runs due to Graphite
 # https://graphite.dev/docs/troubleshooting#why-are-my-actions-running-twice
@@ -13,7 +13,7 @@ concurrency:
 
 defaults:
   run:
-    working-directory: packages/native/auth/native_authentication
+    working-directory: packages/native/authentication
 
 jobs:
   build:
@@ -35,7 +35,7 @@ jobs:
         run: dart format --set-exit-if-changed .
       - name: Build Example (iOS)
         run: flutter build ios --no-codesign
-        working-directory: packages/native/auth/native_authentication/example
+        working-directory: packages/native/authentication/example
       - name: Build Example (Web)
         run: flutter build web
-        working-directory: packages/native/auth/native_authentication/example
+        working-directory: packages/native/authentication/example
