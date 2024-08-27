@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:meta/meta.dart';
 
 /// A session object that represents an ongoing authorization flow.
-sealed class CallbackSession {
+abstract class CallbackSession {
   /// The unique identifier of this session.
   int get id;
 
