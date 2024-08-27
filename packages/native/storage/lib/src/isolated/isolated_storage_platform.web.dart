@@ -63,10 +63,16 @@ self.postMessage('ready');
   Future<void> spawn() async {
     final ready = Completer<void>();
     try {
-      _worker = web.Worker(_workerEntrypoint.toJS);
+      // pkg:web >=1.0.0
+      _worker = web.Worker(_workerEntrypoint.toJS as dynamic);
     } on Object {
-      ready.completeError(NativeStorageException('Failed to spawn worker'));
-      return ready.future;
+      try {
+        // pkg:web <1.0.0
+        _worker = web.Worker(_workerEntrypoint as dynamic);
+      } on Object {
+        ready.completeError(NativeStorageException('Failed to spawn worker'));
+        return ready.future;
+      }
     }
     _worker!.addEventListener(
       'message',
