@@ -7,10 +7,7 @@ import 'package:path/path.dart';
 import 'package:web/web.dart';
 
 final class NativeAuthenticationPlatform implements NativeAuthentication {
-  NativeAuthenticationPlatform({Logger? logger})
-      : _logger = logger ?? Logger('NativeAuthentication');
-
-  final Logger _logger;
+  NativeAuthenticationPlatform({Logger? logger});
 
   /// The base URL, to which all local paths are relative.
   // ignore: unused_element
@@ -20,22 +17,29 @@ final class NativeAuthenticationPlatform implements NativeAuthentication {
     return url.join(window.location.origin, basePath);
   }
 
-  static const _sessionStorageKey = 'dev.celest.native_auth:currentSession';
-
   @override
   CallbackSession startCallback({
     required Uri uri,
     required CallbackType type,
   }) {
-    final sessionId = NativeAuthCallbackSessionImpl.nextId();
-    window.sessionStorage.setItem(_sessionStorageKey, '$sessionId');
-    final session = NativeAuthCallbackSessionImpl(
-      sessionId,
-      Completer<Uri>(),
-      () => window.sessionStorage.removeItem(_sessionStorageKey),
-    );
-    _logger.finer('Redirect flow started');
+    return _NativeAuthCallbackSessionWeb(uri);
+  }
+}
+
+final class _NativeAuthCallbackSessionWeb implements CallbackSession {
+  _NativeAuthCallbackSessionWeb(this.uri);
+
+  final Uri uri;
+
+  @override
+  void cancel() {}
+
+  @override
+  final int id = NativeAuthCallbackSessionImpl.nextId();
+
+  @override
+  Future<Never> get redirectUri async {
     window.open(uri.toString(), '_self');
-    return session;
+    throw const NativeAuthException('Failed to redirect the user');
   }
 }
