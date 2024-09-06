@@ -7,12 +7,16 @@ import 'package:native_authentication/src/native/macos/authentication_services.f
 import 'package:native_authentication/src/platform/native_auth.desktop.dart';
 import 'package:objective_c/objective_c.dart' as objc;
 
+// ignore: camel_case_types
+typedef _ObjCBlock_ffiVoid_NSURL_NSError = objc.ObjCBlock<
+    Void Function(Pointer<objc.ObjCObject>, Pointer<objc.ObjCObject>)>;
+
 final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
   NativeAuthenticationMacOs({super.logger});
 
   // Hold strong references to the callbacks to prevent them from being
   // garbage collected.
-  ObjCBlock_ffiVoid_NSURL_NSError? _currentCompletionHandler;
+  _ObjCBlock_ffiVoid_NSURL_NSError? _currentCompletionHandler;
   late final _presentationContextProvider =
       ASWebAuthenticationPresentationContextProviding.implement(
     presentationAnchorForWebAuthenticationSession_: (session) {
@@ -44,7 +48,7 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
   );
 
   void _cleanUp() {
-    _currentCompletionHandler?.release();
+    _currentCompletionHandler?.ref.release();
     _currentCompletionHandler = null;
   }
 
@@ -148,7 +152,7 @@ extension on CallbackType {
 
   ASWebAuthenticationSession session({
     required objc.NSURL url,
-    required ObjCBlock_ffiVoid_NSURL_NSError completionHandler,
+    required _ObjCBlock_ffiVoid_NSURL_NSError completionHandler,
   }) {
     final session = ASWebAuthenticationSession.alloc();
     switch (this) {

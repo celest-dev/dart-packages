@@ -20,8 +20,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
-  native_authentication: 8304d578f838dad68192fa10e5e5e9847a5123aa
-  objective_c: c13d3306e0fbf006bad001fd523e4bf8ebda8953
+  native_authentication: cf7783d5074db2e2e3babf81b12e14da700f0bcd
+  objective_c: e5f8194456e8fc943e034d1af00510a1bc29c067
 
 PODFILE CHECKSUM: 9ebaf0ce3d369aaa26a9ea0e159195ed94724cf3
 

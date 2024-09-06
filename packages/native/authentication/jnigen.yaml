@@ -27,3 +27,4 @@ classes:
   - android.net.Uri
   - android.os.Bundle
   - android.os.CancellationSignal
+  - io.flutter.embedding.android.FlutterActivity
