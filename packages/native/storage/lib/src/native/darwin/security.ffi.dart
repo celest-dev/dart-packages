@@ -1029,10 +1029,6 @@ external cf.CFStringRef kSecAttrPRFHmacAlgSHA512;
 /// @constant kSecMatchSubjectContains Specifies a dictionary key whose value
 /// is a CFStringRef. If provided, returned certificates or identities
 /// will be limited to those containing this string in the subject.
-/// @constant kSecMatchHostOrSubdomainOfHost Specifies a dictionary key whose value
-/// is a CFStringRef. If provided, returned internet passwords will be limited to those which
-/// have a server host that is equal to or a subdomain of this string. This filter only works on
-/// the Data Protection Keychain on macOS.
 /// @constant kSecMatchSubjectStartsWith OS X only. Specifies a dictionary key whose value
 /// is a CFStringRef. If provided, returned certificates or identities
 /// will be limited to those with subject names that start with this string.
@@ -1087,9 +1083,6 @@ external cf.CFStringRef kSecMatchEmailAddressIfPresent;
 
 @ffi.Native<cf.CFStringRef>()
 external cf.CFStringRef kSecMatchSubjectContains;
-
-@ffi.Native<cf.CFStringRef>()
-external cf.CFStringRef kSecMatchHostOrSubdomainOfHost;
 
 @ffi.Native<cf.CFStringRef>()
 external cf.CFStringRef kSecMatchSubjectStartsWith;

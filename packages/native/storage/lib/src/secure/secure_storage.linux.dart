@@ -24,15 +24,15 @@ final class SecureStorageLinux extends NativeSecureStoragePlatform {
   Pointer<SecretSchema> _schema(Arena arena) {
     final schema = arena<SecretSchema>()
       ..ref.name = namespace.toNativeUtf8(allocator: arena)
-      ..ref.flags = SecretSchemaFlags.SECRET_SCHEMA_NONE
+      ..ref.flagsAsInt = SecretSchemaFlags.SECRET_SCHEMA_NONE.value
       ..ref.attributes[0].name = 'key'.toNativeUtf8(allocator: arena)
-      ..ref.attributes[0].type =
-          SecretSchemaAttributeType.SECRET_SCHEMA_ATTRIBUTE_STRING;
+      ..ref.attributes[0].typeAsInt =
+          SecretSchemaAttributeType.SECRET_SCHEMA_ATTRIBUTE_STRING.value;
     if (scope != null) {
       schema
         ..ref.attributes[1].name = 'scope'.toNativeUtf8(allocator: arena)
-        ..ref.attributes[1].type =
-            SecretSchemaAttributeType.SECRET_SCHEMA_ATTRIBUTE_STRING;
+        ..ref.attributes[1].typeAsInt =
+            SecretSchemaAttributeType.SECRET_SCHEMA_ATTRIBUTE_STRING.value;
     }
     return schema;
   }

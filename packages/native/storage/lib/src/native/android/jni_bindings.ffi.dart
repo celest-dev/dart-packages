@@ -28,7 +28,7 @@ import 'dart:isolate' show ReceivePort;
 import 'package:jni/internal_helpers_for_jnigen.dart';
 import 'package:jni/jni.dart' as jni;
 
-/// from: dev.celest.native_storage.NativeStorage
+/// from: `dev.celest.native_storage.NativeStorage`
 class NativeStorage extends jni.JObject {
   @override
   late final jni.JObjType<NativeStorage> $type = type;
@@ -59,7 +59,7 @@ class NativeStorage extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected final android.content.Context getContext()
+  /// from: `protected final android.content.Context getContext()`
   /// The returned object must be released after use, by calling the [release] method.
   Context getContext() {
     return _getContext(reference.pointer, _id_getContext as jni.JMethodIDPtr)
@@ -83,7 +83,7 @@ class NativeStorage extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected final java.lang.String getNamespace()
+  /// from: `protected final java.lang.String getNamespace()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getNamespace() {
     return _getNamespace(
@@ -108,7 +108,7 @@ class NativeStorage extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected abstract android.content.SharedPreferences getSharedPreferences()
+  /// from: `protected abstract android.content.SharedPreferences getSharedPreferences()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getSharedPreferences() {
     return _getSharedPreferences(
@@ -133,7 +133,7 @@ class NativeStorage extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final java.util.List getAllKeys()
+  /// from: `public final java.util.List getAllKeys()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JList<jni.JString> getAllKeys() {
     return _getAllKeys(reference.pointer, _id_getAllKeys as jni.JMethodIDPtr)
@@ -159,7 +159,7 @@ class NativeStorage extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final void write(java.lang.String string, java.lang.String string1)
+  /// from: `public final void write(java.lang.String string, java.lang.String string1)`
   void write(
     jni.JString string,
     jni.JString string1,
@@ -185,7 +185,7 @@ class NativeStorage extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final java.lang.String read(java.lang.String string)
+  /// from: `public final java.lang.String read(java.lang.String string)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString read(
     jni.JString string,
@@ -211,7 +211,7 @@ class NativeStorage extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final java.lang.String delete(java.lang.String string)
+  /// from: `public final java.lang.String delete(java.lang.String string)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString delete(
     jni.JString string,
@@ -238,7 +238,7 @@ class NativeStorage extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final void clear()
+  /// from: `public final void clear()`
   void clear() {
     _clear(reference.pointer, _id_clear as jni.JMethodIDPtr).check();
   }
@@ -268,7 +268,7 @@ class NativeStorage extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void <init>(android.content.Context context, java.lang.String string, java.lang.String string1, kotlin.jvm.internal.DefaultConstructorMarker defaultConstructorMarker)
+  /// from: `public void <init>(android.content.Context context, java.lang.String string, java.lang.String string1, kotlin.jvm.internal.DefaultConstructorMarker defaultConstructorMarker)`
   /// The returned object must be released after use, by calling the [release] method.
   factory NativeStorage(
     Context context,
@@ -313,7 +313,7 @@ final class $NativeStorageType extends jni.JObjType<NativeStorage> {
   }
 }
 
-/// from: dev.celest.native_storage.NativeLocalStorage
+/// from: `dev.celest.native_storage.NativeLocalStorage`
 class NativeLocalStorage extends NativeStorage {
   @override
   late final jni.JObjType<NativeLocalStorage> $type = type;
@@ -350,7 +350,7 @@ class NativeLocalStorage extends NativeStorage {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void <init>(android.content.Context context, java.lang.String string, java.lang.String string1)
+  /// from: `public void <init>(android.content.Context context, java.lang.String string, java.lang.String string1)`
   /// The returned object must be released after use, by calling the [release] method.
   factory NativeLocalStorage.new1(
     Context context,
@@ -383,7 +383,7 @@ class NativeLocalStorage extends NativeStorage {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected android.content.SharedPreferences getSharedPreferences()
+  /// from: `protected android.content.SharedPreferences getSharedPreferences()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getSharedPreferences() {
     return _getSharedPreferences(
@@ -418,7 +418,7 @@ final class $NativeLocalStorageType extends jni.JObjType<NativeLocalStorage> {
   }
 }
 
-/// from: dev.celest.native_storage.NativeSecureStorage
+/// from: `dev.celest.native_storage.NativeSecureStorage`
 class NativeSecureStorage extends NativeStorage {
   @override
   late final jni.JObjType<NativeSecureStorage> $type = type;
@@ -455,7 +455,7 @@ class NativeSecureStorage extends NativeStorage {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void <init>(android.content.Context context, java.lang.String string, java.lang.String string1)
+  /// from: `public void <init>(android.content.Context context, java.lang.String string, java.lang.String string1)`
   /// The returned object must be released after use, by calling the [release] method.
   factory NativeSecureStorage.new1(
     Context context,
@@ -488,7 +488,7 @@ class NativeSecureStorage extends NativeStorage {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected android.content.SharedPreferences getSharedPreferences()
+  /// from: `protected android.content.SharedPreferences getSharedPreferences()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getSharedPreferences() {
     return _getSharedPreferences(
@@ -523,7 +523,7 @@ final class $NativeSecureStorageType extends jni.JObjType<NativeSecureStorage> {
   }
 }
 
-/// from: android.app.Activity$ScreenCaptureCallback
+/// from: `android.app.Activity$ScreenCaptureCallback`
 class Activity_ScreenCaptureCallback extends jni.JObject {
   @override
   late final jni.JObjType<Activity_ScreenCaptureCallback> $type = type;
@@ -554,7 +554,7 @@ class Activity_ScreenCaptureCallback extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract void onScreenCaptured()
+  /// from: `public abstract void onScreenCaptured()`
   void onScreenCaptured() {
     _onScreenCaptured(
             reference.pointer, _id_onScreenCaptured as jni.JMethodIDPtr)
@@ -589,7 +589,7 @@ final class $Activity_ScreenCaptureCallbackType
   }
 }
 
-/// from: android.app.Activity
+/// from: `android.app.Activity`
 class Activity extends jni.JObject {
   @override
   late final jni.JObjType<Activity> $type = type;
@@ -603,49 +603,49 @@ class Activity extends jni.JObject {
   /// The type which includes information such as the signature of this class.
   static const type = $ActivityType();
 
-  /// from: static public final int DEFAULT_KEYS_DIALER
+  /// from: `static public final int DEFAULT_KEYS_DIALER`
   static const DEFAULT_KEYS_DIALER = 1;
 
-  /// from: static public final int DEFAULT_KEYS_DISABLE
+  /// from: `static public final int DEFAULT_KEYS_DISABLE`
   static const DEFAULT_KEYS_DISABLE = 0;
 
-  /// from: static public final int DEFAULT_KEYS_SEARCH_GLOBAL
+  /// from: `static public final int DEFAULT_KEYS_SEARCH_GLOBAL`
   static const DEFAULT_KEYS_SEARCH_GLOBAL = 4;
 
-  /// from: static public final int DEFAULT_KEYS_SEARCH_LOCAL
+  /// from: `static public final int DEFAULT_KEYS_SEARCH_LOCAL`
   static const DEFAULT_KEYS_SEARCH_LOCAL = 3;
 
-  /// from: static public final int DEFAULT_KEYS_SHORTCUT
+  /// from: `static public final int DEFAULT_KEYS_SHORTCUT`
   static const DEFAULT_KEYS_SHORTCUT = 2;
   static final _id_FOCUSED_STATE_SET = _class.staticFieldId(
     r'FOCUSED_STATE_SET',
     r'[I',
   );
 
-  /// from: static protected final int[] FOCUSED_STATE_SET
+  /// from: `static protected final int[] FOCUSED_STATE_SET`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JArray<jni.jint> get FOCUSED_STATE_SET =>
       _id_FOCUSED_STATE_SET.get(_class, const jni.JArrayType(jni.jintType()));
 
-  /// from: static public final int FULLSCREEN_MODE_REQUEST_ENTER
+  /// from: `static public final int FULLSCREEN_MODE_REQUEST_ENTER`
   static const FULLSCREEN_MODE_REQUEST_ENTER = 1;
 
-  /// from: static public final int FULLSCREEN_MODE_REQUEST_EXIT
+  /// from: `static public final int FULLSCREEN_MODE_REQUEST_EXIT`
   static const FULLSCREEN_MODE_REQUEST_EXIT = 0;
 
-  /// from: static public final int OVERRIDE_TRANSITION_CLOSE
+  /// from: `static public final int OVERRIDE_TRANSITION_CLOSE`
   static const OVERRIDE_TRANSITION_CLOSE = 1;
 
-  /// from: static public final int OVERRIDE_TRANSITION_OPEN
+  /// from: `static public final int OVERRIDE_TRANSITION_OPEN`
   static const OVERRIDE_TRANSITION_OPEN = 0;
 
-  /// from: static public final int RESULT_CANCELED
+  /// from: `static public final int RESULT_CANCELED`
   static const RESULT_CANCELED = 0;
 
-  /// from: static public final int RESULT_FIRST_USER
+  /// from: `static public final int RESULT_FIRST_USER`
   static const RESULT_FIRST_USER = 1;
 
-  /// from: static public final int RESULT_OK
+  /// from: `static public final int RESULT_OK`
   static const RESULT_OK = -1;
   static final _id_new0 = _class.constructorId(
     r'()V',
@@ -663,7 +663,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void <init>()
+  /// from: `public void <init>()`
   /// The returned object must be released after use, by calling the [release] method.
   factory Activity() {
     return Activity.fromReference(
@@ -688,7 +688,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.content.Intent getIntent()
+  /// from: `public android.content.Intent getIntent()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getIntent() {
     return _getIntent(reference.pointer, _id_getIntent as jni.JMethodIDPtr)
@@ -711,7 +711,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setIntent(android.content.Intent intent)
+  /// from: `public void setIntent(android.content.Intent intent)`
   void setIntent(
     jni.JObject intent,
   ) {
@@ -739,7 +739,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setLocusContext(android.content.LocusId locusId, android.os.Bundle bundle)
+  /// from: `public void setLocusContext(android.content.LocusId locusId, android.os.Bundle bundle)`
   void setLocusContext(
     jni.JObject locusId,
     jni.JObject bundle,
@@ -766,7 +766,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final android.app.Application getApplication()
+  /// from: `public final android.app.Application getApplication()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getApplication() {
     return _getApplication(
@@ -791,7 +791,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final boolean isChild()
+  /// from: `public final boolean isChild()`
   bool isChild() {
     return _isChild(reference.pointer, _id_isChild as jni.JMethodIDPtr).boolean;
   }
@@ -813,7 +813,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final android.app.Activity getParent()
+  /// from: `public final android.app.Activity getParent()`
   /// The returned object must be released after use, by calling the [release] method.
   Activity getParent() {
     return _getParent(reference.pointer, _id_getParent as jni.JMethodIDPtr)
@@ -837,7 +837,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.view.WindowManager getWindowManager()
+  /// from: `public android.view.WindowManager getWindowManager()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getWindowManager() {
     return _getWindowManager(
@@ -862,7 +862,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.view.Window getWindow()
+  /// from: `public android.view.Window getWindow()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getWindow() {
     return _getWindow(reference.pointer, _id_getWindow as jni.JMethodIDPtr)
@@ -886,7 +886,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.app.LoaderManager getLoaderManager()
+  /// from: `public android.app.LoaderManager getLoaderManager()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getLoaderManager() {
     return _getLoaderManager(
@@ -911,7 +911,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.view.View getCurrentFocus()
+  /// from: `public android.view.View getCurrentFocus()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getCurrentFocus() {
     return _getCurrentFocus(
@@ -935,7 +935,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: protected void attachBaseContext(android.content.Context context)
+  /// from: `protected void attachBaseContext(android.content.Context context)`
   void attachBaseContext(
     Context context,
   ) {
@@ -963,7 +963,7 @@ class Activity extends jni.JObject {
               jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>,
                   jni.JMethodIDPtr, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void registerActivityLifecycleCallbacks(android.app.Application$ActivityLifecycleCallbacks activityLifecycleCallbacks)
+  /// from: `public void registerActivityLifecycleCallbacks(android.app.Application$ActivityLifecycleCallbacks activityLifecycleCallbacks)`
   void registerActivityLifecycleCallbacks(
     jni.JObject activityLifecycleCallbacks,
   ) {
@@ -992,7 +992,7 @@ class Activity extends jni.JObject {
               jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>,
                   jni.JMethodIDPtr, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void unregisterActivityLifecycleCallbacks(android.app.Application$ActivityLifecycleCallbacks activityLifecycleCallbacks)
+  /// from: `public void unregisterActivityLifecycleCallbacks(android.app.Application$ActivityLifecycleCallbacks activityLifecycleCallbacks)`
   void unregisterActivityLifecycleCallbacks(
     jni.JObject activityLifecycleCallbacks,
   ) {
@@ -1019,7 +1019,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void registerComponentCallbacks(android.content.ComponentCallbacks componentCallbacks)
+  /// from: `public void registerComponentCallbacks(android.content.ComponentCallbacks componentCallbacks)`
   void registerComponentCallbacks(
     jni.JObject componentCallbacks,
   ) {
@@ -1046,7 +1046,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void unregisterComponentCallbacks(android.content.ComponentCallbacks componentCallbacks)
+  /// from: `public void unregisterComponentCallbacks(android.content.ComponentCallbacks componentCallbacks)`
   void unregisterComponentCallbacks(
     jni.JObject componentCallbacks,
   ) {
@@ -1073,7 +1073,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: protected void onCreate(android.os.Bundle bundle)
+  /// from: `protected void onCreate(android.os.Bundle bundle)`
   void onCreate(
     jni.JObject bundle,
   ) {
@@ -1099,7 +1099,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final android.window.SplashScreen getSplashScreen()
+  /// from: `public final android.window.SplashScreen getSplashScreen()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getSplashScreen() {
     return _getSplashScreen(
@@ -1126,7 +1126,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onCreate(android.os.Bundle bundle, android.os.PersistableBundle persistableBundle)
+  /// from: `public void onCreate(android.os.Bundle bundle, android.os.PersistableBundle persistableBundle)`
   void onCreate1(
     jni.JObject bundle,
     jni.JObject persistableBundle,
@@ -1152,7 +1152,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: protected void onRestoreInstanceState(android.os.Bundle bundle)
+  /// from: `protected void onRestoreInstanceState(android.os.Bundle bundle)`
   void onRestoreInstanceState(
     jni.JObject bundle,
   ) {
@@ -1182,7 +1182,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onRestoreInstanceState(android.os.Bundle bundle, android.os.PersistableBundle persistableBundle)
+  /// from: `public void onRestoreInstanceState(android.os.Bundle bundle, android.os.PersistableBundle persistableBundle)`
   void onRestoreInstanceState1(
     jni.JObject bundle,
     jni.JObject persistableBundle,
@@ -1211,7 +1211,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: protected void onPostCreate(android.os.Bundle bundle)
+  /// from: `protected void onPostCreate(android.os.Bundle bundle)`
   void onPostCreate(
     jni.JObject bundle,
   ) {
@@ -1239,7 +1239,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onPostCreate(android.os.Bundle bundle, android.os.PersistableBundle persistableBundle)
+  /// from: `public void onPostCreate(android.os.Bundle bundle, android.os.PersistableBundle persistableBundle)`
   void onPostCreate1(
     jni.JObject bundle,
     jni.JObject persistableBundle,
@@ -1266,7 +1266,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected void onStart()
+  /// from: `protected void onStart()`
   void onStart() {
     _onStart(reference.pointer, _id_onStart as jni.JMethodIDPtr).check();
   }
@@ -1288,7 +1288,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected void onRestart()
+  /// from: `protected void onRestart()`
   void onRestart() {
     _onRestart(reference.pointer, _id_onRestart as jni.JMethodIDPtr).check();
   }
@@ -1310,7 +1310,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void onStateNotSaved()
+  /// from: `public void onStateNotSaved()`
   void onStateNotSaved() {
     _onStateNotSaved(reference.pointer, _id_onStateNotSaved as jni.JMethodIDPtr)
         .check();
@@ -1333,7 +1333,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected void onResume()
+  /// from: `protected void onResume()`
   void onResume() {
     _onResume(reference.pointer, _id_onResume as jni.JMethodIDPtr).check();
   }
@@ -1355,7 +1355,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected void onPostResume()
+  /// from: `protected void onPostResume()`
   void onPostResume() {
     _onPostResume(reference.pointer, _id_onPostResume as jni.JMethodIDPtr)
         .check();
@@ -1376,7 +1376,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void onTopResumedActivityChanged(boolean z)
+  /// from: `public void onTopResumedActivityChanged(boolean z)`
   void onTopResumedActivityChanged(
     bool z,
   ) {
@@ -1402,7 +1402,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isVoiceInteraction()
+  /// from: `public boolean isVoiceInteraction()`
   bool isVoiceInteraction() {
     return _isVoiceInteraction(
             reference.pointer, _id_isVoiceInteraction as jni.JMethodIDPtr)
@@ -1426,7 +1426,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isVoiceInteractionRoot()
+  /// from: `public boolean isVoiceInteractionRoot()`
   bool isVoiceInteractionRoot() {
     return _isVoiceInteractionRoot(
             reference.pointer, _id_isVoiceInteractionRoot as jni.JMethodIDPtr)
@@ -1450,7 +1450,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.app.VoiceInteractor getVoiceInteractor()
+  /// from: `public android.app.VoiceInteractor getVoiceInteractor()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getVoiceInteractor() {
     return _getVoiceInteractor(
@@ -1476,7 +1476,7 @@ class Activity extends jni.JObject {
                 jni.JMethodIDPtr,
               )>();
 
-  /// from: public boolean isLocalVoiceInteractionSupported()
+  /// from: `public boolean isLocalVoiceInteractionSupported()`
   bool isLocalVoiceInteractionSupported() {
     return _isLocalVoiceInteractionSupported(reference.pointer,
             _id_isLocalVoiceInteractionSupported as jni.JMethodIDPtr)
@@ -1499,7 +1499,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startLocalVoiceInteraction(android.os.Bundle bundle)
+  /// from: `public void startLocalVoiceInteraction(android.os.Bundle bundle)`
   void startLocalVoiceInteraction(
     jni.JObject bundle,
   ) {
@@ -1527,7 +1527,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void onLocalVoiceInteractionStarted()
+  /// from: `public void onLocalVoiceInteractionStarted()`
   void onLocalVoiceInteractionStarted() {
     _onLocalVoiceInteractionStarted(reference.pointer,
             _id_onLocalVoiceInteractionStarted as jni.JMethodIDPtr)
@@ -1551,7 +1551,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void onLocalVoiceInteractionStopped()
+  /// from: `public void onLocalVoiceInteractionStopped()`
   void onLocalVoiceInteractionStopped() {
     _onLocalVoiceInteractionStopped(reference.pointer,
             _id_onLocalVoiceInteractionStopped as jni.JMethodIDPtr)
@@ -1575,7 +1575,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void stopLocalVoiceInteraction()
+  /// from: `public void stopLocalVoiceInteraction()`
   void stopLocalVoiceInteraction() {
     _stopLocalVoiceInteraction(reference.pointer,
             _id_stopLocalVoiceInteraction as jni.JMethodIDPtr)
@@ -1598,7 +1598,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: protected void onNewIntent(android.content.Intent intent)
+  /// from: `protected void onNewIntent(android.content.Intent intent)`
   void onNewIntent(
     jni.JObject intent,
   ) {
@@ -1623,7 +1623,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: protected void onSaveInstanceState(android.os.Bundle bundle)
+  /// from: `protected void onSaveInstanceState(android.os.Bundle bundle)`
   void onSaveInstanceState(
     jni.JObject bundle,
   ) {
@@ -1653,7 +1653,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onSaveInstanceState(android.os.Bundle bundle, android.os.PersistableBundle persistableBundle)
+  /// from: `public void onSaveInstanceState(android.os.Bundle bundle, android.os.PersistableBundle persistableBundle)`
   void onSaveInstanceState1(
     jni.JObject bundle,
     jni.JObject persistableBundle,
@@ -1683,7 +1683,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected void onPause()
+  /// from: `protected void onPause()`
   void onPause() {
     _onPause(reference.pointer, _id_onPause as jni.JMethodIDPtr).check();
   }
@@ -1705,7 +1705,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected void onUserLeaveHint()
+  /// from: `protected void onUserLeaveHint()`
   void onUserLeaveHint() {
     _onUserLeaveHint(reference.pointer, _id_onUserLeaveHint as jni.JMethodIDPtr)
         .check();
@@ -1730,7 +1730,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onCreateThumbnail(android.graphics.Bitmap bitmap, android.graphics.Canvas canvas)
+  /// from: `public boolean onCreateThumbnail(android.graphics.Bitmap bitmap, android.graphics.Canvas canvas)`
   bool onCreateThumbnail(
     jni.JObject bitmap,
     jni.JObject canvas,
@@ -1760,7 +1760,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public java.lang.CharSequence onCreateDescription()
+  /// from: `public java.lang.CharSequence onCreateDescription()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject onCreateDescription() {
     return _onCreateDescription(
@@ -1784,7 +1784,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onProvideAssistData(android.os.Bundle bundle)
+  /// from: `public void onProvideAssistData(android.os.Bundle bundle)`
   void onProvideAssistData(
     jni.JObject bundle,
   ) {
@@ -1811,7 +1811,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onProvideAssistContent(android.app.assist.AssistContent assistContent)
+  /// from: `public void onProvideAssistContent(android.app.assist.AssistContent assistContent)`
   void onProvideAssistContent(
     jni.JObject assistContent,
   ) {
@@ -1841,7 +1841,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onGetDirectActions(android.os.CancellationSignal cancellationSignal, java.util.function.Consumer consumer)
+  /// from: `public void onGetDirectActions(android.os.CancellationSignal cancellationSignal, java.util.function.Consumer consumer)`
   void onGetDirectActions(
     jni.JObject cancellationSignal,
     jni.JObject consumer,
@@ -1880,7 +1880,7 @@ class Activity extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onPerformDirectAction(java.lang.String string, android.os.Bundle bundle, android.os.CancellationSignal cancellationSignal, java.util.function.Consumer consumer)
+  /// from: `public void onPerformDirectAction(java.lang.String string, android.os.Bundle bundle, android.os.CancellationSignal cancellationSignal, java.util.function.Consumer consumer)`
   void onPerformDirectAction(
     jni.JString string,
     jni.JObject bundle,
@@ -1914,7 +1914,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final void requestShowKeyboardShortcuts()
+  /// from: `public final void requestShowKeyboardShortcuts()`
   void requestShowKeyboardShortcuts() {
     _requestShowKeyboardShortcuts(reference.pointer,
             _id_requestShowKeyboardShortcuts as jni.JMethodIDPtr)
@@ -1938,7 +1938,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final void dismissKeyboardShortcutsHelper()
+  /// from: `public final void dismissKeyboardShortcutsHelper()`
   void dismissKeyboardShortcutsHelper() {
     _dismissKeyboardShortcutsHelper(reference.pointer,
             _id_dismissKeyboardShortcutsHelper as jni.JMethodIDPtr)
@@ -1965,7 +1965,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public void onProvideKeyboardShortcuts(java.util.List list, android.view.Menu menu, int i)
+  /// from: `public void onProvideKeyboardShortcuts(java.util.List list, android.view.Menu menu, int i)`
   void onProvideKeyboardShortcuts(
     jni.JList<jni.JObject> list,
     jni.JObject menu,
@@ -1996,7 +1996,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean showAssist(android.os.Bundle bundle)
+  /// from: `public boolean showAssist(android.os.Bundle bundle)`
   bool showAssist(
     jni.JObject bundle,
   ) {
@@ -2022,7 +2022,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected void onStop()
+  /// from: `protected void onStop()`
   void onStop() {
     _onStop(reference.pointer, _id_onStop as jni.JMethodIDPtr).check();
   }
@@ -2044,7 +2044,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: protected void onDestroy()
+  /// from: `protected void onDestroy()`
   void onDestroy() {
     _onDestroy(reference.pointer, _id_onDestroy as jni.JMethodIDPtr).check();
   }
@@ -2066,7 +2066,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void reportFullyDrawn()
+  /// from: `public void reportFullyDrawn()`
   void reportFullyDrawn() {
     _reportFullyDrawn(
             reference.pointer, _id_reportFullyDrawn as jni.JMethodIDPtr)
@@ -2089,7 +2089,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onMultiWindowModeChanged(boolean z, android.content.res.Configuration configuration)
+  /// from: `public void onMultiWindowModeChanged(boolean z, android.content.res.Configuration configuration)`
   void onMultiWindowModeChanged(
     bool z,
     jni.JObject configuration,
@@ -2117,7 +2117,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void onMultiWindowModeChanged(boolean z)
+  /// from: `public void onMultiWindowModeChanged(boolean z)`
   void onMultiWindowModeChanged1(
     bool z,
   ) {
@@ -2143,7 +2143,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isInMultiWindowMode()
+  /// from: `public boolean isInMultiWindowMode()`
   bool isInMultiWindowMode() {
     return _isInMultiWindowMode(
             reference.pointer, _id_isInMultiWindowMode as jni.JMethodIDPtr)
@@ -2166,7 +2166,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onPictureInPictureModeChanged(boolean z, android.content.res.Configuration configuration)
+  /// from: `public void onPictureInPictureModeChanged(boolean z, android.content.res.Configuration configuration)`
   void onPictureInPictureModeChanged(
     bool z,
     jni.JObject configuration,
@@ -2196,7 +2196,7 @@ class Activity extends jni.JObject {
               jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>,
                   jni.JMethodIDPtr, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onPictureInPictureUiStateChanged(android.app.PictureInPictureUiState pictureInPictureUiState)
+  /// from: `public void onPictureInPictureUiStateChanged(android.app.PictureInPictureUiState pictureInPictureUiState)`
   void onPictureInPictureUiStateChanged(
     jni.JObject pictureInPictureUiState,
   ) {
@@ -2222,7 +2222,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void onPictureInPictureModeChanged(boolean z)
+  /// from: `public void onPictureInPictureModeChanged(boolean z)`
   void onPictureInPictureModeChanged1(
     bool z,
   ) {
@@ -2248,7 +2248,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isInPictureInPictureMode()
+  /// from: `public boolean isInPictureInPictureMode()`
   bool isInPictureInPictureMode() {
     return _isInPictureInPictureMode(
             reference.pointer, _id_isInPictureInPictureMode as jni.JMethodIDPtr)
@@ -2272,7 +2272,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void enterPictureInPictureMode()
+  /// from: `public void enterPictureInPictureMode()`
   void enterPictureInPictureMode() {
     _enterPictureInPictureMode(reference.pointer,
             _id_enterPictureInPictureMode as jni.JMethodIDPtr)
@@ -2295,7 +2295,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean enterPictureInPictureMode(android.app.PictureInPictureParams pictureInPictureParams)
+  /// from: `public boolean enterPictureInPictureMode(android.app.PictureInPictureParams pictureInPictureParams)`
   bool enterPictureInPictureMode1(
     jni.JObject pictureInPictureParams,
   ) {
@@ -2322,7 +2322,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setPictureInPictureParams(android.app.PictureInPictureParams pictureInPictureParams)
+  /// from: `public void setPictureInPictureParams(android.app.PictureInPictureParams pictureInPictureParams)`
   void setPictureInPictureParams(
     jni.JObject pictureInPictureParams,
   ) {
@@ -2351,7 +2351,7 @@ class Activity extends jni.JObject {
                 jni.JMethodIDPtr,
               )>();
 
-  /// from: public int getMaxNumPictureInPictureActions()
+  /// from: `public int getMaxNumPictureInPictureActions()`
   int getMaxNumPictureInPictureActions() {
     return _getMaxNumPictureInPictureActions(reference.pointer,
             _id_getMaxNumPictureInPictureActions as jni.JMethodIDPtr)
@@ -2375,7 +2375,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean onPictureInPictureRequested()
+  /// from: `public boolean onPictureInPictureRequested()`
   bool onPictureInPictureRequested() {
     return _onPictureInPictureRequested(reference.pointer,
             _id_onPictureInPictureRequested as jni.JMethodIDPtr)
@@ -2398,7 +2398,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void requestFullscreenMode(int i, android.os.OutcomeReceiver outcomeReceiver)
+  /// from: `public void requestFullscreenMode(int i, android.os.OutcomeReceiver outcomeReceiver)`
   void requestFullscreenMode(
     int i,
     jni.JObject outcomeReceiver,
@@ -2426,7 +2426,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setShouldDockBigOverlays(boolean z)
+  /// from: `public void setShouldDockBigOverlays(boolean z)`
   void setShouldDockBigOverlays(
     bool z,
   ) {
@@ -2452,7 +2452,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean shouldDockBigOverlays()
+  /// from: `public boolean shouldDockBigOverlays()`
   bool shouldDockBigOverlays() {
     return _shouldDockBigOverlays(
             reference.pointer, _id_shouldDockBigOverlays as jni.JMethodIDPtr)
@@ -2475,7 +2475,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onConfigurationChanged(android.content.res.Configuration configuration)
+  /// from: `public void onConfigurationChanged(android.content.res.Configuration configuration)`
   void onConfigurationChanged(
     jni.JObject configuration,
   ) {
@@ -2503,7 +2503,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public int getChangingConfigurations()
+  /// from: `public int getChangingConfigurations()`
   int getChangingConfigurations() {
     return _getChangingConfigurations(reference.pointer,
             _id_getChangingConfigurations as jni.JMethodIDPtr)
@@ -2527,7 +2527,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public java.lang.Object getLastNonConfigurationInstance()
+  /// from: `public java.lang.Object getLastNonConfigurationInstance()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getLastNonConfigurationInstance() {
     return _getLastNonConfigurationInstance(reference.pointer,
@@ -2553,7 +2553,7 @@ class Activity extends jni.JObject {
                 jni.JMethodIDPtr,
               )>();
 
-  /// from: public java.lang.Object onRetainNonConfigurationInstance()
+  /// from: `public java.lang.Object onRetainNonConfigurationInstance()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject onRetainNonConfigurationInstance() {
     return _onRetainNonConfigurationInstance(reference.pointer,
@@ -2578,7 +2578,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void onLowMemory()
+  /// from: `public void onLowMemory()`
   void onLowMemory() {
     _onLowMemory(reference.pointer, _id_onLowMemory as jni.JMethodIDPtr)
         .check();
@@ -2599,7 +2599,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void onTrimMemory(int i)
+  /// from: `public void onTrimMemory(int i)`
   void onTrimMemory(
     int i,
   ) {
@@ -2624,7 +2624,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.app.FragmentManager getFragmentManager()
+  /// from: `public android.app.FragmentManager getFragmentManager()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getFragmentManager() {
     return _getFragmentManager(
@@ -2648,7 +2648,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onAttachFragment(android.app.Fragment fragment)
+  /// from: `public void onAttachFragment(android.app.Fragment fragment)`
   void onAttachFragment(
     jni.JObject fragment,
   ) {
@@ -2687,7 +2687,7 @@ class Activity extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final android.database.Cursor managedQuery(android.net.Uri uri, java.lang.String[] strings, java.lang.String string, java.lang.String[] strings1, java.lang.String string1)
+  /// from: `public final android.database.Cursor managedQuery(android.net.Uri uri, java.lang.String[] strings, java.lang.String string, java.lang.String[] strings1, java.lang.String string1)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject managedQuery(
     jni.JObject uri,
@@ -2723,7 +2723,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startManagingCursor(android.database.Cursor cursor)
+  /// from: `public void startManagingCursor(android.database.Cursor cursor)`
   void startManagingCursor(
     jni.JObject cursor,
   ) {
@@ -2750,7 +2750,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void stopManagingCursor(android.database.Cursor cursor)
+  /// from: `public void stopManagingCursor(android.database.Cursor cursor)`
   void stopManagingCursor(
     jni.JObject cursor,
   ) {
@@ -2774,7 +2774,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public T findViewById(int i)
+  /// from: `public T findViewById(int i)`
   /// The returned object must be released after use, by calling the [release] method.
   $T findViewById<$T extends jni.JObject>(
     int i, {
@@ -2798,7 +2798,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final T requireViewById(int i)
+  /// from: `public final T requireViewById(int i)`
   /// The returned object must be released after use, by calling the [release] method.
   $T requireViewById<$T extends jni.JObject>(
     int i, {
@@ -2826,7 +2826,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.app.ActionBar getActionBar()
+  /// from: `public android.app.ActionBar getActionBar()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getActionBar() {
     return _getActionBar(
@@ -2850,7 +2850,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setActionBar(android.widget.Toolbar toolbar)
+  /// from: `public void setActionBar(android.widget.Toolbar toolbar)`
   void setActionBar(
     jni.JObject toolbar,
   ) {
@@ -2874,7 +2874,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setContentView(int i)
+  /// from: `public void setContentView(int i)`
   void setContentView(
     int i,
   ) {
@@ -2899,7 +2899,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setContentView(android.view.View view)
+  /// from: `public void setContentView(android.view.View view)`
   void setContentView1(
     jni.JObject view,
   ) {
@@ -2927,7 +2927,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setContentView(android.view.View view, android.view.ViewGroup$LayoutParams layoutParams)
+  /// from: `public void setContentView(android.view.View view, android.view.ViewGroup$LayoutParams layoutParams)`
   void setContentView2(
     jni.JObject view,
     jni.JObject layoutParams,
@@ -2956,7 +2956,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void addContentView(android.view.View view, android.view.ViewGroup$LayoutParams layoutParams)
+  /// from: `public void addContentView(android.view.View view, android.view.ViewGroup$LayoutParams layoutParams)`
   void addContentView(
     jni.JObject view,
     jni.JObject layoutParams,
@@ -2983,7 +2983,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.transition.TransitionManager getContentTransitionManager()
+  /// from: `public android.transition.TransitionManager getContentTransitionManager()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getContentTransitionManager() {
     return _getContentTransitionManager(reference.pointer,
@@ -3007,7 +3007,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setContentTransitionManager(android.transition.TransitionManager transitionManager)
+  /// from: `public void setContentTransitionManager(android.transition.TransitionManager transitionManager)`
   void setContentTransitionManager(
     jni.JObject transitionManager,
   ) {
@@ -3035,7 +3035,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.transition.Scene getContentScene()
+  /// from: `public android.transition.Scene getContentScene()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getContentScene() {
     return _getContentScene(
@@ -3058,7 +3058,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setFinishOnTouchOutside(boolean z)
+  /// from: `public void setFinishOnTouchOutside(boolean z)`
   void setFinishOnTouchOutside(
     bool z,
   ) {
@@ -3082,7 +3082,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final void setDefaultKeyMode(int i)
+  /// from: `public final void setDefaultKeyMode(int i)`
   void setDefaultKeyMode(
     int i,
   ) {
@@ -3107,7 +3107,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onKeyDown(int i, android.view.KeyEvent keyEvent)
+  /// from: `public boolean onKeyDown(int i, android.view.KeyEvent keyEvent)`
   bool onKeyDown(
     int i,
     jni.JObject keyEvent,
@@ -3133,7 +3133,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onKeyLongPress(int i, android.view.KeyEvent keyEvent)
+  /// from: `public boolean onKeyLongPress(int i, android.view.KeyEvent keyEvent)`
   bool onKeyLongPress(
     int i,
     jni.JObject keyEvent,
@@ -3162,7 +3162,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onKeyUp(int i, android.view.KeyEvent keyEvent)
+  /// from: `public boolean onKeyUp(int i, android.view.KeyEvent keyEvent)`
   bool onKeyUp(
     int i,
     jni.JObject keyEvent,
@@ -3188,7 +3188,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onKeyMultiple(int i, int i1, android.view.KeyEvent keyEvent)
+  /// from: `public boolean onKeyMultiple(int i, int i1, android.view.KeyEvent keyEvent)`
   bool onKeyMultiple(
     int i,
     int i1,
@@ -3220,7 +3220,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void onBackPressed()
+  /// from: `public void onBackPressed()`
   void onBackPressed() {
     _onBackPressed(reference.pointer, _id_onBackPressed as jni.JMethodIDPtr)
         .check();
@@ -3242,7 +3242,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onKeyShortcut(int i, android.view.KeyEvent keyEvent)
+  /// from: `public boolean onKeyShortcut(int i, android.view.KeyEvent keyEvent)`
   bool onKeyShortcut(
     int i,
     jni.JObject keyEvent,
@@ -3271,7 +3271,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onTouchEvent(android.view.MotionEvent motionEvent)
+  /// from: `public boolean onTouchEvent(android.view.MotionEvent motionEvent)`
   bool onTouchEvent(
     jni.JObject motionEvent,
   ) {
@@ -3296,7 +3296,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onTrackballEvent(android.view.MotionEvent motionEvent)
+  /// from: `public boolean onTrackballEvent(android.view.MotionEvent motionEvent)`
   bool onTrackballEvent(
     jni.JObject motionEvent,
   ) {
@@ -3323,7 +3323,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onGenericMotionEvent(android.view.MotionEvent motionEvent)
+  /// from: `public boolean onGenericMotionEvent(android.view.MotionEvent motionEvent)`
   bool onGenericMotionEvent(
     jni.JObject motionEvent,
   ) {
@@ -3351,7 +3351,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void onUserInteraction()
+  /// from: `public void onUserInteraction()`
   void onUserInteraction() {
     _onUserInteraction(
             reference.pointer, _id_onUserInteraction as jni.JMethodIDPtr)
@@ -3374,7 +3374,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onWindowAttributesChanged(android.view.WindowManager$LayoutParams layoutParams)
+  /// from: `public void onWindowAttributesChanged(android.view.WindowManager$LayoutParams layoutParams)`
   void onWindowAttributesChanged(
     jni.JObject layoutParams,
   ) {
@@ -3402,7 +3402,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void onContentChanged()
+  /// from: `public void onContentChanged()`
   void onContentChanged() {
     _onContentChanged(
             reference.pointer, _id_onContentChanged as jni.JMethodIDPtr)
@@ -3424,7 +3424,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void onWindowFocusChanged(boolean z)
+  /// from: `public void onWindowFocusChanged(boolean z)`
   void onWindowFocusChanged(
     bool z,
   ) {
@@ -3450,7 +3450,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void onAttachedToWindow()
+  /// from: `public void onAttachedToWindow()`
   void onAttachedToWindow() {
     _onAttachedToWindow(
             reference.pointer, _id_onAttachedToWindow as jni.JMethodIDPtr)
@@ -3474,7 +3474,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void onDetachedFromWindow()
+  /// from: `public void onDetachedFromWindow()`
   void onDetachedFromWindow() {
     _onDetachedFromWindow(
             reference.pointer, _id_onDetachedFromWindow as jni.JMethodIDPtr)
@@ -3498,7 +3498,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean hasWindowFocus()
+  /// from: `public boolean hasWindowFocus()`
   bool hasWindowFocus() {
     return _hasWindowFocus(
             reference.pointer, _id_hasWindowFocus as jni.JMethodIDPtr)
@@ -3521,7 +3521,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean dispatchKeyEvent(android.view.KeyEvent keyEvent)
+  /// from: `public boolean dispatchKeyEvent(android.view.KeyEvent keyEvent)`
   bool dispatchKeyEvent(
     jni.JObject keyEvent,
   ) {
@@ -3548,7 +3548,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean dispatchKeyShortcutEvent(android.view.KeyEvent keyEvent)
+  /// from: `public boolean dispatchKeyShortcutEvent(android.view.KeyEvent keyEvent)`
   bool dispatchKeyShortcutEvent(
     jni.JObject keyEvent,
   ) {
@@ -3575,7 +3575,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean dispatchTouchEvent(android.view.MotionEvent motionEvent)
+  /// from: `public boolean dispatchTouchEvent(android.view.MotionEvent motionEvent)`
   bool dispatchTouchEvent(
     jni.JObject motionEvent,
   ) {
@@ -3602,7 +3602,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean dispatchTrackballEvent(android.view.MotionEvent motionEvent)
+  /// from: `public boolean dispatchTrackballEvent(android.view.MotionEvent motionEvent)`
   bool dispatchTrackballEvent(
     jni.JObject motionEvent,
   ) {
@@ -3629,7 +3629,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean dispatchGenericMotionEvent(android.view.MotionEvent motionEvent)
+  /// from: `public boolean dispatchGenericMotionEvent(android.view.MotionEvent motionEvent)`
   bool dispatchGenericMotionEvent(
     jni.JObject motionEvent,
   ) {
@@ -3657,7 +3657,7 @@ class Activity extends jni.JObject {
               jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
                   ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent accessibilityEvent)
+  /// from: `public boolean dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent accessibilityEvent)`
   bool dispatchPopulateAccessibilityEvent(
     jni.JObject accessibilityEvent,
   ) {
@@ -3681,7 +3681,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public android.view.View onCreatePanelView(int i)
+  /// from: `public android.view.View onCreatePanelView(int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject onCreatePanelView(
     int i,
@@ -3707,7 +3707,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onCreatePanelMenu(int i, android.view.Menu menu)
+  /// from: `public boolean onCreatePanelMenu(int i, android.view.Menu menu)`
   bool onCreatePanelMenu(
     int i,
     jni.JObject menu,
@@ -3740,7 +3740,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onPreparePanel(int i, android.view.View view, android.view.Menu menu)
+  /// from: `public boolean onPreparePanel(int i, android.view.View view, android.view.Menu menu)`
   bool onPreparePanel(
     int i,
     jni.JObject view,
@@ -3771,7 +3771,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onMenuOpened(int i, android.view.Menu menu)
+  /// from: `public boolean onMenuOpened(int i, android.view.Menu menu)`
   bool onMenuOpened(
     int i,
     jni.JObject menu,
@@ -3797,7 +3797,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onMenuItemSelected(int i, android.view.MenuItem menuItem)
+  /// from: `public boolean onMenuItemSelected(int i, android.view.MenuItem menuItem)`
   bool onMenuItemSelected(
     int i,
     jni.JObject menuItem,
@@ -3826,7 +3826,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onPanelClosed(int i, android.view.Menu menu)
+  /// from: `public void onPanelClosed(int i, android.view.Menu menu)`
   void onPanelClosed(
     int i,
     jni.JObject menu,
@@ -3853,7 +3853,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void invalidateOptionsMenu()
+  /// from: `public void invalidateOptionsMenu()`
   void invalidateOptionsMenu() {
     _invalidateOptionsMenu(
             reference.pointer, _id_invalidateOptionsMenu as jni.JMethodIDPtr)
@@ -3876,7 +3876,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onCreateOptionsMenu(android.view.Menu menu)
+  /// from: `public boolean onCreateOptionsMenu(android.view.Menu menu)`
   bool onCreateOptionsMenu(
     jni.JObject menu,
   ) {
@@ -3901,7 +3901,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onPrepareOptionsMenu(android.view.Menu menu)
+  /// from: `public boolean onPrepareOptionsMenu(android.view.Menu menu)`
   bool onPrepareOptionsMenu(
     jni.JObject menu,
   ) {
@@ -3928,7 +3928,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onOptionsItemSelected(android.view.MenuItem menuItem)
+  /// from: `public boolean onOptionsItemSelected(android.view.MenuItem menuItem)`
   bool onOptionsItemSelected(
     jni.JObject menuItem,
   ) {
@@ -3956,7 +3956,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean onNavigateUp()
+  /// from: `public boolean onNavigateUp()`
   bool onNavigateUp() {
     return _onNavigateUp(
             reference.pointer, _id_onNavigateUp as jni.JMethodIDPtr)
@@ -3979,7 +3979,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onNavigateUpFromChild(android.app.Activity activity)
+  /// from: `public boolean onNavigateUpFromChild(android.app.Activity activity)`
   bool onNavigateUpFromChild(
     Activity activity,
   ) {
@@ -4006,7 +4006,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onCreateNavigateUpTaskStack(android.app.TaskStackBuilder taskStackBuilder)
+  /// from: `public void onCreateNavigateUpTaskStack(android.app.TaskStackBuilder taskStackBuilder)`
   void onCreateNavigateUpTaskStack(
     jni.JObject taskStackBuilder,
   ) {
@@ -4033,7 +4033,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onPrepareNavigateUpTaskStack(android.app.TaskStackBuilder taskStackBuilder)
+  /// from: `public void onPrepareNavigateUpTaskStack(android.app.TaskStackBuilder taskStackBuilder)`
   void onPrepareNavigateUpTaskStack(
     jni.JObject taskStackBuilder,
   ) {
@@ -4060,7 +4060,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onOptionsMenuClosed(android.view.Menu menu)
+  /// from: `public void onOptionsMenuClosed(android.view.Menu menu)`
   void onOptionsMenuClosed(
     jni.JObject menu,
   ) {
@@ -4086,7 +4086,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void openOptionsMenu()
+  /// from: `public void openOptionsMenu()`
   void openOptionsMenu() {
     _openOptionsMenu(reference.pointer, _id_openOptionsMenu as jni.JMethodIDPtr)
         .check();
@@ -4109,7 +4109,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void closeOptionsMenu()
+  /// from: `public void closeOptionsMenu()`
   void closeOptionsMenu() {
     _closeOptionsMenu(
             reference.pointer, _id_closeOptionsMenu as jni.JMethodIDPtr)
@@ -4140,7 +4140,7 @@ class Activity extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onCreateContextMenu(android.view.ContextMenu contextMenu, android.view.View view, android.view.ContextMenu$ContextMenuInfo contextMenuInfo)
+  /// from: `public void onCreateContextMenu(android.view.ContextMenu contextMenu, android.view.View view, android.view.ContextMenu$ContextMenuInfo contextMenuInfo)`
   void onCreateContextMenu(
     jni.JObject contextMenu,
     jni.JObject view,
@@ -4171,7 +4171,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void registerForContextMenu(android.view.View view)
+  /// from: `public void registerForContextMenu(android.view.View view)`
   void registerForContextMenu(
     jni.JObject view,
   ) {
@@ -4198,7 +4198,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void unregisterForContextMenu(android.view.View view)
+  /// from: `public void unregisterForContextMenu(android.view.View view)`
   void unregisterForContextMenu(
     jni.JObject view,
   ) {
@@ -4225,7 +4225,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void openContextMenu(android.view.View view)
+  /// from: `public void openContextMenu(android.view.View view)`
   void openContextMenu(
     jni.JObject view,
   ) {
@@ -4251,7 +4251,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void closeContextMenu()
+  /// from: `public void closeContextMenu()`
   void closeContextMenu() {
     _closeContextMenu(
             reference.pointer, _id_closeContextMenu as jni.JMethodIDPtr)
@@ -4274,7 +4274,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onContextItemSelected(android.view.MenuItem menuItem)
+  /// from: `public boolean onContextItemSelected(android.view.MenuItem menuItem)`
   bool onContextItemSelected(
     jni.JObject menuItem,
   ) {
@@ -4301,7 +4301,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onContextMenuClosed(android.view.Menu menu)
+  /// from: `public void onContextMenuClosed(android.view.Menu menu)`
   void onContextMenuClosed(
     jni.JObject menu,
   ) {
@@ -4323,7 +4323,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: protected android.app.Dialog onCreateDialog(int i)
+  /// from: `protected android.app.Dialog onCreateDialog(int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject onCreateDialog(
     int i,
@@ -4349,7 +4349,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: protected android.app.Dialog onCreateDialog(int i, android.os.Bundle bundle)
+  /// from: `protected android.app.Dialog onCreateDialog(int i, android.os.Bundle bundle)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject onCreateDialog1(
     int i,
@@ -4379,7 +4379,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: protected void onPrepareDialog(int i, android.app.Dialog dialog)
+  /// from: `protected void onPrepareDialog(int i, android.app.Dialog dialog)`
   void onPrepareDialog(
     int i,
     jni.JObject dialog,
@@ -4409,7 +4409,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: protected void onPrepareDialog(int i, android.app.Dialog dialog, android.os.Bundle bundle)
+  /// from: `protected void onPrepareDialog(int i, android.app.Dialog dialog, android.os.Bundle bundle)`
   void onPrepareDialog1(
     int i,
     jni.JObject dialog,
@@ -4439,7 +4439,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final void showDialog(int i)
+  /// from: `public final void showDialog(int i)`
   void showDialog(
     int i,
   ) {
@@ -4463,7 +4463,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final boolean showDialog(int i, android.os.Bundle bundle)
+  /// from: `public final boolean showDialog(int i, android.os.Bundle bundle)`
   bool showDialog1(
     int i,
     jni.JObject bundle,
@@ -4488,7 +4488,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final void dismissDialog(int i)
+  /// from: `public final void dismissDialog(int i)`
   void dismissDialog(
     int i,
   ) {
@@ -4511,7 +4511,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final void removeDialog(int i)
+  /// from: `public final void removeDialog(int i)`
   void removeDialog(
     int i,
   ) {
@@ -4535,7 +4535,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean onSearchRequested(android.view.SearchEvent searchEvent)
+  /// from: `public boolean onSearchRequested(android.view.SearchEvent searchEvent)`
   bool onSearchRequested(
     jni.JObject searchEvent,
   ) {
@@ -4563,7 +4563,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean onSearchRequested()
+  /// from: `public boolean onSearchRequested()`
   bool onSearchRequested1() {
     return _onSearchRequested1(
             reference.pointer, _id_onSearchRequested1 as jni.JMethodIDPtr)
@@ -4587,7 +4587,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final android.view.SearchEvent getSearchEvent()
+  /// from: `public final android.view.SearchEvent getSearchEvent()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getSearchEvent() {
     return _getSearchEvent(
@@ -4616,7 +4616,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public void startSearch(java.lang.String string, boolean z, android.os.Bundle bundle, boolean z1)
+  /// from: `public void startSearch(java.lang.String string, boolean z, android.os.Bundle bundle, boolean z1)`
   void startSearch(
     jni.JString string,
     bool z,
@@ -4652,7 +4652,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void triggerSearch(java.lang.String string, android.os.Bundle bundle)
+  /// from: `public void triggerSearch(java.lang.String string, android.os.Bundle bundle)`
   void triggerSearch(
     jni.JString string,
     jni.JObject bundle,
@@ -4677,7 +4677,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void takeKeyEvents(boolean z)
+  /// from: `public void takeKeyEvents(boolean z)`
   void takeKeyEvents(
     bool z,
   ) {
@@ -4699,7 +4699,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final boolean requestWindowFeature(int i)
+  /// from: `public final boolean requestWindowFeature(int i)`
   bool requestWindowFeature(
     int i,
   ) {
@@ -4723,7 +4723,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int, int)>();
 
-  /// from: public final void setFeatureDrawableResource(int i, int i1)
+  /// from: `public final void setFeatureDrawableResource(int i, int i1)`
   void setFeatureDrawableResource(
     int i,
     int i1,
@@ -4749,7 +4749,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final void setFeatureDrawableUri(int i, android.net.Uri uri)
+  /// from: `public final void setFeatureDrawableUri(int i, android.net.Uri uri)`
   void setFeatureDrawableUri(
     int i,
     jni.JObject uri,
@@ -4778,7 +4778,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final void setFeatureDrawable(int i, android.graphics.drawable.Drawable drawable)
+  /// from: `public final void setFeatureDrawable(int i, android.graphics.drawable.Drawable drawable)`
   void setFeatureDrawable(
     int i,
     jni.JObject drawable,
@@ -4806,7 +4806,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int, int)>();
 
-  /// from: public final void setFeatureDrawableAlpha(int i, int i1)
+  /// from: `public final void setFeatureDrawableAlpha(int i, int i1)`
   void setFeatureDrawableAlpha(
     int i,
     int i1,
@@ -4833,7 +4833,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.view.LayoutInflater getLayoutInflater()
+  /// from: `public android.view.LayoutInflater getLayoutInflater()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getLayoutInflater() {
     return _getLayoutInflater(
@@ -4858,7 +4858,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.view.MenuInflater getMenuInflater()
+  /// from: `public android.view.MenuInflater getMenuInflater()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getMenuInflater() {
     return _getMenuInflater(
@@ -4881,7 +4881,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setTheme(int i)
+  /// from: `public void setTheme(int i)`
   void setTheme(
     int i,
   ) {
@@ -4904,7 +4904,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, int)>();
 
-  /// from: protected void onApplyThemeResource(android.content.res.Resources$Theme theme, int i, boolean z)
+  /// from: `protected void onApplyThemeResource(android.content.res.Resources$Theme theme, int i, boolean z)`
   void onApplyThemeResource(
     jni.JObject theme,
     int i,
@@ -4935,7 +4935,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public final void requestPermissions(java.lang.String[] strings, int i)
+  /// from: `public final void requestPermissions(java.lang.String[] strings, int i)`
   void requestPermissions(
     jni.JArray<jni.JString> strings,
     int i,
@@ -4968,7 +4968,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onRequestPermissionsResult(int i, java.lang.String[] strings, int[] is)
+  /// from: `public void onRequestPermissionsResult(int i, java.lang.String[] strings, int[] is)`
   void onRequestPermissionsResult(
     int i,
     jni.JArray<jni.JString> strings,
@@ -5001,7 +5001,7 @@ class Activity extends jni.JObject {
               jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
                   ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean shouldShowRequestPermissionRationale(java.lang.String string)
+  /// from: `public boolean shouldShowRequestPermissionRationale(java.lang.String string)`
   bool shouldShowRequestPermissionRationale(
     jni.JString string,
   ) {
@@ -5028,7 +5028,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public void startActivityForResult(android.content.Intent intent, int i)
+  /// from: `public void startActivityForResult(android.content.Intent intent, int i)`
   void startActivityForResult(
     jni.JObject intent,
     int i,
@@ -5061,7 +5061,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startActivityForResult(android.content.Intent intent, int i, android.os.Bundle bundle)
+  /// from: `public void startActivityForResult(android.content.Intent intent, int i, android.os.Bundle bundle)`
   void startActivityForResult1(
     jni.JObject intent,
     int i,
@@ -5093,7 +5093,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isActivityTransitionRunning()
+  /// from: `public boolean isActivityTransitionRunning()`
   bool isActivityTransitionRunning() {
     return _isActivityTransitionRunning(reference.pointer,
             _id_isActivityTransitionRunning as jni.JMethodIDPtr)
@@ -5130,7 +5130,7 @@ class Activity extends jni.JObject {
               int,
               int)>();
 
-  /// from: public void startIntentSenderForResult(android.content.IntentSender intentSender, int i, android.content.Intent intent, int i1, int i2, int i3)
+  /// from: `public void startIntentSenderForResult(android.content.IntentSender intentSender, int i, android.content.Intent intent, int i1, int i2, int i3)`
   void startIntentSenderForResult(
     jni.JObject intentSender,
     int i,
@@ -5183,7 +5183,7 @@ class Activity extends jni.JObject {
               int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startIntentSenderForResult(android.content.IntentSender intentSender, int i, android.content.Intent intent, int i1, int i2, int i3, android.os.Bundle bundle)
+  /// from: `public void startIntentSenderForResult(android.content.IntentSender intentSender, int i, android.content.Intent intent, int i1, int i2, int i3, android.os.Bundle bundle)`
   void startIntentSenderForResult1(
     jni.JObject intentSender,
     int i,
@@ -5222,7 +5222,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startActivity(android.content.Intent intent)
+  /// from: `public void startActivity(android.content.Intent intent)`
   void startActivity(
     jni.JObject intent,
   ) {
@@ -5250,7 +5250,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startActivity(android.content.Intent intent, android.os.Bundle bundle)
+  /// from: `public void startActivity(android.content.Intent intent, android.os.Bundle bundle)`
   void startActivity1(
     jni.JObject intent,
     jni.JObject bundle,
@@ -5276,7 +5276,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startActivities(android.content.Intent[] intents)
+  /// from: `public void startActivities(android.content.Intent[] intents)`
   void startActivities(
     jni.JArray<jni.JObject> intents,
   ) {
@@ -5304,7 +5304,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startActivities(android.content.Intent[] intents, android.os.Bundle bundle)
+  /// from: `public void startActivities(android.content.Intent[] intents, android.os.Bundle bundle)`
   void startActivities1(
     jni.JArray<jni.JObject> intents,
     jni.JObject bundle,
@@ -5339,7 +5339,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int, int, int)>();
 
-  /// from: public void startIntentSender(android.content.IntentSender intentSender, android.content.Intent intent, int i, int i1, int i2)
+  /// from: `public void startIntentSender(android.content.IntentSender intentSender, android.content.Intent intent, int i, int i1, int i2)`
   void startIntentSender(
     jni.JObject intentSender,
     jni.JObject intent,
@@ -5388,7 +5388,7 @@ class Activity extends jni.JObject {
               int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startIntentSender(android.content.IntentSender intentSender, android.content.Intent intent, int i, int i1, int i2, android.os.Bundle bundle)
+  /// from: `public void startIntentSender(android.content.IntentSender intentSender, android.content.Intent intent, int i, int i1, int i2, android.os.Bundle bundle)`
   void startIntentSender1(
     jni.JObject intentSender,
     jni.JObject intent,
@@ -5425,7 +5425,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public boolean startActivityIfNeeded(android.content.Intent intent, int i)
+  /// from: `public boolean startActivityIfNeeded(android.content.Intent intent, int i)`
   bool startActivityIfNeeded(
     jni.JObject intent,
     int i,
@@ -5458,7 +5458,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean startActivityIfNeeded(android.content.Intent intent, int i, android.os.Bundle bundle)
+  /// from: `public boolean startActivityIfNeeded(android.content.Intent intent, int i, android.os.Bundle bundle)`
   bool startActivityIfNeeded1(
     jni.JObject intent,
     int i,
@@ -5489,7 +5489,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean startNextMatchingActivity(android.content.Intent intent)
+  /// from: `public boolean startNextMatchingActivity(android.content.Intent intent)`
   bool startNextMatchingActivity(
     jni.JObject intent,
   ) {
@@ -5519,7 +5519,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean startNextMatchingActivity(android.content.Intent intent, android.os.Bundle bundle)
+  /// from: `public boolean startNextMatchingActivity(android.content.Intent intent, android.os.Bundle bundle)`
   bool startNextMatchingActivity1(
     jni.JObject intent,
     jni.JObject bundle,
@@ -5552,7 +5552,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public void startActivityFromChild(android.app.Activity activity, android.content.Intent intent, int i)
+  /// from: `public void startActivityFromChild(android.app.Activity activity, android.content.Intent intent, int i)`
   void startActivityFromChild(
     Activity activity,
     jni.JObject intent,
@@ -5593,7 +5593,7 @@ class Activity extends jni.JObject {
               int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startActivityFromChild(android.app.Activity activity, android.content.Intent intent, int i, android.os.Bundle bundle)
+  /// from: `public void startActivityFromChild(android.app.Activity activity, android.content.Intent intent, int i, android.os.Bundle bundle)`
   void startActivityFromChild1(
     Activity activity,
     jni.JObject intent,
@@ -5630,7 +5630,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public void startActivityFromFragment(android.app.Fragment fragment, android.content.Intent intent, int i)
+  /// from: `public void startActivityFromFragment(android.app.Fragment fragment, android.content.Intent intent, int i)`
   void startActivityFromFragment(
     jni.JObject fragment,
     jni.JObject intent,
@@ -5671,7 +5671,7 @@ class Activity extends jni.JObject {
               int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startActivityFromFragment(android.app.Fragment fragment, android.content.Intent intent, int i, android.os.Bundle bundle)
+  /// from: `public void startActivityFromFragment(android.app.Fragment fragment, android.content.Intent intent, int i, android.os.Bundle bundle)`
   void startActivityFromFragment1(
     jni.JObject fragment,
     jni.JObject intent,
@@ -5720,7 +5720,7 @@ class Activity extends jni.JObject {
               int,
               int)>();
 
-  /// from: public void startIntentSenderFromChild(android.app.Activity activity, android.content.IntentSender intentSender, int i, android.content.Intent intent, int i1, int i2, int i3)
+  /// from: `public void startIntentSenderFromChild(android.app.Activity activity, android.content.IntentSender intentSender, int i, android.content.Intent intent, int i1, int i2, int i3)`
   void startIntentSenderFromChild(
     Activity activity,
     jni.JObject intentSender,
@@ -5777,7 +5777,7 @@ class Activity extends jni.JObject {
               int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void startIntentSenderFromChild(android.app.Activity activity, android.content.IntentSender intentSender, int i, android.content.Intent intent, int i1, int i2, int i3, android.os.Bundle bundle)
+  /// from: `public void startIntentSenderFromChild(android.app.Activity activity, android.content.IntentSender intentSender, int i, android.content.Intent intent, int i1, int i2, int i3, android.os.Bundle bundle)`
   void startIntentSenderFromChild1(
     Activity activity,
     jni.JObject intentSender,
@@ -5818,7 +5818,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int, int, int)>();
 
-  /// from: public void overrideActivityTransition(int i, int i1, int i2)
+  /// from: `public void overrideActivityTransition(int i, int i1, int i2)`
   void overrideActivityTransition(
     int i,
     int i1,
@@ -5845,7 +5845,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int, int, int, int)>();
 
-  /// from: public void overrideActivityTransition(int i, int i1, int i2, int i3)
+  /// from: `public void overrideActivityTransition(int i, int i1, int i2, int i3)`
   void overrideActivityTransition1(
     int i,
     int i1,
@@ -5872,7 +5872,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void clearOverrideActivityTransition(int i)
+  /// from: `public void clearOverrideActivityTransition(int i)`
   void clearOverrideActivityTransition(
     int i,
   ) {
@@ -5896,7 +5896,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int, int)>();
 
-  /// from: public void overridePendingTransition(int i, int i1)
+  /// from: `public void overridePendingTransition(int i, int i1)`
   void overridePendingTransition(
     int i,
     int i1,
@@ -5922,7 +5922,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int, int, int)>();
 
-  /// from: public void overridePendingTransition(int i, int i1, int i2)
+  /// from: `public void overridePendingTransition(int i, int i1, int i2)`
   void overridePendingTransition1(
     int i,
     int i1,
@@ -5948,7 +5948,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final void setResult(int i)
+  /// from: `public final void setResult(int i)`
   void setResult(
     int i,
   ) {
@@ -5971,7 +5971,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final void setResult(int i, android.content.Intent intent)
+  /// from: `public final void setResult(int i, android.content.Intent intent)`
   void setResult1(
     int i,
     jni.JObject intent,
@@ -5998,7 +5998,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.net.Uri getReferrer()
+  /// from: `public android.net.Uri getReferrer()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getReferrer() {
     return _getReferrer(reference.pointer, _id_getReferrer as jni.JMethodIDPtr)
@@ -6022,7 +6022,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.net.Uri onProvideReferrer()
+  /// from: `public android.net.Uri onProvideReferrer()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject onProvideReferrer() {
     return _onProvideReferrer(
@@ -6047,7 +6047,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public java.lang.String getCallingPackage()
+  /// from: `public java.lang.String getCallingPackage()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getCallingPackage() {
     return _getCallingPackage(
@@ -6072,7 +6072,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.content.ComponentName getCallingActivity()
+  /// from: `public android.content.ComponentName getCallingActivity()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getCallingActivity() {
     return _getCallingActivity(
@@ -6097,7 +6097,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public int getLaunchedFromUid()
+  /// from: `public int getLaunchedFromUid()`
   int getLaunchedFromUid() {
     return _getLaunchedFromUid(
             reference.pointer, _id_getLaunchedFromUid as jni.JMethodIDPtr)
@@ -6121,7 +6121,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public java.lang.String getLaunchedFromPackage()
+  /// from: `public java.lang.String getLaunchedFromPackage()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getLaunchedFromPackage() {
     return _getLaunchedFromPackage(
@@ -6144,7 +6144,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setVisible(boolean z)
+  /// from: `public void setVisible(boolean z)`
   void setVisible(
     bool z,
   ) {
@@ -6170,7 +6170,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isFinishing()
+  /// from: `public boolean isFinishing()`
   bool isFinishing() {
     return _isFinishing(reference.pointer, _id_isFinishing as jni.JMethodIDPtr)
         .boolean;
@@ -6193,7 +6193,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isDestroyed()
+  /// from: `public boolean isDestroyed()`
   bool isDestroyed() {
     return _isDestroyed(reference.pointer, _id_isDestroyed as jni.JMethodIDPtr)
         .boolean;
@@ -6216,7 +6216,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isChangingConfigurations()
+  /// from: `public boolean isChangingConfigurations()`
   bool isChangingConfigurations() {
     return _isChangingConfigurations(
             reference.pointer, _id_isChangingConfigurations as jni.JMethodIDPtr)
@@ -6240,7 +6240,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void recreate()
+  /// from: `public void recreate()`
   void recreate() {
     _recreate(reference.pointer, _id_recreate as jni.JMethodIDPtr).check();
   }
@@ -6262,7 +6262,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void finish()
+  /// from: `public void finish()`
   void finish() {
     _finish(reference.pointer, _id_finish as jni.JMethodIDPtr).check();
   }
@@ -6284,7 +6284,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void finishAffinity()
+  /// from: `public void finishAffinity()`
   void finishAffinity() {
     _finishAffinity(reference.pointer, _id_finishAffinity as jni.JMethodIDPtr)
         .check();
@@ -6306,7 +6306,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void finishFromChild(android.app.Activity activity)
+  /// from: `public void finishFromChild(android.app.Activity activity)`
   void finishFromChild(
     Activity activity,
   ) {
@@ -6332,7 +6332,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void finishAfterTransition()
+  /// from: `public void finishAfterTransition()`
   void finishAfterTransition() {
     _finishAfterTransition(
             reference.pointer, _id_finishAfterTransition as jni.JMethodIDPtr)
@@ -6354,7 +6354,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void finishActivity(int i)
+  /// from: `public void finishActivity(int i)`
   void finishActivity(
     int i,
   ) {
@@ -6379,7 +6379,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public void finishActivityFromChild(android.app.Activity activity, int i)
+  /// from: `public void finishActivityFromChild(android.app.Activity activity, int i)`
   void finishActivityFromChild(
     Activity activity,
     int i,
@@ -6409,7 +6409,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void finishAndRemoveTask()
+  /// from: `public void finishAndRemoveTask()`
   void finishAndRemoveTask() {
     _finishAndRemoveTask(
             reference.pointer, _id_finishAndRemoveTask as jni.JMethodIDPtr)
@@ -6433,7 +6433,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean releaseInstance()
+  /// from: `public boolean releaseInstance()`
   bool releaseInstance() {
     return _releaseInstance(
             reference.pointer, _id_releaseInstance as jni.JMethodIDPtr)
@@ -6456,7 +6456,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: protected void onActivityResult(int i, int i1, android.content.Intent intent)
+  /// from: `protected void onActivityResult(int i, int i1, android.content.Intent intent)`
   void onActivityResult(
     int i,
     int i1,
@@ -6487,7 +6487,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onActivityReenter(int i, android.content.Intent intent)
+  /// from: `public void onActivityReenter(int i, android.content.Intent intent)`
   void onActivityReenter(
     int i,
     jni.JObject intent,
@@ -6516,7 +6516,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public android.app.PendingIntent createPendingResult(int i, android.content.Intent intent, int i1)
+  /// from: `public android.app.PendingIntent createPendingResult(int i, android.content.Intent intent, int i1)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject createPendingResult(
     int i,
@@ -6547,7 +6547,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setRequestedOrientation(int i)
+  /// from: `public void setRequestedOrientation(int i)`
   void setRequestedOrientation(
     int i,
   ) {
@@ -6573,7 +6573,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public int getRequestedOrientation()
+  /// from: `public int getRequestedOrientation()`
   int getRequestedOrientation() {
     return _getRequestedOrientation(
             reference.pointer, _id_getRequestedOrientation as jni.JMethodIDPtr)
@@ -6597,7 +6597,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public int getTaskId()
+  /// from: `public int getTaskId()`
   int getTaskId() {
     return _getTaskId(reference.pointer, _id_getTaskId as jni.JMethodIDPtr)
         .integer;
@@ -6620,7 +6620,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isTaskRoot()
+  /// from: `public boolean isTaskRoot()`
   bool isTaskRoot() {
     return _isTaskRoot(reference.pointer, _id_isTaskRoot as jni.JMethodIDPtr)
         .boolean;
@@ -6639,7 +6639,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public boolean moveTaskToBack(boolean z)
+  /// from: `public boolean moveTaskToBack(boolean z)`
   bool moveTaskToBack(
     bool z,
   ) {
@@ -6665,7 +6665,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public java.lang.String getLocalClassName()
+  /// from: `public java.lang.String getLocalClassName()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getLocalClassName() {
     return _getLocalClassName(
@@ -6690,7 +6690,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.content.ComponentName getComponentName()
+  /// from: `public android.content.ComponentName getComponentName()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getComponentName() {
     return _getComponentName(
@@ -6711,7 +6711,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public android.content.SharedPreferences getPreferences(int i)
+  /// from: `public android.content.SharedPreferences getPreferences(int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getPreferences(
     int i,
@@ -6738,7 +6738,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isLaunchedFromBubble()
+  /// from: `public boolean isLaunchedFromBubble()`
   bool isLaunchedFromBubble() {
     return _isLaunchedFromBubble(
             reference.pointer, _id_isLaunchedFromBubble as jni.JMethodIDPtr)
@@ -6761,7 +6761,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public java.lang.Object getSystemService(java.lang.String string)
+  /// from: `public java.lang.Object getSystemService(java.lang.String string)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getSystemService(
     jni.JString string,
@@ -6787,7 +6787,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setTitle(java.lang.CharSequence charSequence)
+  /// from: `public void setTitle(java.lang.CharSequence charSequence)`
   void setTitle(
     jni.JObject charSequence,
   ) {
@@ -6811,7 +6811,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setTitle(int i)
+  /// from: `public void setTitle(int i)`
   void setTitle1(
     int i,
   ) {
@@ -6833,7 +6833,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setTitleColor(int i)
+  /// from: `public void setTitleColor(int i)`
   void setTitleColor(
     int i,
   ) {
@@ -6858,7 +6858,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final java.lang.CharSequence getTitle()
+  /// from: `public final java.lang.CharSequence getTitle()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getTitle() {
     return _getTitle(reference.pointer, _id_getTitle as jni.JMethodIDPtr)
@@ -6882,7 +6882,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final int getTitleColor()
+  /// from: `public final int getTitleColor()`
   int getTitleColor() {
     return _getTitleColor(
             reference.pointer, _id_getTitleColor as jni.JMethodIDPtr)
@@ -6905,7 +6905,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: protected void onTitleChanged(java.lang.CharSequence charSequence, int i)
+  /// from: `protected void onTitleChanged(java.lang.CharSequence charSequence, int i)`
   void onTitleChanged(
     jni.JObject charSequence,
     int i,
@@ -6934,7 +6934,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: protected void onChildTitleChanged(android.app.Activity activity, java.lang.CharSequence charSequence)
+  /// from: `protected void onChildTitleChanged(android.app.Activity activity, java.lang.CharSequence charSequence)`
   void onChildTitleChanged(
     Activity activity,
     jni.JObject charSequence,
@@ -6963,7 +6963,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setTaskDescription(android.app.ActivityManager$TaskDescription taskDescription)
+  /// from: `public void setTaskDescription(android.app.ActivityManager$TaskDescription taskDescription)`
   void setTaskDescription(
     jni.JObject taskDescription,
   ) {
@@ -6989,7 +6989,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final void setProgressBarVisibility(boolean z)
+  /// from: `public final void setProgressBarVisibility(boolean z)`
   void setProgressBarVisibility(
     bool z,
   ) {
@@ -7015,7 +7015,7 @@ class Activity extends jni.JObject {
               jni.JThrowablePtr Function(
                   ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final void setProgressBarIndeterminateVisibility(boolean z)
+  /// from: `public final void setProgressBarIndeterminateVisibility(boolean z)`
   void setProgressBarIndeterminateVisibility(
     bool z,
   ) {
@@ -7041,7 +7041,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final void setProgressBarIndeterminate(boolean z)
+  /// from: `public final void setProgressBarIndeterminate(boolean z)`
   void setProgressBarIndeterminate(
     bool z,
   ) {
@@ -7065,7 +7065,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final void setProgress(int i)
+  /// from: `public final void setProgress(int i)`
   void setProgress(
     int i,
   ) {
@@ -7088,7 +7088,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final void setSecondaryProgress(int i)
+  /// from: `public final void setSecondaryProgress(int i)`
   void setSecondaryProgress(
     int i,
   ) {
@@ -7112,7 +7112,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final void setVolumeControlStream(int i)
+  /// from: `public final void setVolumeControlStream(int i)`
   void setVolumeControlStream(
     int i,
   ) {
@@ -7138,7 +7138,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final int getVolumeControlStream()
+  /// from: `public final int getVolumeControlStream()`
   int getVolumeControlStream() {
     return _getVolumeControlStream(
             reference.pointer, _id_getVolumeControlStream as jni.JMethodIDPtr)
@@ -7161,7 +7161,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final void setMediaController(android.media.session.MediaController mediaController)
+  /// from: `public final void setMediaController(android.media.session.MediaController mediaController)`
   void setMediaController(
     jni.JObject mediaController,
   ) {
@@ -7189,7 +7189,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public final android.media.session.MediaController getMediaController()
+  /// from: `public final android.media.session.MediaController getMediaController()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getMediaController() {
     return _getMediaController(
@@ -7213,7 +7213,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final void runOnUiThread(java.lang.Runnable runnable)
+  /// from: `public final void runOnUiThread(java.lang.Runnable runnable)`
   void runOnUiThread(
     jni.JObject runnable,
   ) {
@@ -7246,7 +7246,7 @@ class Activity extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public android.view.View onCreateView(java.lang.String string, android.content.Context context, android.util.AttributeSet attributeSet)
+  /// from: `public android.view.View onCreateView(java.lang.String string, android.content.Context context, android.util.AttributeSet attributeSet)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject onCreateView(
     jni.JString string,
@@ -7288,7 +7288,7 @@ class Activity extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public android.view.View onCreateView(android.view.View view, java.lang.String string, android.content.Context context, android.util.AttributeSet attributeSet)
+  /// from: `public android.view.View onCreateView(android.view.View view, java.lang.String string, android.content.Context context, android.util.AttributeSet attributeSet)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject onCreateView1(
     jni.JObject view,
@@ -7332,7 +7332,7 @@ class Activity extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void dump(java.lang.String string, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strings)
+  /// from: `public void dump(java.lang.String string, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strings)`
   void dump(
     jni.JString string,
     jni.JObject fileDescriptor,
@@ -7366,7 +7366,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isImmersive()
+  /// from: `public boolean isImmersive()`
   bool isImmersive() {
     return _isImmersive(reference.pointer, _id_isImmersive as jni.JMethodIDPtr)
         .boolean;
@@ -7385,7 +7385,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public boolean setTranslucent(boolean z)
+  /// from: `public boolean setTranslucent(boolean z)`
   bool setTranslucent(
     bool z,
   ) {
@@ -7407,7 +7407,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public boolean requestVisibleBehind(boolean z)
+  /// from: `public boolean requestVisibleBehind(boolean z)`
   bool requestVisibleBehind(
     bool z,
   ) {
@@ -7433,7 +7433,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void onVisibleBehindCanceled()
+  /// from: `public void onVisibleBehindCanceled()`
   void onVisibleBehindCanceled() {
     _onVisibleBehindCanceled(
             reference.pointer, _id_onVisibleBehindCanceled as jni.JMethodIDPtr)
@@ -7457,7 +7457,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void onEnterAnimationComplete()
+  /// from: `public void onEnterAnimationComplete()`
   void onEnterAnimationComplete() {
     _onEnterAnimationComplete(
             reference.pointer, _id_onEnterAnimationComplete as jni.JMethodIDPtr)
@@ -7479,7 +7479,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setImmersive(boolean z)
+  /// from: `public void setImmersive(boolean z)`
   void setImmersive(
     bool z,
   ) {
@@ -7504,7 +7504,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setVrModeEnabled(boolean z, android.content.ComponentName componentName)
+  /// from: `public void setVrModeEnabled(boolean z, android.content.ComponentName componentName)`
   void setVrModeEnabled(
     bool z,
     jni.JObject componentName,
@@ -7533,7 +7533,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public android.view.ActionMode startActionMode(android.view.ActionMode$Callback callback)
+  /// from: `public android.view.ActionMode startActionMode(android.view.ActionMode$Callback callback)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject startActionMode(
     jni.JObject callback,
@@ -7559,7 +7559,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public android.view.ActionMode startActionMode(android.view.ActionMode$Callback callback, int i)
+  /// from: `public android.view.ActionMode startActionMode(android.view.ActionMode$Callback callback, int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject startActionMode1(
     jni.JObject callback,
@@ -7589,7 +7589,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public android.view.ActionMode onWindowStartingActionMode(android.view.ActionMode$Callback callback)
+  /// from: `public android.view.ActionMode onWindowStartingActionMode(android.view.ActionMode$Callback callback)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject onWindowStartingActionMode(
     jni.JObject callback,
@@ -7617,7 +7617,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public android.view.ActionMode onWindowStartingActionMode(android.view.ActionMode$Callback callback, int i)
+  /// from: `public android.view.ActionMode onWindowStartingActionMode(android.view.ActionMode$Callback callback, int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject onWindowStartingActionMode1(
     jni.JObject callback,
@@ -7647,7 +7647,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onActionModeStarted(android.view.ActionMode actionMode)
+  /// from: `public void onActionModeStarted(android.view.ActionMode actionMode)`
   void onActionModeStarted(
     jni.JObject actionMode,
   ) {
@@ -7674,7 +7674,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void onActionModeFinished(android.view.ActionMode actionMode)
+  /// from: `public void onActionModeFinished(android.view.ActionMode actionMode)`
   void onActionModeFinished(
     jni.JObject actionMode,
   ) {
@@ -7701,7 +7701,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean shouldUpRecreateTask(android.content.Intent intent)
+  /// from: `public boolean shouldUpRecreateTask(android.content.Intent intent)`
   bool shouldUpRecreateTask(
     jni.JObject intent,
   ) {
@@ -7728,7 +7728,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean navigateUpTo(android.content.Intent intent)
+  /// from: `public boolean navigateUpTo(android.content.Intent intent)`
   bool navigateUpTo(
     jni.JObject intent,
   ) {
@@ -7756,7 +7756,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean navigateUpToFromChild(android.app.Activity activity, android.content.Intent intent)
+  /// from: `public boolean navigateUpToFromChild(android.app.Activity activity, android.content.Intent intent)`
   bool navigateUpToFromChild(
     Activity activity,
     jni.JObject intent,
@@ -7786,7 +7786,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.content.Intent getParentActivityIntent()
+  /// from: `public android.content.Intent getParentActivityIntent()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getParentActivityIntent() {
     return _getParentActivityIntent(
@@ -7810,7 +7810,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setEnterSharedElementCallback(android.app.SharedElementCallback sharedElementCallback)
+  /// from: `public void setEnterSharedElementCallback(android.app.SharedElementCallback sharedElementCallback)`
   void setEnterSharedElementCallback(
     jni.JObject sharedElementCallback,
   ) {
@@ -7837,7 +7837,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void setExitSharedElementCallback(android.app.SharedElementCallback sharedElementCallback)
+  /// from: `public void setExitSharedElementCallback(android.app.SharedElementCallback sharedElementCallback)`
   void setExitSharedElementCallback(
     jni.JObject sharedElementCallback,
   ) {
@@ -7865,7 +7865,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void postponeEnterTransition()
+  /// from: `public void postponeEnterTransition()`
   void postponeEnterTransition() {
     _postponeEnterTransition(
             reference.pointer, _id_postponeEnterTransition as jni.JMethodIDPtr)
@@ -7889,7 +7889,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void startPostponedEnterTransition()
+  /// from: `public void startPostponedEnterTransition()`
   void startPostponedEnterTransition() {
     _startPostponedEnterTransition(reference.pointer,
             _id_startPostponedEnterTransition as jni.JMethodIDPtr)
@@ -7912,7 +7912,7 @@ class Activity extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public android.view.DragAndDropPermissions requestDragAndDropPermissions(android.view.DragEvent dragEvent)
+  /// from: `public android.view.DragAndDropPermissions requestDragAndDropPermissions(android.view.DragEvent dragEvent)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject requestDragAndDropPermissions(
     jni.JObject dragEvent,
@@ -7941,7 +7941,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void startLockTask()
+  /// from: `public void startLockTask()`
   void startLockTask() {
     _startLockTask(reference.pointer, _id_startLockTask as jni.JMethodIDPtr)
         .check();
@@ -7964,7 +7964,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void stopLockTask()
+  /// from: `public void stopLockTask()`
   void stopLockTask() {
     _stopLockTask(reference.pointer, _id_stopLockTask as jni.JMethodIDPtr)
         .check();
@@ -7987,7 +7987,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void showLockTaskEscapeMessage()
+  /// from: `public void showLockTaskEscapeMessage()`
   void showLockTaskEscapeMessage() {
     _showLockTaskEscapeMessage(reference.pointer,
             _id_showLockTaskEscapeMessage as jni.JMethodIDPtr)
@@ -8009,7 +8009,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setRecentsScreenshotEnabled(boolean z)
+  /// from: `public void setRecentsScreenshotEnabled(boolean z)`
   void setRecentsScreenshotEnabled(
     bool z,
   ) {
@@ -8033,7 +8033,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setShowWhenLocked(boolean z)
+  /// from: `public void setShowWhenLocked(boolean z)`
   void setShowWhenLocked(
     bool z,
   ) {
@@ -8057,7 +8057,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setInheritShowWhenLocked(boolean z)
+  /// from: `public void setInheritShowWhenLocked(boolean z)`
   void setInheritShowWhenLocked(
     bool z,
   ) {
@@ -8081,7 +8081,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public void setTurnScreenOn(boolean z)
+  /// from: `public void setTurnScreenOn(boolean z)`
   void setTurnScreenOn(
     bool z,
   ) {
@@ -8107,7 +8107,7 @@ class Activity extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.window.OnBackInvokedDispatcher getOnBackInvokedDispatcher()
+  /// from: `public android.window.OnBackInvokedDispatcher getOnBackInvokedDispatcher()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getOnBackInvokedDispatcher() {
     return _getOnBackInvokedDispatcher(reference.pointer,
@@ -8134,7 +8134,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void registerScreenCaptureCallback(java.util.concurrent.Executor executor, android.app.Activity$ScreenCaptureCallback screenCaptureCallback)
+  /// from: `public void registerScreenCaptureCallback(java.util.concurrent.Executor executor, android.app.Activity$ScreenCaptureCallback screenCaptureCallback)`
   void registerScreenCaptureCallback(
     jni.JObject executor,
     Activity_ScreenCaptureCallback screenCaptureCallback,
@@ -8163,7 +8163,7 @@ class Activity extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void unregisterScreenCaptureCallback(android.app.Activity$ScreenCaptureCallback screenCaptureCallback)
+  /// from: `public void unregisterScreenCaptureCallback(android.app.Activity$ScreenCaptureCallback screenCaptureCallback)`
   void unregisterScreenCaptureCallback(
     Activity_ScreenCaptureCallback screenCaptureCallback,
   ) {
@@ -8200,7 +8200,7 @@ final class $ActivityType extends jni.JObjType<Activity> {
   }
 }
 
-/// from: android.content.Context$BindServiceFlags
+/// from: `android.content.Context$BindServiceFlags`
 class Context_BindServiceFlags extends jni.JObject {
   @override
   late final jni.JObjType<Context_BindServiceFlags> $type = type;
@@ -8228,7 +8228,7 @@ class Context_BindServiceFlags extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: static public android.content.Context$BindServiceFlags of(long j)
+  /// from: `static public android.content.Context$BindServiceFlags of(long j)`
   /// The returned object must be released after use, by calling the [release] method.
   static Context_BindServiceFlags of(
     int j,
@@ -8265,7 +8265,7 @@ final class $Context_BindServiceFlagsType
   }
 }
 
-/// from: android.content.Context
+/// from: `android.content.Context`
 class Context extends jni.JObject {
   @override
   late final jni.JObjType<Context> $type = type;
@@ -8283,7 +8283,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String ACCESSIBILITY_SERVICE
+  /// from: `static public final java.lang.String ACCESSIBILITY_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get ACCESSIBILITY_SERVICE =>
       _id_ACCESSIBILITY_SERVICE.get(_class, const jni.JStringType());
@@ -8293,7 +8293,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String ACCOUNT_SERVICE
+  /// from: `static public final java.lang.String ACCOUNT_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get ACCOUNT_SERVICE =>
       _id_ACCOUNT_SERVICE.get(_class, const jni.JStringType());
@@ -8303,7 +8303,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String ACTIVITY_SERVICE
+  /// from: `static public final java.lang.String ACTIVITY_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get ACTIVITY_SERVICE =>
       _id_ACTIVITY_SERVICE.get(_class, const jni.JStringType());
@@ -8313,7 +8313,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String ALARM_SERVICE
+  /// from: `static public final java.lang.String ALARM_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get ALARM_SERVICE =>
       _id_ALARM_SERVICE.get(_class, const jni.JStringType());
@@ -8323,7 +8323,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String APPWIDGET_SERVICE
+  /// from: `static public final java.lang.String APPWIDGET_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get APPWIDGET_SERVICE =>
       _id_APPWIDGET_SERVICE.get(_class, const jni.JStringType());
@@ -8333,7 +8333,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String APP_OPS_SERVICE
+  /// from: `static public final java.lang.String APP_OPS_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get APP_OPS_SERVICE =>
       _id_APP_OPS_SERVICE.get(_class, const jni.JStringType());
@@ -8343,7 +8343,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String APP_SEARCH_SERVICE
+  /// from: `static public final java.lang.String APP_SEARCH_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get APP_SEARCH_SERVICE =>
       _id_APP_SEARCH_SERVICE.get(_class, const jni.JStringType());
@@ -8353,7 +8353,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String AUDIO_SERVICE
+  /// from: `static public final java.lang.String AUDIO_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get AUDIO_SERVICE =>
       _id_AUDIO_SERVICE.get(_class, const jni.JStringType());
@@ -8363,58 +8363,58 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String BATTERY_SERVICE
+  /// from: `static public final java.lang.String BATTERY_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get BATTERY_SERVICE =>
       _id_BATTERY_SERVICE.get(_class, const jni.JStringType());
 
-  /// from: static public final int BIND_ABOVE_CLIENT
+  /// from: `static public final int BIND_ABOVE_CLIENT`
   static const BIND_ABOVE_CLIENT = 8;
 
-  /// from: static public final int BIND_ADJUST_WITH_ACTIVITY
+  /// from: `static public final int BIND_ADJUST_WITH_ACTIVITY`
   static const BIND_ADJUST_WITH_ACTIVITY = 128;
 
-  /// from: static public final int BIND_ALLOW_ACTIVITY_STARTS
+  /// from: `static public final int BIND_ALLOW_ACTIVITY_STARTS`
   static const BIND_ALLOW_ACTIVITY_STARTS = 512;
 
-  /// from: static public final int BIND_ALLOW_OOM_MANAGEMENT
+  /// from: `static public final int BIND_ALLOW_OOM_MANAGEMENT`
   static const BIND_ALLOW_OOM_MANAGEMENT = 16;
 
-  /// from: static public final int BIND_AUTO_CREATE
+  /// from: `static public final int BIND_AUTO_CREATE`
   static const BIND_AUTO_CREATE = 1;
 
-  /// from: static public final int BIND_DEBUG_UNBIND
+  /// from: `static public final int BIND_DEBUG_UNBIND`
   static const BIND_DEBUG_UNBIND = 2;
 
-  /// from: static public final int BIND_EXTERNAL_SERVICE
+  /// from: `static public final int BIND_EXTERNAL_SERVICE`
   static const BIND_EXTERNAL_SERVICE = -2147483648;
 
-  /// from: static public final long BIND_EXTERNAL_SERVICE_LONG
+  /// from: `static public final long BIND_EXTERNAL_SERVICE_LONG`
   static const BIND_EXTERNAL_SERVICE_LONG = 4611686018427387904;
 
-  /// from: static public final int BIND_IMPORTANT
+  /// from: `static public final int BIND_IMPORTANT`
   static const BIND_IMPORTANT = 64;
 
-  /// from: static public final int BIND_INCLUDE_CAPABILITIES
+  /// from: `static public final int BIND_INCLUDE_CAPABILITIES`
   static const BIND_INCLUDE_CAPABILITIES = 4096;
 
-  /// from: static public final int BIND_NOT_FOREGROUND
+  /// from: `static public final int BIND_NOT_FOREGROUND`
   static const BIND_NOT_FOREGROUND = 4;
 
-  /// from: static public final int BIND_NOT_PERCEPTIBLE
+  /// from: `static public final int BIND_NOT_PERCEPTIBLE`
   static const BIND_NOT_PERCEPTIBLE = 256;
 
-  /// from: static public final int BIND_SHARED_ISOLATED_PROCESS
+  /// from: `static public final int BIND_SHARED_ISOLATED_PROCESS`
   static const BIND_SHARED_ISOLATED_PROCESS = 8192;
 
-  /// from: static public final int BIND_WAIVE_PRIORITY
+  /// from: `static public final int BIND_WAIVE_PRIORITY`
   static const BIND_WAIVE_PRIORITY = 32;
   static final _id_BIOMETRIC_SERVICE = _class.staticFieldId(
     r'BIOMETRIC_SERVICE',
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String BIOMETRIC_SERVICE
+  /// from: `static public final java.lang.String BIOMETRIC_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get BIOMETRIC_SERVICE =>
       _id_BIOMETRIC_SERVICE.get(_class, const jni.JStringType());
@@ -8424,7 +8424,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String BLOB_STORE_SERVICE
+  /// from: `static public final java.lang.String BLOB_STORE_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get BLOB_STORE_SERVICE =>
       _id_BLOB_STORE_SERVICE.get(_class, const jni.JStringType());
@@ -8434,7 +8434,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String BLUETOOTH_SERVICE
+  /// from: `static public final java.lang.String BLUETOOTH_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get BLUETOOTH_SERVICE =>
       _id_BLUETOOTH_SERVICE.get(_class, const jni.JStringType());
@@ -8444,7 +8444,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String BUGREPORT_SERVICE
+  /// from: `static public final java.lang.String BUGREPORT_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get BUGREPORT_SERVICE =>
       _id_BUGREPORT_SERVICE.get(_class, const jni.JStringType());
@@ -8454,7 +8454,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String CAMERA_SERVICE
+  /// from: `static public final java.lang.String CAMERA_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get CAMERA_SERVICE =>
       _id_CAMERA_SERVICE.get(_class, const jni.JStringType());
@@ -8464,7 +8464,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String CAPTIONING_SERVICE
+  /// from: `static public final java.lang.String CAPTIONING_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get CAPTIONING_SERVICE =>
       _id_CAPTIONING_SERVICE.get(_class, const jni.JStringType());
@@ -8474,7 +8474,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String CARRIER_CONFIG_SERVICE
+  /// from: `static public final java.lang.String CARRIER_CONFIG_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get CARRIER_CONFIG_SERVICE =>
       _id_CARRIER_CONFIG_SERVICE.get(_class, const jni.JStringType());
@@ -8484,7 +8484,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String CLIPBOARD_SERVICE
+  /// from: `static public final java.lang.String CLIPBOARD_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get CLIPBOARD_SERVICE =>
       _id_CLIPBOARD_SERVICE.get(_class, const jni.JStringType());
@@ -8494,7 +8494,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String COMPANION_DEVICE_SERVICE
+  /// from: `static public final java.lang.String COMPANION_DEVICE_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get COMPANION_DEVICE_SERVICE =>
       _id_COMPANION_DEVICE_SERVICE.get(_class, const jni.JStringType());
@@ -8504,7 +8504,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String CONNECTIVITY_DIAGNOSTICS_SERVICE
+  /// from: `static public final java.lang.String CONNECTIVITY_DIAGNOSTICS_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get CONNECTIVITY_DIAGNOSTICS_SERVICE =>
       _id_CONNECTIVITY_DIAGNOSTICS_SERVICE.get(_class, const jni.JStringType());
@@ -8514,7 +8514,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String CONNECTIVITY_SERVICE
+  /// from: `static public final java.lang.String CONNECTIVITY_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get CONNECTIVITY_SERVICE =>
       _id_CONNECTIVITY_SERVICE.get(_class, const jni.JStringType());
@@ -8524,25 +8524,25 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String CONSUMER_IR_SERVICE
+  /// from: `static public final java.lang.String CONSUMER_IR_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get CONSUMER_IR_SERVICE =>
       _id_CONSUMER_IR_SERVICE.get(_class, const jni.JStringType());
 
-  /// from: static public final int CONTEXT_IGNORE_SECURITY
+  /// from: `static public final int CONTEXT_IGNORE_SECURITY`
   static const CONTEXT_IGNORE_SECURITY = 2;
 
-  /// from: static public final int CONTEXT_INCLUDE_CODE
+  /// from: `static public final int CONTEXT_INCLUDE_CODE`
   static const CONTEXT_INCLUDE_CODE = 1;
 
-  /// from: static public final int CONTEXT_RESTRICTED
+  /// from: `static public final int CONTEXT_RESTRICTED`
   static const CONTEXT_RESTRICTED = 4;
   static final _id_CREDENTIAL_SERVICE = _class.staticFieldId(
     r'CREDENTIAL_SERVICE',
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String CREDENTIAL_SERVICE
+  /// from: `static public final java.lang.String CREDENTIAL_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get CREDENTIAL_SERVICE =>
       _id_CREDENTIAL_SERVICE.get(_class, const jni.JStringType());
@@ -8552,22 +8552,22 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String CROSS_PROFILE_APPS_SERVICE
+  /// from: `static public final java.lang.String CROSS_PROFILE_APPS_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get CROSS_PROFILE_APPS_SERVICE =>
       _id_CROSS_PROFILE_APPS_SERVICE.get(_class, const jni.JStringType());
 
-  /// from: static public final int DEVICE_ID_DEFAULT
+  /// from: `static public final int DEVICE_ID_DEFAULT`
   static const DEVICE_ID_DEFAULT = 0;
 
-  /// from: static public final int DEVICE_ID_INVALID
+  /// from: `static public final int DEVICE_ID_INVALID`
   static const DEVICE_ID_INVALID = -1;
   static final _id_DEVICE_LOCK_SERVICE = _class.staticFieldId(
     r'DEVICE_LOCK_SERVICE',
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String DEVICE_LOCK_SERVICE
+  /// from: `static public final java.lang.String DEVICE_LOCK_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get DEVICE_LOCK_SERVICE =>
       _id_DEVICE_LOCK_SERVICE.get(_class, const jni.JStringType());
@@ -8577,7 +8577,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String DEVICE_POLICY_SERVICE
+  /// from: `static public final java.lang.String DEVICE_POLICY_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get DEVICE_POLICY_SERVICE =>
       _id_DEVICE_POLICY_SERVICE.get(_class, const jni.JStringType());
@@ -8587,7 +8587,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String DISPLAY_HASH_SERVICE
+  /// from: `static public final java.lang.String DISPLAY_HASH_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get DISPLAY_HASH_SERVICE =>
       _id_DISPLAY_HASH_SERVICE.get(_class, const jni.JStringType());
@@ -8597,7 +8597,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String DISPLAY_SERVICE
+  /// from: `static public final java.lang.String DISPLAY_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get DISPLAY_SERVICE =>
       _id_DISPLAY_SERVICE.get(_class, const jni.JStringType());
@@ -8607,7 +8607,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String DOMAIN_VERIFICATION_SERVICE
+  /// from: `static public final java.lang.String DOMAIN_VERIFICATION_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get DOMAIN_VERIFICATION_SERVICE =>
       _id_DOMAIN_VERIFICATION_SERVICE.get(_class, const jni.JStringType());
@@ -8617,7 +8617,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String DOWNLOAD_SERVICE
+  /// from: `static public final java.lang.String DOWNLOAD_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get DOWNLOAD_SERVICE =>
       _id_DOWNLOAD_SERVICE.get(_class, const jni.JStringType());
@@ -8627,7 +8627,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String DROPBOX_SERVICE
+  /// from: `static public final java.lang.String DROPBOX_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get DROPBOX_SERVICE =>
       _id_DROPBOX_SERVICE.get(_class, const jni.JStringType());
@@ -8637,7 +8637,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String EUICC_SERVICE
+  /// from: `static public final java.lang.String EUICC_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get EUICC_SERVICE =>
       _id_EUICC_SERVICE.get(_class, const jni.JStringType());
@@ -8647,7 +8647,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String FILE_INTEGRITY_SERVICE
+  /// from: `static public final java.lang.String FILE_INTEGRITY_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get FILE_INTEGRITY_SERVICE =>
       _id_FILE_INTEGRITY_SERVICE.get(_class, const jni.JStringType());
@@ -8657,7 +8657,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String FINGERPRINT_SERVICE
+  /// from: `static public final java.lang.String FINGERPRINT_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get FINGERPRINT_SERVICE =>
       _id_FINGERPRINT_SERVICE.get(_class, const jni.JStringType());
@@ -8667,7 +8667,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String GAME_SERVICE
+  /// from: `static public final java.lang.String GAME_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get GAME_SERVICE =>
       _id_GAME_SERVICE.get(_class, const jni.JStringType());
@@ -8677,7 +8677,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String GRAMMATICAL_INFLECTION_SERVICE
+  /// from: `static public final java.lang.String GRAMMATICAL_INFLECTION_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get GRAMMATICAL_INFLECTION_SERVICE =>
       _id_GRAMMATICAL_INFLECTION_SERVICE.get(_class, const jni.JStringType());
@@ -8687,7 +8687,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String HARDWARE_PROPERTIES_SERVICE
+  /// from: `static public final java.lang.String HARDWARE_PROPERTIES_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get HARDWARE_PROPERTIES_SERVICE =>
       _id_HARDWARE_PROPERTIES_SERVICE.get(_class, const jni.JStringType());
@@ -8697,7 +8697,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String HEALTHCONNECT_SERVICE
+  /// from: `static public final java.lang.String HEALTHCONNECT_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get HEALTHCONNECT_SERVICE =>
       _id_HEALTHCONNECT_SERVICE.get(_class, const jni.JStringType());
@@ -8707,7 +8707,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String INPUT_METHOD_SERVICE
+  /// from: `static public final java.lang.String INPUT_METHOD_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get INPUT_METHOD_SERVICE =>
       _id_INPUT_METHOD_SERVICE.get(_class, const jni.JStringType());
@@ -8717,7 +8717,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String INPUT_SERVICE
+  /// from: `static public final java.lang.String INPUT_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get INPUT_SERVICE =>
       _id_INPUT_SERVICE.get(_class, const jni.JStringType());
@@ -8727,7 +8727,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String IPSEC_SERVICE
+  /// from: `static public final java.lang.String IPSEC_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get IPSEC_SERVICE =>
       _id_IPSEC_SERVICE.get(_class, const jni.JStringType());
@@ -8737,7 +8737,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String JOB_SCHEDULER_SERVICE
+  /// from: `static public final java.lang.String JOB_SCHEDULER_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get JOB_SCHEDULER_SERVICE =>
       _id_JOB_SCHEDULER_SERVICE.get(_class, const jni.JStringType());
@@ -8747,7 +8747,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String KEYGUARD_SERVICE
+  /// from: `static public final java.lang.String KEYGUARD_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get KEYGUARD_SERVICE =>
       _id_KEYGUARD_SERVICE.get(_class, const jni.JStringType());
@@ -8757,7 +8757,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String LAUNCHER_APPS_SERVICE
+  /// from: `static public final java.lang.String LAUNCHER_APPS_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get LAUNCHER_APPS_SERVICE =>
       _id_LAUNCHER_APPS_SERVICE.get(_class, const jni.JStringType());
@@ -8767,7 +8767,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String LAYOUT_INFLATER_SERVICE
+  /// from: `static public final java.lang.String LAYOUT_INFLATER_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get LAYOUT_INFLATER_SERVICE =>
       _id_LAYOUT_INFLATER_SERVICE.get(_class, const jni.JStringType());
@@ -8777,7 +8777,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String LOCALE_SERVICE
+  /// from: `static public final java.lang.String LOCALE_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get LOCALE_SERVICE =>
       _id_LOCALE_SERVICE.get(_class, const jni.JStringType());
@@ -8787,7 +8787,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String LOCATION_SERVICE
+  /// from: `static public final java.lang.String LOCATION_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get LOCATION_SERVICE =>
       _id_LOCATION_SERVICE.get(_class, const jni.JStringType());
@@ -8797,7 +8797,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String MEDIA_COMMUNICATION_SERVICE
+  /// from: `static public final java.lang.String MEDIA_COMMUNICATION_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get MEDIA_COMMUNICATION_SERVICE =>
       _id_MEDIA_COMMUNICATION_SERVICE.get(_class, const jni.JStringType());
@@ -8807,7 +8807,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String MEDIA_METRICS_SERVICE
+  /// from: `static public final java.lang.String MEDIA_METRICS_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get MEDIA_METRICS_SERVICE =>
       _id_MEDIA_METRICS_SERVICE.get(_class, const jni.JStringType());
@@ -8817,7 +8817,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String MEDIA_PROJECTION_SERVICE
+  /// from: `static public final java.lang.String MEDIA_PROJECTION_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get MEDIA_PROJECTION_SERVICE =>
       _id_MEDIA_PROJECTION_SERVICE.get(_class, const jni.JStringType());
@@ -8827,7 +8827,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String MEDIA_ROUTER_SERVICE
+  /// from: `static public final java.lang.String MEDIA_ROUTER_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get MEDIA_ROUTER_SERVICE =>
       _id_MEDIA_ROUTER_SERVICE.get(_class, const jni.JStringType());
@@ -8837,7 +8837,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String MEDIA_SESSION_SERVICE
+  /// from: `static public final java.lang.String MEDIA_SESSION_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get MEDIA_SESSION_SERVICE =>
       _id_MEDIA_SESSION_SERVICE.get(_class, const jni.JStringType());
@@ -8847,37 +8847,37 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String MIDI_SERVICE
+  /// from: `static public final java.lang.String MIDI_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get MIDI_SERVICE =>
       _id_MIDI_SERVICE.get(_class, const jni.JStringType());
 
-  /// from: static public final int MODE_APPEND
+  /// from: `static public final int MODE_APPEND`
   static const MODE_APPEND = 32768;
 
-  /// from: static public final int MODE_ENABLE_WRITE_AHEAD_LOGGING
+  /// from: `static public final int MODE_ENABLE_WRITE_AHEAD_LOGGING`
   static const MODE_ENABLE_WRITE_AHEAD_LOGGING = 8;
 
-  /// from: static public final int MODE_MULTI_PROCESS
+  /// from: `static public final int MODE_MULTI_PROCESS`
   static const MODE_MULTI_PROCESS = 4;
 
-  /// from: static public final int MODE_NO_LOCALIZED_COLLATORS
+  /// from: `static public final int MODE_NO_LOCALIZED_COLLATORS`
   static const MODE_NO_LOCALIZED_COLLATORS = 16;
 
-  /// from: static public final int MODE_PRIVATE
+  /// from: `static public final int MODE_PRIVATE`
   static const MODE_PRIVATE = 0;
 
-  /// from: static public final int MODE_WORLD_READABLE
+  /// from: `static public final int MODE_WORLD_READABLE`
   static const MODE_WORLD_READABLE = 1;
 
-  /// from: static public final int MODE_WORLD_WRITEABLE
+  /// from: `static public final int MODE_WORLD_WRITEABLE`
   static const MODE_WORLD_WRITEABLE = 2;
   static final _id_NETWORK_STATS_SERVICE = _class.staticFieldId(
     r'NETWORK_STATS_SERVICE',
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String NETWORK_STATS_SERVICE
+  /// from: `static public final java.lang.String NETWORK_STATS_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get NETWORK_STATS_SERVICE =>
       _id_NETWORK_STATS_SERVICE.get(_class, const jni.JStringType());
@@ -8887,7 +8887,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String NFC_SERVICE
+  /// from: `static public final java.lang.String NFC_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get NFC_SERVICE =>
       _id_NFC_SERVICE.get(_class, const jni.JStringType());
@@ -8897,7 +8897,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String NOTIFICATION_SERVICE
+  /// from: `static public final java.lang.String NOTIFICATION_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get NOTIFICATION_SERVICE =>
       _id_NOTIFICATION_SERVICE.get(_class, const jni.JStringType());
@@ -8907,7 +8907,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String NSD_SERVICE
+  /// from: `static public final java.lang.String NSD_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get NSD_SERVICE =>
       _id_NSD_SERVICE.get(_class, const jni.JStringType());
@@ -8917,7 +8917,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String OVERLAY_SERVICE
+  /// from: `static public final java.lang.String OVERLAY_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get OVERLAY_SERVICE =>
       _id_OVERLAY_SERVICE.get(_class, const jni.JStringType());
@@ -8927,7 +8927,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String PEOPLE_SERVICE
+  /// from: `static public final java.lang.String PEOPLE_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get PEOPLE_SERVICE =>
       _id_PEOPLE_SERVICE.get(_class, const jni.JStringType());
@@ -8937,7 +8937,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String PERFORMANCE_HINT_SERVICE
+  /// from: `static public final java.lang.String PERFORMANCE_HINT_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get PERFORMANCE_HINT_SERVICE =>
       _id_PERFORMANCE_HINT_SERVICE.get(_class, const jni.JStringType());
@@ -8947,7 +8947,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String POWER_SERVICE
+  /// from: `static public final java.lang.String POWER_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get POWER_SERVICE =>
       _id_POWER_SERVICE.get(_class, const jni.JStringType());
@@ -8957,25 +8957,25 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String PRINT_SERVICE
+  /// from: `static public final java.lang.String PRINT_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get PRINT_SERVICE =>
       _id_PRINT_SERVICE.get(_class, const jni.JStringType());
 
-  /// from: static public final int RECEIVER_EXPORTED
+  /// from: `static public final int RECEIVER_EXPORTED`
   static const RECEIVER_EXPORTED = 2;
 
-  /// from: static public final int RECEIVER_NOT_EXPORTED
+  /// from: `static public final int RECEIVER_NOT_EXPORTED`
   static const RECEIVER_NOT_EXPORTED = 4;
 
-  /// from: static public final int RECEIVER_VISIBLE_TO_INSTANT_APPS
+  /// from: `static public final int RECEIVER_VISIBLE_TO_INSTANT_APPS`
   static const RECEIVER_VISIBLE_TO_INSTANT_APPS = 1;
   static final _id_RESTRICTIONS_SERVICE = _class.staticFieldId(
     r'RESTRICTIONS_SERVICE',
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String RESTRICTIONS_SERVICE
+  /// from: `static public final java.lang.String RESTRICTIONS_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get RESTRICTIONS_SERVICE =>
       _id_RESTRICTIONS_SERVICE.get(_class, const jni.JStringType());
@@ -8985,7 +8985,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String ROLE_SERVICE
+  /// from: `static public final java.lang.String ROLE_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get ROLE_SERVICE =>
       _id_ROLE_SERVICE.get(_class, const jni.JStringType());
@@ -8995,7 +8995,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String SEARCH_SERVICE
+  /// from: `static public final java.lang.String SEARCH_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get SEARCH_SERVICE =>
       _id_SEARCH_SERVICE.get(_class, const jni.JStringType());
@@ -9005,7 +9005,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String SENSOR_SERVICE
+  /// from: `static public final java.lang.String SENSOR_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get SENSOR_SERVICE =>
       _id_SENSOR_SERVICE.get(_class, const jni.JStringType());
@@ -9015,7 +9015,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String SHORTCUT_SERVICE
+  /// from: `static public final java.lang.String SHORTCUT_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get SHORTCUT_SERVICE =>
       _id_SHORTCUT_SERVICE.get(_class, const jni.JStringType());
@@ -9025,7 +9025,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String STATUS_BAR_SERVICE
+  /// from: `static public final java.lang.String STATUS_BAR_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get STATUS_BAR_SERVICE =>
       _id_STATUS_BAR_SERVICE.get(_class, const jni.JStringType());
@@ -9035,7 +9035,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String STORAGE_SERVICE
+  /// from: `static public final java.lang.String STORAGE_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get STORAGE_SERVICE =>
       _id_STORAGE_SERVICE.get(_class, const jni.JStringType());
@@ -9045,7 +9045,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String STORAGE_STATS_SERVICE
+  /// from: `static public final java.lang.String STORAGE_STATS_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get STORAGE_STATS_SERVICE =>
       _id_STORAGE_STATS_SERVICE.get(_class, const jni.JStringType());
@@ -9055,7 +9055,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String SYSTEM_HEALTH_SERVICE
+  /// from: `static public final java.lang.String SYSTEM_HEALTH_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get SYSTEM_HEALTH_SERVICE =>
       _id_SYSTEM_HEALTH_SERVICE.get(_class, const jni.JStringType());
@@ -9065,7 +9065,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String TELECOM_SERVICE
+  /// from: `static public final java.lang.String TELECOM_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get TELECOM_SERVICE =>
       _id_TELECOM_SERVICE.get(_class, const jni.JStringType());
@@ -9075,7 +9075,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String TELEPHONY_IMS_SERVICE
+  /// from: `static public final java.lang.String TELEPHONY_IMS_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get TELEPHONY_IMS_SERVICE =>
       _id_TELEPHONY_IMS_SERVICE.get(_class, const jni.JStringType());
@@ -9085,7 +9085,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String TELEPHONY_SERVICE
+  /// from: `static public final java.lang.String TELEPHONY_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get TELEPHONY_SERVICE =>
       _id_TELEPHONY_SERVICE.get(_class, const jni.JStringType());
@@ -9095,7 +9095,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String TELEPHONY_SUBSCRIPTION_SERVICE
+  /// from: `static public final java.lang.String TELEPHONY_SUBSCRIPTION_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get TELEPHONY_SUBSCRIPTION_SERVICE =>
       _id_TELEPHONY_SUBSCRIPTION_SERVICE.get(_class, const jni.JStringType());
@@ -9105,7 +9105,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String TEXT_CLASSIFICATION_SERVICE
+  /// from: `static public final java.lang.String TEXT_CLASSIFICATION_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get TEXT_CLASSIFICATION_SERVICE =>
       _id_TEXT_CLASSIFICATION_SERVICE.get(_class, const jni.JStringType());
@@ -9115,7 +9115,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String TEXT_SERVICES_MANAGER_SERVICE
+  /// from: `static public final java.lang.String TEXT_SERVICES_MANAGER_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get TEXT_SERVICES_MANAGER_SERVICE =>
       _id_TEXT_SERVICES_MANAGER_SERVICE.get(_class, const jni.JStringType());
@@ -9125,7 +9125,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String TV_INPUT_SERVICE
+  /// from: `static public final java.lang.String TV_INPUT_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get TV_INPUT_SERVICE =>
       _id_TV_INPUT_SERVICE.get(_class, const jni.JStringType());
@@ -9135,7 +9135,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String TV_INTERACTIVE_APP_SERVICE
+  /// from: `static public final java.lang.String TV_INTERACTIVE_APP_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get TV_INTERACTIVE_APP_SERVICE =>
       _id_TV_INTERACTIVE_APP_SERVICE.get(_class, const jni.JStringType());
@@ -9145,7 +9145,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String UI_MODE_SERVICE
+  /// from: `static public final java.lang.String UI_MODE_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get UI_MODE_SERVICE =>
       _id_UI_MODE_SERVICE.get(_class, const jni.JStringType());
@@ -9155,7 +9155,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String USAGE_STATS_SERVICE
+  /// from: `static public final java.lang.String USAGE_STATS_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get USAGE_STATS_SERVICE =>
       _id_USAGE_STATS_SERVICE.get(_class, const jni.JStringType());
@@ -9165,7 +9165,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String USB_SERVICE
+  /// from: `static public final java.lang.String USB_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get USB_SERVICE =>
       _id_USB_SERVICE.get(_class, const jni.JStringType());
@@ -9175,7 +9175,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String USER_SERVICE
+  /// from: `static public final java.lang.String USER_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get USER_SERVICE =>
       _id_USER_SERVICE.get(_class, const jni.JStringType());
@@ -9185,7 +9185,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String VIBRATOR_MANAGER_SERVICE
+  /// from: `static public final java.lang.String VIBRATOR_MANAGER_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get VIBRATOR_MANAGER_SERVICE =>
       _id_VIBRATOR_MANAGER_SERVICE.get(_class, const jni.JStringType());
@@ -9195,7 +9195,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String VIBRATOR_SERVICE
+  /// from: `static public final java.lang.String VIBRATOR_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get VIBRATOR_SERVICE =>
       _id_VIBRATOR_SERVICE.get(_class, const jni.JStringType());
@@ -9205,7 +9205,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String VIRTUAL_DEVICE_SERVICE
+  /// from: `static public final java.lang.String VIRTUAL_DEVICE_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get VIRTUAL_DEVICE_SERVICE =>
       _id_VIRTUAL_DEVICE_SERVICE.get(_class, const jni.JStringType());
@@ -9215,7 +9215,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String VPN_MANAGEMENT_SERVICE
+  /// from: `static public final java.lang.String VPN_MANAGEMENT_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get VPN_MANAGEMENT_SERVICE =>
       _id_VPN_MANAGEMENT_SERVICE.get(_class, const jni.JStringType());
@@ -9225,7 +9225,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String WALLPAPER_SERVICE
+  /// from: `static public final java.lang.String WALLPAPER_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get WALLPAPER_SERVICE =>
       _id_WALLPAPER_SERVICE.get(_class, const jni.JStringType());
@@ -9235,7 +9235,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String WIFI_AWARE_SERVICE
+  /// from: `static public final java.lang.String WIFI_AWARE_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get WIFI_AWARE_SERVICE =>
       _id_WIFI_AWARE_SERVICE.get(_class, const jni.JStringType());
@@ -9245,7 +9245,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String WIFI_P2P_SERVICE
+  /// from: `static public final java.lang.String WIFI_P2P_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get WIFI_P2P_SERVICE =>
       _id_WIFI_P2P_SERVICE.get(_class, const jni.JStringType());
@@ -9255,7 +9255,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String WIFI_RTT_RANGING_SERVICE
+  /// from: `static public final java.lang.String WIFI_RTT_RANGING_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get WIFI_RTT_RANGING_SERVICE =>
       _id_WIFI_RTT_RANGING_SERVICE.get(_class, const jni.JStringType());
@@ -9265,7 +9265,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String WIFI_SERVICE
+  /// from: `static public final java.lang.String WIFI_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get WIFI_SERVICE =>
       _id_WIFI_SERVICE.get(_class, const jni.JStringType());
@@ -9275,7 +9275,7 @@ class Context extends jni.JObject {
     r'Ljava/lang/String;',
   );
 
-  /// from: static public final java.lang.String WINDOW_SERVICE
+  /// from: `static public final java.lang.String WINDOW_SERVICE`
   /// The returned object must be released after use, by calling the [release] method.
   static jni.JString get WINDOW_SERVICE =>
       _id_WINDOW_SERVICE.get(_class, const jni.JStringType());
@@ -9296,7 +9296,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public void <init>()
+  /// from: `public void <init>()`
   /// The returned object must be released after use, by calling the [release] method.
   factory Context() {
     return Context.fromReference(
@@ -9321,7 +9321,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract android.content.res.AssetManager getAssets()
+  /// from: `public abstract android.content.res.AssetManager getAssets()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getAssets() {
     return _getAssets(reference.pointer, _id_getAssets as jni.JMethodIDPtr)
@@ -9345,7 +9345,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract android.content.res.Resources getResources()
+  /// from: `public abstract android.content.res.Resources getResources()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getResources() {
     return _getResources(
@@ -9370,7 +9370,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract android.content.pm.PackageManager getPackageManager()
+  /// from: `public abstract android.content.pm.PackageManager getPackageManager()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getPackageManager() {
     return _getPackageManager(
@@ -9395,7 +9395,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract android.content.ContentResolver getContentResolver()
+  /// from: `public abstract android.content.ContentResolver getContentResolver()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getContentResolver() {
     return _getContentResolver(
@@ -9420,7 +9420,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract android.os.Looper getMainLooper()
+  /// from: `public abstract android.os.Looper getMainLooper()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getMainLooper() {
     return _getMainLooper(
@@ -9445,7 +9445,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public java.util.concurrent.Executor getMainExecutor()
+  /// from: `public java.util.concurrent.Executor getMainExecutor()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getMainExecutor() {
     return _getMainExecutor(
@@ -9470,7 +9470,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract android.content.Context getApplicationContext()
+  /// from: `public abstract android.content.Context getApplicationContext()`
   /// The returned object must be released after use, by calling the [release] method.
   Context getApplicationContext() {
     return _getApplicationContext(
@@ -9494,7 +9494,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void registerComponentCallbacks(android.content.ComponentCallbacks componentCallbacks)
+  /// from: `public void registerComponentCallbacks(android.content.ComponentCallbacks componentCallbacks)`
   void registerComponentCallbacks(
     jni.JObject componentCallbacks,
   ) {
@@ -9521,7 +9521,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void unregisterComponentCallbacks(android.content.ComponentCallbacks componentCallbacks)
+  /// from: `public void unregisterComponentCallbacks(android.content.ComponentCallbacks componentCallbacks)`
   void unregisterComponentCallbacks(
     jni.JObject componentCallbacks,
   ) {
@@ -9545,7 +9545,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final java.lang.CharSequence getText(int i)
+  /// from: `public final java.lang.CharSequence getText(int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getText(
     int i,
@@ -9567,7 +9567,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final java.lang.String getString(int i)
+  /// from: `public final java.lang.String getString(int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getString(
     int i,
@@ -9592,7 +9592,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final java.lang.String getString(int i, java.lang.Object[] objects)
+  /// from: `public final java.lang.String getString(int i, java.lang.Object[] objects)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getString1(
     int i,
@@ -9616,7 +9616,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final int getColor(int i)
+  /// from: `public final int getColor(int i)`
   int getColor(
     int i,
   ) {
@@ -9637,7 +9637,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final android.graphics.drawable.Drawable getDrawable(int i)
+  /// from: `public final android.graphics.drawable.Drawable getDrawable(int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getDrawable(
     int i,
@@ -9660,7 +9660,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public final android.content.res.ColorStateList getColorStateList(int i)
+  /// from: `public final android.content.res.ColorStateList getColorStateList(int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getColorStateList(
     int i,
@@ -9685,7 +9685,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public abstract void setTheme(int i)
+  /// from: `public abstract void setTheme(int i)`
   void setTheme(
     int i,
   ) {
@@ -9709,7 +9709,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract android.content.res.Resources$Theme getTheme()
+  /// from: `public abstract android.content.res.Resources$Theme getTheme()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getTheme() {
     return _getTheme(reference.pointer, _id_getTheme as jni.JMethodIDPtr)
@@ -9732,7 +9732,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final android.content.res.TypedArray obtainStyledAttributes(int[] is)
+  /// from: `public final android.content.res.TypedArray obtainStyledAttributes(int[] is)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject obtainStyledAttributes(
     jni.JArray<jni.jint> is0,
@@ -9760,7 +9760,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final android.content.res.TypedArray obtainStyledAttributes(int i, int[] is)
+  /// from: `public final android.content.res.TypedArray obtainStyledAttributes(int i, int[] is)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject obtainStyledAttributes1(
     int i,
@@ -9793,7 +9793,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final android.content.res.TypedArray obtainStyledAttributes(android.util.AttributeSet attributeSet, int[] is)
+  /// from: `public final android.content.res.TypedArray obtainStyledAttributes(android.util.AttributeSet attributeSet, int[] is)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject obtainStyledAttributes2(
     jni.JObject attributeSet,
@@ -9828,7 +9828,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int, int)>();
 
-  /// from: public final android.content.res.TypedArray obtainStyledAttributes(android.util.AttributeSet attributeSet, int[] is, int i, int i1)
+  /// from: `public final android.content.res.TypedArray obtainStyledAttributes(android.util.AttributeSet attributeSet, int[] is, int i, int i1)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject obtainStyledAttributes3(
     jni.JObject attributeSet,
@@ -9863,7 +9863,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.lang.ClassLoader getClassLoader()
+  /// from: `public abstract java.lang.ClassLoader getClassLoader()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getClassLoader() {
     return _getClassLoader(
@@ -9888,7 +9888,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.lang.String getPackageName()
+  /// from: `public abstract java.lang.String getPackageName()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getPackageName() {
     return _getPackageName(
@@ -9913,7 +9913,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public java.lang.String getOpPackageName()
+  /// from: `public java.lang.String getOpPackageName()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getOpPackageName() {
     return _getOpPackageName(
@@ -9938,7 +9938,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public java.lang.String getAttributionTag()
+  /// from: `public java.lang.String getAttributionTag()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getAttributionTag() {
     return _getAttributionTag(
@@ -9963,7 +9963,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.content.AttributionSource getAttributionSource()
+  /// from: `public android.content.AttributionSource getAttributionSource()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getAttributionSource() {
     return _getAttributionSource(
@@ -9988,7 +9988,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.content.ContextParams getParams()
+  /// from: `public android.content.ContextParams getParams()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getParams() {
     return _getParams(reference.pointer, _id_getParams as jni.JMethodIDPtr)
@@ -10012,7 +10012,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract android.content.pm.ApplicationInfo getApplicationInfo()
+  /// from: `public abstract android.content.pm.ApplicationInfo getApplicationInfo()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getApplicationInfo() {
     return _getApplicationInfo(
@@ -10037,7 +10037,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.lang.String getPackageResourcePath()
+  /// from: `public abstract java.lang.String getPackageResourcePath()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getPackageResourcePath() {
     return _getPackageResourcePath(
@@ -10062,7 +10062,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.lang.String getPackageCodePath()
+  /// from: `public abstract java.lang.String getPackageCodePath()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getPackageCodePath() {
     return _getPackageCodePath(
@@ -10086,7 +10086,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public abstract android.content.SharedPreferences getSharedPreferences(java.lang.String string, int i)
+  /// from: `public abstract android.content.SharedPreferences getSharedPreferences(java.lang.String string, int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getSharedPreferences(
     jni.JString string,
@@ -10119,7 +10119,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract boolean moveSharedPreferencesFrom(android.content.Context context, java.lang.String string)
+  /// from: `public abstract boolean moveSharedPreferencesFrom(android.content.Context context, java.lang.String string)`
   bool moveSharedPreferencesFrom(
     Context context,
     jni.JString string,
@@ -10148,7 +10148,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract boolean deleteSharedPreferences(java.lang.String string)
+  /// from: `public abstract boolean deleteSharedPreferences(java.lang.String string)`
   bool deleteSharedPreferences(
     jni.JString string,
   ) {
@@ -10175,7 +10175,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract java.io.FileInputStream openFileInput(java.lang.String string)
+  /// from: `public abstract java.io.FileInputStream openFileInput(java.lang.String string)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject openFileInput(
     jni.JString string,
@@ -10201,7 +10201,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public abstract java.io.FileOutputStream openFileOutput(java.lang.String string, int i)
+  /// from: `public abstract java.io.FileOutputStream openFileOutput(java.lang.String string, int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject openFileOutput(
     jni.JString string,
@@ -10228,7 +10228,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract boolean deleteFile(java.lang.String string)
+  /// from: `public abstract boolean deleteFile(java.lang.String string)`
   bool deleteFile(
     jni.JString string,
   ) {
@@ -10253,7 +10253,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract java.io.File getFileStreamPath(java.lang.String string)
+  /// from: `public abstract java.io.File getFileStreamPath(java.lang.String string)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getFileStreamPath(
     jni.JString string,
@@ -10280,7 +10280,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.io.File getDataDir()
+  /// from: `public abstract java.io.File getDataDir()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getDataDir() {
     return _getDataDir(reference.pointer, _id_getDataDir as jni.JMethodIDPtr)
@@ -10304,7 +10304,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.io.File getFilesDir()
+  /// from: `public abstract java.io.File getFilesDir()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getFilesDir() {
     return _getFilesDir(reference.pointer, _id_getFilesDir as jni.JMethodIDPtr)
@@ -10328,7 +10328,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.io.File getNoBackupFilesDir()
+  /// from: `public abstract java.io.File getNoBackupFilesDir()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getNoBackupFilesDir() {
     return _getNoBackupFilesDir(
@@ -10352,7 +10352,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract java.io.File getExternalFilesDir(java.lang.String string)
+  /// from: `public abstract java.io.File getExternalFilesDir(java.lang.String string)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getExternalFilesDir(
     jni.JString string,
@@ -10380,7 +10380,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract java.io.File[] getExternalFilesDirs(java.lang.String string)
+  /// from: `public abstract java.io.File[] getExternalFilesDirs(java.lang.String string)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JArray<jni.JObject> getExternalFilesDirs(
     jni.JString string,
@@ -10409,7 +10409,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.io.File getObbDir()
+  /// from: `public abstract java.io.File getObbDir()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getObbDir() {
     return _getObbDir(reference.pointer, _id_getObbDir as jni.JMethodIDPtr)
@@ -10433,7 +10433,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.io.File[] getObbDirs()
+  /// from: `public abstract java.io.File[] getObbDirs()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JArray<jni.JObject> getObbDirs() {
     return _getObbDirs(reference.pointer, _id_getObbDirs as jni.JMethodIDPtr)
@@ -10457,7 +10457,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.io.File getCacheDir()
+  /// from: `public abstract java.io.File getCacheDir()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getCacheDir() {
     return _getCacheDir(reference.pointer, _id_getCacheDir as jni.JMethodIDPtr)
@@ -10481,7 +10481,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.io.File getCodeCacheDir()
+  /// from: `public abstract java.io.File getCodeCacheDir()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getCodeCacheDir() {
     return _getCodeCacheDir(
@@ -10506,7 +10506,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.io.File getExternalCacheDir()
+  /// from: `public abstract java.io.File getExternalCacheDir()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getExternalCacheDir() {
     return _getExternalCacheDir(
@@ -10531,7 +10531,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.io.File[] getExternalCacheDirs()
+  /// from: `public abstract java.io.File[] getExternalCacheDirs()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JArray<jni.JObject> getExternalCacheDirs() {
     return _getExternalCacheDirs(
@@ -10556,7 +10556,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.io.File[] getExternalMediaDirs()
+  /// from: `public abstract java.io.File[] getExternalMediaDirs()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JArray<jni.JObject> getExternalMediaDirs() {
     return _getExternalMediaDirs(
@@ -10581,7 +10581,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.lang.String[] fileList()
+  /// from: `public abstract java.lang.String[] fileList()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JArray<jni.JString> fileList() {
     return _fileList(reference.pointer, _id_fileList as jni.JMethodIDPtr)
@@ -10604,7 +10604,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public abstract java.io.File getDir(java.lang.String string, int i)
+  /// from: `public abstract java.io.File getDir(java.lang.String string, int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getDir(
     jni.JString string,
@@ -10635,7 +10635,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String string, int i, android.database.sqlite.SQLiteDatabase$CursorFactory cursorFactory)
+  /// from: `public abstract android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String string, int i, android.database.sqlite.SQLiteDatabase$CursorFactory cursorFactory)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject openOrCreateDatabase(
     jni.JString string,
@@ -10677,7 +10677,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String string, int i, android.database.sqlite.SQLiteDatabase$CursorFactory cursorFactory, android.database.DatabaseErrorHandler databaseErrorHandler)
+  /// from: `public abstract android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String string, int i, android.database.sqlite.SQLiteDatabase$CursorFactory cursorFactory, android.database.DatabaseErrorHandler databaseErrorHandler)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject openOrCreateDatabase1(
     jni.JString string,
@@ -10714,7 +10714,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract boolean moveDatabaseFrom(android.content.Context context, java.lang.String string)
+  /// from: `public abstract boolean moveDatabaseFrom(android.content.Context context, java.lang.String string)`
   bool moveDatabaseFrom(
     Context context,
     jni.JString string,
@@ -10743,7 +10743,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract boolean deleteDatabase(java.lang.String string)
+  /// from: `public abstract boolean deleteDatabase(java.lang.String string)`
   bool deleteDatabase(
     jni.JString string,
   ) {
@@ -10768,7 +10768,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract java.io.File getDatabasePath(java.lang.String string)
+  /// from: `public abstract java.io.File getDatabasePath(java.lang.String string)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getDatabasePath(
     jni.JString string,
@@ -10795,7 +10795,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract java.lang.String[] databaseList()
+  /// from: `public abstract java.lang.String[] databaseList()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JArray<jni.JString> databaseList() {
     return _databaseList(
@@ -10820,7 +10820,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract android.graphics.drawable.Drawable getWallpaper()
+  /// from: `public abstract android.graphics.drawable.Drawable getWallpaper()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getWallpaper() {
     return _getWallpaper(
@@ -10845,7 +10845,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract android.graphics.drawable.Drawable peekWallpaper()
+  /// from: `public abstract android.graphics.drawable.Drawable peekWallpaper()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject peekWallpaper() {
     return _peekWallpaper(
@@ -10870,7 +10870,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract int getWallpaperDesiredMinimumWidth()
+  /// from: `public abstract int getWallpaperDesiredMinimumWidth()`
   int getWallpaperDesiredMinimumWidth() {
     return _getWallpaperDesiredMinimumWidth(reference.pointer,
             _id_getWallpaperDesiredMinimumWidth as jni.JMethodIDPtr)
@@ -10895,7 +10895,7 @@ class Context extends jni.JObject {
                 jni.JMethodIDPtr,
               )>();
 
-  /// from: public abstract int getWallpaperDesiredMinimumHeight()
+  /// from: `public abstract int getWallpaperDesiredMinimumHeight()`
   int getWallpaperDesiredMinimumHeight() {
     return _getWallpaperDesiredMinimumHeight(reference.pointer,
             _id_getWallpaperDesiredMinimumHeight as jni.JMethodIDPtr)
@@ -10918,7 +10918,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void setWallpaper(android.graphics.Bitmap bitmap)
+  /// from: `public abstract void setWallpaper(android.graphics.Bitmap bitmap)`
   void setWallpaper(
     jni.JObject bitmap,
   ) {
@@ -10943,7 +10943,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void setWallpaper(java.io.InputStream inputStream)
+  /// from: `public abstract void setWallpaper(java.io.InputStream inputStream)`
   void setWallpaper1(
     jni.JObject inputStream,
   ) {
@@ -10969,7 +10969,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract void clearWallpaper()
+  /// from: `public abstract void clearWallpaper()`
   void clearWallpaper() {
     _clearWallpaper(reference.pointer, _id_clearWallpaper as jni.JMethodIDPtr)
         .check();
@@ -10991,7 +10991,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void startActivity(android.content.Intent intent)
+  /// from: `public abstract void startActivity(android.content.Intent intent)`
   void startActivity(
     jni.JObject intent,
   ) {
@@ -11019,7 +11019,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void startActivity(android.content.Intent intent, android.os.Bundle bundle)
+  /// from: `public abstract void startActivity(android.content.Intent intent, android.os.Bundle bundle)`
   void startActivity1(
     jni.JObject intent,
     jni.JObject bundle,
@@ -11045,7 +11045,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void startActivities(android.content.Intent[] intents)
+  /// from: `public abstract void startActivities(android.content.Intent[] intents)`
   void startActivities(
     jni.JArray<jni.JObject> intents,
   ) {
@@ -11073,7 +11073,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void startActivities(android.content.Intent[] intents, android.os.Bundle bundle)
+  /// from: `public abstract void startActivities(android.content.Intent[] intents, android.os.Bundle bundle)`
   void startActivities1(
     jni.JArray<jni.JObject> intents,
     jni.JObject bundle,
@@ -11108,7 +11108,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int, int, int)>();
 
-  /// from: public abstract void startIntentSender(android.content.IntentSender intentSender, android.content.Intent intent, int i, int i1, int i2)
+  /// from: `public abstract void startIntentSender(android.content.IntentSender intentSender, android.content.Intent intent, int i, int i1, int i2)`
   void startIntentSender(
     jni.JObject intentSender,
     jni.JObject intent,
@@ -11157,7 +11157,7 @@ class Context extends jni.JObject {
               int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void startIntentSender(android.content.IntentSender intentSender, android.content.Intent intent, int i, int i1, int i2, android.os.Bundle bundle)
+  /// from: `public abstract void startIntentSender(android.content.IntentSender intentSender, android.content.Intent intent, int i, int i1, int i2, android.os.Bundle bundle)`
   void startIntentSender1(
     jni.JObject intentSender,
     jni.JObject intent,
@@ -11194,7 +11194,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void sendBroadcast(android.content.Intent intent)
+  /// from: `public abstract void sendBroadcast(android.content.Intent intent)`
   void sendBroadcast(
     jni.JObject intent,
   ) {
@@ -11222,7 +11222,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void sendBroadcast(android.content.Intent intent, java.lang.String string)
+  /// from: `public abstract void sendBroadcast(android.content.Intent intent, java.lang.String string)`
   void sendBroadcast1(
     jni.JObject intent,
     jni.JString string,
@@ -11256,7 +11256,7 @@ class Context extends jni.JObject {
                   ffi.Pointer<ffi.Void>,
                   ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void sendBroadcastWithMultiplePermissions(android.content.Intent intent, java.lang.String[] strings)
+  /// from: `public void sendBroadcastWithMultiplePermissions(android.content.Intent intent, java.lang.String[] strings)`
   void sendBroadcastWithMultiplePermissions(
     jni.JObject intent,
     jni.JArray<jni.JString> strings,
@@ -11293,7 +11293,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void sendBroadcast(android.content.Intent intent, java.lang.String string, android.os.Bundle bundle)
+  /// from: `public void sendBroadcast(android.content.Intent intent, java.lang.String string, android.os.Bundle bundle)`
   void sendBroadcast2(
     jni.JObject intent,
     jni.JString string,
@@ -11327,7 +11327,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void sendOrderedBroadcast(android.content.Intent intent, java.lang.String string)
+  /// from: `public abstract void sendOrderedBroadcast(android.content.Intent intent, java.lang.String string)`
   void sendOrderedBroadcast(
     jni.JObject intent,
     jni.JString string,
@@ -11364,7 +11364,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void sendOrderedBroadcast(android.content.Intent intent, java.lang.String string, android.os.Bundle bundle)
+  /// from: `public void sendOrderedBroadcast(android.content.Intent intent, java.lang.String string, android.os.Bundle bundle)`
   void sendOrderedBroadcast1(
     jni.JObject intent,
     jni.JString string,
@@ -11411,7 +11411,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void sendOrderedBroadcast(android.content.Intent intent, java.lang.String string, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string1, android.os.Bundle bundle)
+  /// from: `public abstract void sendOrderedBroadcast(android.content.Intent intent, java.lang.String string, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string1, android.os.Bundle bundle)`
   void sendOrderedBroadcast2(
     jni.JObject intent,
     jni.JString string,
@@ -11468,7 +11468,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void sendOrderedBroadcast(android.content.Intent intent, java.lang.String string, android.os.Bundle bundle, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string1, android.os.Bundle bundle1)
+  /// from: `public void sendOrderedBroadcast(android.content.Intent intent, java.lang.String string, android.os.Bundle bundle, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string1, android.os.Bundle bundle1)`
   void sendOrderedBroadcast3(
     jni.JObject intent,
     jni.JString string,
@@ -11512,7 +11512,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void sendBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle)
+  /// from: `public abstract void sendBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle)`
   void sendBroadcastAsUser(
     jni.JObject intent,
     jni.JObject userHandle,
@@ -11549,7 +11549,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void sendBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle, java.lang.String string)
+  /// from: `public abstract void sendBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle, java.lang.String string)`
   void sendBroadcastAsUser1(
     jni.JObject intent,
     jni.JObject userHandle,
@@ -11598,7 +11598,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void sendOrderedBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle, java.lang.String string, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string1, android.os.Bundle bundle)
+  /// from: `public abstract void sendOrderedBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle, java.lang.String string, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string1, android.os.Bundle bundle)`
   void sendOrderedBroadcastAsUser(
     jni.JObject intent,
     jni.JObject userHandle,
@@ -11657,7 +11657,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void sendOrderedBroadcast(android.content.Intent intent, java.lang.String string, java.lang.String string1, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string2, android.os.Bundle bundle)
+  /// from: `public void sendOrderedBroadcast(android.content.Intent intent, java.lang.String string, java.lang.String string1, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string2, android.os.Bundle bundle)`
   void sendOrderedBroadcast4(
     jni.JObject intent,
     jni.JString string,
@@ -11698,7 +11698,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void sendStickyBroadcast(android.content.Intent intent)
+  /// from: `public abstract void sendStickyBroadcast(android.content.Intent intent)`
   void sendStickyBroadcast(
     jni.JObject intent,
   ) {
@@ -11728,7 +11728,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void sendStickyBroadcast(android.content.Intent intent, android.os.Bundle bundle)
+  /// from: `public void sendStickyBroadcast(android.content.Intent intent, android.os.Bundle bundle)`
   void sendStickyBroadcast1(
     jni.JObject intent,
     jni.JObject bundle,
@@ -11771,7 +11771,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void sendStickyOrderedBroadcast(android.content.Intent intent, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string, android.os.Bundle bundle)
+  /// from: `public abstract void sendStickyOrderedBroadcast(android.content.Intent intent, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string, android.os.Bundle bundle)`
   void sendStickyOrderedBroadcast(
     jni.JObject intent,
     jni.JObject broadcastReceiver,
@@ -11808,7 +11808,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void removeStickyBroadcast(android.content.Intent intent)
+  /// from: `public abstract void removeStickyBroadcast(android.content.Intent intent)`
   void removeStickyBroadcast(
     jni.JObject intent,
   ) {
@@ -11838,7 +11838,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void sendStickyBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle)
+  /// from: `public abstract void sendStickyBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle)`
   void sendStickyBroadcastAsUser(
     jni.JObject intent,
     jni.JObject userHandle,
@@ -11884,7 +11884,7 @@ class Context extends jni.JObject {
                   ffi.Pointer<ffi.Void>,
                   ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void sendStickyOrderedBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string, android.os.Bundle bundle)
+  /// from: `public abstract void sendStickyOrderedBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle, android.content.BroadcastReceiver broadcastReceiver, android.os.Handler handler, int i, java.lang.String string, android.os.Bundle bundle)`
   void sendStickyOrderedBroadcastAsUser(
     jni.JObject intent,
     jni.JObject userHandle,
@@ -11926,7 +11926,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void removeStickyBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle)
+  /// from: `public abstract void removeStickyBroadcastAsUser(android.content.Intent intent, android.os.UserHandle userHandle)`
   void removeStickyBroadcastAsUser(
     jni.JObject intent,
     jni.JObject userHandle,
@@ -11958,7 +11958,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract android.content.Intent registerReceiver(android.content.BroadcastReceiver broadcastReceiver, android.content.IntentFilter intentFilter)
+  /// from: `public abstract android.content.Intent registerReceiver(android.content.BroadcastReceiver broadcastReceiver, android.content.IntentFilter intentFilter)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject registerReceiver(
     jni.JObject broadcastReceiver,
@@ -11992,7 +11992,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public abstract android.content.Intent registerReceiver(android.content.BroadcastReceiver broadcastReceiver, android.content.IntentFilter intentFilter, int i)
+  /// from: `public abstract android.content.Intent registerReceiver(android.content.BroadcastReceiver broadcastReceiver, android.content.IntentFilter intentFilter, int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject registerReceiver1(
     jni.JObject broadcastReceiver,
@@ -12034,7 +12034,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract android.content.Intent registerReceiver(android.content.BroadcastReceiver broadcastReceiver, android.content.IntentFilter intentFilter, java.lang.String string, android.os.Handler handler)
+  /// from: `public abstract android.content.Intent registerReceiver(android.content.BroadcastReceiver broadcastReceiver, android.content.IntentFilter intentFilter, java.lang.String string, android.os.Handler handler)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject registerReceiver2(
     jni.JObject broadcastReceiver,
@@ -12080,7 +12080,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               int)>();
 
-  /// from: public abstract android.content.Intent registerReceiver(android.content.BroadcastReceiver broadcastReceiver, android.content.IntentFilter intentFilter, java.lang.String string, android.os.Handler handler, int i)
+  /// from: `public abstract android.content.Intent registerReceiver(android.content.BroadcastReceiver broadcastReceiver, android.content.IntentFilter intentFilter, java.lang.String string, android.os.Handler handler, int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject registerReceiver3(
     jni.JObject broadcastReceiver,
@@ -12116,7 +12116,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void unregisterReceiver(android.content.BroadcastReceiver broadcastReceiver)
+  /// from: `public abstract void unregisterReceiver(android.content.BroadcastReceiver broadcastReceiver)`
   void unregisterReceiver(
     jni.JObject broadcastReceiver,
   ) {
@@ -12143,7 +12143,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract android.content.ComponentName startService(android.content.Intent intent)
+  /// from: `public abstract android.content.ComponentName startService(android.content.Intent intent)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject startService(
     jni.JObject intent,
@@ -12169,7 +12169,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract android.content.ComponentName startForegroundService(android.content.Intent intent)
+  /// from: `public abstract android.content.ComponentName startForegroundService(android.content.Intent intent)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject startForegroundService(
     jni.JObject intent,
@@ -12197,7 +12197,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract boolean stopService(android.content.Intent intent)
+  /// from: `public abstract boolean stopService(android.content.Intent intent)`
   bool stopService(
     jni.JObject intent,
   ) {
@@ -12226,7 +12226,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public abstract boolean bindService(android.content.Intent intent, android.content.ServiceConnection serviceConnection, int i)
+  /// from: `public abstract boolean bindService(android.content.Intent intent, android.content.ServiceConnection serviceConnection, int i)`
   bool bindService(
     jni.JObject intent,
     jni.JObject serviceConnection,
@@ -12261,7 +12261,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean bindService(android.content.Intent intent, android.content.ServiceConnection serviceConnection, android.content.Context$BindServiceFlags bindServiceFlags)
+  /// from: `public boolean bindService(android.content.Intent intent, android.content.ServiceConnection serviceConnection, android.content.Context$BindServiceFlags bindServiceFlags)`
   bool bindService1(
     jni.JObject intent,
     jni.JObject serviceConnection,
@@ -12302,7 +12302,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean bindService(android.content.Intent intent, int i, java.util.concurrent.Executor executor, android.content.ServiceConnection serviceConnection)
+  /// from: `public boolean bindService(android.content.Intent intent, int i, java.util.concurrent.Executor executor, android.content.ServiceConnection serviceConnection)`
   bool bindService2(
     jni.JObject intent,
     int i,
@@ -12345,7 +12345,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean bindService(android.content.Intent intent, android.content.Context$BindServiceFlags bindServiceFlags, java.util.concurrent.Executor executor, android.content.ServiceConnection serviceConnection)
+  /// from: `public boolean bindService(android.content.Intent intent, android.content.Context$BindServiceFlags bindServiceFlags, java.util.concurrent.Executor executor, android.content.ServiceConnection serviceConnection)`
   bool bindService3(
     jni.JObject intent,
     Context_BindServiceFlags bindServiceFlags,
@@ -12390,7 +12390,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean bindIsolatedService(android.content.Intent intent, int i, java.lang.String string, java.util.concurrent.Executor executor, android.content.ServiceConnection serviceConnection)
+  /// from: `public boolean bindIsolatedService(android.content.Intent intent, int i, java.lang.String string, java.util.concurrent.Executor executor, android.content.ServiceConnection serviceConnection)`
   bool bindIsolatedService(
     jni.JObject intent,
     int i,
@@ -12437,7 +12437,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean bindIsolatedService(android.content.Intent intent, android.content.Context$BindServiceFlags bindServiceFlags, java.lang.String string, java.util.concurrent.Executor executor, android.content.ServiceConnection serviceConnection)
+  /// from: `public boolean bindIsolatedService(android.content.Intent intent, android.content.Context$BindServiceFlags bindServiceFlags, java.lang.String string, java.util.concurrent.Executor executor, android.content.ServiceConnection serviceConnection)`
   bool bindIsolatedService1(
     jni.JObject intent,
     Context_BindServiceFlags bindServiceFlags,
@@ -12482,7 +12482,7 @@ class Context extends jni.JObject {
               int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean bindServiceAsUser(android.content.Intent intent, android.content.ServiceConnection serviceConnection, int i, android.os.UserHandle userHandle)
+  /// from: `public boolean bindServiceAsUser(android.content.Intent intent, android.content.ServiceConnection serviceConnection, int i, android.os.UserHandle userHandle)`
   bool bindServiceAsUser(
     jni.JObject intent,
     jni.JObject serviceConnection,
@@ -12525,7 +12525,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public boolean bindServiceAsUser(android.content.Intent intent, android.content.ServiceConnection serviceConnection, android.content.Context$BindServiceFlags bindServiceFlags, android.os.UserHandle userHandle)
+  /// from: `public boolean bindServiceAsUser(android.content.Intent intent, android.content.ServiceConnection serviceConnection, android.content.Context$BindServiceFlags bindServiceFlags, android.os.UserHandle userHandle)`
   bool bindServiceAsUser1(
     jni.JObject intent,
     jni.JObject serviceConnection,
@@ -12558,7 +12558,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, int)>();
 
-  /// from: public void updateServiceGroup(android.content.ServiceConnection serviceConnection, int i, int i1)
+  /// from: `public void updateServiceGroup(android.content.ServiceConnection serviceConnection, int i, int i1)`
   void updateServiceGroup(
     jni.JObject serviceConnection,
     int i,
@@ -12589,7 +12589,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void unbindService(android.content.ServiceConnection serviceConnection)
+  /// from: `public abstract void unbindService(android.content.ServiceConnection serviceConnection)`
   void unbindService(
     jni.JObject serviceConnection,
   ) {
@@ -12622,7 +12622,7 @@ class Context extends jni.JObject {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract boolean startInstrumentation(android.content.ComponentName componentName, java.lang.String string, android.os.Bundle bundle)
+  /// from: `public abstract boolean startInstrumentation(android.content.ComponentName componentName, java.lang.String string, android.os.Bundle bundle)`
   bool startInstrumentation(
     jni.JObject componentName,
     jni.JString string,
@@ -12653,7 +12653,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract java.lang.Object getSystemService(java.lang.String string)
+  /// from: `public abstract java.lang.Object getSystemService(java.lang.String string)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getSystemService(
     jni.JString string,
@@ -12679,7 +12679,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public final T getSystemService(java.lang.Class class)
+  /// from: `public final T getSystemService(java.lang.Class class)`
   /// The returned object must be released after use, by calling the [release] method.
   $T getSystemService1<$T extends jni.JObject>(
     jni.JObject class0, {
@@ -12706,7 +12706,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract java.lang.String getSystemServiceName(java.lang.Class class)
+  /// from: `public abstract java.lang.String getSystemServiceName(java.lang.Class class)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JString getSystemServiceName(
     jni.JObject class0,
@@ -12734,7 +12734,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, int)>();
 
-  /// from: public abstract int checkPermission(java.lang.String string, int i, int i1)
+  /// from: `public abstract int checkPermission(java.lang.String string, int i, int i1)`
   int checkPermission(
     jni.JString string,
     int i,
@@ -12765,7 +12765,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract int checkCallingPermission(java.lang.String string)
+  /// from: `public abstract int checkCallingPermission(java.lang.String string)`
   int checkCallingPermission(
     jni.JString string,
   ) {
@@ -12792,7 +12792,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract int checkCallingOrSelfPermission(java.lang.String string)
+  /// from: `public abstract int checkCallingOrSelfPermission(java.lang.String string)`
   int checkCallingOrSelfPermission(
     jni.JString string,
   ) {
@@ -12819,7 +12819,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract int checkSelfPermission(java.lang.String string)
+  /// from: `public abstract int checkSelfPermission(java.lang.String string)`
   int checkSelfPermission(
     jni.JString string,
   ) {
@@ -12851,7 +12851,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void enforcePermission(java.lang.String string, int i, int i1, java.lang.String string1)
+  /// from: `public abstract void enforcePermission(java.lang.String string, int i, int i1, java.lang.String string1)`
   void enforcePermission(
     jni.JString string,
     int i,
@@ -12887,7 +12887,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void enforceCallingPermission(java.lang.String string, java.lang.String string1)
+  /// from: `public abstract void enforceCallingPermission(java.lang.String string, java.lang.String string1)`
   void enforceCallingPermission(
     jni.JString string,
     jni.JString string1,
@@ -12919,7 +12919,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void enforceCallingOrSelfPermission(java.lang.String string, java.lang.String string1)
+  /// from: `public abstract void enforceCallingOrSelfPermission(java.lang.String string, java.lang.String string1)`
   void enforceCallingOrSelfPermission(
     jni.JString string,
     jni.JString string1,
@@ -12952,7 +12952,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public abstract void grantUriPermission(java.lang.String string, android.net.Uri uri, int i)
+  /// from: `public abstract void grantUriPermission(java.lang.String string, android.net.Uri uri, int i)`
   void grantUriPermission(
     jni.JString string,
     jni.JObject uri,
@@ -12983,7 +12983,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public abstract void revokeUriPermission(android.net.Uri uri, int i)
+  /// from: `public abstract void revokeUriPermission(android.net.Uri uri, int i)`
   void revokeUriPermission(
     jni.JObject uri,
     int i,
@@ -13016,7 +13016,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public abstract void revokeUriPermission(java.lang.String string, android.net.Uri uri, int i)
+  /// from: `public abstract void revokeUriPermission(java.lang.String string, android.net.Uri uri, int i)`
   void revokeUriPermission1(
     jni.JString string,
     jni.JObject uri,
@@ -13052,7 +13052,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, int, int)>();
 
-  /// from: public abstract int checkUriPermission(android.net.Uri uri, int i, int i1, int i2)
+  /// from: `public abstract int checkUriPermission(android.net.Uri uri, int i, int i1, int i2)`
   int checkUriPermission(
     jni.JObject uri,
     int i,
@@ -13090,7 +13090,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, int, int)>();
 
-  /// from: public java.lang.Object[] checkUriPermissions(java.util.List list, int i, int i1, int i2)
+  /// from: `public java.lang.Object[] checkUriPermissions(java.util.List list, int i, int i1, int i2)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JArray<jni.jint> checkUriPermissions(
     jni.JList<jni.JObject> list,
@@ -13124,7 +13124,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public abstract int checkCallingUriPermission(android.net.Uri uri, int i)
+  /// from: `public abstract int checkCallingUriPermission(android.net.Uri uri, int i)`
   int checkCallingUriPermission(
     jni.JObject uri,
     int i,
@@ -13153,7 +13153,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public java.lang.Object[] checkCallingUriPermissions(java.util.List list, int i)
+  /// from: `public java.lang.Object[] checkCallingUriPermissions(java.util.List list, int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JArray<jni.jint> checkCallingUriPermissions(
     jni.JList<jni.JObject> list,
@@ -13183,7 +13183,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public abstract int checkCallingOrSelfUriPermission(android.net.Uri uri, int i)
+  /// from: `public abstract int checkCallingOrSelfUriPermission(android.net.Uri uri, int i)`
   int checkCallingOrSelfUriPermission(
     jni.JObject uri,
     int i,
@@ -13213,7 +13213,7 @@ class Context extends jni.JObject {
               jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
                   ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public java.lang.Object[] checkCallingOrSelfUriPermissions(java.util.List list, int i)
+  /// from: `public java.lang.Object[] checkCallingOrSelfUriPermissions(java.util.List list, int i)`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JArray<jni.jint> checkCallingOrSelfUriPermissions(
     jni.JList<jni.JObject> list,
@@ -13257,7 +13257,7 @@ class Context extends jni.JObject {
               int,
               int)>();
 
-  /// from: public abstract int checkUriPermission(android.net.Uri uri, java.lang.String string, java.lang.String string1, int i, int i1, int i2)
+  /// from: `public abstract int checkUriPermission(android.net.Uri uri, java.lang.String string, java.lang.String string1, int i, int i1, int i2)`
   int checkUriPermission1(
     jni.JObject uri,
     jni.JString string,
@@ -13300,7 +13300,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, int, int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void enforceUriPermission(android.net.Uri uri, int i, int i1, int i2, java.lang.String string)
+  /// from: `public abstract void enforceUriPermission(android.net.Uri uri, int i, int i1, int i2, java.lang.String string)`
   void enforceUriPermission(
     jni.JObject uri,
     int i,
@@ -13339,7 +13339,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void enforceCallingUriPermission(android.net.Uri uri, int i, java.lang.String string)
+  /// from: `public abstract void enforceCallingUriPermission(android.net.Uri uri, int i, java.lang.String string)`
   void enforceCallingUriPermission(
     jni.JObject uri,
     int i,
@@ -13379,7 +13379,7 @@ class Context extends jni.JObject {
                   int,
                   ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void enforceCallingOrSelfUriPermission(android.net.Uri uri, int i, java.lang.String string)
+  /// from: `public abstract void enforceCallingOrSelfUriPermission(android.net.Uri uri, int i, java.lang.String string)`
   void enforceCallingOrSelfUriPermission(
     jni.JObject uri,
     int i,
@@ -13426,7 +13426,7 @@ class Context extends jni.JObject {
               int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract void enforceUriPermission(android.net.Uri uri, java.lang.String string, java.lang.String string1, int i, int i1, int i2, java.lang.String string2)
+  /// from: `public abstract void enforceUriPermission(android.net.Uri uri, java.lang.String string, java.lang.String string1, int i, int i1, int i2, java.lang.String string2)`
   void enforceUriPermission1(
     jni.JObject uri,
     jni.JString string,
@@ -13465,7 +13465,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void revokeSelfPermissionOnKill(java.lang.String string)
+  /// from: `public void revokeSelfPermissionOnKill(java.lang.String string)`
   void revokeSelfPermissionOnKill(
     jni.JString string,
   ) {
@@ -13492,7 +13492,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void revokeSelfPermissionsOnKill(java.util.Collection collection)
+  /// from: `public void revokeSelfPermissionsOnKill(java.util.Collection collection)`
   void revokeSelfPermissionsOnKill(
     jni.JObject collection,
   ) {
@@ -13519,7 +13519,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int)>();
 
-  /// from: public abstract android.content.Context createPackageContext(java.lang.String string, int i)
+  /// from: `public abstract android.content.Context createPackageContext(java.lang.String string, int i)`
   /// The returned object must be released after use, by calling the [release] method.
   Context createPackageContext(
     jni.JString string,
@@ -13549,7 +13549,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract android.content.Context createContextForSplit(java.lang.String string)
+  /// from: `public abstract android.content.Context createContextForSplit(java.lang.String string)`
   /// The returned object must be released after use, by calling the [release] method.
   Context createContextForSplit(
     jni.JString string,
@@ -13577,7 +13577,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract android.content.Context createConfigurationContext(android.content.res.Configuration configuration)
+  /// from: `public abstract android.content.Context createConfigurationContext(android.content.res.Configuration configuration)`
   /// The returned object must be released after use, by calling the [release] method.
   Context createConfigurationContext(
     jni.JObject configuration,
@@ -13605,7 +13605,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public abstract android.content.Context createDisplayContext(android.view.Display display)
+  /// from: `public abstract android.content.Context createDisplayContext(android.view.Display display)`
   /// The returned object must be released after use, by calling the [release] method.
   Context createDisplayContext(
     jni.JObject display,
@@ -13630,7 +13630,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(
               ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int)>();
 
-  /// from: public android.content.Context createDeviceContext(int i)
+  /// from: `public android.content.Context createDeviceContext(int i)`
   /// The returned object must be released after use, by calling the [release] method.
   Context createDeviceContext(
     int i,
@@ -13656,7 +13656,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr, int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public android.content.Context createWindowContext(int i, android.os.Bundle bundle)
+  /// from: `public android.content.Context createWindowContext(int i, android.os.Bundle bundle)`
   /// The returned object must be released after use, by calling the [release] method.
   Context createWindowContext(
     int i,
@@ -13690,7 +13690,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public android.content.Context createWindowContext(android.view.Display display, int i, android.os.Bundle bundle)
+  /// from: `public android.content.Context createWindowContext(android.view.Display display, int i, android.os.Bundle bundle)`
   /// The returned object must be released after use, by calling the [release] method.
   Context createWindowContext1(
     jni.JObject display,
@@ -13722,7 +13722,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public android.content.Context createContext(android.content.ContextParams contextParams)
+  /// from: `public android.content.Context createContext(android.content.ContextParams contextParams)`
   /// The returned object must be released after use, by calling the [release] method.
   Context createContext(
     jni.JObject contextParams,
@@ -13750,7 +13750,7 @@ class Context extends jni.JObject {
           jni.JniResult Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>)>();
 
-  /// from: public android.content.Context createAttributionContext(java.lang.String string)
+  /// from: `public android.content.Context createAttributionContext(java.lang.String string)`
   /// The returned object must be released after use, by calling the [release] method.
   Context createAttributionContext(
     jni.JString string,
@@ -13781,7 +13781,7 @@ class Context extends jni.JObject {
                 jni.JMethodIDPtr,
               )>();
 
-  /// from: public abstract android.content.Context createDeviceProtectedStorageContext()
+  /// from: `public abstract android.content.Context createDeviceProtectedStorageContext()`
   /// The returned object must be released after use, by calling the [release] method.
   Context createDeviceProtectedStorageContext() {
     return _createDeviceProtectedStorageContext(reference.pointer,
@@ -13806,7 +13806,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public android.view.Display getDisplay()
+  /// from: `public android.view.Display getDisplay()`
   /// The returned object must be released after use, by calling the [release] method.
   jni.JObject getDisplay() {
     return _getDisplay(reference.pointer, _id_getDisplay as jni.JMethodIDPtr)
@@ -13830,7 +13830,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public int getDeviceId()
+  /// from: `public int getDeviceId()`
   int getDeviceId() {
     return _getDeviceId(reference.pointer, _id_getDeviceId as jni.JMethodIDPtr)
         .integer;
@@ -13855,7 +13855,7 @@ class Context extends jni.JObject {
           jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>, jni.JMethodIDPtr,
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void registerDeviceIdChangeListener(java.util.concurrent.Executor executor, java.util.function.IntConsumer intConsumer)
+  /// from: `public void registerDeviceIdChangeListener(java.util.concurrent.Executor executor, java.util.function.IntConsumer intConsumer)`
   void registerDeviceIdChangeListener(
     jni.JObject executor,
     jni.JObject intConsumer,
@@ -13885,7 +13885,7 @@ class Context extends jni.JObject {
               jni.JThrowablePtr Function(ffi.Pointer<ffi.Void>,
                   jni.JMethodIDPtr, ffi.Pointer<ffi.Void>)>();
 
-  /// from: public void unregisterDeviceIdChangeListener(java.util.function.IntConsumer intConsumer)
+  /// from: `public void unregisterDeviceIdChangeListener(java.util.function.IntConsumer intConsumer)`
   void unregisterDeviceIdChangeListener(
     jni.JObject intConsumer,
   ) {
@@ -13913,7 +13913,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isRestricted()
+  /// from: `public boolean isRestricted()`
   bool isRestricted() {
     return _isRestricted(
             reference.pointer, _id_isRestricted as jni.JMethodIDPtr)
@@ -13937,7 +13937,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public abstract boolean isDeviceProtectedStorage()
+  /// from: `public abstract boolean isDeviceProtectedStorage()`
   bool isDeviceProtectedStorage() {
     return _isDeviceProtectedStorage(
             reference.pointer, _id_isDeviceProtectedStorage as jni.JMethodIDPtr)
@@ -13961,7 +13961,7 @@ class Context extends jni.JObject {
             jni.JMethodIDPtr,
           )>();
 
-  /// from: public boolean isUiContext()
+  /// from: `public boolean isUiContext()`
   bool isUiContext() {
     return _isUiContext(reference.pointer, _id_isUiContext as jni.JMethodIDPtr)
         .boolean;
