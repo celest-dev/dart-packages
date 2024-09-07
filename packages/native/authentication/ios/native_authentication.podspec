@@ -9,13 +9,14 @@ Wraps ASWebAuthenticationSession for iOS.
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Celest' => 'contact@celest.dev' }
 
-  s.platform = :ios, '13.0'
-  s.swift_version = '5.0'
-  s.dependency 'Flutter'
+  s.swift_version    = '5.0'
+  s.platform         = :ios, '13.0'
+  s.dependency       'Flutter'
 
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
-  s.compiler_flags = ['-fno-objc-arc']
+  s.source_files     = 'Classes/**/*'
+  s.requires_arc     = true
+  s.frameworks       = 'AuthenticationServices', 'UIKit'
 
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 end
