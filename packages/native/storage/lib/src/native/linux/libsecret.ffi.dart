@@ -79,7 +79,7 @@ class Libsecret {
     ffi.Pointer<glib.GHashTable> attributes,
     ffi.Pointer<pkg_ffi.Utf8> label,
     ffi.Pointer<_SecretValue> value,
-    int flags,
+    SecretItemCreateFlags flags,
     ffi.Pointer<glib.GCancellable> cancellable,
     ffi.Pointer<
             ffi.NativeFunction<
@@ -94,7 +94,7 @@ class Libsecret {
       attributes,
       label,
       value,
-      flags,
+      flags.value,
       cancellable,
       callback,
       user_data,
@@ -109,7 +109,7 @@ class Libsecret {
               ffi.Pointer<glib.GHashTable>,
               ffi.Pointer<pkg_ffi.Utf8>,
               ffi.Pointer<_SecretValue>,
-              ffi.Int32,
+              ffi.UnsignedInt,
               ffi.Pointer<glib.GCancellable>,
               ffi.Pointer<
                   ffi.NativeFunction<
@@ -157,7 +157,7 @@ class Libsecret {
     ffi.Pointer<glib.GHashTable> attributes,
     ffi.Pointer<pkg_ffi.Utf8> label,
     ffi.Pointer<_SecretValue> value,
-    int flags,
+    SecretItemCreateFlags flags,
     ffi.Pointer<glib.GCancellable> cancellable,
     ffi.Pointer<ffi.Pointer<glib.GError>> error,
   ) {
@@ -167,7 +167,7 @@ class Libsecret {
       attributes,
       label,
       value,
-      flags,
+      flags.value,
       cancellable,
       error,
     );
@@ -181,7 +181,7 @@ class Libsecret {
                   ffi.Pointer<glib.GHashTable>,
                   ffi.Pointer<pkg_ffi.Utf8>,
                   ffi.Pointer<_SecretValue>,
-                  ffi.Int32,
+                  ffi.UnsignedInt,
                   ffi.Pointer<glib.GCancellable>,
                   ffi.Pointer<ffi.Pointer<glib.GError>>)>>(
       'secret_item_create_sync');
@@ -281,17 +281,18 @@ class Libsecret {
       int Function(ffi.Pointer<SecretItem>, ffi.Pointer<glib.GCancellable>,
           ffi.Pointer<ffi.Pointer<glib.GError>>)>();
 
-  int secret_item_get_flags(
+  SecretItemFlags secret_item_get_flags(
     ffi.Pointer<SecretItem> self,
   ) {
-    return _secret_item_get_flags(
+    return SecretItemFlags.fromValue(_secret_item_get_flags(
       self,
-    );
+    ));
   }
 
-  late final _secret_item_get_flagsPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<SecretItem>)>>(
-          'secret_item_get_flags');
+  late final _secret_item_get_flagsPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.UnsignedInt Function(ffi.Pointer<SecretItem>)>>(
+      'secret_item_get_flags');
   late final _secret_item_get_flags = _secret_item_get_flagsPtr
       .asFunction<int Function(ffi.Pointer<SecretItem>)>();
 
@@ -861,9 +862,9 @@ class Libsecret {
   }
 
   late final _secret_item_get_createdPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.UnsignedLong Function(ffi.Pointer<SecretItem>)>>(
-      'secret_item_get_created');
+      ffi.NativeFunction<
+          ffi.UnsignedLongLong Function(
+              ffi.Pointer<SecretItem>)>>('secret_item_get_created');
   late final _secret_item_get_created = _secret_item_get_createdPtr
       .asFunction<int Function(ffi.Pointer<SecretItem>)>();
 
@@ -876,9 +877,9 @@ class Libsecret {
   }
 
   late final _secret_item_get_modifiedPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.UnsignedLong Function(ffi.Pointer<SecretItem>)>>(
-      'secret_item_get_modified');
+      ffi.NativeFunction<
+          ffi.UnsignedLongLong Function(
+              ffi.Pointer<SecretItem>)>>('secret_item_get_modified');
   late final _secret_item_get_modified = _secret_item_get_modifiedPtr
       .asFunction<int Function(ffi.Pointer<SecretItem>)>();
 
@@ -987,14 +988,14 @@ class Libsecret {
   ffi.Pointer<glib.GList> secret_password_searchv_sync(
     ffi.Pointer<SecretSchema> schema,
     ffi.Pointer<glib.GHashTable> attributes,
-    int flags,
+    SecretSearchFlags flags,
     ffi.Pointer<glib.GCancellable> cancellable,
     ffi.Pointer<ffi.Pointer<glib.GError>> error,
   ) {
     return _secret_password_searchv_sync(
       schema,
       attributes,
-      flags,
+      flags.value,
       cancellable,
       error,
     );
@@ -1005,7 +1006,7 @@ class Libsecret {
               ffi.Pointer<glib.GList> Function(
                   ffi.Pointer<SecretSchema>,
                   ffi.Pointer<glib.GHashTable>,
-                  ffi.Int32,
+                  ffi.UnsignedInt,
                   ffi.Pointer<glib.GCancellable>,
                   ffi.Pointer<ffi.Pointer<glib.GError>>)>>(
       'secret_password_searchv_sync');
@@ -1033,29 +1034,54 @@ class Libsecret {
       .asFunction<void Function(ffi.Pointer<pkg_ffi.Utf8>)>();
 }
 
-abstract class SecretSchemaAttributeType {
-  static const int SECRET_SCHEMA_ATTRIBUTE_STRING = 0;
-  static const int SECRET_SCHEMA_ATTRIBUTE_INTEGER = 1;
-  static const int SECRET_SCHEMA_ATTRIBUTE_BOOLEAN = 2;
+enum SecretSchemaAttributeType {
+  SECRET_SCHEMA_ATTRIBUTE_STRING(0),
+  SECRET_SCHEMA_ATTRIBUTE_INTEGER(1),
+  SECRET_SCHEMA_ATTRIBUTE_BOOLEAN(2);
+
+  final int value;
+  const SecretSchemaAttributeType(this.value);
+
+  static SecretSchemaAttributeType fromValue(int value) => switch (value) {
+        0 => SECRET_SCHEMA_ATTRIBUTE_STRING,
+        1 => SECRET_SCHEMA_ATTRIBUTE_INTEGER,
+        2 => SECRET_SCHEMA_ATTRIBUTE_BOOLEAN,
+        _ => throw ArgumentError(
+            "Unknown value for SecretSchemaAttributeType: $value"),
+      };
 }
 
 final class SecretSchemaAttribute extends ffi.Struct {
   external ffi.Pointer<pkg_ffi.Utf8> name;
 
-  @ffi.Int32()
-  external int type;
+  @ffi.UnsignedInt()
+  external int typeAsInt;
+
+  SecretSchemaAttributeType get type =>
+      SecretSchemaAttributeType.fromValue(typeAsInt);
 }
 
-abstract class SecretSchemaFlags {
-  static const int SECRET_SCHEMA_NONE = 0;
-  static const int SECRET_SCHEMA_DONT_MATCH_NAME = 2;
+enum SecretSchemaFlags {
+  SECRET_SCHEMA_NONE(0),
+  SECRET_SCHEMA_DONT_MATCH_NAME(2);
+
+  final int value;
+  const SecretSchemaFlags(this.value);
+
+  static SecretSchemaFlags fromValue(int value) => switch (value) {
+        0 => SECRET_SCHEMA_NONE,
+        2 => SECRET_SCHEMA_DONT_MATCH_NAME,
+        _ => throw ArgumentError("Unknown value for SecretSchemaFlags: $value"),
+      };
 }
 
 final class SecretSchema extends ffi.Struct {
   external ffi.Pointer<pkg_ffi.Utf8> name;
 
-  @ffi.Int32()
-  external int flags;
+  @ffi.UnsignedInt()
+  external int flagsAsInt;
+
+  SecretSchemaFlags get flags => SecretSchemaFlags.fromValue(flagsAsInt);
 
   @ffi.Array.multi([32])
   external ffi.Array<SecretSchemaAttribute> attributes;
@@ -1088,12 +1114,6 @@ final class _SecretItem extends ffi.Struct {
   external ffi.Pointer<_SecretItemPrivate> pv;
 }
 
-/// GDBusProxy:
-///
-/// The #GDBusProxy structure contains only private data and
-/// should only be accessed using the provided API.
-///
-/// Since: 2.26
 final class _GDBusProxy extends ffi.Struct {
   /// < private >
   external _GObject parent_instance;
@@ -1101,20 +1121,6 @@ final class _GDBusProxy extends ffi.Struct {
   external ffi.Pointer<_GDBusProxyPrivate> priv;
 }
 
-/// GObject:
-///
-/// The base object type.
-///
-/// All the fields in the `GObject` structure are private to the implementation
-/// and should never be accessed directly.
-///
-/// Since GLib 2.72, all #GObjects are guaranteed to be aligned to at least the
-/// alignment of the largest basic GLib type (typically this is #guint64 or
-/// #gdouble). If you need larger alignment for an element in a #GObject, you
-/// should allocate it on the heap (aligned), or arrange for your #GObject to be
-/// appropriately padded. This guarantee applies to the #GObject (or derived)
-/// struct, the #GObjectClass (or derived) struct, and any private data allocated
-/// by G_ADD_PRIVATE().
 final class _GObject extends ffi.Struct {
   external _GTypeInstance g_type_instance;
 
@@ -1162,16 +1168,35 @@ final class _SecretCollectionPrivate extends ffi.Opaque {}
 
 final class _SecretValue extends ffi.Opaque {}
 
-abstract class SecretItemCreateFlags {
-  static const int SECRET_ITEM_CREATE_NONE = 0;
-  static const int SECRET_ITEM_CREATE_REPLACE = 2;
+enum SecretItemCreateFlags {
+  SECRET_ITEM_CREATE_NONE(0),
+  SECRET_ITEM_CREATE_REPLACE(2);
+
+  final int value;
+  const SecretItemCreateFlags(this.value);
+
+  static SecretItemCreateFlags fromValue(int value) => switch (value) {
+        0 => SECRET_ITEM_CREATE_NONE,
+        2 => SECRET_ITEM_CREATE_REPLACE,
+        _ => throw ArgumentError(
+            "Unknown value for SecretItemCreateFlags: $value"),
+      };
 }
 
 final class _GAsyncResult extends ffi.Opaque {}
 
-abstract class SecretItemFlags {
-  static const int SECRET_ITEM_NONE = 0;
-  static const int SECRET_ITEM_LOAD_SECRET = 2;
+enum SecretItemFlags {
+  SECRET_ITEM_NONE(0),
+  SECRET_ITEM_LOAD_SECRET(2);
+
+  final int value;
+  const SecretItemFlags(this.value);
+
+  static SecretItemFlags fromValue(int value) => switch (value) {
+        0 => SECRET_ITEM_NONE,
+        2 => SECRET_ITEM_LOAD_SECRET,
+        _ => throw ArgumentError("Unknown value for SecretItemFlags: $value"),
+      };
 }
 
 final class _SecretService extends ffi.Struct {
@@ -1183,11 +1208,22 @@ final class _SecretService extends ffi.Struct {
 
 final class _SecretServicePrivate extends ffi.Opaque {}
 
-abstract class SecretSearchFlags {
-  static const int SECRET_SEARCH_NONE = 0;
-  static const int SECRET_SEARCH_ALL = 2;
-  static const int SECRET_SEARCH_UNLOCK = 4;
-  static const int SECRET_SEARCH_LOAD_SECRETS = 8;
+enum SecretSearchFlags {
+  SECRET_SEARCH_NONE(0),
+  SECRET_SEARCH_ALL(2),
+  SECRET_SEARCH_UNLOCK(4),
+  SECRET_SEARCH_LOAD_SECRETS(8);
+
+  final int value;
+  const SecretSearchFlags(this.value);
+
+  static SecretSearchFlags fromValue(int value) => switch (value) {
+        0 => SECRET_SEARCH_NONE,
+        2 => SECRET_SEARCH_ALL,
+        4 => SECRET_SEARCH_UNLOCK,
+        8 => SECRET_SEARCH_LOAD_SECRETS,
+        _ => throw ArgumentError("Unknown value for SecretSearchFlags: $value"),
+      };
 }
 
 const String SECRET_COLLECTION_DEFAULT = 'default';
