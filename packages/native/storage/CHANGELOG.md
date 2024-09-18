@@ -1,3 +1,7 @@
+## 0.2.2
+
+- chore: Bump dependencies
+
 ## 0.2.1
 
 - fix: Workaround for `package:web` differences pre- and post-1.0.0
