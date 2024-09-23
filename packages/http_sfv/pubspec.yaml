@@ -1,5 +1,6 @@
 name: http_sfv
 description: Dart implementation of Structured Field Values for HTTP (RFC8941)
+repository: https://github.com/celest-dev/dart-packages/tree/main/packages/http_sfv
 version: 0.1.0
 
 environment:
