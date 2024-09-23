@@ -1,0 +1,52 @@
+name: cloud_http
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/cloud_http.yaml"
+      - "packages/cloud_http/**"
+
+# Prevent duplicate runs due to Graphite
+# https://graphite.dev/docs/troubleshooting#why-are-my-actions-running-twice
+concurrency:
+  group: ${{ github.repository }}-${{ github.workflow }}-${{ github.ref }}-${{ github.ref == 'refs/heads/main' && github.sha || ''}}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    strategy:
+      fail-fast: true
+      matrix:
+        sdk:
+          - stable
+          - "3.3"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # 4.1.7
+        with:
+          submodules: recursive
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672 # 1.6.5
+        with:
+          sdk: ${{ matrix.sdk }}
+      - name: Create override
+        working-directory: packages/cloud_http
+        run: |
+          cat <<EOF > pubspec_overrides.yaml
+          dependency_overrides:
+            http_sfv:
+              path: ../http_sfv
+          EOF
+      - name: Get Packages
+        working-directory: packages/cloud_http
+        run: dart pub get
+      - name: Analyze
+        working-directory: packages/cloud_http
+        run: dart analyze
+      - name: Format
+        working-directory: packages/cloud_http
+        run: dart format --set-exit-if-changed .
+      - name: Test
+        working-directory: packages/cloud_http
+        run: dart test
