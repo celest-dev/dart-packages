@@ -1,5 +1,6 @@
 name: cloud_http
 description: Utilities for running Dart server applications in cloud environments.
+repository: https://github.com/celest-dev/dart-packages/tree/main/packages/cloud_http
 version: 0.1.0
 
 environment:
