@@ -46,13 +46,15 @@ final class MyClass {
   V encodeWith<V>(Encoder<V> protocol) => protocol.encode(this, as: self);
 }
 
+// TODO(dnys1): https://github.com/dart-lang/sdk/issues/55573
+const config = {
+  MyClass.self: CoderConfig<MyClass>(
+    encode: MyClass.encode,
+    decode: MyClass.decode,
+  ),
+};
 final coding = GlobalCoder(
-  staticConfig: const {
-    MyClass.self: CoderConfig<MyClass>(
-      encode: MyClass.encode,
-      decode: MyClass.decode,
-    ),
-  },
+  staticConfig: config,
 );
 
 void main() {
