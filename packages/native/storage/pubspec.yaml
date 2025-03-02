@@ -4,8 +4,9 @@ version: 0.2.2
 repository: https://github.com/celest-dev/dart-packages/tree/main/packages/native/storage
 
 environment:
-  sdk: ^3.3.0
-  flutter: ">=3.19.0"
+  sdk: ^3.6.0
+  flutter: ">=3.27.0"
+resolution: workspace
 
 # Explicitly declare platform support to help `pana`
 platforms:

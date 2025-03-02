@@ -1,0 +1,12 @@
+name: _
+publish_to: none
+environment:
+  sdk: ^3.6.0
+workspace:
+  - packages/cloud_http
+  - packages/http_sfv
+  - packages/libcoder
+  - packages/native/authentication
+  - packages/native/authentication/example
+  - packages/native/storage
+  - packages/native/storage/example

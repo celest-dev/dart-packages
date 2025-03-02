@@ -18,7 +18,7 @@ jobs:
       matrix:
         sdk:
           - stable
-          - "3.3"
+          - "3.6"
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -30,14 +30,6 @@ jobs:
         uses: dart-lang/setup-dart@e630b99d28a3b71860378cafdc2a067c71107f94 # 1.7.0
         with:
           sdk: ${{ matrix.sdk }}
-      - name: Create override
-        working-directory: packages/cloud_http
-        run: |
-          cat <<EOF > pubspec_overrides.yaml
-          dependency_overrides:
-            http_sfv:
-              path: ../http_sfv
-          EOF
       - name: Get Packages
         working-directory: packages/cloud_http
         run: dart pub get
