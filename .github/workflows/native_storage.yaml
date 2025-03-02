@@ -52,9 +52,9 @@ jobs:
         run: flutter pub get
       - name: Setup iOS Simulator
         run: |
-          RUNTIME=$(xcrun simctl list runtimes | grep 'iOS 17' | tail -n 1 | cut -d' ' -f 7)
+          RUNTIME=$(xcrun simctl list runtimes | grep 'iOS 18' | tail -n 1 | cut -d' ' -f 7)
           echo "Using runtime: $RUNTIME"
-          xcrun simctl create ios 'iPhone 15 Pro Max' $RUNTIME
+          xcrun simctl create ios 'iPhone 16 Pro Max' $RUNTIME
           echo "Booting simulator"
           xcrun simctl boot ios
           echo "Booted simulator"
@@ -65,9 +65,7 @@ jobs:
         working-directory: packages/native/storage/example
         run: flutter test -d macos integration_test/storage_test.dart
   test_android:
-    runs-on:
-      group: public
-      labels: linux
+    runs-on: ubuntu-large
     timeout-minutes: 15
     steps:
       - name: Git Checkout
