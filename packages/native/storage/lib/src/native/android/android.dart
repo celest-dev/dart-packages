@@ -10,26 +10,25 @@ final class AndroidCommon {
   late final Activity _mainActivity =
       Activity.fromReference(Jni.getCurrentActivity());
   late final Context _mainActivityContext =
+      // ignore: invalid_use_of_internal_member
       Context.fromReference(_mainActivity.reference);
 
   late final String packageName =
-      _mainActivityContext.getPackageName().toDartString();
+      _mainActivityContext.getPackageName()!.toDartString();
 
   NativeLocalStorage localStorage(String namespace, String? scope) {
-    scope ??= ''; // Can't pass `null`
-    return NativeLocalStorage.new1(
+    return NativeLocalStorage(
       _mainActivityContext,
       namespace.toJString(),
-      scope.toJString(),
+      scope?.toJString(),
     );
   }
 
   NativeSecureStorage secureStorage(String namespace, String? scope) {
-    scope ??= ''; // Can't pass `null`
-    return NativeSecureStorage.new1(
+    return NativeSecureStorage(
       _mainActivityContext,
       namespace.toJString(),
-      scope.toJString(),
+      scope?.toJString(),
     );
   }
 }

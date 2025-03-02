@@ -14,11 +14,11 @@ final class LocalStorageWindows extends NativeLocalStoragePlatform
   final String? namespaceOverride;
 
   @override
-  String? read(String key) => registry.getValueAsString(key);
+  String? read(String key) => registry.getStringValue(key);
 
   @override
   String write(String key, String value) {
-    registry.createValue(RegistryValue(key, RegistryValueType.string, value));
+    registry.createValue(RegistryValue.string(key, value));
     return value;
   }
 }
