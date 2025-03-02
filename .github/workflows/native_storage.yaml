@@ -65,9 +65,7 @@ jobs:
         working-directory: packages/native/storage/example
         run: flutter test -d macos integration_test/storage_test.dart
   test_android:
-    runs-on:
-      group: public
-      labels: linux
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 15
     steps:
       - name: Git Checkout
@@ -90,7 +88,7 @@ jobs:
           # Matches `package:jni` compileSdkVersion
           # https://github.com/dart-lang/native/blob/001910c9f40d637cb25c19bb500fb89cebdf7450/pkgs/jni/android/build.gradle#L57C23-L57C25
           api-level: 31
-          arch: x86_64
+          arch: arm64-v8a
           script: cd packages/native/storage/example && flutter test -d emulator integration_test/storage_test.dart
       - name: Test (API 21)
         uses: ReactiveCircus/android-emulator-runner@62dbb605bba737720e10b196cb4220d374026a6d # 2.33.0
@@ -98,7 +96,7 @@ jobs:
           # Minimum supported API level
           # Should match build.gradle: https://github.com/celest-dev/celest/blob/main/packages/native/storage/android/build.gradle#L49
           api-level: 21
-          arch: x86_64
+          arch: arm64-v8a
           script: cd packages/native/storage/example && flutter test -d emulator integration_test/storage_test.dart
   test_linux:
     runs-on: ubuntu-latest
