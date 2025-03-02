@@ -8,6 +8,9 @@ flutter pub get
 flutter build apk
 popd
 
+echo "Generating JNI bindings..."
+dart run jnigen --config=jnigen.yaml
+
 echo "Generating FFI bindings..."
 dart run ffigen --config=ffigen.core_foundation.yaml
 dart run ffigen --config=ffigen.security.yaml
@@ -20,6 +23,3 @@ else
     LIBSECRET_OPTS=$(pkg-config --cflags-only-I libsecret-1)
     dart run ffigen --config=ffigen.libsecret.yaml --compiler-opts="$LIBSECRET_OPTS"
 fi
-
-echo "Generating JNI bindings..."
-dart run jnigen --config=jnigen.yaml

@@ -22,19 +22,13 @@ final class LocalStoragePlatformAndroid extends NativeLocalStoragePlatform {
   @override
   String? delete(String key) {
     final value = _storage.delete(key.toJString());
-    if (value.isNull) {
-      return null;
-    }
-    return value.toDartString();
+    return value?.toDartString();
   }
 
   @override
   String? read(String key) {
     final value = _storage.read(key.toJString());
-    if (value.isNull) {
-      return null;
-    }
-    return value.toDartString();
+    return value?.toDartString();
   }
 
   @override

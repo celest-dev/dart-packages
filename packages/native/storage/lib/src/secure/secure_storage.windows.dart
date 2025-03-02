@@ -38,9 +38,7 @@ final class SecureStorageWindows extends NativeSecureStoragePlatform
   String write(String key, String value) {
     return using((arena) {
       final encrypted = _encrypt(value, arena);
-      registry.createValue(
-        RegistryValue(key, RegistryValueType.string, encrypted),
-      );
+      registry.createValue(RegistryValue.string(key, encrypted));
       return value;
     });
   }
@@ -62,7 +60,7 @@ final class SecureStorageWindows extends NativeSecureStoragePlatform
       0, // default flag
       encryptedPtr,
     );
-    if (GetLastError() case final hr && != WIN32_ERROR.ERROR_SUCCESS) {
+    if (GetLastError() case final hr && != ERROR_SUCCESS) {
       throw NativeStorageException(_windowsException(hr).toString());
     }
     final encryptedBlob = encryptedPtr.ref;
@@ -88,7 +86,7 @@ final class SecureStorageWindows extends NativeSecureStoragePlatform
       0, // default flag
       unencryptedPtr,
     );
-    if (GetLastError() case final hr && != WIN32_ERROR.ERROR_SUCCESS) {
+    if (GetLastError() case final hr && != ERROR_SUCCESS) {
       throw NativeStorageException(_windowsException(hr).toString());
     }
     final unencryptedDataBlob = unencryptedPtr.ref;

@@ -2494,13 +2494,61 @@ external int CFStringGetMostCompatibleMacStringEncoding(
   int encoding,
 );
 
+/// from <malloc/malloc.h>
+typedef CFAllocatorTypeID = ffi.UnsignedLongLong;
+typedef DartCFAllocatorTypeID = int;
+typedef CFTypeID = ffi.UnsignedLong;
+typedef DartCFTypeID = int;
+typedef CFOptionFlags = ffi.UnsignedLong;
+typedef DartCFOptionFlags = int;
+typedef CFHashCode = ffi.UnsignedLong;
+typedef DartCFHashCode = int;
 typedef CFIndex = ffi.Long;
 typedef DartCFIndex = int;
+
+/// Base "type" of all "CF objects", and polymorphic functions on them
+typedef CFTypeRef = ffi.Pointer<ffi.Void>;
+
+final class CFString extends ffi.Opaque {}
+
+typedef CFStringRef = ffi.Pointer<CFString>;
+typedef CFMutableStringRef = ffi.Pointer<CFString>;
+
+/// Type to mean any instance of a property list type;
+/// currently, CFString, CFData, CFNumber, CFBoolean, CFDate,
+/// CFArray, and CFDictionary.
+typedef CFPropertyListRef = CFTypeRef;
+
+/// Values returned from comparison functions
+typedef CFComparisonResult = CFIndex;
+typedef CFComparatorFunctionFunction = CFComparisonResult Function(
+    ffi.Pointer<ffi.Void> val1,
+    ffi.Pointer<ffi.Void> val2,
+    ffi.Pointer<ffi.Void> context);
+typedef DartCFComparatorFunctionFunction = DartCFIndex Function(
+    ffi.Pointer<ffi.Void> val1,
+    ffi.Pointer<ffi.Void> val2,
+    ffi.Pointer<ffi.Void> context);
+
+/// A standard comparison function
+typedef CFComparatorFunction
+    = ffi.Pointer<ffi.NativeFunction<CFComparatorFunctionFunction>>;
+
+/// Range type
+final class CFRange extends ffi.Struct {
+  @CFIndex()
+  external int location;
+
+  @CFIndex()
+  external int length;
+}
+
+final class __CFNull extends ffi.Opaque {}
 
 /// Null representant
 typedef CFNullRef = ffi.Pointer<__CFNull>;
 
-final class __CFNull extends ffi.Opaque {}
+final class __CFAllocator extends ffi.Opaque {}
 
 /// Allocator API
 ///
@@ -2509,29 +2557,54 @@ final class __CFNull extends ffi.Opaque {}
 /// or the return value from CFAllocatorGetDefault().  This assures that you will use
 /// the allocator in effect at that time.
 typedef CFAllocatorRef = ffi.Pointer<__CFAllocator>;
-
-final class __CFAllocator extends ffi.Opaque {}
-
-typedef CFTypeID = ffi.UnsignedLong;
-typedef DartCFTypeID = int;
-
-/// Base "type" of all "CF objects", and polymorphic functions on them
-typedef CFTypeRef = ffi.Pointer<ffi.Void>;
-
-final class CFDictionaryKeyCallBacks extends ffi.Struct {
-  @CFIndex()
-  external int version;
-
-  external CFDictionaryRetainCallBack retain;
-
-  external CFDictionaryReleaseCallBack release;
-
-  external CFDictionaryCopyDescriptionCallBack copyDescription;
-
-  external CFDictionaryEqualCallBack equal;
-
-  external CFDictionaryHashCallBack hash;
-}
+typedef CFAllocatorRetainCallBackFunction = ffi.Pointer<ffi.Void> Function(
+    ffi.Pointer<ffi.Void> info);
+typedef CFAllocatorRetainCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFAllocatorRetainCallBackFunction>>;
+typedef CFAllocatorReleaseCallBackFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Void> info);
+typedef DartCFAllocatorReleaseCallBackFunction = void Function(
+    ffi.Pointer<ffi.Void> info);
+typedef CFAllocatorReleaseCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFAllocatorReleaseCallBackFunction>>;
+typedef CFAllocatorCopyDescriptionCallBackFunction = CFStringRef Function(
+    ffi.Pointer<ffi.Void> info);
+typedef CFAllocatorCopyDescriptionCallBack = ffi
+    .Pointer<ffi.NativeFunction<CFAllocatorCopyDescriptionCallBackFunction>>;
+typedef CFAllocatorAllocateCallBackFunction = ffi.Pointer<ffi.Void> Function(
+    CFIndex allocSize, CFOptionFlags hint, ffi.Pointer<ffi.Void> info);
+typedef DartCFAllocatorAllocateCallBackFunction
+    = ffi.Pointer<ffi.Void> Function(DartCFIndex allocSize,
+        DartCFOptionFlags hint, ffi.Pointer<ffi.Void> info);
+typedef CFAllocatorAllocateCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFAllocatorAllocateCallBackFunction>>;
+typedef CFAllocatorReallocateCallBackFunction = ffi.Pointer<ffi.Void> Function(
+    ffi.Pointer<ffi.Void> ptr,
+    CFIndex newsize,
+    CFOptionFlags hint,
+    ffi.Pointer<ffi.Void> info);
+typedef DartCFAllocatorReallocateCallBackFunction
+    = ffi.Pointer<ffi.Void> Function(
+        ffi.Pointer<ffi.Void> ptr,
+        DartCFIndex newsize,
+        DartCFOptionFlags hint,
+        ffi.Pointer<ffi.Void> info);
+typedef CFAllocatorReallocateCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFAllocatorReallocateCallBackFunction>>;
+typedef CFAllocatorDeallocateCallBackFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Void> ptr, ffi.Pointer<ffi.Void> info);
+typedef DartCFAllocatorDeallocateCallBackFunction = void Function(
+    ffi.Pointer<ffi.Void> ptr, ffi.Pointer<ffi.Void> info);
+typedef CFAllocatorDeallocateCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFAllocatorDeallocateCallBackFunction>>;
+typedef CFAllocatorPreferredSizeCallBackFunction = CFIndex Function(
+    CFIndex size, CFOptionFlags hint, ffi.Pointer<ffi.Void> info);
+typedef DartCFAllocatorPreferredSizeCallBackFunction = DartCFIndex Function(
+    DartCFIndex size, DartCFOptionFlags hint, ffi.Pointer<ffi.Void> info);
+typedef CFAllocatorPreferredSizeCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFAllocatorPreferredSizeCallBackFunction>>;
+typedef CFDictionaryRetainCallBackFunction = ffi.Pointer<ffi.Void> Function(
+    CFAllocatorRef allocator, ffi.Pointer<ffi.Void> value);
 
 /// !
 /// @typedef CFDictionaryKeyCallBacks
@@ -2559,36 +2632,43 @@ final class CFDictionaryKeyCallBacks extends ffi.Struct {
 /// are used to access, add, or remove values in the dictionary.
 typedef CFDictionaryRetainCallBack
     = ffi.Pointer<ffi.NativeFunction<CFDictionaryRetainCallBackFunction>>;
-typedef CFDictionaryRetainCallBackFunction = ffi.Pointer<ffi.Void> Function(
-    CFAllocatorRef allocator, ffi.Pointer<ffi.Void> value);
-typedef CFDictionaryReleaseCallBack
-    = ffi.Pointer<ffi.NativeFunction<CFDictionaryReleaseCallBackFunction>>;
 typedef CFDictionaryReleaseCallBackFunction = ffi.Void Function(
     CFAllocatorRef allocator, ffi.Pointer<ffi.Void> value);
 typedef DartCFDictionaryReleaseCallBackFunction = void Function(
     CFAllocatorRef allocator, ffi.Pointer<ffi.Void> value);
-typedef CFDictionaryCopyDescriptionCallBack = ffi
-    .Pointer<ffi.NativeFunction<CFDictionaryCopyDescriptionCallBackFunction>>;
+typedef CFDictionaryReleaseCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFDictionaryReleaseCallBackFunction>>;
 typedef CFDictionaryCopyDescriptionCallBackFunction = CFStringRef Function(
     ffi.Pointer<ffi.Void> value);
-typedef CFStringRef = ffi.Pointer<CFString>;
-
-final class CFString extends ffi.Opaque {}
-
-typedef CFDictionaryEqualCallBack
-    = ffi.Pointer<ffi.NativeFunction<CFDictionaryEqualCallBackFunction>>;
+typedef CFDictionaryCopyDescriptionCallBack = ffi
+    .Pointer<ffi.NativeFunction<CFDictionaryCopyDescriptionCallBackFunction>>;
 typedef CFDictionaryEqualCallBackFunction = ffi.UnsignedChar Function(
     ffi.Pointer<ffi.Void> value1, ffi.Pointer<ffi.Void> value2);
 typedef DartCFDictionaryEqualCallBackFunction = int Function(
     ffi.Pointer<ffi.Void> value1, ffi.Pointer<ffi.Void> value2);
-typedef CFDictionaryHashCallBack
-    = ffi.Pointer<ffi.NativeFunction<CFDictionaryHashCallBackFunction>>;
+typedef CFDictionaryEqualCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFDictionaryEqualCallBackFunction>>;
 typedef CFDictionaryHashCallBackFunction = CFHashCode Function(
     ffi.Pointer<ffi.Void> value);
 typedef DartCFDictionaryHashCallBackFunction = DartCFHashCode Function(
     ffi.Pointer<ffi.Void> value);
-typedef CFHashCode = ffi.UnsignedLong;
-typedef DartCFHashCode = int;
+typedef CFDictionaryHashCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFDictionaryHashCallBackFunction>>;
+
+final class CFDictionaryKeyCallBacks extends ffi.Struct {
+  @CFIndex()
+  external int version;
+
+  external CFDictionaryRetainCallBack retain;
+
+  external CFDictionaryReleaseCallBack release;
+
+  external CFDictionaryCopyDescriptionCallBack copyDescription;
+
+  external CFDictionaryEqualCallBack equal;
+
+  external CFDictionaryHashCallBack hash;
+}
 
 /// !
 /// @typedef CFDictionaryValueCallBacks
@@ -2625,17 +2705,14 @@ final class CFDictionaryValueCallBacks extends ffi.Struct {
   external CFDictionaryEqualCallBack equal;
 }
 
-/// !
-/// @typedef CFDictionaryRef
-/// This is the type of a reference to immutable CFDictionarys.
-typedef CFDictionaryRef = ffi.Pointer<CFDictionary>;
-
-final class CFDictionary extends ffi.Opaque {}
-
-/// !
-/// @typedef CFMutableDictionaryRef
-/// This is the type of a reference to mutable CFDictionarys.
-typedef CFMutableDictionaryRef = ffi.Pointer<CFDictionary>;
+typedef CFDictionaryApplierFunctionFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Void> key,
+    ffi.Pointer<ffi.Void> value,
+    ffi.Pointer<ffi.Void> context);
+typedef DartCFDictionaryApplierFunctionFunction = void Function(
+    ffi.Pointer<ffi.Void> key,
+    ffi.Pointer<ffi.Void> value,
+    ffi.Pointer<ffi.Void> context);
 
 /// !
 /// @typedef CFDictionaryApplierFunction
@@ -2647,27 +2724,20 @@ typedef CFMutableDictionaryRef = ffi.Pointer<CFDictionary>;
 /// function.
 typedef CFDictionaryApplierFunction
     = ffi.Pointer<ffi.NativeFunction<CFDictionaryApplierFunctionFunction>>;
-typedef CFDictionaryApplierFunctionFunction = ffi.Void Function(
-    ffi.Pointer<ffi.Void> key,
-    ffi.Pointer<ffi.Void> value,
-    ffi.Pointer<ffi.Void> context);
-typedef DartCFDictionaryApplierFunctionFunction = void Function(
-    ffi.Pointer<ffi.Void> key,
-    ffi.Pointer<ffi.Void> value,
-    ffi.Pointer<ffi.Void> context);
 
-final class CFArrayCallBacks extends ffi.Struct {
-  @CFIndex()
-  external int version;
+final class CFDictionary extends ffi.Opaque {}
 
-  external CFArrayRetainCallBack retain;
+/// !
+/// @typedef CFDictionaryRef
+/// This is the type of a reference to immutable CFDictionarys.
+typedef CFDictionaryRef = ffi.Pointer<CFDictionary>;
 
-  external CFArrayReleaseCallBack release;
-
-  external CFArrayCopyDescriptionCallBack copyDescription;
-
-  external CFArrayEqualCallBack equal;
-}
+/// !
+/// @typedef CFMutableDictionaryRef
+/// This is the type of a reference to mutable CFDictionarys.
+typedef CFMutableDictionaryRef = ffi.Pointer<CFDictionary>;
+typedef CFArrayRetainCallBackFunction = ffi.Pointer<ffi.Void> Function(
+    CFAllocatorRef allocator, ffi.Pointer<ffi.Void> value);
 
 /// !
 /// @typedef CFArrayCallBacks
@@ -2692,45 +2762,40 @@ final class CFArrayCallBacks extends ffi.Struct {
 /// equality for some operations.
 typedef CFArrayRetainCallBack
     = ffi.Pointer<ffi.NativeFunction<CFArrayRetainCallBackFunction>>;
-typedef CFArrayRetainCallBackFunction = ffi.Pointer<ffi.Void> Function(
-    CFAllocatorRef allocator, ffi.Pointer<ffi.Void> value);
-typedef CFArrayReleaseCallBack
-    = ffi.Pointer<ffi.NativeFunction<CFArrayReleaseCallBackFunction>>;
 typedef CFArrayReleaseCallBackFunction = ffi.Void Function(
     CFAllocatorRef allocator, ffi.Pointer<ffi.Void> value);
 typedef DartCFArrayReleaseCallBackFunction = void Function(
     CFAllocatorRef allocator, ffi.Pointer<ffi.Void> value);
-typedef CFArrayCopyDescriptionCallBack
-    = ffi.Pointer<ffi.NativeFunction<CFArrayCopyDescriptionCallBackFunction>>;
+typedef CFArrayReleaseCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFArrayReleaseCallBackFunction>>;
 typedef CFArrayCopyDescriptionCallBackFunction = CFStringRef Function(
     ffi.Pointer<ffi.Void> value);
-typedef CFArrayEqualCallBack
-    = ffi.Pointer<ffi.NativeFunction<CFArrayEqualCallBackFunction>>;
+typedef CFArrayCopyDescriptionCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFArrayCopyDescriptionCallBackFunction>>;
 typedef CFArrayEqualCallBackFunction = ffi.UnsignedChar Function(
     ffi.Pointer<ffi.Void> value1, ffi.Pointer<ffi.Void> value2);
 typedef DartCFArrayEqualCallBackFunction = int Function(
     ffi.Pointer<ffi.Void> value1, ffi.Pointer<ffi.Void> value2);
+typedef CFArrayEqualCallBack
+    = ffi.Pointer<ffi.NativeFunction<CFArrayEqualCallBackFunction>>;
 
-/// !
-/// @typedef CFArrayRef
-/// This is the type of a reference to immutable CFArrays.
-typedef CFArrayRef = ffi.Pointer<CFArray>;
-
-final class CFArray extends ffi.Opaque {}
-
-/// !
-/// @typedef CFMutableArrayRef
-/// This is the type of a reference to mutable CFArrays.
-typedef CFMutableArrayRef = ffi.Pointer<CFArray>;
-
-/// Range type
-final class CFRange extends ffi.Struct {
+final class CFArrayCallBacks extends ffi.Struct {
   @CFIndex()
-  external int location;
+  external int version;
 
-  @CFIndex()
-  external int length;
+  external CFArrayRetainCallBack retain;
+
+  external CFArrayReleaseCallBack release;
+
+  external CFArrayCopyDescriptionCallBack copyDescription;
+
+  external CFArrayEqualCallBack equal;
 }
+
+typedef CFArrayApplierFunctionFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Void> value, ffi.Pointer<ffi.Void> context);
+typedef DartCFArrayApplierFunctionFunction = void Function(
+    ffi.Pointer<ffi.Void> value, ffi.Pointer<ffi.Void> context);
 
 /// !
 /// @typedef CFArrayApplierFunction
@@ -2741,65 +2806,88 @@ final class CFRange extends ffi.Struct {
 /// function.
 typedef CFArrayApplierFunction
     = ffi.Pointer<ffi.NativeFunction<CFArrayApplierFunctionFunction>>;
-typedef CFArrayApplierFunctionFunction = ffi.Void Function(
-    ffi.Pointer<ffi.Void> value, ffi.Pointer<ffi.Void> context);
-typedef DartCFArrayApplierFunctionFunction = void Function(
-    ffi.Pointer<ffi.Void> value, ffi.Pointer<ffi.Void> context);
 
-/// A standard comparison function
-typedef CFComparatorFunction
-    = ffi.Pointer<ffi.NativeFunction<CFComparatorFunctionFunction>>;
-typedef CFComparatorFunctionFunction = CFComparisonResult Function(
-    ffi.Pointer<ffi.Void> val1,
-    ffi.Pointer<ffi.Void> val2,
-    ffi.Pointer<ffi.Void> context);
-typedef DartCFComparatorFunctionFunction = DartCFIndex Function(
-    ffi.Pointer<ffi.Void> val1,
-    ffi.Pointer<ffi.Void> val2,
-    ffi.Pointer<ffi.Void> context);
+final class CFArray extends ffi.Opaque {}
 
-/// Values returned from comparison functions
-typedef CFComparisonResult = CFIndex;
-typedef CFDataRef = ffi.Pointer<CFData>;
+/// !
+/// @typedef CFArrayRef
+/// This is the type of a reference to immutable CFArrays.
+typedef CFArrayRef = ffi.Pointer<CFArray>;
+
+/// !
+/// @typedef CFMutableArrayRef
+/// This is the type of a reference to mutable CFArrays.
+typedef CFMutableArrayRef = ffi.Pointer<CFArray>;
 
 final class CFData extends ffi.Opaque {}
 
+typedef CFDataRef = ffi.Pointer<CFData>;
 typedef CFMutableDataRef = ffi.Pointer<CFData>;
 typedef CFDataSearchFlags = CFOptionFlags;
-typedef CFOptionFlags = ffi.UnsignedLong;
-typedef DartCFOptionFlags = int;
-typedef CFNotificationName = CFStringRef;
-typedef CFLocaleKey = CFStringRef;
 
-/// Values for kCFLocaleCalendarIdentifier
-typedef CFCalendarIdentifier = CFStringRef;
-typedef CFErrorDomain = CFStringRef;
-
-/// Identifier for character encoding; the values are the same as Text Encoding Converter TextEncoding.
-typedef CFStringEncoding = ffi.UnsignedInt;
-typedef DartCFStringEncoding = int;
-
-/// !
-/// @typedef CFErrorRef
-/// This is the type of a reference to CFErrors.  CFErrorRef is toll-free bridged with NSError.
-typedef CFErrorRef = ffi.Pointer<__CFError>;
-
-final class __CFError extends ffi.Opaque {}
-
-typedef CFMutableStringRef = ffi.Pointer<CFString>;
-
-/// Find and compare flags; these are OR'ed together and provided as CFStringCompareFlags in the various functions.
-typedef CFStringCompareFlags = CFOptionFlags;
-typedef CFLocaleRef = ffi.Pointer<__CFLocale>;
-
-final class __CFLocale extends ffi.Opaque {}
+final class __CFCharacterSet extends ffi.Opaque {}
 
 /// !
 /// @typedef CFCharacterSetRef
 /// This is the type of a reference to immutable CFCharacterSets.
 typedef CFCharacterSetRef = ffi.Pointer<__CFCharacterSet>;
 
-final class __CFCharacterSet extends ffi.Opaque {}
+/// !
+/// @typedef CFMutableCharacterSetRef
+/// This is the type of a reference to mutable CFMutableCharacterSets.
+typedef CFMutableCharacterSetRef = ffi.Pointer<__CFCharacterSet>;
+
+/// !
+/// @typedef CFCharacterSetPredefinedSet
+/// Type of the predefined CFCharacterSet selector values.
+typedef CFCharacterSetPredefinedSet = CFIndex;
+typedef CFNotificationName = CFStringRef;
+
+final class __CFNotificationCenter extends ffi.Opaque {}
+
+typedef CFNotificationCenterRef = ffi.Pointer<__CFNotificationCenter>;
+typedef CFNotificationCallbackFunction = ffi.Void Function(
+    CFNotificationCenterRef center,
+    ffi.Pointer<ffi.Void> observer,
+    CFNotificationName name,
+    ffi.Pointer<ffi.Void> object,
+    CFDictionaryRef userInfo);
+typedef DartCFNotificationCallbackFunction = void Function(
+    CFNotificationCenterRef center,
+    ffi.Pointer<ffi.Void> observer,
+    CFNotificationName name,
+    ffi.Pointer<ffi.Void> object,
+    CFDictionaryRef userInfo);
+typedef CFNotificationCallback
+    = ffi.Pointer<ffi.NativeFunction<CFNotificationCallbackFunction>>;
+typedef CFNotificationSuspensionBehavior = CFIndex;
+typedef CFLocaleIdentifier = CFStringRef;
+typedef CFLocaleKey = CFStringRef;
+
+final class __CFLocale extends ffi.Opaque {}
+
+typedef CFLocaleRef = ffi.Pointer<__CFLocale>;
+
+/// Map a locale identifier to a Windows LCID.
+typedef CFLocaleLanguageDirection = CFIndex;
+
+/// Values for kCFLocaleCalendarIdentifier
+typedef CFCalendarIdentifier = CFStringRef;
+typedef CFErrorDomain = CFStringRef;
+
+final class __CFError extends ffi.Opaque {}
+
+/// !
+/// @typedef CFErrorRef
+/// This is the type of a reference to CFErrors.  CFErrorRef is toll-free bridged with NSError.
+typedef CFErrorRef = ffi.Pointer<__CFError>;
+
+/// Identifier for character encoding; the values are the same as Text Encoding Converter TextEncoding.
+typedef CFStringEncoding = ffi.UnsignedInt;
+typedef CFStringBuiltInEncodings = CFStringEncoding;
+
+/// Find and compare flags; these are OR'ed together and provided as CFStringCompareFlags in the various functions.
+typedef CFStringCompareFlags = CFOptionFlags;
 
 /// !
 /// @typedef CFStringNormalizationForm
@@ -2813,6 +2901,12 @@ const int kCFCompareLessThan = -1;
 const int kCFCompareEqualTo = 0;
 
 const int kCFCompareGreaterThan = 1;
+
+const int kCFCompareLessThan1 = -1;
+
+const int kCFCompareEqualTo1 = 0;
+
+const int kCFCompareGreaterThan1 = 1;
 
 const int kCFDataSearchBackwards = 1;
 
@@ -2915,3 +3009,13 @@ const int kCFStringNormalizationFormKD = 1;
 const int kCFStringNormalizationFormC = 2;
 
 const int kCFStringNormalizationFormKC = 3;
+
+const int kCFCompareLessThan2 = -1;
+
+const int kCFCompareEqualTo2 = 0;
+
+const int kCFCompareGreaterThan2 = 1;
+
+const int kCFDataSearchBackwards1 = 1;
+
+const int kCFDataSearchAnchored1 = 2;

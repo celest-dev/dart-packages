@@ -158,10 +158,10 @@ external cf.CFStringRef kSecClassIdentity;
 /// below lists the currently defined attributes for each item class:
 ///
 /// kSecClassGenericPassword item attributes:
-/// kSecAttrAccess (OS X only)
+/// kSecAttrAccess (macOS only)
 /// kSecAttrAccessControl
-/// kSecAttrAccessGroup (iOS; also OS X if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
-/// kSecAttrAccessible (iOS; also OS X if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
+/// kSecAttrAccessGroup (iOS; also macOS if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
+/// kSecAttrAccessible (iOS; also macOS if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
 /// kSecAttrCreationDate
 /// kSecAttrModificationDate
 /// kSecAttrDescription
@@ -177,10 +177,10 @@ external cf.CFStringRef kSecClassIdentity;
 /// kSecAttrSynchronizable
 ///
 /// kSecClassInternetPassword item attributes:
-/// kSecAttrAccess (OS X only)
+/// kSecAttrAccess (macOS only)
 /// kSecAttrAccessControl
-/// kSecAttrAccessGroup (iOS; also OS X if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
-/// kSecAttrAccessible (iOS; also OS X if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
+/// kSecAttrAccessGroup (iOS; also macOS if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
+/// kSecAttrAccessible (iOS; also macOS if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
 /// kSecAttrCreationDate
 /// kSecAttrModificationDate
 /// kSecAttrDescription
@@ -214,19 +214,19 @@ external cf.CFStringRef kSecClassIdentity;
 /// kSecAttrSynchronizable
 ///
 /// kSecClassKey item attributes:
-/// kSecAttrAccess (OS X only)
+/// kSecAttrAccess (macOS only)
 /// kSecAttrAccessControl
-/// kSecAttrAccessGroup (iOS; also OS X if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
-/// kSecAttrAccessible (iOS; also OS X if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
+/// kSecAttrAccessGroup (iOS; also macOS if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
+/// kSecAttrAccessible (iOS; also macOS if kSecAttrSynchronizable and/or kSecUseDataProtectionKeychain set)
 /// kSecAttrKeyClass
 /// kSecAttrLabel
 /// kSecAttrApplicationLabel
 /// kSecAttrIsPermanent
 /// kSecAttrApplicationTag
 /// kSecAttrKeyType
-/// kSecAttrPRF    (OS X only)
-/// kSecAttrSalt   (OS X only)
-/// kSecAttrRounds (OS X only)
+/// kSecAttrPRF    (macOS only)
+/// kSecAttrSalt   (macOS only)
+/// kSecAttrRounds (macOS only)
 /// kSecAttrKeySizeInBits
 /// kSecAttrEffectiveKeySize
 /// kSecAttrCanEncrypt
@@ -257,9 +257,9 @@ external cf.CFStringRef kSecClassIdentity;
 /// needs to allow the system to protect that item in the best way possible.
 /// See the "kSecAttrAccessible Value Constants" section for a list of
 /// values which can be specified.
-/// IMPORTANT: This attribute is currently not supported for OS X keychain
+/// IMPORTANT: This attribute is currently not supported for macOS keychain
 /// items, unless the kSecAttrSynchronizable attribute is also present. If
-/// both attributes are specified on either OS X or iOS, the value for the
+/// both attributes are specified on either macOS or iOS, the value for the
 /// kSecAttrAccessible key may only be one whose name does not end with
 /// "ThisDeviceOnly", as those cannot sync to another device.
 ///
@@ -271,7 +271,7 @@ external cf.CFStringRef kSecClassIdentity;
 ///
 /// @constant kSecAttrAccess Specifies a dictionary key whose value
 /// is a SecAccessRef describing the access control settings for this item.
-/// This key is available on OS X only.
+/// This key is available on macOS only.
 ///
 /// @constant kSecAttrAccessGroup Specifies a dictionary key whose value is
 /// a CFStringRef indicating which access group a item is in.  The access
@@ -436,13 +436,13 @@ external cf.CFStringRef kSecClassIdentity;
 /// a value of type CFNumberRef that denotes the certificate type
 /// (On iOS, currently the value of this attribute must be equal to the
 /// version of the X509 certificate.  So, 1 for v1, 2 for v2, and 3 for v3
-/// certificates). (On OSX, see the CSSM_CERT_TYPE enum in cssmtype.h).
+/// certificates). (On macOS, see the CSSM_CERT_TYPE enum in cssmtype.h).
 /// Only items of class kSecClassCertificate have this attribute.
 /// @constant kSecAttrCertificateEncoding (read-only) Specifies a dictionary
 /// key whose value is the item's certificate encoding. You use this key
 /// to get a value of type CFNumberRef that denotes the certificate
 /// encoding (On iOS, currently only the value 3 meaning
-/// kSecAttrCertificateEncodingDER is supported). On OSX, see the
+/// kSecAttrCertificateEncodingDER is supported). On macOS, see the
 /// CSSM_CERT_ENCODING enum in cssmtype.h. Only items of class
 /// kSecClassCertificate have this attribute.
 /// @constant kSecAttrKeyClass (read only) Specifies a dictionary key whose
@@ -460,25 +460,25 @@ external cf.CFStringRef kSecClassIdentity;
 /// permanently.
 /// @constant kSecAttrIsSensitive Specifies a dictionary key whose value is a
 /// CFBooleanRef indicating that the key in question can only be exported
-/// in a wrapped (encrypted) format. OS X only.
+/// in a wrapped (encrypted) format. macOS only.
 /// @constant kSecAttrIsExtractable Specifies a dictionary key whose value is a
 /// CFBooleanRef indicating whether the key in question can be exported from
-/// its keychain container. OS X only.
+/// its keychain container. macOS only.
 /// @constant kSecAttrApplicationTag Specifies a dictionary key whose value is a
 /// CFDataRef containing private tag data.
 /// @constant kSecAttrKeyType Specifies a dictionary key whose value is a
 /// CFNumberRef indicating the algorithm associated with this key
 /// (On iOS, currently only the value 42 is supported, alternatively you can use
-/// kSecAttrKeyTypeRSA). (On OSX, see the CSSM_ALGORITHMS enum in cssmtype.h).
+/// kSecAttrKeyTypeRSA). (On macOS, see the CSSM_ALGORITHMS enum in cssmtype.h).
 ///
 /// @constant kSecAttrPRF Specifies a dictionary key whose value is the PRF
 /// (pseudo-random function) for this key (see "kSecAttrPRF Value Constants".)
-/// OS X only.
+/// macOS only.
 /// @constant kSecAttrSalt Specifies a dictionary key whose value is a
-/// CFData containing the salt to use for this key. OS X only.
+/// CFData containing the salt to use for this key. macOS only.
 /// @constant kSecAttrRounds Specifies a dictionary key whose value is the
 /// number of rounds for the pseudo-random function specified by kSecAttrPRF.
-/// OS X only.
+/// macOS only.
 /// @constant kSecAttrKeySizeInBits Specifies a dictionary key whose value
 /// is a CFNumberRef indicating the number of bits in this key.
 /// @constant kSecAttrEffectiveKeySize Specifies a dictionary key whose value
@@ -940,13 +940,13 @@ external cf.CFStringRef kSecAttrKeyClassSymmetric;
 /// @constant kSecAttrKeyTypeECSECPrimeRandom. The used curve is P-192, P-256, P-384 or P-521.
 /// The size is specified by kSecAttrKeySizeInBits attribute. Curves are defined in FIPS PUB 186-4 standard.
 /// @constant kSecAttrKeyTypeEC This is the legacy name for kSecAttrKeyTypeECSECPrimeRandom, new applications should not use it.
-/// @constant kSecAttrKeyTypeDSA (OSX only)
-/// @constant kSecAttrKeyTypeAES (OSX only)
-/// @constant kSecAttrKeyType3DES (OSX only)
-/// @constant kSecAttrKeyTypeRC4 (OSX only)
-/// @constant kSecAttrKeyTypeRC2 (OSX only)
-/// @constant kSecAttrKeyTypeCAST (OSX only)
-/// @constant kSecAttrKeyTypeECDSA (deprecated; use kSecAttrKeyTypeECSECPrimeRandom instead.) (OSX only)
+/// @constant kSecAttrKeyTypeDSA (macOS only)
+/// @constant kSecAttrKeyTypeAES (macOS only)
+/// @constant kSecAttrKeyType3DES (macOS only)
+/// @constant kSecAttrKeyTypeRC4 (macOS only)
+/// @constant kSecAttrKeyTypeRC2 (macOS only)
+/// @constant kSecAttrKeyTypeCAST (macOS only)
+/// @constant kSecAttrKeyTypeECDSA (deprecated; use kSecAttrKeyTypeECSECPrimeRandom instead.) (macOS only)
 @ffi.Native<cf.CFStringRef>()
 external cf.CFStringRef kSecAttrKeyTypeRSA;
 
@@ -982,7 +982,7 @@ external cf.CFStringRef kSecAttrKeyTypeECSECPrimeRandom;
 
 /// @enum kSecAttrPRF Value Constants
 /// @discussion Predefined item attribute constants used to specify the PRF
-/// to use with SecKeyDeriveFromPassword. OS X only.
+/// to use with SecKeyDeriveFromPassword. macOS only.
 /// @constant kSecAttrPRFHmacAlgSHA1
 /// @constant kSecAttrPRFHmacAlgSHA224
 /// @constant kSecAttrPRFHmacAlgSHA256
@@ -1012,7 +1012,7 @@ external cf.CFStringRef kSecAttrPRFHmacAlgSHA512;
 /// @constant kSecMatchPolicy Specifies a dictionary key whose value is a
 /// SecPolicyRef. If provided, returned certificates or identities must
 /// verify with this policy.
-/// @constant kSecMatchItemList OS X only. Specifies a dictionary key whose value is a
+/// @constant kSecMatchItemList macOS only. Specifies a dictionary key whose value is a
 /// CFArray of SecKeychainItemRef items. If provided, returned items will be
 /// limited to the subset which are contained in this list.
 /// @constant kSecMatchSearchList Specifies a dictionary key whose value is a
@@ -1029,22 +1029,26 @@ external cf.CFStringRef kSecAttrPRFHmacAlgSHA512;
 /// @constant kSecMatchSubjectContains Specifies a dictionary key whose value
 /// is a CFStringRef. If provided, returned certificates or identities
 /// will be limited to those containing this string in the subject.
-/// @constant kSecMatchSubjectStartsWith OS X only. Specifies a dictionary key whose value
+/// @constant kSecMatchHostOrSubdomainOfHost Specifies a dictionary key whose value
+/// is a CFStringRef. If provided, returned internet passwords will be limited to those which
+/// have a server host that is equal to or a subdomain of this string. This filter only works on
+/// the Data Protection Keychain on macOS.
+/// @constant kSecMatchSubjectStartsWith macOS only. Specifies a dictionary key whose value
 /// is a CFStringRef. If provided, returned certificates or identities
 /// will be limited to those with subject names that start with this string.
-/// @constant kSecMatchSubjectEndsWith OS X only. Specifies a dictionary key whose value
+/// @constant kSecMatchSubjectEndsWith macOS only. Specifies a dictionary key whose value
 /// is a CFStringRef. If provided, returned certificates or identities
 /// will be limited to those with subject names that end with this string.
-/// @constant kSecMatchSubjectWholeString OS X only. Specifies a dictionary key whose
+/// @constant kSecMatchSubjectWholeString macOS only. Specifies a dictionary key whose
 /// value is a CFStringRef. If provided, returned certificates or identities
 /// will be limited to those matching this string exactly in the subject.
 /// @constant kSecMatchCaseInsensitive Specifies a dictionary key whose value
 /// is a CFBooleanRef. If this value is kCFBooleanFalse, or is not
 /// provided, then case-sensitive string matching is performed.
-/// @constant kSecMatchDiacriticInsensitive OS X only. Specifies a dictionary key whose
+/// @constant kSecMatchDiacriticInsensitive macOS only. Specifies a dictionary key whose
 /// value is a CFBooleanRef. If this value is kCFBooleanFalse, or is not
 /// provided, then diacritic-sensitive string matching is performed.
-/// @constant kSecMatchWidthInsensitive OS X only. Specifies a dictionary key whose
+/// @constant kSecMatchWidthInsensitive macOS only. Specifies a dictionary key whose
 /// value is a CFBooleanRef. If this value is kCFBooleanFalse, or is not
 /// provided, then string matching is width-sensitive (e.g. 'a' != 0xFF41).
 /// @constant kSecMatchTrustedOnly Specifies a dictionary key whose value is
@@ -1083,6 +1087,9 @@ external cf.CFStringRef kSecMatchEmailAddressIfPresent;
 
 @ffi.Native<cf.CFStringRef>()
 external cf.CFStringRef kSecMatchSubjectContains;
+
+@ffi.Native<cf.CFStringRef>()
+external cf.CFStringRef kSecMatchHostOrSubdomainOfHost;
 
 @ffi.Native<cf.CFStringRef>()
 external cf.CFStringRef kSecMatchSubjectStartsWith;
@@ -1193,14 +1200,14 @@ external cf.CFStringRef kSecValuePersistentRef;
 /// SecCertificateRef, SecIdentityRef, or CFDataRef (for a persistent
 /// item reference.) The items in the array must all be of the same
 /// type. When this attribute is provided, no keychains are searched.
-/// @constant kSecUseKeychain OS X only. Specifies a dictionary key whose value is a
+/// @constant kSecUseKeychain macOS only. Specifies a dictionary key whose value is a
 /// keychain reference. You use this key to specify a value of type
 /// SecKeychainRef to which SecItemAdd will add the provided item(s).
 /// @constant kSecUseOperationPrompt Specifies a dictionary key whose value
 /// is a CFStringRef that represents a user-visible string describing
 /// the operation for which the application is attempting to authenticate.
 /// The application is responsible for the text localization.
-/// @constant kSecUseNoAuthenticationUI OS X only. Specifies a dictionary key whose value
+/// @constant kSecUseNoAuthenticationUI macOS only. Specifies a dictionary key whose value
 /// is a CFBooleanRef. If provided with a value of kCFBooleanTrue, the error
 /// errSecInteractionNotAllowed will be returned if the item is attempting
 /// to authenticate with UI.
@@ -1357,7 +1364,7 @@ external cf.CFStringRef kSecAttrAccessGroupToken;
 /// specify a kSecValuePersistentRef whose value a CFDataRef (the persistent
 /// reference), and a kSecReturnRef whose value is kCFBooleanTrue.
 ///
-/// On OSX, to convert from persistent item references to normal item references,
+/// On macOS, to convert from persistent item references to normal item references,
 /// specify a kSecMatchItemList whose value is a CFArray containing one or
 /// more CFDataRef elements (the persistent reference), and a kSecReturnRef
 /// whose value is kCFBooleanTrue. The objects in the provided array must be
@@ -1385,7 +1392,7 @@ external int SecItemCopyMatching(
 /// at once use the kSecUseItemList key with an array of items as its value.
 /// This is currently only supported for non password items.
 ///
-/// On OSX, To add an item to a particular keychain, supply kSecUseKeychain
+/// On macOS, to add an item to a particular keychain, supply kSecUseKeychain
 /// with a SecKeychainRef as its value.
 ///
 /// On iOS, watchOS & tvOS, Certificate, Key, and Identity items may be
@@ -1412,7 +1419,7 @@ external int SecItemCopyMatching(
 /// If more than one of these result types is specified, the result is
 /// returned as a CFDictionaryRef containing all the requested data.
 /// On iOS, if a result type is not specified, no results are returned.
-/// On OSX, the added item is returned.
+/// On macOS, the added item is returned.
 @ffi.Native<ffi.Int Function(cf.CFDictionaryRef, ffi.Pointer<cf.CFTypeRef>)>()
 external int SecItemAdd(
   cf.CFDictionaryRef attributes,
@@ -1455,12 +1462,12 @@ external int SecItemUpdate(
 /// You can change this behavior by specifying one of the follow keys:
 ///
 /// To delete an item identified by a transient reference, on iOS, specify
-/// kSecValueRef with a item reference. On OS X, give a kSecMatchItemList
+/// kSecValueRef with a item reference. On macOS, give a kSecMatchItemList
 /// containing an item reference.
 /// To delete an item identified by a persistent reference, on iOS, specify
 /// kSecValuePersistentRef with a persistent reference returned by
 /// using the kSecReturnPersistentRef key to SecItemCopyMatching or
-/// SecItemAdd. on OSX, use kSecMatchItemList with a persistent reference
+/// SecItemAdd. On macOS, use kSecMatchItemList with a persistent reference
 /// returned by using the kSecReturnPersistentRef key with
 /// SecItemCopyMatching or SecItemAdd.
 /// To delete multiple items specify kSecMatchItemList with an array
@@ -1746,6 +1753,155 @@ final class __CFNull extends ffi.Opaque {}
 
 final class __CFAllocator extends ffi.Opaque {}
 
+final class __SecCertificate extends ffi.Opaque {}
+
+/// !
+/// @typedef SecCertificateRef
+/// @abstract CFType representing a X.509 certificate.
+/// See SecCertificate.h for details.
+typedef SecCertificateRef = ffi.Pointer<__SecCertificate>;
+
+final class __SecIdentity extends ffi.Opaque {}
+
+/// !
+/// @typedef SecIdentityRef
+/// @abstract CFType representing an identity, which contains
+/// a SecKeyRef and an associated SecCertificateRef. See
+/// SecIdentity.h for details.
+typedef SecIdentityRef = ffi.Pointer<__SecIdentity>;
+
+final class __SecKey extends ffi.Opaque {}
+
+/// !
+/// @typedef SecKeyRef
+/// @abstract CFType representing a cryptographic key. See
+/// SecKey.h for details.
+typedef SecKeyRef = ffi.Pointer<__SecKey>;
+
+final class __SecPolicy extends ffi.Opaque {}
+
+/// !
+/// @typedef SecPolicyRef
+/// @abstract CFType representing a X.509 certificate trust policy.
+/// See SecPolicy.h for details.
+typedef SecPolicyRef = ffi.Pointer<__SecPolicy>;
+
+final class __SecAccessControl extends ffi.Opaque {}
+
+/// !
+/// @typedef SecAccessControl
+/// @abstract CFType representing access control for an item.
+/// SecAccessControl.h for details.
+typedef SecAccessControlRef = ffi.Pointer<__SecAccessControl>;
+
+final class __SecKeychain extends ffi.Opaque {}
+
+/// !
+/// @typedef SecKeychainRef
+/// @abstract Contains information about a keychain.
+typedef SecKeychainRef = ffi.Pointer<__SecKeychain>;
+
+final class __SecKeychainItem extends ffi.Opaque {}
+
+/// !
+/// @typedef SecKeychainItemRef
+/// @abstract Contains information about a keychain item.
+typedef SecKeychainItemRef = ffi.Pointer<__SecKeychainItem>;
+
+final class __SecKeychainSearch extends ffi.Opaque {}
+
+/// !
+/// @typedef SecKeychainSearchRef
+/// @abstract Contains information about a keychain search.
+typedef SecKeychainSearchRef = ffi.Pointer<__SecKeychainSearch>;
+
+/// !
+/// @typedef SecKeychainAttrType
+/// @abstract Represents a keychain attribute type.
+typedef SecKeychainAttrType = ffi.UnsignedInt;
+
+/// !
+/// @struct SecKeychainAttribute
+/// @abstract Contains keychain attributes.
+/// @field tag A 4-byte attribute tag.
+/// @field length The length of the buffer pointed to by data.
+/// @field data A pointer to the attribute data.
+final class SecKeychainAttribute extends ffi.Struct {
+  @SecKeychainAttrType()
+  external int tag;
+
+  @ffi.UnsignedInt()
+  external int length;
+
+  external ffi.Pointer<ffi.Void> data;
+}
+
+/// !
+/// @typedef SecKeychainAttributePtr
+/// @abstract Represents a pointer to a keychain attribute structure.
+typedef SecKeychainAttributePtr = ffi.Pointer<SecKeychainAttribute>;
+
+/// !
+/// @typedef SecKeychainAttributeList
+/// @abstract Represents a list of keychain attributes.
+/// @field count An unsigned 32-bit integer that represents the number of keychain attributes in the array.
+/// @field attr A pointer to the first keychain attribute in the array.
+final class SecKeychainAttributeList extends ffi.Struct {
+  @ffi.UnsignedInt()
+  external int count;
+
+  external ffi.Pointer<SecKeychainAttribute> attr;
+}
+
+/// !
+/// @typedef SecKeychainStatus
+/// @abstract Represents the status of a keychain.
+typedef SecKeychainStatus = ffi.UnsignedInt;
+
+final class __SecTrustedApplication extends ffi.Opaque {}
+
+/// !
+/// @typedef SecTrustedApplicationRef
+/// @abstract Contains information about a trusted application.
+typedef SecTrustedApplicationRef = ffi.Pointer<__SecTrustedApplication>;
+
+final class __SecAccess extends ffi.Opaque {}
+
+/// !
+/// @typedef SecAccessRef
+/// @abstract Contains information about an access.
+typedef SecAccessRef = ffi.Pointer<__SecAccess>;
+
+final class __SecACL extends ffi.Opaque {}
+
+/// !
+/// @typedef SecACLRef
+/// @abstract Contains information about an access control list (ACL) entry.
+typedef SecACLRef = ffi.Pointer<__SecACL>;
+
+final class __SecPassword extends ffi.Opaque {}
+
+/// !
+/// @typedef SecPasswordRef
+/// @abstract Contains information about a password.
+typedef SecPasswordRef = ffi.Pointer<__SecPassword>;
+
+/// !
+/// @typedef SecKeychainAttributeInfo
+/// @abstract Represents an attribute.
+/// @field count The number of tag-format pairs in the respective arrays.
+/// @field tag A pointer to the first attribute tag in the array.
+/// @field format A pointer to the first CSSM_DB_ATTRIBUTE_FORMAT in the array.
+/// @discussion Each tag and format item form a pair.
+final class SecKeychainAttributeInfo extends ffi.Struct {
+  @ffi.UnsignedInt()
+  external int count;
+
+  external ffi.Pointer<ffi.UnsignedInt> tag;
+
+  external ffi.Pointer<ffi.UnsignedInt> format;
+}
+
 final class __CFBoolean extends ffi.Opaque {}
 
 final class __CFNumber extends ffi.Opaque {}
@@ -1756,22 +1912,24 @@ final class CFArrayCallBacks extends ffi.Struct {
 
   external ffi.Pointer<
       ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<__CFAllocator>, ffi.Pointer<ffi.Void>)>> retain;
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<__CFAllocator> allocator,
+              ffi.Pointer<ffi.Void> value)>> retain;
 
   external ffi.Pointer<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<__CFAllocator>, ffi.Pointer<ffi.Void>)>> release;
+          ffi.Void Function(ffi.Pointer<__CFAllocator> allocator,
+              ffi.Pointer<ffi.Void> value)>> release;
 
   external ffi.Pointer<
-          ffi.NativeFunction<cf.CFStringRef Function(ffi.Pointer<ffi.Void>)>>
+          ffi
+          .NativeFunction<cf.CFStringRef Function(ffi.Pointer<ffi.Void> value)>>
       copyDescription;
 
   external ffi.Pointer<
-      ffi.NativeFunction<
-          ffi.UnsignedChar Function(
-              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>> equal;
+          ffi.NativeFunction<
+              ffi.UnsignedChar Function(
+                  ffi.Pointer<ffi.Void> value1, ffi.Pointer<ffi.Void> value2)>>
+      equal;
 }
 
 final class CFDictionaryKeyCallBacks extends ffi.Struct {
@@ -1780,26 +1938,28 @@ final class CFDictionaryKeyCallBacks extends ffi.Struct {
 
   external ffi.Pointer<
       ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<__CFAllocator>, ffi.Pointer<ffi.Void>)>> retain;
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<__CFAllocator> allocator,
+              ffi.Pointer<ffi.Void> value)>> retain;
 
   external ffi.Pointer<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<__CFAllocator>, ffi.Pointer<ffi.Void>)>> release;
+          ffi.Void Function(ffi.Pointer<__CFAllocator> allocator,
+              ffi.Pointer<ffi.Void> value)>> release;
 
   external ffi.Pointer<
-          ffi.NativeFunction<cf.CFStringRef Function(ffi.Pointer<ffi.Void>)>>
+          ffi
+          .NativeFunction<cf.CFStringRef Function(ffi.Pointer<ffi.Void> value)>>
       copyDescription;
 
   external ffi.Pointer<
-      ffi.NativeFunction<
-          ffi.UnsignedChar Function(
-              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>> equal;
+          ffi.NativeFunction<
+              ffi.UnsignedChar Function(
+                  ffi.Pointer<ffi.Void> value1, ffi.Pointer<ffi.Void> value2)>>
+      equal;
 
   external ffi.Pointer<
-          ffi.NativeFunction<ffi.UnsignedLong Function(ffi.Pointer<ffi.Void>)>>
-      hash;
+      ffi.NativeFunction<
+          ffi.UnsignedLong Function(ffi.Pointer<ffi.Void> value)>> hash;
 }
 
 /// !
@@ -1830,109 +1990,107 @@ final class CFDictionaryValueCallBacks extends ffi.Struct {
 
   external ffi.Pointer<
       ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<__CFAllocator>, ffi.Pointer<ffi.Void>)>> retain;
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<__CFAllocator> allocator,
+              ffi.Pointer<ffi.Void> value)>> retain;
 
   external ffi.Pointer<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<__CFAllocator>, ffi.Pointer<ffi.Void>)>> release;
+          ffi.Void Function(ffi.Pointer<__CFAllocator> allocator,
+              ffi.Pointer<ffi.Void> value)>> release;
 
   external ffi.Pointer<
-          ffi.NativeFunction<cf.CFStringRef Function(ffi.Pointer<ffi.Void>)>>
+          ffi
+          .NativeFunction<cf.CFStringRef Function(ffi.Pointer<ffi.Void> value)>>
       copyDescription;
 
   external ffi.Pointer<
-      ffi.NativeFunction<
-          ffi.UnsignedChar Function(
-              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>> equal;
+          ffi.NativeFunction<
+              ffi.UnsignedChar Function(
+                  ffi.Pointer<ffi.Void> value1, ffi.Pointer<ffi.Void> value2)>>
+      equal;
 }
 
-/// !
-/// @typedef SecKeychainItemRef
-/// @abstract Contains information about a keychain item.
-typedef SecKeychainItemRef = ffi.Pointer<__SecKeychainItem>;
+final class cssm_data extends ffi.Struct {
+  @ffi.Size()
+  external int Length;
 
-final class __SecKeychainItem extends ffi.Opaque {}
-
-/// !
-/// @typedef SecKeychainAttributeList
-/// @abstract Represents a list of keychain attributes.
-/// @field count An unsigned 32-bit integer that represents the number of keychain attributes in the array.
-/// @field attr A pointer to the first keychain attribute in the array.
-final class SecKeychainAttributeList extends ffi.Struct {
-  @ffi.UnsignedInt()
-  external int count;
-
-  external ffi.Pointer<SecKeychainAttribute> attr;
+  external ffi.Pointer<ffi.Uint8> Data;
 }
 
-/// !
-/// @struct SecKeychainAttribute
-/// @abstract Contains keychain attributes.
-/// @field tag A 4-byte attribute tag.
-/// @field length The length of the buffer pointed to by data.
-/// @field data A pointer to the attribute data.
-final class SecKeychainAttribute extends ffi.Struct {
-  @SecKeychainAttrType()
-  external int tag;
+typedef SecAsn1Item = cssm_data;
+typedef SecAsn1Oid = cssm_data;
 
-  @ffi.UnsignedInt()
-  external int length;
+/// An array of these structures defines a BER/DER encoding for an object.
+///
+/// The array usually starts with a dummy entry whose kind is SEC_ASN1_SEQUENCE;
+/// such an array is terminated with an entry where kind == 0.  (An array
+/// which consists of a single component does not require a second dummy
+/// entry -- the array is only searched as long as previous component(s)
+/// instruct it.)
+final class SecAsn1Template_struct extends ffi.Struct {
+  /// Kind of item being decoded/encoded, including tags and modifiers.
+  @ffi.Uint32()
+  external int kind;
 
-  external ffi.Pointer<ffi.Void> data;
+  /// This value is the offset from the base of the structure (i.e., the
+  /// (void *) passed as 'src' to SecAsn1EncodeItem, or the 'dst' argument
+  /// passed to SecAsn1CoderRef()) to the field that holds the value being
+  /// decoded/encoded.
+  @ffi.Uint32()
+  external int offset;
+
+  /// When kind suggests it (e.g., SEC_ASN1_POINTER, SEC_ASN1_GROUP,
+  /// SEC_ASN1_INLINE, or a component that is *not* a SEC_ASN1_UNIVERSAL),
+  /// this points to a sub-template for nested encoding/decoding.
+  /// OR, iff SEC_ASN1_DYNAMIC is set, then this is a pointer to a pointer
+  /// to a function which will return the appropriate template when called
+  /// at runtime.  NOTE! that explicit level of indirection, which is
+  /// necessary because ANSI does not allow you to store a function
+  /// pointer directly as a "void *" so we must store it separately and
+  /// dereference it to get at the function pointer itself.
+  external ffi.Pointer<ffi.Void> sub;
+
+  /// In the first element of a template array, the value is the size
+  /// of the structure to allocate when this template is being referenced
+  /// by another template via SEC_ASN1_POINTER or SEC_ASN1_GROUP.
+  /// In all other cases, the value is ignored.
+  @ffi.Uint32()
+  external int size;
 }
 
-/// !
-/// @typedef SecKeychainAttrType
-/// @abstract Represents a keychain attribute type.
-typedef SecKeychainAttrType = ffi.UnsignedInt;
-typedef DartSecKeychainAttrType = int;
+/// An array of these structures defines a BER/DER encoding for an object.
+///
+/// The array usually starts with a dummy entry whose kind is SEC_ASN1_SEQUENCE;
+/// such an array is terminated with an entry where kind == 0.  (An array
+/// which consists of a single component does not require a second dummy
+/// entry -- the array is only searched as long as previous component(s)
+/// instruct it.)
+typedef SecAsn1Template = SecAsn1Template_struct;
 
-/// !
-/// @enum ItemClassConstants
-/// @abstract Specifies a keychain item's class code.
-/// @constant kSecInternetPasswordItemClass Indicates that the item is an Internet password.
-/// @constant kSecGenericPasswordItemClass Indicates that the item is a generic password.
-/// @constant kSecAppleSharePasswordItemClass Indicates that the item is an AppleShare password.
-/// Note: AppleShare passwords are no longer used by OS X, starting in Leopard (10.5). Use of this item class is deprecated in OS X 10.9 and later; kSecInternetPasswordItemClass should be used instead when storing or looking up passwords for an Apple Filing Protocol (AFP) server.
-/// @constant kSecCertificateItemClass Indicates that the item is a digital certificate.
-/// @constant kSecPublicKeyItemClass Indicates that the item is a public key.
-/// @constant kSecPrivateKeyItemClass Indicates that the item is a private key.
-/// @constant kSecSymmetricKeyItemClass Indicates that the item is a symmetric key.
-/// @discussion The SecItemClass enumeration defines constants your application can use to specify the type of the keychain item you wish to create, dispose, add, delete, update, copy, or locate. You can also use these constants with the tag constant SecItemAttr.
-typedef SecItemClass = ffi.UnsignedInt;
-typedef DartSecItemClass = int;
-
-/// !
-/// @typedef SecKeychainRef
-/// @abstract Contains information about a keychain.
-typedef SecKeychainRef = ffi.Pointer<__SecKeychain>;
-
-final class __SecKeychain extends ffi.Opaque {}
-
-/// !
-/// @typedef SecAccessRef
-/// @abstract Contains information about an access.
-typedef SecAccessRef = ffi.Pointer<__SecAccess>;
-
-final class __SecAccess extends ffi.Opaque {}
-
-/// !
-/// @typedef SecKeychainAttributeInfo
-/// @abstract Represents an attribute.
-/// @field count The number of tag-format pairs in the respective arrays.
-/// @field tag A pointer to the first attribute tag in the array.
-/// @field format A pointer to the first CSSM_DB_ATTRIBUTE_FORMAT in the array.
-/// @discussion Each tag and format item form a pair.
-final class SecKeychainAttributeInfo extends ffi.Struct {
-  @ffi.UnsignedInt()
-  external int count;
-
-  external ffi.Pointer<ffi.UnsignedInt> tag;
-
-  external ffi.Pointer<ffi.UnsignedInt> format;
-}
+/// Function used for SEC_ASN1_DYNAMIC.
+/// "arg"  is a pointer to the top-level structure being encoded or
+/// decoded.
+///
+/// "enc"  when true, means that we are encoding (false means decoding)
+///
+/// "buf"  For decode only; points to the start of the decoded data for
+/// the current template. Callee can use the tag at this location
+/// to infer the returned template. Not used on encode.
+///
+/// "len"  For decode only; the length of buf.
+///
+/// "Dest" points to the template-specific item being decoded to
+/// or encoded from. (This is as opposed to arg, which
+/// points to the start of the struct associated with the
+/// current array of templates).
+typedef SecAsn1TemplateChooser = ffi.NativeFunction<
+    ffi.Pointer<SecAsn1Template> Function(
+        ffi.Pointer<ffi.Void> arg,
+        ffi.UnsignedChar enc,
+        ffi.Pointer<ffi.Char> buf,
+        ffi.Size len,
+        ffi.Pointer<ffi.Void> dest)>;
+typedef SecAsn1TemplateChooserPtr = ffi.Pointer<SecAsn1TemplateChooser>;
 
 /// From DL.
 final class cssm_dl_db_handle extends ffi.Struct {
@@ -1941,32 +2099,6 @@ final class cssm_dl_db_handle extends ffi.Struct {
 
   @ffi.IntPtr()
   external int DBHandle;
-}
-
-final class cssm_db_unique_record extends ffi.Struct {
-  external cssm_db_index_info RecordLocator;
-
-  external SecAsn1Item RecordIdentifier;
-}
-
-final class cssm_db_index_info extends ffi.Struct {
-  @ffi.Uint32()
-  external int IndexType;
-
-  @ffi.Uint32()
-  external int IndexedDataLocation;
-
-  external cssm_db_attribute_info Info;
-}
-
-final class cssm_db_attribute_info extends ffi.Struct {
-  @ffi.Uint32()
-  external int AttributeNameFormat;
-
-  external cssm_db_attribute_label Label;
-
-  @ffi.Uint32()
-  external int AttributeFormat;
 }
 
 final class cssm_db_attribute_label extends ffi.Union {
@@ -1981,16 +2113,79 @@ final class cssm_db_attribute_label extends ffi.Union {
   external int AttributeID;
 }
 
-typedef SecAsn1Oid = cssm_data;
+final class cssm_db_attribute_info extends ffi.Struct {
+  @ffi.Uint32()
+  external int AttributeNameFormat;
 
-final class cssm_data extends ffi.Struct {
-  @ffi.Size()
-  external int Length;
+  external cssm_db_attribute_label Label;
 
-  external ffi.Pointer<ffi.Uint8> Data;
+  @ffi.Uint32()
+  external int AttributeFormat;
 }
 
-typedef SecAsn1Item = cssm_data;
+final class cssm_db_index_info extends ffi.Struct {
+  @ffi.Uint32()
+  external int IndexType;
+
+  @ffi.Uint32()
+  external int IndexedDataLocation;
+
+  external cssm_db_attribute_info Info;
+}
+
+final class cssm_db_unique_record extends ffi.Struct {
+  external cssm_db_index_info RecordLocator;
+
+  external SecAsn1Item RecordIdentifier;
+}
+
+/// !
+/// @enum ItemClassConstants
+/// @abstract Specifies a keychain item's class code.
+/// @constant kSecInternetPasswordItemClass Indicates that the item is an Internet password.
+/// @constant kSecGenericPasswordItemClass Indicates that the item is a generic password.
+/// @constant kSecAppleSharePasswordItemClass Indicates that the item is an AppleShare password.
+/// Note: AppleShare passwords are no longer used by macOS, starting in Leopard (10.5). Use of this item class is deprecated in OS X 10.9 and later; kSecInternetPasswordItemClass should be used instead when storing or looking up passwords for an Apple Filing Protocol (AFP) server.
+/// @constant kSecCertificateItemClass Indicates that the item is a digital certificate.
+/// @constant kSecPublicKeyItemClass Indicates that the item is a public key.
+/// @constant kSecPrivateKeyItemClass Indicates that the item is a private key.
+/// @constant kSecSymmetricKeyItemClass Indicates that the item is a symmetric key.
+/// @discussion The SecItemClass enumeration defines constants your application can use to specify the type of the keychain item you wish to create, dispose, add, delete, update, copy, or locate. You can also use these constants with the tag constant SecItemAttr.
+typedef SecItemClass = ffi.UnsignedInt;
+
+/// !
+/// @enum ItemAttributeConstants
+/// @abstract Specifies keychain item attributes.
+/// @constant kSecCreationDateItemAttr (read-only) Identifies the creation date attribute. You use this tag to get a value of type string that represents the date the item was created, expressed in Zulu Time format ("YYYYMMDDhhmmSSZ"). This format is identical to CSSM_DB_ATTRIBUTE_FORMAT_TIME_DATE (cssmtype.h). When specifying the creation date as input to a function (e.g. SecKeychainSearchCreateFromAttributes), you may alternatively provide a numeric value of type UInt32 or SInt64, expressed as seconds since 1/1/1904 (DateTimeUtils.h).
+/// @constant kSecModDateItemAttr (read-only) Identifies the modification date attribute. You use this tag to get a value of type string that represents the last time the item was updated, expressed in Zulu Time format ("YYYYMMDDhhmmSSZ"). This format is identical to CSSM_DB_ATTRIBUTE_FORMAT_TIME_DATE (cssmtype.h). When specifying the modification date as input to a function (e.g. SecKeychainSearchCreateFromAttributes), you may alternatively provide a numeric value of type UInt32 or SInt64, expressed as seconds since 1/1/1904 (DateTimeUtils.h).
+/// @constant kSecDescriptionItemAttr Identifies the description attribute. You use this tag to set or get a value of type string that represents a user-visible string describing this particular kind of item (e.g. "disk image password").
+/// @constant kSecCommentItemAttr Identifies the comment attribute. You use this tag to set or get a value of type string that represents a user-editable string containing comments for this item.
+/// @constant kSecCreatorItemAttr Identifies the creator attribute. You use this tag to set or get a value of type FourCharCode that represents the item's creator.
+/// @constant kSecTypeItemAttr Identifies the type attribute. You use this tag to set or get a value of type FourCharCode that represents the item's type.
+/// @constant kSecScriptCodeItemAttr Identifies the script code attribute. You use this tag to set or get a value of type ScriptCode that represents the script code for all strings. (Note: use of this attribute is deprecated; string attributes should always be stored in UTF-8 encoding.)
+/// @constant kSecLabelItemAttr Identifies the label attribute. You use this tag to set or get a value of type string that represents a user-editable string containing the label for this item.
+/// @constant kSecInvisibleItemAttr Identifies the invisible attribute. You use this tag to set or get a value of type Boolean that indicates whether the item is invisible (i.e. should not be displayed).
+/// @constant kSecNegativeItemAttr Identifies the negative attribute. You use this tag to set or get a value of type Boolean that indicates whether there is a valid password associated with this keychain item. This is useful if your application doesn't want a password for some particular service to be stored in the keychain, but prefers that it always be entered by the user. The item (typically invisible and with zero-length data) acts as a placeholder to say "don't use me."
+/// @constant kSecCustomIconItemAttr Identifies the custom icon attribute. You use this tag to set or get a value of type Boolean that indicates whether the item has an application-specific icon. To do this, you must also set the attribute value identified by the tag kSecTypeItemAttr to a file type for which there is a corresponding icon in the desktop database, and set the attribute value identified by the tag kSecCreatorItemAttr to an appropriate application creator type. If a custom icon corresponding to the item's type and creator can be found in the desktop database, it will be displayed by Keychain Access. Otherwise, default icons are used. (Note: use of this attribute is deprecated; custom icons for keychain items are not supported in macOS.)
+/// @constant kSecAccountItemAttr Identifies the account attribute. You use this tag to set or get a string that represents the user account. This attribute applies to generic, Internet, and AppleShare password items.
+/// @constant kSecServiceItemAttr Identifies the service attribute. You use this tag to set or get a string that represents the service associated with this item. This attribute is unique to generic password items.
+/// @constant kSecGenericItemAttr Identifies the generic attribute. You use this tag to set or get a value of untyped bytes that represents a user-defined attribute.  This attribute is unique to generic password items.
+/// @constant kSecSecurityDomainItemAttr Identifies the security domain attribute. You use this tag to set or get a value that represents the Internet security domain. This attribute is unique to Internet password items.
+/// @constant kSecServerItemAttr Identifies the server attribute. You use this tag to set or get a value of type string that represents the Internet server's domain name or IP address. This attribute is unique to Internet password items.
+/// @constant kSecAuthenticationTypeItemAttr Identifies the authentication type attribute. You use this tag to set or get a value of type SecAuthenticationType that represents the Internet authentication scheme. This attribute is unique to Internet password items.
+/// @constant kSecPortItemAttr Identifies the port attribute. You use this tag to set or get a value of type UInt32 that represents the Internet port number. This attribute is unique to Internet password items.
+/// @constant kSecPathItemAttr Identifies the path attribute. You use this tag to set or get a string value that represents the path. This attribute is unique to Internet password items.
+/// @constant kSecVolumeItemAttr Identifies the volume attribute. You use this tag to set or get a string value that represents the AppleShare volume. This attribute is unique to AppleShare password items. Note: AppleShare passwords are no longer used by macOS as of Leopard (10.5); Internet password items are used instead.
+/// @constant kSecAddressItemAttr Identifies the address attribute. You use this tag to set or get a string value that represents the AppleTalk zone name, or the IP or domain name that represents the server address. This attribute is unique to AppleShare password items. Note: AppleShare passwords are no longer used by macOS as of Leopard (10.5); Internet password items are used instead.
+/// @constant kSecSignatureItemAttr Identifies the server signature attribute. You use this tag to set or get a value of type SecAFPServerSignature that represents the server signature block. This attribute is unique to AppleShare password items. Note: AppleShare passwords are no longer used by macOS as of Leopard (10.5); Internet password items are used instead.
+/// @constant kSecProtocolItemAttr Identifies the protocol attribute. You use this tag to set or get a value of type SecProtocolType that represents the Internet protocol. This attribute applies to AppleShare and Internet password items.
+/// @constant kSecCertificateType Indicates a CSSM_CERT_TYPE type.
+/// @constant kSecCertificateEncoding Indicates a CSSM_CERT_ENCODING type.
+/// @constant kSecCrlType Indicates a CSSM_CRL_TYPE type.
+/// @constant kSecCrlEncoding Indicates a CSSM_CRL_ENCODING type.
+/// @constant kSecAlias Indicates an alias.
+/// @discussion To obtain information about a certificate, use the CDSA Certificate Library (CL) API. To obtain information about a key, use the SecKeyGetCSSMKey function and the CDSA Cryptographic Service Provider (CSP) API.
+typedef SecItemAttr = ffi.UnsignedInt;
 
 const int errSecSuccess = 0;
 
@@ -2757,3 +2952,1535 @@ const int errSecCertificateValidityPeriodTooLong = -67901;
 const int errSecCertificateIsCA = -67902;
 
 const int errSecCertificateDuplicateExtension = -67903;
+
+const int errSecSuccess1 = 0;
+
+const int errSecUnimplemented1 = -4;
+
+const int errSecDiskFull1 = -34;
+
+const int errSecDskFull1 = -34;
+
+const int errSecIO1 = -36;
+
+const int errSecOpWr1 = -49;
+
+const int errSecParam1 = -50;
+
+const int errSecWrPerm1 = -61;
+
+const int errSecAllocate1 = -108;
+
+const int errSecUserCanceled1 = -128;
+
+const int errSecBadReq1 = -909;
+
+const int errSecInternalComponent1 = -2070;
+
+const int errSecCoreFoundationUnknown1 = -4960;
+
+const int errSecMissingEntitlement1 = -34018;
+
+const int errSecRestrictedAPI1 = -34020;
+
+const int errSecNotAvailable1 = -25291;
+
+const int errSecReadOnly1 = -25292;
+
+const int errSecAuthFailed1 = -25293;
+
+const int errSecNoSuchKeychain1 = -25294;
+
+const int errSecInvalidKeychain1 = -25295;
+
+const int errSecDuplicateKeychain1 = -25296;
+
+const int errSecDuplicateCallback1 = -25297;
+
+const int errSecInvalidCallback1 = -25298;
+
+const int errSecDuplicateItem1 = -25299;
+
+const int errSecItemNotFound1 = -25300;
+
+const int errSecBufferTooSmall1 = -25301;
+
+const int errSecDataTooLarge1 = -25302;
+
+const int errSecNoSuchAttr1 = -25303;
+
+const int errSecInvalidItemRef1 = -25304;
+
+const int errSecInvalidSearchRef1 = -25305;
+
+const int errSecNoSuchClass1 = -25306;
+
+const int errSecNoDefaultKeychain1 = -25307;
+
+const int errSecInteractionNotAllowed1 = -25308;
+
+const int errSecReadOnlyAttr1 = -25309;
+
+const int errSecWrongSecVersion1 = -25310;
+
+const int errSecKeySizeNotAllowed1 = -25311;
+
+const int errSecNoStorageModule1 = -25312;
+
+const int errSecNoCertificateModule1 = -25313;
+
+const int errSecNoPolicyModule1 = -25314;
+
+const int errSecInteractionRequired1 = -25315;
+
+const int errSecDataNotAvailable1 = -25316;
+
+const int errSecDataNotModifiable1 = -25317;
+
+const int errSecCreateChainFailed1 = -25318;
+
+const int errSecInvalidPrefsDomain1 = -25319;
+
+const int errSecInDarkWake1 = -25320;
+
+const int errSecACLNotSimple1 = -25240;
+
+const int errSecPolicyNotFound1 = -25241;
+
+const int errSecInvalidTrustSetting1 = -25242;
+
+const int errSecNoAccessForItem1 = -25243;
+
+const int errSecInvalidOwnerEdit1 = -25244;
+
+const int errSecTrustNotAvailable1 = -25245;
+
+const int errSecUnsupportedFormat1 = -25256;
+
+const int errSecUnknownFormat1 = -25257;
+
+const int errSecKeyIsSensitive1 = -25258;
+
+const int errSecMultiplePrivKeys1 = -25259;
+
+const int errSecPassphraseRequired1 = -25260;
+
+const int errSecInvalidPasswordRef1 = -25261;
+
+const int errSecInvalidTrustSettings1 = -25262;
+
+const int errSecNoTrustSettings1 = -25263;
+
+const int errSecPkcs12VerifyFailure1 = -25264;
+
+const int errSecNotSigner1 = -26267;
+
+const int errSecDecode1 = -26275;
+
+const int errSecServiceNotAvailable1 = -67585;
+
+const int errSecInsufficientClientID1 = -67586;
+
+const int errSecDeviceReset1 = -67587;
+
+const int errSecDeviceFailed1 = -67588;
+
+const int errSecAppleAddAppACLSubject1 = -67589;
+
+const int errSecApplePublicKeyIncomplete1 = -67590;
+
+const int errSecAppleSignatureMismatch1 = -67591;
+
+const int errSecAppleInvalidKeyStartDate1 = -67592;
+
+const int errSecAppleInvalidKeyEndDate1 = -67593;
+
+const int errSecConversionError1 = -67594;
+
+const int errSecAppleSSLv2Rollback1 = -67595;
+
+const int errSecQuotaExceeded1 = -67596;
+
+const int errSecFileTooBig1 = -67597;
+
+const int errSecInvalidDatabaseBlob1 = -67598;
+
+const int errSecInvalidKeyBlob1 = -67599;
+
+const int errSecIncompatibleDatabaseBlob1 = -67600;
+
+const int errSecIncompatibleKeyBlob1 = -67601;
+
+const int errSecHostNameMismatch1 = -67602;
+
+const int errSecUnknownCriticalExtensionFlag1 = -67603;
+
+const int errSecNoBasicConstraints1 = -67604;
+
+const int errSecNoBasicConstraintsCA1 = -67605;
+
+const int errSecInvalidAuthorityKeyID1 = -67606;
+
+const int errSecInvalidSubjectKeyID1 = -67607;
+
+const int errSecInvalidKeyUsageForPolicy1 = -67608;
+
+const int errSecInvalidExtendedKeyUsage1 = -67609;
+
+const int errSecInvalidIDLinkage1 = -67610;
+
+const int errSecPathLengthConstraintExceeded1 = -67611;
+
+const int errSecInvalidRoot1 = -67612;
+
+const int errSecCRLExpired1 = -67613;
+
+const int errSecCRLNotValidYet1 = -67614;
+
+const int errSecCRLNotFound1 = -67615;
+
+const int errSecCRLServerDown1 = -67616;
+
+const int errSecCRLBadURI1 = -67617;
+
+const int errSecUnknownCertExtension1 = -67618;
+
+const int errSecUnknownCRLExtension1 = -67619;
+
+const int errSecCRLNotTrusted1 = -67620;
+
+const int errSecCRLPolicyFailed1 = -67621;
+
+const int errSecIDPFailure1 = -67622;
+
+const int errSecSMIMEEmailAddressesNotFound1 = -67623;
+
+const int errSecSMIMEBadExtendedKeyUsage1 = -67624;
+
+const int errSecSMIMEBadKeyUsage1 = -67625;
+
+const int errSecSMIMEKeyUsageNotCritical1 = -67626;
+
+const int errSecSMIMENoEmailAddress1 = -67627;
+
+const int errSecSMIMESubjAltNameNotCritical1 = -67628;
+
+const int errSecSSLBadExtendedKeyUsage1 = -67629;
+
+const int errSecOCSPBadResponse1 = -67630;
+
+const int errSecOCSPBadRequest1 = -67631;
+
+const int errSecOCSPUnavailable1 = -67632;
+
+const int errSecOCSPStatusUnrecognized1 = -67633;
+
+const int errSecEndOfData1 = -67634;
+
+const int errSecIncompleteCertRevocationCheck1 = -67635;
+
+const int errSecNetworkFailure1 = -67636;
+
+const int errSecOCSPNotTrustedToAnchor1 = -67637;
+
+const int errSecRecordModified1 = -67638;
+
+const int errSecOCSPSignatureError1 = -67639;
+
+const int errSecOCSPNoSigner1 = -67640;
+
+const int errSecOCSPResponderMalformedReq1 = -67641;
+
+const int errSecOCSPResponderInternalError1 = -67642;
+
+const int errSecOCSPResponderTryLater1 = -67643;
+
+const int errSecOCSPResponderSignatureRequired1 = -67644;
+
+const int errSecOCSPResponderUnauthorized1 = -67645;
+
+const int errSecOCSPResponseNonceMismatch1 = -67646;
+
+const int errSecCodeSigningBadCertChainLength1 = -67647;
+
+const int errSecCodeSigningNoBasicConstraints1 = -67648;
+
+const int errSecCodeSigningBadPathLengthConstraint1 = -67649;
+
+const int errSecCodeSigningNoExtendedKeyUsage1 = -67650;
+
+const int errSecCodeSigningDevelopment1 = -67651;
+
+const int errSecResourceSignBadCertChainLength1 = -67652;
+
+const int errSecResourceSignBadExtKeyUsage1 = -67653;
+
+const int errSecTrustSettingDeny1 = -67654;
+
+const int errSecInvalidSubjectName1 = -67655;
+
+const int errSecUnknownQualifiedCertStatement1 = -67656;
+
+const int errSecMobileMeRequestQueued1 = -67657;
+
+const int errSecMobileMeRequestRedirected1 = -67658;
+
+const int errSecMobileMeServerError1 = -67659;
+
+const int errSecMobileMeServerNotAvailable1 = -67660;
+
+const int errSecMobileMeServerAlreadyExists1 = -67661;
+
+const int errSecMobileMeServerServiceErr1 = -67662;
+
+const int errSecMobileMeRequestAlreadyPending1 = -67663;
+
+const int errSecMobileMeNoRequestPending1 = -67664;
+
+const int errSecMobileMeCSRVerifyFailure1 = -67665;
+
+const int errSecMobileMeFailedConsistencyCheck1 = -67666;
+
+const int errSecNotInitialized1 = -67667;
+
+const int errSecInvalidHandleUsage1 = -67668;
+
+const int errSecPVCReferentNotFound1 = -67669;
+
+const int errSecFunctionIntegrityFail1 = -67670;
+
+const int errSecInternalError1 = -67671;
+
+const int errSecMemoryError1 = -67672;
+
+const int errSecInvalidData1 = -67673;
+
+const int errSecMDSError1 = -67674;
+
+const int errSecInvalidPointer1 = -67675;
+
+const int errSecSelfCheckFailed1 = -67676;
+
+const int errSecFunctionFailed1 = -67677;
+
+const int errSecModuleManifestVerifyFailed1 = -67678;
+
+const int errSecInvalidGUID1 = -67679;
+
+const int errSecInvalidHandle1 = -67680;
+
+const int errSecInvalidDBList1 = -67681;
+
+const int errSecInvalidPassthroughID1 = -67682;
+
+const int errSecInvalidNetworkAddress1 = -67683;
+
+const int errSecCRLAlreadySigned1 = -67684;
+
+const int errSecInvalidNumberOfFields1 = -67685;
+
+const int errSecVerificationFailure1 = -67686;
+
+const int errSecUnknownTag1 = -67687;
+
+const int errSecInvalidSignature1 = -67688;
+
+const int errSecInvalidName1 = -67689;
+
+const int errSecInvalidCertificateRef1 = -67690;
+
+const int errSecInvalidCertificateGroup1 = -67691;
+
+const int errSecTagNotFound1 = -67692;
+
+const int errSecInvalidQuery1 = -67693;
+
+const int errSecInvalidValue1 = -67694;
+
+const int errSecCallbackFailed1 = -67695;
+
+const int errSecACLDeleteFailed1 = -67696;
+
+const int errSecACLReplaceFailed1 = -67697;
+
+const int errSecACLAddFailed1 = -67698;
+
+const int errSecACLChangeFailed1 = -67699;
+
+const int errSecInvalidAccessCredentials1 = -67700;
+
+const int errSecInvalidRecord1 = -67701;
+
+const int errSecInvalidACL1 = -67702;
+
+const int errSecInvalidSampleValue1 = -67703;
+
+const int errSecIncompatibleVersion1 = -67704;
+
+const int errSecPrivilegeNotGranted1 = -67705;
+
+const int errSecInvalidScope1 = -67706;
+
+const int errSecPVCAlreadyConfigured1 = -67707;
+
+const int errSecInvalidPVC1 = -67708;
+
+const int errSecEMMLoadFailed1 = -67709;
+
+const int errSecEMMUnloadFailed1 = -67710;
+
+const int errSecAddinLoadFailed1 = -67711;
+
+const int errSecInvalidKeyRef1 = -67712;
+
+const int errSecInvalidKeyHierarchy1 = -67713;
+
+const int errSecAddinUnloadFailed1 = -67714;
+
+const int errSecLibraryReferenceNotFound1 = -67715;
+
+const int errSecInvalidAddinFunctionTable1 = -67716;
+
+const int errSecInvalidServiceMask1 = -67717;
+
+const int errSecModuleNotLoaded1 = -67718;
+
+const int errSecInvalidSubServiceID1 = -67719;
+
+const int errSecAttributeNotInContext1 = -67720;
+
+const int errSecModuleManagerInitializeFailed1 = -67721;
+
+const int errSecModuleManagerNotFound1 = -67722;
+
+const int errSecEventNotificationCallbackNotFound1 = -67723;
+
+const int errSecInputLengthError1 = -67724;
+
+const int errSecOutputLengthError1 = -67725;
+
+const int errSecPrivilegeNotSupported1 = -67726;
+
+const int errSecDeviceError1 = -67727;
+
+const int errSecAttachHandleBusy1 = -67728;
+
+const int errSecNotLoggedIn1 = -67729;
+
+const int errSecAlgorithmMismatch1 = -67730;
+
+const int errSecKeyUsageIncorrect1 = -67731;
+
+const int errSecKeyBlobTypeIncorrect1 = -67732;
+
+const int errSecKeyHeaderInconsistent1 = -67733;
+
+const int errSecUnsupportedKeyFormat1 = -67734;
+
+const int errSecUnsupportedKeySize1 = -67735;
+
+const int errSecInvalidKeyUsageMask1 = -67736;
+
+const int errSecUnsupportedKeyUsageMask1 = -67737;
+
+const int errSecInvalidKeyAttributeMask1 = -67738;
+
+const int errSecUnsupportedKeyAttributeMask1 = -67739;
+
+const int errSecInvalidKeyLabel1 = -67740;
+
+const int errSecUnsupportedKeyLabel1 = -67741;
+
+const int errSecInvalidKeyFormat1 = -67742;
+
+const int errSecUnsupportedVectorOfBuffers1 = -67743;
+
+const int errSecInvalidInputVector1 = -67744;
+
+const int errSecInvalidOutputVector1 = -67745;
+
+const int errSecInvalidContext1 = -67746;
+
+const int errSecInvalidAlgorithm1 = -67747;
+
+const int errSecInvalidAttributeKey1 = -67748;
+
+const int errSecMissingAttributeKey1 = -67749;
+
+const int errSecInvalidAttributeInitVector1 = -67750;
+
+const int errSecMissingAttributeInitVector1 = -67751;
+
+const int errSecInvalidAttributeSalt1 = -67752;
+
+const int errSecMissingAttributeSalt1 = -67753;
+
+const int errSecInvalidAttributePadding1 = -67754;
+
+const int errSecMissingAttributePadding1 = -67755;
+
+const int errSecInvalidAttributeRandom1 = -67756;
+
+const int errSecMissingAttributeRandom1 = -67757;
+
+const int errSecInvalidAttributeSeed1 = -67758;
+
+const int errSecMissingAttributeSeed1 = -67759;
+
+const int errSecInvalidAttributePassphrase1 = -67760;
+
+const int errSecMissingAttributePassphrase1 = -67761;
+
+const int errSecInvalidAttributeKeyLength1 = -67762;
+
+const int errSecMissingAttributeKeyLength1 = -67763;
+
+const int errSecInvalidAttributeBlockSize1 = -67764;
+
+const int errSecMissingAttributeBlockSize1 = -67765;
+
+const int errSecInvalidAttributeOutputSize1 = -67766;
+
+const int errSecMissingAttributeOutputSize1 = -67767;
+
+const int errSecInvalidAttributeRounds1 = -67768;
+
+const int errSecMissingAttributeRounds1 = -67769;
+
+const int errSecInvalidAlgorithmParms1 = -67770;
+
+const int errSecMissingAlgorithmParms1 = -67771;
+
+const int errSecInvalidAttributeLabel1 = -67772;
+
+const int errSecMissingAttributeLabel1 = -67773;
+
+const int errSecInvalidAttributeKeyType1 = -67774;
+
+const int errSecMissingAttributeKeyType1 = -67775;
+
+const int errSecInvalidAttributeMode1 = -67776;
+
+const int errSecMissingAttributeMode1 = -67777;
+
+const int errSecInvalidAttributeEffectiveBits1 = -67778;
+
+const int errSecMissingAttributeEffectiveBits1 = -67779;
+
+const int errSecInvalidAttributeStartDate1 = -67780;
+
+const int errSecMissingAttributeStartDate1 = -67781;
+
+const int errSecInvalidAttributeEndDate1 = -67782;
+
+const int errSecMissingAttributeEndDate1 = -67783;
+
+const int errSecInvalidAttributeVersion1 = -67784;
+
+const int errSecMissingAttributeVersion1 = -67785;
+
+const int errSecInvalidAttributePrime1 = -67786;
+
+const int errSecMissingAttributePrime1 = -67787;
+
+const int errSecInvalidAttributeBase1 = -67788;
+
+const int errSecMissingAttributeBase1 = -67789;
+
+const int errSecInvalidAttributeSubprime1 = -67790;
+
+const int errSecMissingAttributeSubprime1 = -67791;
+
+const int errSecInvalidAttributeIterationCount1 = -67792;
+
+const int errSecMissingAttributeIterationCount1 = -67793;
+
+const int errSecInvalidAttributeDLDBHandle1 = -67794;
+
+const int errSecMissingAttributeDLDBHandle1 = -67795;
+
+const int errSecInvalidAttributeAccessCredentials1 = -67796;
+
+const int errSecMissingAttributeAccessCredentials1 = -67797;
+
+const int errSecInvalidAttributePublicKeyFormat1 = -67798;
+
+const int errSecMissingAttributePublicKeyFormat1 = -67799;
+
+const int errSecInvalidAttributePrivateKeyFormat1 = -67800;
+
+const int errSecMissingAttributePrivateKeyFormat1 = -67801;
+
+const int errSecInvalidAttributeSymmetricKeyFormat1 = -67802;
+
+const int errSecMissingAttributeSymmetricKeyFormat1 = -67803;
+
+const int errSecInvalidAttributeWrappedKeyFormat1 = -67804;
+
+const int errSecMissingAttributeWrappedKeyFormat1 = -67805;
+
+const int errSecStagedOperationInProgress1 = -67806;
+
+const int errSecStagedOperationNotStarted1 = -67807;
+
+const int errSecVerifyFailed1 = -67808;
+
+const int errSecQuerySizeUnknown1 = -67809;
+
+const int errSecBlockSizeMismatch1 = -67810;
+
+const int errSecPublicKeyInconsistent1 = -67811;
+
+const int errSecDeviceVerifyFailed1 = -67812;
+
+const int errSecInvalidLoginName1 = -67813;
+
+const int errSecAlreadyLoggedIn1 = -67814;
+
+const int errSecInvalidDigestAlgorithm1 = -67815;
+
+const int errSecInvalidCRLGroup1 = -67816;
+
+const int errSecCertificateCannotOperate1 = -67817;
+
+const int errSecCertificateExpired1 = -67818;
+
+const int errSecCertificateNotValidYet1 = -67819;
+
+const int errSecCertificateRevoked1 = -67820;
+
+const int errSecCertificateSuspended1 = -67821;
+
+const int errSecInsufficientCredentials1 = -67822;
+
+const int errSecInvalidAction1 = -67823;
+
+const int errSecInvalidAuthority1 = -67824;
+
+const int errSecVerifyActionFailed1 = -67825;
+
+const int errSecInvalidCertAuthority1 = -67826;
+
+const int errSecInvalidCRLAuthority1 = -67827;
+
+const int errSecInvaldCRLAuthority1 = -67827;
+
+const int errSecInvalidCRLEncoding1 = -67828;
+
+const int errSecInvalidCRLType1 = -67829;
+
+const int errSecInvalidCRL1 = -67830;
+
+const int errSecInvalidFormType1 = -67831;
+
+const int errSecInvalidID1 = -67832;
+
+const int errSecInvalidIdentifier1 = -67833;
+
+const int errSecInvalidIndex1 = -67834;
+
+const int errSecInvalidPolicyIdentifiers1 = -67835;
+
+const int errSecInvalidTimeString1 = -67836;
+
+const int errSecInvalidReason1 = -67837;
+
+const int errSecInvalidRequestInputs1 = -67838;
+
+const int errSecInvalidResponseVector1 = -67839;
+
+const int errSecInvalidStopOnPolicy1 = -67840;
+
+const int errSecInvalidTuple1 = -67841;
+
+const int errSecMultipleValuesUnsupported1 = -67842;
+
+const int errSecNotTrusted1 = -67843;
+
+const int errSecNoDefaultAuthority1 = -67844;
+
+const int errSecRejectedForm1 = -67845;
+
+const int errSecRequestLost1 = -67846;
+
+const int errSecRequestRejected1 = -67847;
+
+const int errSecUnsupportedAddressType1 = -67848;
+
+const int errSecUnsupportedService1 = -67849;
+
+const int errSecInvalidTupleGroup1 = -67850;
+
+const int errSecInvalidBaseACLs1 = -67851;
+
+const int errSecInvalidTupleCredentials1 = -67852;
+
+const int errSecInvalidTupleCredendtials1 = -67852;
+
+const int errSecInvalidEncoding1 = -67853;
+
+const int errSecInvalidValidityPeriod1 = -67854;
+
+const int errSecInvalidRequestor1 = -67855;
+
+const int errSecRequestDescriptor1 = -67856;
+
+const int errSecInvalidBundleInfo1 = -67857;
+
+const int errSecInvalidCRLIndex1 = -67858;
+
+const int errSecNoFieldValues1 = -67859;
+
+const int errSecUnsupportedFieldFormat1 = -67860;
+
+const int errSecUnsupportedIndexInfo1 = -67861;
+
+const int errSecUnsupportedLocality1 = -67862;
+
+const int errSecUnsupportedNumAttributes1 = -67863;
+
+const int errSecUnsupportedNumIndexes1 = -67864;
+
+const int errSecUnsupportedNumRecordTypes1 = -67865;
+
+const int errSecFieldSpecifiedMultiple1 = -67866;
+
+const int errSecIncompatibleFieldFormat1 = -67867;
+
+const int errSecInvalidParsingModule1 = -67868;
+
+const int errSecDatabaseLocked1 = -67869;
+
+const int errSecDatastoreIsOpen1 = -67870;
+
+const int errSecMissingValue1 = -67871;
+
+const int errSecUnsupportedQueryLimits1 = -67872;
+
+const int errSecUnsupportedNumSelectionPreds1 = -67873;
+
+const int errSecUnsupportedOperator1 = -67874;
+
+const int errSecInvalidDBLocation1 = -67875;
+
+const int errSecInvalidAccessRequest1 = -67876;
+
+const int errSecInvalidIndexInfo1 = -67877;
+
+const int errSecInvalidNewOwner1 = -67878;
+
+const int errSecInvalidModifyMode1 = -67879;
+
+const int errSecMissingRequiredExtension1 = -67880;
+
+const int errSecExtendedKeyUsageNotCritical1 = -67881;
+
+const int errSecTimestampMissing1 = -67882;
+
+const int errSecTimestampInvalid1 = -67883;
+
+const int errSecTimestampNotTrusted1 = -67884;
+
+const int errSecTimestampServiceNotAvailable1 = -67885;
+
+const int errSecTimestampBadAlg1 = -67886;
+
+const int errSecTimestampBadRequest1 = -67887;
+
+const int errSecTimestampBadDataFormat1 = -67888;
+
+const int errSecTimestampTimeNotAvailable1 = -67889;
+
+const int errSecTimestampUnacceptedPolicy1 = -67890;
+
+const int errSecTimestampUnacceptedExtension1 = -67891;
+
+const int errSecTimestampAddInfoNotAvailable1 = -67892;
+
+const int errSecTimestampSystemFailure1 = -67893;
+
+const int errSecSigningTimeMissing1 = -67894;
+
+const int errSecTimestampRejection1 = -67895;
+
+const int errSecTimestampWaiting1 = -67896;
+
+const int errSecTimestampRevocationWarning1 = -67897;
+
+const int errSecTimestampRevocationNotification1 = -67898;
+
+const int errSecCertificatePolicyNotAllowed1 = -67899;
+
+const int errSecCertificateNameNotAllowed1 = -67900;
+
+const int errSecCertificateValidityPeriodTooLong1 = -67901;
+
+const int errSecCertificateIsCA1 = -67902;
+
+const int errSecCertificateDuplicateExtension1 = -67903;
+
+const int errSecSuccess2 = 0;
+
+const int errSecUnimplemented2 = -4;
+
+const int errSecDiskFull2 = -34;
+
+const int errSecDskFull2 = -34;
+
+const int errSecIO2 = -36;
+
+const int errSecOpWr2 = -49;
+
+const int errSecParam2 = -50;
+
+const int errSecWrPerm2 = -61;
+
+const int errSecAllocate2 = -108;
+
+const int errSecUserCanceled2 = -128;
+
+const int errSecBadReq2 = -909;
+
+const int errSecInternalComponent2 = -2070;
+
+const int errSecCoreFoundationUnknown2 = -4960;
+
+const int errSecMissingEntitlement2 = -34018;
+
+const int errSecRestrictedAPI2 = -34020;
+
+const int errSecNotAvailable2 = -25291;
+
+const int errSecReadOnly2 = -25292;
+
+const int errSecAuthFailed2 = -25293;
+
+const int errSecNoSuchKeychain2 = -25294;
+
+const int errSecInvalidKeychain2 = -25295;
+
+const int errSecDuplicateKeychain2 = -25296;
+
+const int errSecDuplicateCallback2 = -25297;
+
+const int errSecInvalidCallback2 = -25298;
+
+const int errSecDuplicateItem2 = -25299;
+
+const int errSecItemNotFound2 = -25300;
+
+const int errSecBufferTooSmall2 = -25301;
+
+const int errSecDataTooLarge2 = -25302;
+
+const int errSecNoSuchAttr2 = -25303;
+
+const int errSecInvalidItemRef2 = -25304;
+
+const int errSecInvalidSearchRef2 = -25305;
+
+const int errSecNoSuchClass2 = -25306;
+
+const int errSecNoDefaultKeychain2 = -25307;
+
+const int errSecInteractionNotAllowed2 = -25308;
+
+const int errSecReadOnlyAttr2 = -25309;
+
+const int errSecWrongSecVersion2 = -25310;
+
+const int errSecKeySizeNotAllowed2 = -25311;
+
+const int errSecNoStorageModule2 = -25312;
+
+const int errSecNoCertificateModule2 = -25313;
+
+const int errSecNoPolicyModule2 = -25314;
+
+const int errSecInteractionRequired2 = -25315;
+
+const int errSecDataNotAvailable2 = -25316;
+
+const int errSecDataNotModifiable2 = -25317;
+
+const int errSecCreateChainFailed2 = -25318;
+
+const int errSecInvalidPrefsDomain2 = -25319;
+
+const int errSecInDarkWake2 = -25320;
+
+const int errSecACLNotSimple2 = -25240;
+
+const int errSecPolicyNotFound2 = -25241;
+
+const int errSecInvalidTrustSetting2 = -25242;
+
+const int errSecNoAccessForItem2 = -25243;
+
+const int errSecInvalidOwnerEdit2 = -25244;
+
+const int errSecTrustNotAvailable2 = -25245;
+
+const int errSecUnsupportedFormat2 = -25256;
+
+const int errSecUnknownFormat2 = -25257;
+
+const int errSecKeyIsSensitive2 = -25258;
+
+const int errSecMultiplePrivKeys2 = -25259;
+
+const int errSecPassphraseRequired2 = -25260;
+
+const int errSecInvalidPasswordRef2 = -25261;
+
+const int errSecInvalidTrustSettings2 = -25262;
+
+const int errSecNoTrustSettings2 = -25263;
+
+const int errSecPkcs12VerifyFailure2 = -25264;
+
+const int errSecNotSigner2 = -26267;
+
+const int errSecDecode2 = -26275;
+
+const int errSecServiceNotAvailable2 = -67585;
+
+const int errSecInsufficientClientID2 = -67586;
+
+const int errSecDeviceReset2 = -67587;
+
+const int errSecDeviceFailed2 = -67588;
+
+const int errSecAppleAddAppACLSubject2 = -67589;
+
+const int errSecApplePublicKeyIncomplete2 = -67590;
+
+const int errSecAppleSignatureMismatch2 = -67591;
+
+const int errSecAppleInvalidKeyStartDate2 = -67592;
+
+const int errSecAppleInvalidKeyEndDate2 = -67593;
+
+const int errSecConversionError2 = -67594;
+
+const int errSecAppleSSLv2Rollback2 = -67595;
+
+const int errSecQuotaExceeded2 = -67596;
+
+const int errSecFileTooBig2 = -67597;
+
+const int errSecInvalidDatabaseBlob2 = -67598;
+
+const int errSecInvalidKeyBlob2 = -67599;
+
+const int errSecIncompatibleDatabaseBlob2 = -67600;
+
+const int errSecIncompatibleKeyBlob2 = -67601;
+
+const int errSecHostNameMismatch2 = -67602;
+
+const int errSecUnknownCriticalExtensionFlag2 = -67603;
+
+const int errSecNoBasicConstraints2 = -67604;
+
+const int errSecNoBasicConstraintsCA2 = -67605;
+
+const int errSecInvalidAuthorityKeyID2 = -67606;
+
+const int errSecInvalidSubjectKeyID2 = -67607;
+
+const int errSecInvalidKeyUsageForPolicy2 = -67608;
+
+const int errSecInvalidExtendedKeyUsage2 = -67609;
+
+const int errSecInvalidIDLinkage2 = -67610;
+
+const int errSecPathLengthConstraintExceeded2 = -67611;
+
+const int errSecInvalidRoot2 = -67612;
+
+const int errSecCRLExpired2 = -67613;
+
+const int errSecCRLNotValidYet2 = -67614;
+
+const int errSecCRLNotFound2 = -67615;
+
+const int errSecCRLServerDown2 = -67616;
+
+const int errSecCRLBadURI2 = -67617;
+
+const int errSecUnknownCertExtension2 = -67618;
+
+const int errSecUnknownCRLExtension2 = -67619;
+
+const int errSecCRLNotTrusted2 = -67620;
+
+const int errSecCRLPolicyFailed2 = -67621;
+
+const int errSecIDPFailure2 = -67622;
+
+const int errSecSMIMEEmailAddressesNotFound2 = -67623;
+
+const int errSecSMIMEBadExtendedKeyUsage2 = -67624;
+
+const int errSecSMIMEBadKeyUsage2 = -67625;
+
+const int errSecSMIMEKeyUsageNotCritical2 = -67626;
+
+const int errSecSMIMENoEmailAddress2 = -67627;
+
+const int errSecSMIMESubjAltNameNotCritical2 = -67628;
+
+const int errSecSSLBadExtendedKeyUsage2 = -67629;
+
+const int errSecOCSPBadResponse2 = -67630;
+
+const int errSecOCSPBadRequest2 = -67631;
+
+const int errSecOCSPUnavailable2 = -67632;
+
+const int errSecOCSPStatusUnrecognized2 = -67633;
+
+const int errSecEndOfData2 = -67634;
+
+const int errSecIncompleteCertRevocationCheck2 = -67635;
+
+const int errSecNetworkFailure2 = -67636;
+
+const int errSecOCSPNotTrustedToAnchor2 = -67637;
+
+const int errSecRecordModified2 = -67638;
+
+const int errSecOCSPSignatureError2 = -67639;
+
+const int errSecOCSPNoSigner2 = -67640;
+
+const int errSecOCSPResponderMalformedReq2 = -67641;
+
+const int errSecOCSPResponderInternalError2 = -67642;
+
+const int errSecOCSPResponderTryLater2 = -67643;
+
+const int errSecOCSPResponderSignatureRequired2 = -67644;
+
+const int errSecOCSPResponderUnauthorized2 = -67645;
+
+const int errSecOCSPResponseNonceMismatch2 = -67646;
+
+const int errSecCodeSigningBadCertChainLength2 = -67647;
+
+const int errSecCodeSigningNoBasicConstraints2 = -67648;
+
+const int errSecCodeSigningBadPathLengthConstraint2 = -67649;
+
+const int errSecCodeSigningNoExtendedKeyUsage2 = -67650;
+
+const int errSecCodeSigningDevelopment2 = -67651;
+
+const int errSecResourceSignBadCertChainLength2 = -67652;
+
+const int errSecResourceSignBadExtKeyUsage2 = -67653;
+
+const int errSecTrustSettingDeny2 = -67654;
+
+const int errSecInvalidSubjectName2 = -67655;
+
+const int errSecUnknownQualifiedCertStatement2 = -67656;
+
+const int errSecMobileMeRequestQueued2 = -67657;
+
+const int errSecMobileMeRequestRedirected2 = -67658;
+
+const int errSecMobileMeServerError2 = -67659;
+
+const int errSecMobileMeServerNotAvailable2 = -67660;
+
+const int errSecMobileMeServerAlreadyExists2 = -67661;
+
+const int errSecMobileMeServerServiceErr2 = -67662;
+
+const int errSecMobileMeRequestAlreadyPending2 = -67663;
+
+const int errSecMobileMeNoRequestPending2 = -67664;
+
+const int errSecMobileMeCSRVerifyFailure2 = -67665;
+
+const int errSecMobileMeFailedConsistencyCheck2 = -67666;
+
+const int errSecNotInitialized2 = -67667;
+
+const int errSecInvalidHandleUsage2 = -67668;
+
+const int errSecPVCReferentNotFound2 = -67669;
+
+const int errSecFunctionIntegrityFail2 = -67670;
+
+const int errSecInternalError2 = -67671;
+
+const int errSecMemoryError2 = -67672;
+
+const int errSecInvalidData2 = -67673;
+
+const int errSecMDSError2 = -67674;
+
+const int errSecInvalidPointer2 = -67675;
+
+const int errSecSelfCheckFailed2 = -67676;
+
+const int errSecFunctionFailed2 = -67677;
+
+const int errSecModuleManifestVerifyFailed2 = -67678;
+
+const int errSecInvalidGUID2 = -67679;
+
+const int errSecInvalidHandle2 = -67680;
+
+const int errSecInvalidDBList2 = -67681;
+
+const int errSecInvalidPassthroughID2 = -67682;
+
+const int errSecInvalidNetworkAddress2 = -67683;
+
+const int errSecCRLAlreadySigned2 = -67684;
+
+const int errSecInvalidNumberOfFields2 = -67685;
+
+const int errSecVerificationFailure2 = -67686;
+
+const int errSecUnknownTag2 = -67687;
+
+const int errSecInvalidSignature2 = -67688;
+
+const int errSecInvalidName2 = -67689;
+
+const int errSecInvalidCertificateRef2 = -67690;
+
+const int errSecInvalidCertificateGroup2 = -67691;
+
+const int errSecTagNotFound2 = -67692;
+
+const int errSecInvalidQuery2 = -67693;
+
+const int errSecInvalidValue2 = -67694;
+
+const int errSecCallbackFailed2 = -67695;
+
+const int errSecACLDeleteFailed2 = -67696;
+
+const int errSecACLReplaceFailed2 = -67697;
+
+const int errSecACLAddFailed2 = -67698;
+
+const int errSecACLChangeFailed2 = -67699;
+
+const int errSecInvalidAccessCredentials2 = -67700;
+
+const int errSecInvalidRecord2 = -67701;
+
+const int errSecInvalidACL2 = -67702;
+
+const int errSecInvalidSampleValue2 = -67703;
+
+const int errSecIncompatibleVersion2 = -67704;
+
+const int errSecPrivilegeNotGranted2 = -67705;
+
+const int errSecInvalidScope2 = -67706;
+
+const int errSecPVCAlreadyConfigured2 = -67707;
+
+const int errSecInvalidPVC2 = -67708;
+
+const int errSecEMMLoadFailed2 = -67709;
+
+const int errSecEMMUnloadFailed2 = -67710;
+
+const int errSecAddinLoadFailed2 = -67711;
+
+const int errSecInvalidKeyRef2 = -67712;
+
+const int errSecInvalidKeyHierarchy2 = -67713;
+
+const int errSecAddinUnloadFailed2 = -67714;
+
+const int errSecLibraryReferenceNotFound2 = -67715;
+
+const int errSecInvalidAddinFunctionTable2 = -67716;
+
+const int errSecInvalidServiceMask2 = -67717;
+
+const int errSecModuleNotLoaded2 = -67718;
+
+const int errSecInvalidSubServiceID2 = -67719;
+
+const int errSecAttributeNotInContext2 = -67720;
+
+const int errSecModuleManagerInitializeFailed2 = -67721;
+
+const int errSecModuleManagerNotFound2 = -67722;
+
+const int errSecEventNotificationCallbackNotFound2 = -67723;
+
+const int errSecInputLengthError2 = -67724;
+
+const int errSecOutputLengthError2 = -67725;
+
+const int errSecPrivilegeNotSupported2 = -67726;
+
+const int errSecDeviceError2 = -67727;
+
+const int errSecAttachHandleBusy2 = -67728;
+
+const int errSecNotLoggedIn2 = -67729;
+
+const int errSecAlgorithmMismatch2 = -67730;
+
+const int errSecKeyUsageIncorrect2 = -67731;
+
+const int errSecKeyBlobTypeIncorrect2 = -67732;
+
+const int errSecKeyHeaderInconsistent2 = -67733;
+
+const int errSecUnsupportedKeyFormat2 = -67734;
+
+const int errSecUnsupportedKeySize2 = -67735;
+
+const int errSecInvalidKeyUsageMask2 = -67736;
+
+const int errSecUnsupportedKeyUsageMask2 = -67737;
+
+const int errSecInvalidKeyAttributeMask2 = -67738;
+
+const int errSecUnsupportedKeyAttributeMask2 = -67739;
+
+const int errSecInvalidKeyLabel2 = -67740;
+
+const int errSecUnsupportedKeyLabel2 = -67741;
+
+const int errSecInvalidKeyFormat2 = -67742;
+
+const int errSecUnsupportedVectorOfBuffers2 = -67743;
+
+const int errSecInvalidInputVector2 = -67744;
+
+const int errSecInvalidOutputVector2 = -67745;
+
+const int errSecInvalidContext2 = -67746;
+
+const int errSecInvalidAlgorithm2 = -67747;
+
+const int errSecInvalidAttributeKey2 = -67748;
+
+const int errSecMissingAttributeKey2 = -67749;
+
+const int errSecInvalidAttributeInitVector2 = -67750;
+
+const int errSecMissingAttributeInitVector2 = -67751;
+
+const int errSecInvalidAttributeSalt2 = -67752;
+
+const int errSecMissingAttributeSalt2 = -67753;
+
+const int errSecInvalidAttributePadding2 = -67754;
+
+const int errSecMissingAttributePadding2 = -67755;
+
+const int errSecInvalidAttributeRandom2 = -67756;
+
+const int errSecMissingAttributeRandom2 = -67757;
+
+const int errSecInvalidAttributeSeed2 = -67758;
+
+const int errSecMissingAttributeSeed2 = -67759;
+
+const int errSecInvalidAttributePassphrase2 = -67760;
+
+const int errSecMissingAttributePassphrase2 = -67761;
+
+const int errSecInvalidAttributeKeyLength2 = -67762;
+
+const int errSecMissingAttributeKeyLength2 = -67763;
+
+const int errSecInvalidAttributeBlockSize2 = -67764;
+
+const int errSecMissingAttributeBlockSize2 = -67765;
+
+const int errSecInvalidAttributeOutputSize2 = -67766;
+
+const int errSecMissingAttributeOutputSize2 = -67767;
+
+const int errSecInvalidAttributeRounds2 = -67768;
+
+const int errSecMissingAttributeRounds2 = -67769;
+
+const int errSecInvalidAlgorithmParms2 = -67770;
+
+const int errSecMissingAlgorithmParms2 = -67771;
+
+const int errSecInvalidAttributeLabel2 = -67772;
+
+const int errSecMissingAttributeLabel2 = -67773;
+
+const int errSecInvalidAttributeKeyType2 = -67774;
+
+const int errSecMissingAttributeKeyType2 = -67775;
+
+const int errSecInvalidAttributeMode2 = -67776;
+
+const int errSecMissingAttributeMode2 = -67777;
+
+const int errSecInvalidAttributeEffectiveBits2 = -67778;
+
+const int errSecMissingAttributeEffectiveBits2 = -67779;
+
+const int errSecInvalidAttributeStartDate2 = -67780;
+
+const int errSecMissingAttributeStartDate2 = -67781;
+
+const int errSecInvalidAttributeEndDate2 = -67782;
+
+const int errSecMissingAttributeEndDate2 = -67783;
+
+const int errSecInvalidAttributeVersion2 = -67784;
+
+const int errSecMissingAttributeVersion2 = -67785;
+
+const int errSecInvalidAttributePrime2 = -67786;
+
+const int errSecMissingAttributePrime2 = -67787;
+
+const int errSecInvalidAttributeBase2 = -67788;
+
+const int errSecMissingAttributeBase2 = -67789;
+
+const int errSecInvalidAttributeSubprime2 = -67790;
+
+const int errSecMissingAttributeSubprime2 = -67791;
+
+const int errSecInvalidAttributeIterationCount2 = -67792;
+
+const int errSecMissingAttributeIterationCount2 = -67793;
+
+const int errSecInvalidAttributeDLDBHandle2 = -67794;
+
+const int errSecMissingAttributeDLDBHandle2 = -67795;
+
+const int errSecInvalidAttributeAccessCredentials2 = -67796;
+
+const int errSecMissingAttributeAccessCredentials2 = -67797;
+
+const int errSecInvalidAttributePublicKeyFormat2 = -67798;
+
+const int errSecMissingAttributePublicKeyFormat2 = -67799;
+
+const int errSecInvalidAttributePrivateKeyFormat2 = -67800;
+
+const int errSecMissingAttributePrivateKeyFormat2 = -67801;
+
+const int errSecInvalidAttributeSymmetricKeyFormat2 = -67802;
+
+const int errSecMissingAttributeSymmetricKeyFormat2 = -67803;
+
+const int errSecInvalidAttributeWrappedKeyFormat2 = -67804;
+
+const int errSecMissingAttributeWrappedKeyFormat2 = -67805;
+
+const int errSecStagedOperationInProgress2 = -67806;
+
+const int errSecStagedOperationNotStarted2 = -67807;
+
+const int errSecVerifyFailed2 = -67808;
+
+const int errSecQuerySizeUnknown2 = -67809;
+
+const int errSecBlockSizeMismatch2 = -67810;
+
+const int errSecPublicKeyInconsistent2 = -67811;
+
+const int errSecDeviceVerifyFailed2 = -67812;
+
+const int errSecInvalidLoginName2 = -67813;
+
+const int errSecAlreadyLoggedIn2 = -67814;
+
+const int errSecInvalidDigestAlgorithm2 = -67815;
+
+const int errSecInvalidCRLGroup2 = -67816;
+
+const int errSecCertificateCannotOperate2 = -67817;
+
+const int errSecCertificateExpired2 = -67818;
+
+const int errSecCertificateNotValidYet2 = -67819;
+
+const int errSecCertificateRevoked2 = -67820;
+
+const int errSecCertificateSuspended2 = -67821;
+
+const int errSecInsufficientCredentials2 = -67822;
+
+const int errSecInvalidAction2 = -67823;
+
+const int errSecInvalidAuthority2 = -67824;
+
+const int errSecVerifyActionFailed2 = -67825;
+
+const int errSecInvalidCertAuthority2 = -67826;
+
+const int errSecInvalidCRLAuthority2 = -67827;
+
+const int errSecInvaldCRLAuthority2 = -67827;
+
+const int errSecInvalidCRLEncoding2 = -67828;
+
+const int errSecInvalidCRLType2 = -67829;
+
+const int errSecInvalidCRL2 = -67830;
+
+const int errSecInvalidFormType2 = -67831;
+
+const int errSecInvalidID2 = -67832;
+
+const int errSecInvalidIdentifier2 = -67833;
+
+const int errSecInvalidIndex2 = -67834;
+
+const int errSecInvalidPolicyIdentifiers2 = -67835;
+
+const int errSecInvalidTimeString2 = -67836;
+
+const int errSecInvalidReason2 = -67837;
+
+const int errSecInvalidRequestInputs2 = -67838;
+
+const int errSecInvalidResponseVector2 = -67839;
+
+const int errSecInvalidStopOnPolicy2 = -67840;
+
+const int errSecInvalidTuple2 = -67841;
+
+const int errSecMultipleValuesUnsupported2 = -67842;
+
+const int errSecNotTrusted2 = -67843;
+
+const int errSecNoDefaultAuthority2 = -67844;
+
+const int errSecRejectedForm2 = -67845;
+
+const int errSecRequestLost2 = -67846;
+
+const int errSecRequestRejected2 = -67847;
+
+const int errSecUnsupportedAddressType2 = -67848;
+
+const int errSecUnsupportedService2 = -67849;
+
+const int errSecInvalidTupleGroup2 = -67850;
+
+const int errSecInvalidBaseACLs2 = -67851;
+
+const int errSecInvalidTupleCredentials2 = -67852;
+
+const int errSecInvalidTupleCredendtials2 = -67852;
+
+const int errSecInvalidEncoding2 = -67853;
+
+const int errSecInvalidValidityPeriod2 = -67854;
+
+const int errSecInvalidRequestor2 = -67855;
+
+const int errSecRequestDescriptor2 = -67856;
+
+const int errSecInvalidBundleInfo2 = -67857;
+
+const int errSecInvalidCRLIndex2 = -67858;
+
+const int errSecNoFieldValues2 = -67859;
+
+const int errSecUnsupportedFieldFormat2 = -67860;
+
+const int errSecUnsupportedIndexInfo2 = -67861;
+
+const int errSecUnsupportedLocality2 = -67862;
+
+const int errSecUnsupportedNumAttributes2 = -67863;
+
+const int errSecUnsupportedNumIndexes2 = -67864;
+
+const int errSecUnsupportedNumRecordTypes2 = -67865;
+
+const int errSecFieldSpecifiedMultiple2 = -67866;
+
+const int errSecIncompatibleFieldFormat2 = -67867;
+
+const int errSecInvalidParsingModule2 = -67868;
+
+const int errSecDatabaseLocked2 = -67869;
+
+const int errSecDatastoreIsOpen2 = -67870;
+
+const int errSecMissingValue2 = -67871;
+
+const int errSecUnsupportedQueryLimits2 = -67872;
+
+const int errSecUnsupportedNumSelectionPreds2 = -67873;
+
+const int errSecUnsupportedOperator2 = -67874;
+
+const int errSecInvalidDBLocation2 = -67875;
+
+const int errSecInvalidAccessRequest2 = -67876;
+
+const int errSecInvalidIndexInfo2 = -67877;
+
+const int errSecInvalidNewOwner2 = -67878;
+
+const int errSecInvalidModifyMode2 = -67879;
+
+const int errSecMissingRequiredExtension2 = -67880;
+
+const int errSecExtendedKeyUsageNotCritical2 = -67881;
+
+const int errSecTimestampMissing2 = -67882;
+
+const int errSecTimestampInvalid2 = -67883;
+
+const int errSecTimestampNotTrusted2 = -67884;
+
+const int errSecTimestampServiceNotAvailable2 = -67885;
+
+const int errSecTimestampBadAlg2 = -67886;
+
+const int errSecTimestampBadRequest2 = -67887;
+
+const int errSecTimestampBadDataFormat2 = -67888;
+
+const int errSecTimestampTimeNotAvailable2 = -67889;
+
+const int errSecTimestampUnacceptedPolicy2 = -67890;
+
+const int errSecTimestampUnacceptedExtension2 = -67891;
+
+const int errSecTimestampAddInfoNotAvailable2 = -67892;
+
+const int errSecTimestampSystemFailure2 = -67893;
+
+const int errSecSigningTimeMissing2 = -67894;
+
+const int errSecTimestampRejection2 = -67895;
+
+const int errSecTimestampWaiting2 = -67896;
+
+const int errSecTimestampRevocationWarning2 = -67897;
+
+const int errSecTimestampRevocationNotification2 = -67898;
+
+const int errSecCertificatePolicyNotAllowed2 = -67899;
+
+const int errSecCertificateNameNotAllowed2 = -67900;
+
+const int errSecCertificateValidityPeriodTooLong2 = -67901;
+
+const int errSecCertificateIsCA2 = -67902;
+
+const int errSecCertificateDuplicateExtension2 = -67903;
