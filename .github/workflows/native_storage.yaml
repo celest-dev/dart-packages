@@ -5,7 +5,6 @@ on:
       - ".github/workflows/native_storage.yaml"
       - "packages/native/storage/**"
 
-
 # Prevent duplicate runs due to Graphite
 # https://graphite.dev/docs/troubleshooting#why-are-my-actions-running-twice
 concurrency:
@@ -68,7 +67,7 @@ jobs:
   test_android:
     runs-on:
       group: public
-      labels: linux
+      labels: linux-x64
     timeout-minutes: 15
     steps:
       - name: Git Checkout
