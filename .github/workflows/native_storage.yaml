@@ -65,9 +65,7 @@ jobs:
         working-directory: packages/native/storage/example
         run: flutter test -d macos integration_test/storage_test.dart
   test_android:
-    runs-on:
-      group: public
-      labels: linux-x64
+    runs-on: ubuntu-large
     timeout-minutes: 15
     steps:
       - name: Git Checkout
