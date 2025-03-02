@@ -19,13 +19,13 @@ final class NativeAuthenticationAndroid extends NativeAuthenticationPlatform {
   static final StreamController<android.CallbackResult>
       _redirectStreamController = StreamController.broadcast();
   static final _redirectCallback = android.Callback.implement(
-    android.$CallbackImpl(
+    android.$Callback(
       T: android.CallbackResult.type,
       onMessage: _redirectStreamController.add,
     ),
   );
   static final _nativeAuth = android.NativeAuthentication(
-    android.FlutterActivity.fromReference(Jni.getCurrentActivity()),
+    android.Activity.fromReference(Jni.getCurrentActivity()),
     _redirectCallback,
   );
 
@@ -116,11 +116,10 @@ final class NativeAuthenticationAndroid extends NativeAuthenticationPlatform {
         'Another redirect operation is in progress (id=${currentSession.id})',
       );
     }
-    // ignore: invalid_use_of_internal_member
     final sessionId = NativeAuthCallbackSessionImpl.nextId();
     final cancellationToken = _nativeAuth.startCallback(
       sessionId,
-      android.Uri.parse(uri.toString().toJString()),
+      android.Uri.parse(uri.toString().toJString())!,
     );
     _currentCompleter = Completer<Uri>();
     _logger.finer('Redirect flow started');

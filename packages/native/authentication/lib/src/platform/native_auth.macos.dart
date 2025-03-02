@@ -8,8 +8,8 @@ import 'package:native_authentication/src/platform/native_auth.desktop.dart';
 import 'package:objective_c/objective_c.dart' as objc;
 
 // ignore: camel_case_types
-typedef _ObjCBlock_ffiVoid_NSURL_NSError = objc.ObjCBlock<
-    Void Function(Pointer<objc.ObjCObject>, Pointer<objc.ObjCObject>)>;
+typedef _ObjCBlock_ffiVoid_NSURL_NSError
+    = objc.ObjCBlock<Void Function(objc.NSURL?, objc.NSError?)>;
 
 final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
   NativeAuthenticationMacOs({super.logger});
