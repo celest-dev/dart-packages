@@ -3,10 +3,9 @@
 android_sdk_config:
   add_gradle_deps: true
   android_example: "example/"
-
-suspend_fun_to_async: true
-enable_experiment:
-  - "interface_implementation"
+summarizer:
+  backend: asm
+log_level: all
 
 output:
   dart:
@@ -27,4 +26,10 @@ classes:
   - android.net.Uri
   - android.os.Bundle
   - android.os.CancellationSignal
-  - io.flutter.embedding.android.FlutterActivity
+
+# TODO: Should work but doesn't. When fixed, we can accept FlutterActivity in NativeAuthentication.init
+#   - io.flutter.embedding.android.FlutterActivity
+# # exclude:
+# #   methods:
+# #     # Results in `invalid_override` error
+# #     - "io.flutter.embedding.android.FlutterActivity#onRequestPermissionsResult"

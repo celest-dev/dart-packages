@@ -1,5 +1,6 @@
 package dev.celest.native_authentication
 
+import android.app.Activity
 import android.content.ComponentName
 import android.content.Intent
 import android.net.Uri
@@ -28,7 +29,7 @@ interface Callback<T> {
  * Platform authorization methods.
  */
 class NativeAuthentication(
-    private val mainActivity: FlutterActivity,
+    private val mainActivity: Activity,
     private val redirectCallback: Callback<CallbackResult>
 ) {
 
@@ -65,7 +66,7 @@ class NativeAuthentication(
 
     @UiThread
     private fun listenForRedirects() {
-        currentState.observe(mainActivity) {
+        currentState.observe(mainActivity as FlutterActivity) {
             Log.d(TAG, "Redirect state change: $it")
             val result = when (it) {
                 is CallbackState.Success -> CallbackResult(

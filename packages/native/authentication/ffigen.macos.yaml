@@ -4,6 +4,9 @@ description: |
 
   Regenerate bindings with `dart run ffigen --config=ffigen.macos.yaml`.
 language: "objc"
+external-versions:
+  macos:
+    min: 14.5.0
 output: 
   bindings: "lib/src/native/macos/authentication_services.ffi.dart"
   objc-bindings: "macos/Classes/AuthenticationServices.ffi.m"
@@ -17,6 +20,7 @@ headers:
   entry-points:
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSProcessInfo.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSApplication.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSDragging.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSWindow.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Cryptexes/OS/System/Library/Frameworks/AuthenticationServices.framework/Versions/A/Headers/ASFoundation.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Cryptexes/OS/System/Library/Frameworks/AuthenticationServices.framework/Versions/A/Headers/ASWebAuthenticationSession.h"
@@ -26,6 +30,7 @@ headers:
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSProcessInfo.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/AppKit.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSApplication.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSDragging.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSWindow.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Cryptexes/OS/System/Library/Frameworks/AuthenticationServices.framework/Versions/A/Headers/ASFoundation.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Cryptexes/OS/System/Library/Frameworks/AuthenticationServices.framework/Versions/A/Headers/ASWebAuthenticationSession.h"
@@ -33,6 +38,7 @@ headers:
 preamble: |
   // ignore_for_file: type=lint
   // ignore_for_file: return_of_invalid_type
+  // ignore_for_file: unused_element
 comments:
   style: any
   length: full
@@ -44,9 +50,26 @@ objc-interfaces:
     - NSWindow
     - NSProcessInfo
     - AS.*
+  member-filter:
+    NSApplication:
+      include:
+        - "sharedApplication"
+        - "windows"
+    NSWindow:
+      include:
+        - "isKeyWindow"
+    NSProcessInfo:
+      include:
+        - "processInfo"
+        - "operatingSystemVersionString"
+    NSView:
+      include: []
+    NSResponder:
+      include: []
 objc-protocols:
   include:
     - NSApplicationDelegate
+    - NSDraggingDestination
     - AS.*
 enums:
   include:

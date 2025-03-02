@@ -9,8 +9,8 @@ import 'package:native_authentication/src/native_auth.platform_io.dart';
 import 'package:objective_c/objective_c.dart' as objc;
 
 // ignore: camel_case_types
-typedef _ObjCBlock_ffiVoid_NSURL_NSError = objc.ObjCBlock<
-    Void Function(Pointer<objc.ObjCObject>, Pointer<objc.ObjCObject>)>;
+typedef _ObjCBlock_ffiVoid_NSURL_NSError
+    = objc.ObjCBlock<Void Function(objc.NSURL?, objc.NSError?)>;
 
 final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
   NativeAuthenticationIos({Logger? logger})
@@ -25,13 +25,26 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
   late final _presentationContextProvider =
       ASWebAuthenticationPresentationContextProviding.implement(
     presentationAnchorForWebAuthenticationSession_: (session) {
-      final keyWindow = UIApplication.getSharedApplication().keyWindow;
-      if (keyWindow == null) {
-        logger?.severe('Failed to get key window');
-        session.cancel();
-        return UIWindow.castFromPointer(nullptr);
+      // Best way to get the key window in iOS 13+.
+      // https://stackoverflow.com/questions/57134259/how-to-resolve-keywindow-was-deprecated-in-ios-13-0
+      final connectedScenes =
+          UIApplication.getSharedApplication().connectedScenes.allObjects;
+      for (var sceneId = 0; sceneId < connectedScenes.count; sceneId++) {
+        final scene = connectedScenes.objectAtIndex_(sceneId);
+        if (!UIWindowScene.isInstance(scene)) {
+          continue;
+        }
+        final windows = UIWindowScene.castFrom(scene).windows;
+        for (var windowId = 0; windowId < windows.count; windowId++) {
+          final window = UIWindow.castFrom(windows.objectAtIndex_(windowId));
+          if (window.keyWindow) {
+            return window;
+          }
+        }
       }
-      return keyWindow;
+      logger?.severe('Failed to get key window');
+      session.cancel();
+      return UIWindow.castFromPointer(nullptr);
     },
   );
 
