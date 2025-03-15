@@ -1,3 +1,8 @@
+## 0.2.3
+
+- chore: Bump dependencies
+- chore: Re-generate native bindings
+
 ## 0.2.2
 
 - chore: Bump dependencies

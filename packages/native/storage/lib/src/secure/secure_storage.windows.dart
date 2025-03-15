@@ -26,7 +26,7 @@ final class SecureStorageWindows extends NativeSecureStoragePlatform
   @override
   String? read(String key) {
     return using((arena) {
-      final value = registry.getValueAsString(key);
+      final value = registry.getStringValue(key);
       if (value == null) {
         return null;
       }

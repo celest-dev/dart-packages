@@ -2902,11 +2902,11 @@ const int kCFCompareEqualTo = 0;
 
 const int kCFCompareGreaterThan = 1;
 
-const int kCFCompareLessThan1 = -1;
+const int kCFCompareLessThan$1 = -1;
 
-const int kCFCompareEqualTo1 = 0;
+const int kCFCompareEqualTo$1 = 0;
 
-const int kCFCompareGreaterThan1 = 1;
+const int kCFCompareGreaterThan$1 = 1;
 
 const int kCFDataSearchBackwards = 1;
 
@@ -3010,12 +3010,12 @@ const int kCFStringNormalizationFormC = 2;
 
 const int kCFStringNormalizationFormKC = 3;
 
-const int kCFCompareLessThan2 = -1;
+const int kCFCompareLessThan$2 = -1;
 
-const int kCFCompareEqualTo2 = 0;
+const int kCFCompareEqualTo$2 = 0;
 
-const int kCFCompareGreaterThan2 = 1;
+const int kCFCompareGreaterThan$2 = 1;
 
-const int kCFDataSearchBackwards1 = 1;
+const int kCFDataSearchBackwards$1 = 1;
 
-const int kCFDataSearchAnchored1 = 2;
+const int kCFDataSearchAnchored$1 = 2;

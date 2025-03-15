@@ -40,7 +40,7 @@ final class NativeLocalStoragePlatform extends NativeStorageBase
   }
 
   @override
-  String? read(String key) => _storage['$_prefix$key'];
+  String? read(String key) => _storage.getItem('$_prefix$key');
 
   @override
   String write(String key, String value) {
