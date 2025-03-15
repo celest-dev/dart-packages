@@ -1,3 +1,7 @@
+# 0.1.1+1
+
+- fix: Add default redirect scheme on Android
+
 # 0.1.1
 
 - chore: Update dependencies
