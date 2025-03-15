@@ -2953,1534 +2953,1534 @@ const int errSecCertificateIsCA = -67902;
 
 const int errSecCertificateDuplicateExtension = -67903;
 
-const int errSecSuccess1 = 0;
+const int errSecSuccess$1 = 0;
 
-const int errSecUnimplemented1 = -4;
+const int errSecUnimplemented$1 = -4;
 
-const int errSecDiskFull1 = -34;
+const int errSecDiskFull$1 = -34;
 
-const int errSecDskFull1 = -34;
+const int errSecDskFull$1 = -34;
 
-const int errSecIO1 = -36;
+const int errSecIO$1 = -36;
 
-const int errSecOpWr1 = -49;
+const int errSecOpWr$1 = -49;
 
-const int errSecParam1 = -50;
+const int errSecParam$1 = -50;
 
-const int errSecWrPerm1 = -61;
+const int errSecWrPerm$1 = -61;
 
-const int errSecAllocate1 = -108;
+const int errSecAllocate$1 = -108;
 
-const int errSecUserCanceled1 = -128;
+const int errSecUserCanceled$1 = -128;
 
-const int errSecBadReq1 = -909;
+const int errSecBadReq$1 = -909;
 
-const int errSecInternalComponent1 = -2070;
+const int errSecInternalComponent$1 = -2070;
 
-const int errSecCoreFoundationUnknown1 = -4960;
+const int errSecCoreFoundationUnknown$1 = -4960;
 
-const int errSecMissingEntitlement1 = -34018;
+const int errSecMissingEntitlement$1 = -34018;
 
-const int errSecRestrictedAPI1 = -34020;
+const int errSecRestrictedAPI$1 = -34020;
 
-const int errSecNotAvailable1 = -25291;
+const int errSecNotAvailable$1 = -25291;
 
-const int errSecReadOnly1 = -25292;
+const int errSecReadOnly$1 = -25292;
 
-const int errSecAuthFailed1 = -25293;
+const int errSecAuthFailed$1 = -25293;
 
-const int errSecNoSuchKeychain1 = -25294;
+const int errSecNoSuchKeychain$1 = -25294;
 
-const int errSecInvalidKeychain1 = -25295;
+const int errSecInvalidKeychain$1 = -25295;
 
-const int errSecDuplicateKeychain1 = -25296;
+const int errSecDuplicateKeychain$1 = -25296;
 
-const int errSecDuplicateCallback1 = -25297;
+const int errSecDuplicateCallback$1 = -25297;
 
-const int errSecInvalidCallback1 = -25298;
+const int errSecInvalidCallback$1 = -25298;
 
-const int errSecDuplicateItem1 = -25299;
+const int errSecDuplicateItem$1 = -25299;
 
-const int errSecItemNotFound1 = -25300;
+const int errSecItemNotFound$1 = -25300;
 
-const int errSecBufferTooSmall1 = -25301;
+const int errSecBufferTooSmall$1 = -25301;
 
-const int errSecDataTooLarge1 = -25302;
+const int errSecDataTooLarge$1 = -25302;
 
-const int errSecNoSuchAttr1 = -25303;
+const int errSecNoSuchAttr$1 = -25303;
 
-const int errSecInvalidItemRef1 = -25304;
+const int errSecInvalidItemRef$1 = -25304;
 
-const int errSecInvalidSearchRef1 = -25305;
+const int errSecInvalidSearchRef$1 = -25305;
 
-const int errSecNoSuchClass1 = -25306;
+const int errSecNoSuchClass$1 = -25306;
 
-const int errSecNoDefaultKeychain1 = -25307;
+const int errSecNoDefaultKeychain$1 = -25307;
 
-const int errSecInteractionNotAllowed1 = -25308;
+const int errSecInteractionNotAllowed$1 = -25308;
 
-const int errSecReadOnlyAttr1 = -25309;
+const int errSecReadOnlyAttr$1 = -25309;
 
-const int errSecWrongSecVersion1 = -25310;
+const int errSecWrongSecVersion$1 = -25310;
 
-const int errSecKeySizeNotAllowed1 = -25311;
+const int errSecKeySizeNotAllowed$1 = -25311;
 
-const int errSecNoStorageModule1 = -25312;
+const int errSecNoStorageModule$1 = -25312;
 
-const int errSecNoCertificateModule1 = -25313;
+const int errSecNoCertificateModule$1 = -25313;
 
-const int errSecNoPolicyModule1 = -25314;
+const int errSecNoPolicyModule$1 = -25314;
 
-const int errSecInteractionRequired1 = -25315;
+const int errSecInteractionRequired$1 = -25315;
 
-const int errSecDataNotAvailable1 = -25316;
+const int errSecDataNotAvailable$1 = -25316;
 
-const int errSecDataNotModifiable1 = -25317;
+const int errSecDataNotModifiable$1 = -25317;
 
-const int errSecCreateChainFailed1 = -25318;
+const int errSecCreateChainFailed$1 = -25318;
 
-const int errSecInvalidPrefsDomain1 = -25319;
+const int errSecInvalidPrefsDomain$1 = -25319;
 
-const int errSecInDarkWake1 = -25320;
+const int errSecInDarkWake$1 = -25320;
 
-const int errSecACLNotSimple1 = -25240;
+const int errSecACLNotSimple$1 = -25240;
 
-const int errSecPolicyNotFound1 = -25241;
+const int errSecPolicyNotFound$1 = -25241;
 
-const int errSecInvalidTrustSetting1 = -25242;
+const int errSecInvalidTrustSetting$1 = -25242;
 
-const int errSecNoAccessForItem1 = -25243;
+const int errSecNoAccessForItem$1 = -25243;
 
-const int errSecInvalidOwnerEdit1 = -25244;
+const int errSecInvalidOwnerEdit$1 = -25244;
 
-const int errSecTrustNotAvailable1 = -25245;
+const int errSecTrustNotAvailable$1 = -25245;
 
-const int errSecUnsupportedFormat1 = -25256;
+const int errSecUnsupportedFormat$1 = -25256;
 
-const int errSecUnknownFormat1 = -25257;
+const int errSecUnknownFormat$1 = -25257;
 
-const int errSecKeyIsSensitive1 = -25258;
+const int errSecKeyIsSensitive$1 = -25258;
 
-const int errSecMultiplePrivKeys1 = -25259;
+const int errSecMultiplePrivKeys$1 = -25259;
 
-const int errSecPassphraseRequired1 = -25260;
+const int errSecPassphraseRequired$1 = -25260;
 
-const int errSecInvalidPasswordRef1 = -25261;
+const int errSecInvalidPasswordRef$1 = -25261;
 
-const int errSecInvalidTrustSettings1 = -25262;
+const int errSecInvalidTrustSettings$1 = -25262;
 
-const int errSecNoTrustSettings1 = -25263;
+const int errSecNoTrustSettings$1 = -25263;
 
-const int errSecPkcs12VerifyFailure1 = -25264;
+const int errSecPkcs12VerifyFailure$1 = -25264;
 
-const int errSecNotSigner1 = -26267;
+const int errSecNotSigner$1 = -26267;
 
-const int errSecDecode1 = -26275;
+const int errSecDecode$1 = -26275;
 
-const int errSecServiceNotAvailable1 = -67585;
+const int errSecServiceNotAvailable$1 = -67585;
 
-const int errSecInsufficientClientID1 = -67586;
+const int errSecInsufficientClientID$1 = -67586;
 
-const int errSecDeviceReset1 = -67587;
+const int errSecDeviceReset$1 = -67587;
 
-const int errSecDeviceFailed1 = -67588;
+const int errSecDeviceFailed$1 = -67588;
 
-const int errSecAppleAddAppACLSubject1 = -67589;
+const int errSecAppleAddAppACLSubject$1 = -67589;
 
-const int errSecApplePublicKeyIncomplete1 = -67590;
+const int errSecApplePublicKeyIncomplete$1 = -67590;
 
-const int errSecAppleSignatureMismatch1 = -67591;
+const int errSecAppleSignatureMismatch$1 = -67591;
 
-const int errSecAppleInvalidKeyStartDate1 = -67592;
+const int errSecAppleInvalidKeyStartDate$1 = -67592;
 
-const int errSecAppleInvalidKeyEndDate1 = -67593;
+const int errSecAppleInvalidKeyEndDate$1 = -67593;
 
-const int errSecConversionError1 = -67594;
+const int errSecConversionError$1 = -67594;
 
-const int errSecAppleSSLv2Rollback1 = -67595;
+const int errSecAppleSSLv2Rollback$1 = -67595;
 
-const int errSecQuotaExceeded1 = -67596;
+const int errSecQuotaExceeded$1 = -67596;
 
-const int errSecFileTooBig1 = -67597;
+const int errSecFileTooBig$1 = -67597;
 
-const int errSecInvalidDatabaseBlob1 = -67598;
+const int errSecInvalidDatabaseBlob$1 = -67598;
 
-const int errSecInvalidKeyBlob1 = -67599;
+const int errSecInvalidKeyBlob$1 = -67599;
 
-const int errSecIncompatibleDatabaseBlob1 = -67600;
+const int errSecIncompatibleDatabaseBlob$1 = -67600;
 
-const int errSecIncompatibleKeyBlob1 = -67601;
+const int errSecIncompatibleKeyBlob$1 = -67601;
 
-const int errSecHostNameMismatch1 = -67602;
+const int errSecHostNameMismatch$1 = -67602;
 
-const int errSecUnknownCriticalExtensionFlag1 = -67603;
+const int errSecUnknownCriticalExtensionFlag$1 = -67603;
 
-const int errSecNoBasicConstraints1 = -67604;
+const int errSecNoBasicConstraints$1 = -67604;
 
-const int errSecNoBasicConstraintsCA1 = -67605;
+const int errSecNoBasicConstraintsCA$1 = -67605;
 
-const int errSecInvalidAuthorityKeyID1 = -67606;
+const int errSecInvalidAuthorityKeyID$1 = -67606;
 
-const int errSecInvalidSubjectKeyID1 = -67607;
+const int errSecInvalidSubjectKeyID$1 = -67607;
 
-const int errSecInvalidKeyUsageForPolicy1 = -67608;
+const int errSecInvalidKeyUsageForPolicy$1 = -67608;
 
-const int errSecInvalidExtendedKeyUsage1 = -67609;
+const int errSecInvalidExtendedKeyUsage$1 = -67609;
 
-const int errSecInvalidIDLinkage1 = -67610;
+const int errSecInvalidIDLinkage$1 = -67610;
 
-const int errSecPathLengthConstraintExceeded1 = -67611;
+const int errSecPathLengthConstraintExceeded$1 = -67611;
 
-const int errSecInvalidRoot1 = -67612;
+const int errSecInvalidRoot$1 = -67612;
 
-const int errSecCRLExpired1 = -67613;
+const int errSecCRLExpired$1 = -67613;
 
-const int errSecCRLNotValidYet1 = -67614;
+const int errSecCRLNotValidYet$1 = -67614;
 
-const int errSecCRLNotFound1 = -67615;
+const int errSecCRLNotFound$1 = -67615;
 
-const int errSecCRLServerDown1 = -67616;
+const int errSecCRLServerDown$1 = -67616;
 
-const int errSecCRLBadURI1 = -67617;
+const int errSecCRLBadURI$1 = -67617;
 
-const int errSecUnknownCertExtension1 = -67618;
+const int errSecUnknownCertExtension$1 = -67618;
 
-const int errSecUnknownCRLExtension1 = -67619;
+const int errSecUnknownCRLExtension$1 = -67619;
 
-const int errSecCRLNotTrusted1 = -67620;
+const int errSecCRLNotTrusted$1 = -67620;
 
-const int errSecCRLPolicyFailed1 = -67621;
+const int errSecCRLPolicyFailed$1 = -67621;
 
-const int errSecIDPFailure1 = -67622;
+const int errSecIDPFailure$1 = -67622;
 
-const int errSecSMIMEEmailAddressesNotFound1 = -67623;
+const int errSecSMIMEEmailAddressesNotFound$1 = -67623;
 
-const int errSecSMIMEBadExtendedKeyUsage1 = -67624;
+const int errSecSMIMEBadExtendedKeyUsage$1 = -67624;
 
-const int errSecSMIMEBadKeyUsage1 = -67625;
+const int errSecSMIMEBadKeyUsage$1 = -67625;
 
-const int errSecSMIMEKeyUsageNotCritical1 = -67626;
+const int errSecSMIMEKeyUsageNotCritical$1 = -67626;
 
-const int errSecSMIMENoEmailAddress1 = -67627;
+const int errSecSMIMENoEmailAddress$1 = -67627;
 
-const int errSecSMIMESubjAltNameNotCritical1 = -67628;
+const int errSecSMIMESubjAltNameNotCritical$1 = -67628;
 
-const int errSecSSLBadExtendedKeyUsage1 = -67629;
+const int errSecSSLBadExtendedKeyUsage$1 = -67629;
 
-const int errSecOCSPBadResponse1 = -67630;
+const int errSecOCSPBadResponse$1 = -67630;
 
-const int errSecOCSPBadRequest1 = -67631;
+const int errSecOCSPBadRequest$1 = -67631;
 
-const int errSecOCSPUnavailable1 = -67632;
+const int errSecOCSPUnavailable$1 = -67632;
 
-const int errSecOCSPStatusUnrecognized1 = -67633;
+const int errSecOCSPStatusUnrecognized$1 = -67633;
 
-const int errSecEndOfData1 = -67634;
+const int errSecEndOfData$1 = -67634;
 
-const int errSecIncompleteCertRevocationCheck1 = -67635;
+const int errSecIncompleteCertRevocationCheck$1 = -67635;
 
-const int errSecNetworkFailure1 = -67636;
+const int errSecNetworkFailure$1 = -67636;
 
-const int errSecOCSPNotTrustedToAnchor1 = -67637;
+const int errSecOCSPNotTrustedToAnchor$1 = -67637;
 
-const int errSecRecordModified1 = -67638;
+const int errSecRecordModified$1 = -67638;
 
-const int errSecOCSPSignatureError1 = -67639;
+const int errSecOCSPSignatureError$1 = -67639;
 
-const int errSecOCSPNoSigner1 = -67640;
+const int errSecOCSPNoSigner$1 = -67640;
 
-const int errSecOCSPResponderMalformedReq1 = -67641;
+const int errSecOCSPResponderMalformedReq$1 = -67641;
 
-const int errSecOCSPResponderInternalError1 = -67642;
+const int errSecOCSPResponderInternalError$1 = -67642;
 
-const int errSecOCSPResponderTryLater1 = -67643;
+const int errSecOCSPResponderTryLater$1 = -67643;
 
-const int errSecOCSPResponderSignatureRequired1 = -67644;
+const int errSecOCSPResponderSignatureRequired$1 = -67644;
 
-const int errSecOCSPResponderUnauthorized1 = -67645;
+const int errSecOCSPResponderUnauthorized$1 = -67645;
 
-const int errSecOCSPResponseNonceMismatch1 = -67646;
+const int errSecOCSPResponseNonceMismatch$1 = -67646;
 
-const int errSecCodeSigningBadCertChainLength1 = -67647;
+const int errSecCodeSigningBadCertChainLength$1 = -67647;
 
-const int errSecCodeSigningNoBasicConstraints1 = -67648;
+const int errSecCodeSigningNoBasicConstraints$1 = -67648;
 
-const int errSecCodeSigningBadPathLengthConstraint1 = -67649;
+const int errSecCodeSigningBadPathLengthConstraint$1 = -67649;
 
-const int errSecCodeSigningNoExtendedKeyUsage1 = -67650;
+const int errSecCodeSigningNoExtendedKeyUsage$1 = -67650;
 
-const int errSecCodeSigningDevelopment1 = -67651;
+const int errSecCodeSigningDevelopment$1 = -67651;
 
-const int errSecResourceSignBadCertChainLength1 = -67652;
+const int errSecResourceSignBadCertChainLength$1 = -67652;
 
-const int errSecResourceSignBadExtKeyUsage1 = -67653;
+const int errSecResourceSignBadExtKeyUsage$1 = -67653;
 
-const int errSecTrustSettingDeny1 = -67654;
+const int errSecTrustSettingDeny$1 = -67654;
 
-const int errSecInvalidSubjectName1 = -67655;
+const int errSecInvalidSubjectName$1 = -67655;
 
-const int errSecUnknownQualifiedCertStatement1 = -67656;
+const int errSecUnknownQualifiedCertStatement$1 = -67656;
 
-const int errSecMobileMeRequestQueued1 = -67657;
+const int errSecMobileMeRequestQueued$1 = -67657;
 
-const int errSecMobileMeRequestRedirected1 = -67658;
+const int errSecMobileMeRequestRedirected$1 = -67658;
 
-const int errSecMobileMeServerError1 = -67659;
+const int errSecMobileMeServerError$1 = -67659;
 
-const int errSecMobileMeServerNotAvailable1 = -67660;
+const int errSecMobileMeServerNotAvailable$1 = -67660;
 
-const int errSecMobileMeServerAlreadyExists1 = -67661;
+const int errSecMobileMeServerAlreadyExists$1 = -67661;
 
-const int errSecMobileMeServerServiceErr1 = -67662;
+const int errSecMobileMeServerServiceErr$1 = -67662;
 
-const int errSecMobileMeRequestAlreadyPending1 = -67663;
+const int errSecMobileMeRequestAlreadyPending$1 = -67663;
 
-const int errSecMobileMeNoRequestPending1 = -67664;
+const int errSecMobileMeNoRequestPending$1 = -67664;
 
-const int errSecMobileMeCSRVerifyFailure1 = -67665;
+const int errSecMobileMeCSRVerifyFailure$1 = -67665;
 
-const int errSecMobileMeFailedConsistencyCheck1 = -67666;
+const int errSecMobileMeFailedConsistencyCheck$1 = -67666;
 
-const int errSecNotInitialized1 = -67667;
+const int errSecNotInitialized$1 = -67667;
 
-const int errSecInvalidHandleUsage1 = -67668;
+const int errSecInvalidHandleUsage$1 = -67668;
 
-const int errSecPVCReferentNotFound1 = -67669;
+const int errSecPVCReferentNotFound$1 = -67669;
 
-const int errSecFunctionIntegrityFail1 = -67670;
+const int errSecFunctionIntegrityFail$1 = -67670;
 
-const int errSecInternalError1 = -67671;
+const int errSecInternalError$1 = -67671;
 
-const int errSecMemoryError1 = -67672;
+const int errSecMemoryError$1 = -67672;
 
-const int errSecInvalidData1 = -67673;
+const int errSecInvalidData$1 = -67673;
 
-const int errSecMDSError1 = -67674;
+const int errSecMDSError$1 = -67674;
 
-const int errSecInvalidPointer1 = -67675;
+const int errSecInvalidPointer$1 = -67675;
 
-const int errSecSelfCheckFailed1 = -67676;
+const int errSecSelfCheckFailed$1 = -67676;
 
-const int errSecFunctionFailed1 = -67677;
+const int errSecFunctionFailed$1 = -67677;
 
-const int errSecModuleManifestVerifyFailed1 = -67678;
+const int errSecModuleManifestVerifyFailed$1 = -67678;
 
-const int errSecInvalidGUID1 = -67679;
+const int errSecInvalidGUID$1 = -67679;
 
-const int errSecInvalidHandle1 = -67680;
+const int errSecInvalidHandle$1 = -67680;
 
-const int errSecInvalidDBList1 = -67681;
+const int errSecInvalidDBList$1 = -67681;
 
-const int errSecInvalidPassthroughID1 = -67682;
+const int errSecInvalidPassthroughID$1 = -67682;
 
-const int errSecInvalidNetworkAddress1 = -67683;
+const int errSecInvalidNetworkAddress$1 = -67683;
 
-const int errSecCRLAlreadySigned1 = -67684;
+const int errSecCRLAlreadySigned$1 = -67684;
 
-const int errSecInvalidNumberOfFields1 = -67685;
+const int errSecInvalidNumberOfFields$1 = -67685;
 
-const int errSecVerificationFailure1 = -67686;
+const int errSecVerificationFailure$1 = -67686;
 
-const int errSecUnknownTag1 = -67687;
+const int errSecUnknownTag$1 = -67687;
 
-const int errSecInvalidSignature1 = -67688;
+const int errSecInvalidSignature$1 = -67688;
 
-const int errSecInvalidName1 = -67689;
+const int errSecInvalidName$1 = -67689;
 
-const int errSecInvalidCertificateRef1 = -67690;
+const int errSecInvalidCertificateRef$1 = -67690;
 
-const int errSecInvalidCertificateGroup1 = -67691;
+const int errSecInvalidCertificateGroup$1 = -67691;
 
-const int errSecTagNotFound1 = -67692;
+const int errSecTagNotFound$1 = -67692;
 
-const int errSecInvalidQuery1 = -67693;
+const int errSecInvalidQuery$1 = -67693;
 
-const int errSecInvalidValue1 = -67694;
+const int errSecInvalidValue$1 = -67694;
 
-const int errSecCallbackFailed1 = -67695;
+const int errSecCallbackFailed$1 = -67695;
 
-const int errSecACLDeleteFailed1 = -67696;
+const int errSecACLDeleteFailed$1 = -67696;
 
-const int errSecACLReplaceFailed1 = -67697;
+const int errSecACLReplaceFailed$1 = -67697;
 
-const int errSecACLAddFailed1 = -67698;
+const int errSecACLAddFailed$1 = -67698;
 
-const int errSecACLChangeFailed1 = -67699;
+const int errSecACLChangeFailed$1 = -67699;
 
-const int errSecInvalidAccessCredentials1 = -67700;
+const int errSecInvalidAccessCredentials$1 = -67700;
 
-const int errSecInvalidRecord1 = -67701;
+const int errSecInvalidRecord$1 = -67701;
 
-const int errSecInvalidACL1 = -67702;
+const int errSecInvalidACL$1 = -67702;
 
-const int errSecInvalidSampleValue1 = -67703;
+const int errSecInvalidSampleValue$1 = -67703;
 
-const int errSecIncompatibleVersion1 = -67704;
+const int errSecIncompatibleVersion$1 = -67704;
 
-const int errSecPrivilegeNotGranted1 = -67705;
+const int errSecPrivilegeNotGranted$1 = -67705;
 
-const int errSecInvalidScope1 = -67706;
+const int errSecInvalidScope$1 = -67706;
 
-const int errSecPVCAlreadyConfigured1 = -67707;
+const int errSecPVCAlreadyConfigured$1 = -67707;
 
-const int errSecInvalidPVC1 = -67708;
+const int errSecInvalidPVC$1 = -67708;
 
-const int errSecEMMLoadFailed1 = -67709;
+const int errSecEMMLoadFailed$1 = -67709;
 
-const int errSecEMMUnloadFailed1 = -67710;
+const int errSecEMMUnloadFailed$1 = -67710;
 
-const int errSecAddinLoadFailed1 = -67711;
+const int errSecAddinLoadFailed$1 = -67711;
 
-const int errSecInvalidKeyRef1 = -67712;
+const int errSecInvalidKeyRef$1 = -67712;
 
-const int errSecInvalidKeyHierarchy1 = -67713;
+const int errSecInvalidKeyHierarchy$1 = -67713;
 
-const int errSecAddinUnloadFailed1 = -67714;
+const int errSecAddinUnloadFailed$1 = -67714;
 
-const int errSecLibraryReferenceNotFound1 = -67715;
+const int errSecLibraryReferenceNotFound$1 = -67715;
 
-const int errSecInvalidAddinFunctionTable1 = -67716;
+const int errSecInvalidAddinFunctionTable$1 = -67716;
 
-const int errSecInvalidServiceMask1 = -67717;
+const int errSecInvalidServiceMask$1 = -67717;
 
-const int errSecModuleNotLoaded1 = -67718;
+const int errSecModuleNotLoaded$1 = -67718;
 
-const int errSecInvalidSubServiceID1 = -67719;
+const int errSecInvalidSubServiceID$1 = -67719;
 
-const int errSecAttributeNotInContext1 = -67720;
+const int errSecAttributeNotInContext$1 = -67720;
 
-const int errSecModuleManagerInitializeFailed1 = -67721;
+const int errSecModuleManagerInitializeFailed$1 = -67721;
 
-const int errSecModuleManagerNotFound1 = -67722;
+const int errSecModuleManagerNotFound$1 = -67722;
 
-const int errSecEventNotificationCallbackNotFound1 = -67723;
+const int errSecEventNotificationCallbackNotFound$1 = -67723;
 
-const int errSecInputLengthError1 = -67724;
+const int errSecInputLengthError$1 = -67724;
 
-const int errSecOutputLengthError1 = -67725;
+const int errSecOutputLengthError$1 = -67725;
 
-const int errSecPrivilegeNotSupported1 = -67726;
+const int errSecPrivilegeNotSupported$1 = -67726;
 
-const int errSecDeviceError1 = -67727;
+const int errSecDeviceError$1 = -67727;
 
-const int errSecAttachHandleBusy1 = -67728;
+const int errSecAttachHandleBusy$1 = -67728;
 
-const int errSecNotLoggedIn1 = -67729;
+const int errSecNotLoggedIn$1 = -67729;
 
-const int errSecAlgorithmMismatch1 = -67730;
+const int errSecAlgorithmMismatch$1 = -67730;
 
-const int errSecKeyUsageIncorrect1 = -67731;
+const int errSecKeyUsageIncorrect$1 = -67731;
 
-const int errSecKeyBlobTypeIncorrect1 = -67732;
+const int errSecKeyBlobTypeIncorrect$1 = -67732;
 
-const int errSecKeyHeaderInconsistent1 = -67733;
+const int errSecKeyHeaderInconsistent$1 = -67733;
 
-const int errSecUnsupportedKeyFormat1 = -67734;
+const int errSecUnsupportedKeyFormat$1 = -67734;
 
-const int errSecUnsupportedKeySize1 = -67735;
+const int errSecUnsupportedKeySize$1 = -67735;
 
-const int errSecInvalidKeyUsageMask1 = -67736;
+const int errSecInvalidKeyUsageMask$1 = -67736;
 
-const int errSecUnsupportedKeyUsageMask1 = -67737;
+const int errSecUnsupportedKeyUsageMask$1 = -67737;
 
-const int errSecInvalidKeyAttributeMask1 = -67738;
+const int errSecInvalidKeyAttributeMask$1 = -67738;
 
-const int errSecUnsupportedKeyAttributeMask1 = -67739;
+const int errSecUnsupportedKeyAttributeMask$1 = -67739;
 
-const int errSecInvalidKeyLabel1 = -67740;
+const int errSecInvalidKeyLabel$1 = -67740;
 
-const int errSecUnsupportedKeyLabel1 = -67741;
+const int errSecUnsupportedKeyLabel$1 = -67741;
 
-const int errSecInvalidKeyFormat1 = -67742;
+const int errSecInvalidKeyFormat$1 = -67742;
 
-const int errSecUnsupportedVectorOfBuffers1 = -67743;
+const int errSecUnsupportedVectorOfBuffers$1 = -67743;
 
-const int errSecInvalidInputVector1 = -67744;
+const int errSecInvalidInputVector$1 = -67744;
 
-const int errSecInvalidOutputVector1 = -67745;
+const int errSecInvalidOutputVector$1 = -67745;
 
-const int errSecInvalidContext1 = -67746;
+const int errSecInvalidContext$1 = -67746;
 
-const int errSecInvalidAlgorithm1 = -67747;
+const int errSecInvalidAlgorithm$1 = -67747;
 
-const int errSecInvalidAttributeKey1 = -67748;
+const int errSecInvalidAttributeKey$1 = -67748;
 
-const int errSecMissingAttributeKey1 = -67749;
+const int errSecMissingAttributeKey$1 = -67749;
 
-const int errSecInvalidAttributeInitVector1 = -67750;
+const int errSecInvalidAttributeInitVector$1 = -67750;
 
-const int errSecMissingAttributeInitVector1 = -67751;
+const int errSecMissingAttributeInitVector$1 = -67751;
 
-const int errSecInvalidAttributeSalt1 = -67752;
+const int errSecInvalidAttributeSalt$1 = -67752;
 
-const int errSecMissingAttributeSalt1 = -67753;
+const int errSecMissingAttributeSalt$1 = -67753;
 
-const int errSecInvalidAttributePadding1 = -67754;
+const int errSecInvalidAttributePadding$1 = -67754;
 
-const int errSecMissingAttributePadding1 = -67755;
+const int errSecMissingAttributePadding$1 = -67755;
 
-const int errSecInvalidAttributeRandom1 = -67756;
+const int errSecInvalidAttributeRandom$1 = -67756;
 
-const int errSecMissingAttributeRandom1 = -67757;
+const int errSecMissingAttributeRandom$1 = -67757;
 
-const int errSecInvalidAttributeSeed1 = -67758;
+const int errSecInvalidAttributeSeed$1 = -67758;
 
-const int errSecMissingAttributeSeed1 = -67759;
+const int errSecMissingAttributeSeed$1 = -67759;
 
-const int errSecInvalidAttributePassphrase1 = -67760;
+const int errSecInvalidAttributePassphrase$1 = -67760;
 
-const int errSecMissingAttributePassphrase1 = -67761;
+const int errSecMissingAttributePassphrase$1 = -67761;
 
-const int errSecInvalidAttributeKeyLength1 = -67762;
+const int errSecInvalidAttributeKeyLength$1 = -67762;
 
-const int errSecMissingAttributeKeyLength1 = -67763;
+const int errSecMissingAttributeKeyLength$1 = -67763;
 
-const int errSecInvalidAttributeBlockSize1 = -67764;
+const int errSecInvalidAttributeBlockSize$1 = -67764;
 
-const int errSecMissingAttributeBlockSize1 = -67765;
+const int errSecMissingAttributeBlockSize$1 = -67765;
 
-const int errSecInvalidAttributeOutputSize1 = -67766;
+const int errSecInvalidAttributeOutputSize$1 = -67766;
 
-const int errSecMissingAttributeOutputSize1 = -67767;
+const int errSecMissingAttributeOutputSize$1 = -67767;
 
-const int errSecInvalidAttributeRounds1 = -67768;
+const int errSecInvalidAttributeRounds$1 = -67768;
 
-const int errSecMissingAttributeRounds1 = -67769;
+const int errSecMissingAttributeRounds$1 = -67769;
 
-const int errSecInvalidAlgorithmParms1 = -67770;
+const int errSecInvalidAlgorithmParms$1 = -67770;
 
-const int errSecMissingAlgorithmParms1 = -67771;
+const int errSecMissingAlgorithmParms$1 = -67771;
 
-const int errSecInvalidAttributeLabel1 = -67772;
+const int errSecInvalidAttributeLabel$1 = -67772;
 
-const int errSecMissingAttributeLabel1 = -67773;
+const int errSecMissingAttributeLabel$1 = -67773;
 
-const int errSecInvalidAttributeKeyType1 = -67774;
+const int errSecInvalidAttributeKeyType$1 = -67774;
 
-const int errSecMissingAttributeKeyType1 = -67775;
+const int errSecMissingAttributeKeyType$1 = -67775;
 
-const int errSecInvalidAttributeMode1 = -67776;
+const int errSecInvalidAttributeMode$1 = -67776;
 
-const int errSecMissingAttributeMode1 = -67777;
+const int errSecMissingAttributeMode$1 = -67777;
 
-const int errSecInvalidAttributeEffectiveBits1 = -67778;
+const int errSecInvalidAttributeEffectiveBits$1 = -67778;
 
-const int errSecMissingAttributeEffectiveBits1 = -67779;
+const int errSecMissingAttributeEffectiveBits$1 = -67779;
 
-const int errSecInvalidAttributeStartDate1 = -67780;
+const int errSecInvalidAttributeStartDate$1 = -67780;
 
-const int errSecMissingAttributeStartDate1 = -67781;
+const int errSecMissingAttributeStartDate$1 = -67781;
 
-const int errSecInvalidAttributeEndDate1 = -67782;
+const int errSecInvalidAttributeEndDate$1 = -67782;
 
-const int errSecMissingAttributeEndDate1 = -67783;
+const int errSecMissingAttributeEndDate$1 = -67783;
 
-const int errSecInvalidAttributeVersion1 = -67784;
+const int errSecInvalidAttributeVersion$1 = -67784;
 
-const int errSecMissingAttributeVersion1 = -67785;
+const int errSecMissingAttributeVersion$1 = -67785;
 
-const int errSecInvalidAttributePrime1 = -67786;
+const int errSecInvalidAttributePrime$1 = -67786;
 
-const int errSecMissingAttributePrime1 = -67787;
+const int errSecMissingAttributePrime$1 = -67787;
 
-const int errSecInvalidAttributeBase1 = -67788;
+const int errSecInvalidAttributeBase$1 = -67788;
 
-const int errSecMissingAttributeBase1 = -67789;
+const int errSecMissingAttributeBase$1 = -67789;
 
-const int errSecInvalidAttributeSubprime1 = -67790;
+const int errSecInvalidAttributeSubprime$1 = -67790;
 
-const int errSecMissingAttributeSubprime1 = -67791;
+const int errSecMissingAttributeSubprime$1 = -67791;
 
-const int errSecInvalidAttributeIterationCount1 = -67792;
+const int errSecInvalidAttributeIterationCount$1 = -67792;
 
-const int errSecMissingAttributeIterationCount1 = -67793;
+const int errSecMissingAttributeIterationCount$1 = -67793;
 
-const int errSecInvalidAttributeDLDBHandle1 = -67794;
+const int errSecInvalidAttributeDLDBHandle$1 = -67794;
 
-const int errSecMissingAttributeDLDBHandle1 = -67795;
+const int errSecMissingAttributeDLDBHandle$1 = -67795;
 
-const int errSecInvalidAttributeAccessCredentials1 = -67796;
+const int errSecInvalidAttributeAccessCredentials$1 = -67796;
 
-const int errSecMissingAttributeAccessCredentials1 = -67797;
+const int errSecMissingAttributeAccessCredentials$1 = -67797;
 
-const int errSecInvalidAttributePublicKeyFormat1 = -67798;
+const int errSecInvalidAttributePublicKeyFormat$1 = -67798;
 
-const int errSecMissingAttributePublicKeyFormat1 = -67799;
+const int errSecMissingAttributePublicKeyFormat$1 = -67799;
 
-const int errSecInvalidAttributePrivateKeyFormat1 = -67800;
+const int errSecInvalidAttributePrivateKeyFormat$1 = -67800;
 
-const int errSecMissingAttributePrivateKeyFormat1 = -67801;
+const int errSecMissingAttributePrivateKeyFormat$1 = -67801;
 
-const int errSecInvalidAttributeSymmetricKeyFormat1 = -67802;
+const int errSecInvalidAttributeSymmetricKeyFormat$1 = -67802;
 
-const int errSecMissingAttributeSymmetricKeyFormat1 = -67803;
+const int errSecMissingAttributeSymmetricKeyFormat$1 = -67803;
 
-const int errSecInvalidAttributeWrappedKeyFormat1 = -67804;
+const int errSecInvalidAttributeWrappedKeyFormat$1 = -67804;
 
-const int errSecMissingAttributeWrappedKeyFormat1 = -67805;
+const int errSecMissingAttributeWrappedKeyFormat$1 = -67805;
 
-const int errSecStagedOperationInProgress1 = -67806;
+const int errSecStagedOperationInProgress$1 = -67806;
 
-const int errSecStagedOperationNotStarted1 = -67807;
+const int errSecStagedOperationNotStarted$1 = -67807;
 
-const int errSecVerifyFailed1 = -67808;
+const int errSecVerifyFailed$1 = -67808;
 
-const int errSecQuerySizeUnknown1 = -67809;
+const int errSecQuerySizeUnknown$1 = -67809;
 
-const int errSecBlockSizeMismatch1 = -67810;
+const int errSecBlockSizeMismatch$1 = -67810;
 
-const int errSecPublicKeyInconsistent1 = -67811;
+const int errSecPublicKeyInconsistent$1 = -67811;
 
-const int errSecDeviceVerifyFailed1 = -67812;
+const int errSecDeviceVerifyFailed$1 = -67812;
 
-const int errSecInvalidLoginName1 = -67813;
+const int errSecInvalidLoginName$1 = -67813;
 
-const int errSecAlreadyLoggedIn1 = -67814;
+const int errSecAlreadyLoggedIn$1 = -67814;
 
-const int errSecInvalidDigestAlgorithm1 = -67815;
+const int errSecInvalidDigestAlgorithm$1 = -67815;
 
-const int errSecInvalidCRLGroup1 = -67816;
+const int errSecInvalidCRLGroup$1 = -67816;
 
-const int errSecCertificateCannotOperate1 = -67817;
+const int errSecCertificateCannotOperate$1 = -67817;
 
-const int errSecCertificateExpired1 = -67818;
+const int errSecCertificateExpired$1 = -67818;
 
-const int errSecCertificateNotValidYet1 = -67819;
+const int errSecCertificateNotValidYet$1 = -67819;
 
-const int errSecCertificateRevoked1 = -67820;
+const int errSecCertificateRevoked$1 = -67820;
 
-const int errSecCertificateSuspended1 = -67821;
+const int errSecCertificateSuspended$1 = -67821;
 
-const int errSecInsufficientCredentials1 = -67822;
+const int errSecInsufficientCredentials$1 = -67822;
 
-const int errSecInvalidAction1 = -67823;
+const int errSecInvalidAction$1 = -67823;
 
-const int errSecInvalidAuthority1 = -67824;
+const int errSecInvalidAuthority$1 = -67824;
 
-const int errSecVerifyActionFailed1 = -67825;
+const int errSecVerifyActionFailed$1 = -67825;
 
-const int errSecInvalidCertAuthority1 = -67826;
+const int errSecInvalidCertAuthority$1 = -67826;
 
-const int errSecInvalidCRLAuthority1 = -67827;
+const int errSecInvalidCRLAuthority$1 = -67827;
 
-const int errSecInvaldCRLAuthority1 = -67827;
+const int errSecInvaldCRLAuthority$1 = -67827;
 
-const int errSecInvalidCRLEncoding1 = -67828;
+const int errSecInvalidCRLEncoding$1 = -67828;
 
-const int errSecInvalidCRLType1 = -67829;
+const int errSecInvalidCRLType$1 = -67829;
 
-const int errSecInvalidCRL1 = -67830;
+const int errSecInvalidCRL$1 = -67830;
 
-const int errSecInvalidFormType1 = -67831;
+const int errSecInvalidFormType$1 = -67831;
 
-const int errSecInvalidID1 = -67832;
+const int errSecInvalidID$1 = -67832;
 
-const int errSecInvalidIdentifier1 = -67833;
+const int errSecInvalidIdentifier$1 = -67833;
 
-const int errSecInvalidIndex1 = -67834;
+const int errSecInvalidIndex$1 = -67834;
 
-const int errSecInvalidPolicyIdentifiers1 = -67835;
+const int errSecInvalidPolicyIdentifiers$1 = -67835;
 
-const int errSecInvalidTimeString1 = -67836;
+const int errSecInvalidTimeString$1 = -67836;
 
-const int errSecInvalidReason1 = -67837;
+const int errSecInvalidReason$1 = -67837;
 
-const int errSecInvalidRequestInputs1 = -67838;
+const int errSecInvalidRequestInputs$1 = -67838;
 
-const int errSecInvalidResponseVector1 = -67839;
+const int errSecInvalidResponseVector$1 = -67839;
 
-const int errSecInvalidStopOnPolicy1 = -67840;
+const int errSecInvalidStopOnPolicy$1 = -67840;
 
-const int errSecInvalidTuple1 = -67841;
+const int errSecInvalidTuple$1 = -67841;
 
-const int errSecMultipleValuesUnsupported1 = -67842;
+const int errSecMultipleValuesUnsupported$1 = -67842;
 
-const int errSecNotTrusted1 = -67843;
+const int errSecNotTrusted$1 = -67843;
 
-const int errSecNoDefaultAuthority1 = -67844;
+const int errSecNoDefaultAuthority$1 = -67844;
 
-const int errSecRejectedForm1 = -67845;
+const int errSecRejectedForm$1 = -67845;
 
-const int errSecRequestLost1 = -67846;
+const int errSecRequestLost$1 = -67846;
 
-const int errSecRequestRejected1 = -67847;
+const int errSecRequestRejected$1 = -67847;
 
-const int errSecUnsupportedAddressType1 = -67848;
+const int errSecUnsupportedAddressType$1 = -67848;
 
-const int errSecUnsupportedService1 = -67849;
+const int errSecUnsupportedService$1 = -67849;
 
-const int errSecInvalidTupleGroup1 = -67850;
+const int errSecInvalidTupleGroup$1 = -67850;
 
-const int errSecInvalidBaseACLs1 = -67851;
+const int errSecInvalidBaseACLs$1 = -67851;
 
-const int errSecInvalidTupleCredentials1 = -67852;
+const int errSecInvalidTupleCredentials$1 = -67852;
 
-const int errSecInvalidTupleCredendtials1 = -67852;
+const int errSecInvalidTupleCredendtials$1 = -67852;
 
-const int errSecInvalidEncoding1 = -67853;
+const int errSecInvalidEncoding$1 = -67853;
 
-const int errSecInvalidValidityPeriod1 = -67854;
+const int errSecInvalidValidityPeriod$1 = -67854;
 
-const int errSecInvalidRequestor1 = -67855;
+const int errSecInvalidRequestor$1 = -67855;
 
-const int errSecRequestDescriptor1 = -67856;
+const int errSecRequestDescriptor$1 = -67856;
 
-const int errSecInvalidBundleInfo1 = -67857;
+const int errSecInvalidBundleInfo$1 = -67857;
 
-const int errSecInvalidCRLIndex1 = -67858;
+const int errSecInvalidCRLIndex$1 = -67858;
 
-const int errSecNoFieldValues1 = -67859;
+const int errSecNoFieldValues$1 = -67859;
 
-const int errSecUnsupportedFieldFormat1 = -67860;
+const int errSecUnsupportedFieldFormat$1 = -67860;
 
-const int errSecUnsupportedIndexInfo1 = -67861;
+const int errSecUnsupportedIndexInfo$1 = -67861;
 
-const int errSecUnsupportedLocality1 = -67862;
+const int errSecUnsupportedLocality$1 = -67862;
 
-const int errSecUnsupportedNumAttributes1 = -67863;
+const int errSecUnsupportedNumAttributes$1 = -67863;
 
-const int errSecUnsupportedNumIndexes1 = -67864;
+const int errSecUnsupportedNumIndexes$1 = -67864;
 
-const int errSecUnsupportedNumRecordTypes1 = -67865;
+const int errSecUnsupportedNumRecordTypes$1 = -67865;
 
-const int errSecFieldSpecifiedMultiple1 = -67866;
+const int errSecFieldSpecifiedMultiple$1 = -67866;
 
-const int errSecIncompatibleFieldFormat1 = -67867;
+const int errSecIncompatibleFieldFormat$1 = -67867;
 
-const int errSecInvalidParsingModule1 = -67868;
+const int errSecInvalidParsingModule$1 = -67868;
 
-const int errSecDatabaseLocked1 = -67869;
+const int errSecDatabaseLocked$1 = -67869;
 
-const int errSecDatastoreIsOpen1 = -67870;
+const int errSecDatastoreIsOpen$1 = -67870;
 
-const int errSecMissingValue1 = -67871;
+const int errSecMissingValue$1 = -67871;
 
-const int errSecUnsupportedQueryLimits1 = -67872;
+const int errSecUnsupportedQueryLimits$1 = -67872;
 
-const int errSecUnsupportedNumSelectionPreds1 = -67873;
+const int errSecUnsupportedNumSelectionPreds$1 = -67873;
 
-const int errSecUnsupportedOperator1 = -67874;
+const int errSecUnsupportedOperator$1 = -67874;
 
-const int errSecInvalidDBLocation1 = -67875;
+const int errSecInvalidDBLocation$1 = -67875;
 
-const int errSecInvalidAccessRequest1 = -67876;
+const int errSecInvalidAccessRequest$1 = -67876;
 
-const int errSecInvalidIndexInfo1 = -67877;
+const int errSecInvalidIndexInfo$1 = -67877;
 
-const int errSecInvalidNewOwner1 = -67878;
+const int errSecInvalidNewOwner$1 = -67878;
 
-const int errSecInvalidModifyMode1 = -67879;
+const int errSecInvalidModifyMode$1 = -67879;
 
-const int errSecMissingRequiredExtension1 = -67880;
+const int errSecMissingRequiredExtension$1 = -67880;
 
-const int errSecExtendedKeyUsageNotCritical1 = -67881;
+const int errSecExtendedKeyUsageNotCritical$1 = -67881;
 
-const int errSecTimestampMissing1 = -67882;
+const int errSecTimestampMissing$1 = -67882;
 
-const int errSecTimestampInvalid1 = -67883;
+const int errSecTimestampInvalid$1 = -67883;
 
-const int errSecTimestampNotTrusted1 = -67884;
+const int errSecTimestampNotTrusted$1 = -67884;
 
-const int errSecTimestampServiceNotAvailable1 = -67885;
+const int errSecTimestampServiceNotAvailable$1 = -67885;
 
-const int errSecTimestampBadAlg1 = -67886;
+const int errSecTimestampBadAlg$1 = -67886;
 
-const int errSecTimestampBadRequest1 = -67887;
+const int errSecTimestampBadRequest$1 = -67887;
 
-const int errSecTimestampBadDataFormat1 = -67888;
+const int errSecTimestampBadDataFormat$1 = -67888;
 
-const int errSecTimestampTimeNotAvailable1 = -67889;
+const int errSecTimestampTimeNotAvailable$1 = -67889;
 
-const int errSecTimestampUnacceptedPolicy1 = -67890;
+const int errSecTimestampUnacceptedPolicy$1 = -67890;
 
-const int errSecTimestampUnacceptedExtension1 = -67891;
+const int errSecTimestampUnacceptedExtension$1 = -67891;
 
-const int errSecTimestampAddInfoNotAvailable1 = -67892;
+const int errSecTimestampAddInfoNotAvailable$1 = -67892;
 
-const int errSecTimestampSystemFailure1 = -67893;
+const int errSecTimestampSystemFailure$1 = -67893;
 
-const int errSecSigningTimeMissing1 = -67894;
+const int errSecSigningTimeMissing$1 = -67894;
 
-const int errSecTimestampRejection1 = -67895;
+const int errSecTimestampRejection$1 = -67895;
 
-const int errSecTimestampWaiting1 = -67896;
+const int errSecTimestampWaiting$1 = -67896;
 
-const int errSecTimestampRevocationWarning1 = -67897;
+const int errSecTimestampRevocationWarning$1 = -67897;
 
-const int errSecTimestampRevocationNotification1 = -67898;
+const int errSecTimestampRevocationNotification$1 = -67898;
 
-const int errSecCertificatePolicyNotAllowed1 = -67899;
+const int errSecCertificatePolicyNotAllowed$1 = -67899;
 
-const int errSecCertificateNameNotAllowed1 = -67900;
+const int errSecCertificateNameNotAllowed$1 = -67900;
 
-const int errSecCertificateValidityPeriodTooLong1 = -67901;
+const int errSecCertificateValidityPeriodTooLong$1 = -67901;
 
-const int errSecCertificateIsCA1 = -67902;
+const int errSecCertificateIsCA$1 = -67902;
 
-const int errSecCertificateDuplicateExtension1 = -67903;
+const int errSecCertificateDuplicateExtension$1 = -67903;
 
-const int errSecSuccess2 = 0;
+const int errSecSuccess$2 = 0;
 
-const int errSecUnimplemented2 = -4;
+const int errSecUnimplemented$2 = -4;
 
-const int errSecDiskFull2 = -34;
+const int errSecDiskFull$2 = -34;
 
-const int errSecDskFull2 = -34;
+const int errSecDskFull$2 = -34;
 
-const int errSecIO2 = -36;
+const int errSecIO$2 = -36;
 
-const int errSecOpWr2 = -49;
+const int errSecOpWr$2 = -49;
 
-const int errSecParam2 = -50;
+const int errSecParam$2 = -50;
 
-const int errSecWrPerm2 = -61;
+const int errSecWrPerm$2 = -61;
 
-const int errSecAllocate2 = -108;
+const int errSecAllocate$2 = -108;
 
-const int errSecUserCanceled2 = -128;
+const int errSecUserCanceled$2 = -128;
 
-const int errSecBadReq2 = -909;
+const int errSecBadReq$2 = -909;
 
-const int errSecInternalComponent2 = -2070;
+const int errSecInternalComponent$2 = -2070;
 
-const int errSecCoreFoundationUnknown2 = -4960;
+const int errSecCoreFoundationUnknown$2 = -4960;
 
-const int errSecMissingEntitlement2 = -34018;
+const int errSecMissingEntitlement$2 = -34018;
 
-const int errSecRestrictedAPI2 = -34020;
+const int errSecRestrictedAPI$2 = -34020;
 
-const int errSecNotAvailable2 = -25291;
+const int errSecNotAvailable$2 = -25291;
 
-const int errSecReadOnly2 = -25292;
+const int errSecReadOnly$2 = -25292;
 
-const int errSecAuthFailed2 = -25293;
+const int errSecAuthFailed$2 = -25293;
 
-const int errSecNoSuchKeychain2 = -25294;
+const int errSecNoSuchKeychain$2 = -25294;
 
-const int errSecInvalidKeychain2 = -25295;
+const int errSecInvalidKeychain$2 = -25295;
 
-const int errSecDuplicateKeychain2 = -25296;
+const int errSecDuplicateKeychain$2 = -25296;
 
-const int errSecDuplicateCallback2 = -25297;
+const int errSecDuplicateCallback$2 = -25297;
 
-const int errSecInvalidCallback2 = -25298;
+const int errSecInvalidCallback$2 = -25298;
 
-const int errSecDuplicateItem2 = -25299;
+const int errSecDuplicateItem$2 = -25299;
 
-const int errSecItemNotFound2 = -25300;
+const int errSecItemNotFound$2 = -25300;
 
-const int errSecBufferTooSmall2 = -25301;
+const int errSecBufferTooSmall$2 = -25301;
 
-const int errSecDataTooLarge2 = -25302;
+const int errSecDataTooLarge$2 = -25302;
 
-const int errSecNoSuchAttr2 = -25303;
+const int errSecNoSuchAttr$2 = -25303;
 
-const int errSecInvalidItemRef2 = -25304;
+const int errSecInvalidItemRef$2 = -25304;
 
-const int errSecInvalidSearchRef2 = -25305;
+const int errSecInvalidSearchRef$2 = -25305;
 
-const int errSecNoSuchClass2 = -25306;
+const int errSecNoSuchClass$2 = -25306;
 
-const int errSecNoDefaultKeychain2 = -25307;
+const int errSecNoDefaultKeychain$2 = -25307;
 
-const int errSecInteractionNotAllowed2 = -25308;
+const int errSecInteractionNotAllowed$2 = -25308;
 
-const int errSecReadOnlyAttr2 = -25309;
+const int errSecReadOnlyAttr$2 = -25309;
 
-const int errSecWrongSecVersion2 = -25310;
+const int errSecWrongSecVersion$2 = -25310;
 
-const int errSecKeySizeNotAllowed2 = -25311;
+const int errSecKeySizeNotAllowed$2 = -25311;
 
-const int errSecNoStorageModule2 = -25312;
+const int errSecNoStorageModule$2 = -25312;
 
-const int errSecNoCertificateModule2 = -25313;
+const int errSecNoCertificateModule$2 = -25313;
 
-const int errSecNoPolicyModule2 = -25314;
+const int errSecNoPolicyModule$2 = -25314;
 
-const int errSecInteractionRequired2 = -25315;
+const int errSecInteractionRequired$2 = -25315;
 
-const int errSecDataNotAvailable2 = -25316;
+const int errSecDataNotAvailable$2 = -25316;
 
-const int errSecDataNotModifiable2 = -25317;
+const int errSecDataNotModifiable$2 = -25317;
 
-const int errSecCreateChainFailed2 = -25318;
+const int errSecCreateChainFailed$2 = -25318;
 
-const int errSecInvalidPrefsDomain2 = -25319;
+const int errSecInvalidPrefsDomain$2 = -25319;
 
-const int errSecInDarkWake2 = -25320;
+const int errSecInDarkWake$2 = -25320;
 
-const int errSecACLNotSimple2 = -25240;
+const int errSecACLNotSimple$2 = -25240;
 
-const int errSecPolicyNotFound2 = -25241;
+const int errSecPolicyNotFound$2 = -25241;
 
-const int errSecInvalidTrustSetting2 = -25242;
+const int errSecInvalidTrustSetting$2 = -25242;
 
-const int errSecNoAccessForItem2 = -25243;
+const int errSecNoAccessForItem$2 = -25243;
 
-const int errSecInvalidOwnerEdit2 = -25244;
+const int errSecInvalidOwnerEdit$2 = -25244;
 
-const int errSecTrustNotAvailable2 = -25245;
+const int errSecTrustNotAvailable$2 = -25245;
 
-const int errSecUnsupportedFormat2 = -25256;
+const int errSecUnsupportedFormat$2 = -25256;
 
-const int errSecUnknownFormat2 = -25257;
+const int errSecUnknownFormat$2 = -25257;
 
-const int errSecKeyIsSensitive2 = -25258;
+const int errSecKeyIsSensitive$2 = -25258;
 
-const int errSecMultiplePrivKeys2 = -25259;
+const int errSecMultiplePrivKeys$2 = -25259;
 
-const int errSecPassphraseRequired2 = -25260;
+const int errSecPassphraseRequired$2 = -25260;
 
-const int errSecInvalidPasswordRef2 = -25261;
+const int errSecInvalidPasswordRef$2 = -25261;
 
-const int errSecInvalidTrustSettings2 = -25262;
+const int errSecInvalidTrustSettings$2 = -25262;
 
-const int errSecNoTrustSettings2 = -25263;
+const int errSecNoTrustSettings$2 = -25263;
 
-const int errSecPkcs12VerifyFailure2 = -25264;
+const int errSecPkcs12VerifyFailure$2 = -25264;
 
-const int errSecNotSigner2 = -26267;
+const int errSecNotSigner$2 = -26267;
 
-const int errSecDecode2 = -26275;
+const int errSecDecode$2 = -26275;
 
-const int errSecServiceNotAvailable2 = -67585;
+const int errSecServiceNotAvailable$2 = -67585;
 
-const int errSecInsufficientClientID2 = -67586;
+const int errSecInsufficientClientID$2 = -67586;
 
-const int errSecDeviceReset2 = -67587;
+const int errSecDeviceReset$2 = -67587;
 
-const int errSecDeviceFailed2 = -67588;
+const int errSecDeviceFailed$2 = -67588;
 
-const int errSecAppleAddAppACLSubject2 = -67589;
+const int errSecAppleAddAppACLSubject$2 = -67589;
 
-const int errSecApplePublicKeyIncomplete2 = -67590;
+const int errSecApplePublicKeyIncomplete$2 = -67590;
 
-const int errSecAppleSignatureMismatch2 = -67591;
+const int errSecAppleSignatureMismatch$2 = -67591;
 
-const int errSecAppleInvalidKeyStartDate2 = -67592;
+const int errSecAppleInvalidKeyStartDate$2 = -67592;
 
-const int errSecAppleInvalidKeyEndDate2 = -67593;
+const int errSecAppleInvalidKeyEndDate$2 = -67593;
 
-const int errSecConversionError2 = -67594;
+const int errSecConversionError$2 = -67594;
 
-const int errSecAppleSSLv2Rollback2 = -67595;
+const int errSecAppleSSLv2Rollback$2 = -67595;
 
-const int errSecQuotaExceeded2 = -67596;
+const int errSecQuotaExceeded$2 = -67596;
 
-const int errSecFileTooBig2 = -67597;
+const int errSecFileTooBig$2 = -67597;
 
-const int errSecInvalidDatabaseBlob2 = -67598;
+const int errSecInvalidDatabaseBlob$2 = -67598;
 
-const int errSecInvalidKeyBlob2 = -67599;
+const int errSecInvalidKeyBlob$2 = -67599;
 
-const int errSecIncompatibleDatabaseBlob2 = -67600;
+const int errSecIncompatibleDatabaseBlob$2 = -67600;
 
-const int errSecIncompatibleKeyBlob2 = -67601;
+const int errSecIncompatibleKeyBlob$2 = -67601;
 
-const int errSecHostNameMismatch2 = -67602;
+const int errSecHostNameMismatch$2 = -67602;
 
-const int errSecUnknownCriticalExtensionFlag2 = -67603;
+const int errSecUnknownCriticalExtensionFlag$2 = -67603;
 
-const int errSecNoBasicConstraints2 = -67604;
+const int errSecNoBasicConstraints$2 = -67604;
 
-const int errSecNoBasicConstraintsCA2 = -67605;
+const int errSecNoBasicConstraintsCA$2 = -67605;
 
-const int errSecInvalidAuthorityKeyID2 = -67606;
+const int errSecInvalidAuthorityKeyID$2 = -67606;
 
-const int errSecInvalidSubjectKeyID2 = -67607;
+const int errSecInvalidSubjectKeyID$2 = -67607;
 
-const int errSecInvalidKeyUsageForPolicy2 = -67608;
+const int errSecInvalidKeyUsageForPolicy$2 = -67608;
 
-const int errSecInvalidExtendedKeyUsage2 = -67609;
+const int errSecInvalidExtendedKeyUsage$2 = -67609;
 
-const int errSecInvalidIDLinkage2 = -67610;
+const int errSecInvalidIDLinkage$2 = -67610;
 
-const int errSecPathLengthConstraintExceeded2 = -67611;
+const int errSecPathLengthConstraintExceeded$2 = -67611;
 
-const int errSecInvalidRoot2 = -67612;
+const int errSecInvalidRoot$2 = -67612;
 
-const int errSecCRLExpired2 = -67613;
+const int errSecCRLExpired$2 = -67613;
 
-const int errSecCRLNotValidYet2 = -67614;
+const int errSecCRLNotValidYet$2 = -67614;
 
-const int errSecCRLNotFound2 = -67615;
+const int errSecCRLNotFound$2 = -67615;
 
-const int errSecCRLServerDown2 = -67616;
+const int errSecCRLServerDown$2 = -67616;
 
-const int errSecCRLBadURI2 = -67617;
+const int errSecCRLBadURI$2 = -67617;
 
-const int errSecUnknownCertExtension2 = -67618;
+const int errSecUnknownCertExtension$2 = -67618;
 
-const int errSecUnknownCRLExtension2 = -67619;
+const int errSecUnknownCRLExtension$2 = -67619;
 
-const int errSecCRLNotTrusted2 = -67620;
+const int errSecCRLNotTrusted$2 = -67620;
 
-const int errSecCRLPolicyFailed2 = -67621;
+const int errSecCRLPolicyFailed$2 = -67621;
 
-const int errSecIDPFailure2 = -67622;
+const int errSecIDPFailure$2 = -67622;
 
-const int errSecSMIMEEmailAddressesNotFound2 = -67623;
+const int errSecSMIMEEmailAddressesNotFound$2 = -67623;
 
-const int errSecSMIMEBadExtendedKeyUsage2 = -67624;
+const int errSecSMIMEBadExtendedKeyUsage$2 = -67624;
 
-const int errSecSMIMEBadKeyUsage2 = -67625;
+const int errSecSMIMEBadKeyUsage$2 = -67625;
 
-const int errSecSMIMEKeyUsageNotCritical2 = -67626;
+const int errSecSMIMEKeyUsageNotCritical$2 = -67626;
 
-const int errSecSMIMENoEmailAddress2 = -67627;
+const int errSecSMIMENoEmailAddress$2 = -67627;
 
-const int errSecSMIMESubjAltNameNotCritical2 = -67628;
+const int errSecSMIMESubjAltNameNotCritical$2 = -67628;
 
-const int errSecSSLBadExtendedKeyUsage2 = -67629;
+const int errSecSSLBadExtendedKeyUsage$2 = -67629;
 
-const int errSecOCSPBadResponse2 = -67630;
+const int errSecOCSPBadResponse$2 = -67630;
 
-const int errSecOCSPBadRequest2 = -67631;
+const int errSecOCSPBadRequest$2 = -67631;
 
-const int errSecOCSPUnavailable2 = -67632;
+const int errSecOCSPUnavailable$2 = -67632;
 
-const int errSecOCSPStatusUnrecognized2 = -67633;
+const int errSecOCSPStatusUnrecognized$2 = -67633;
 
-const int errSecEndOfData2 = -67634;
+const int errSecEndOfData$2 = -67634;
 
-const int errSecIncompleteCertRevocationCheck2 = -67635;
+const int errSecIncompleteCertRevocationCheck$2 = -67635;
 
-const int errSecNetworkFailure2 = -67636;
+const int errSecNetworkFailure$2 = -67636;
 
-const int errSecOCSPNotTrustedToAnchor2 = -67637;
+const int errSecOCSPNotTrustedToAnchor$2 = -67637;
 
-const int errSecRecordModified2 = -67638;
+const int errSecRecordModified$2 = -67638;
 
-const int errSecOCSPSignatureError2 = -67639;
+const int errSecOCSPSignatureError$2 = -67639;
 
-const int errSecOCSPNoSigner2 = -67640;
+const int errSecOCSPNoSigner$2 = -67640;
 
-const int errSecOCSPResponderMalformedReq2 = -67641;
+const int errSecOCSPResponderMalformedReq$2 = -67641;
 
-const int errSecOCSPResponderInternalError2 = -67642;
+const int errSecOCSPResponderInternalError$2 = -67642;
 
-const int errSecOCSPResponderTryLater2 = -67643;
+const int errSecOCSPResponderTryLater$2 = -67643;
 
-const int errSecOCSPResponderSignatureRequired2 = -67644;
+const int errSecOCSPResponderSignatureRequired$2 = -67644;
 
-const int errSecOCSPResponderUnauthorized2 = -67645;
+const int errSecOCSPResponderUnauthorized$2 = -67645;
 
-const int errSecOCSPResponseNonceMismatch2 = -67646;
+const int errSecOCSPResponseNonceMismatch$2 = -67646;
 
-const int errSecCodeSigningBadCertChainLength2 = -67647;
+const int errSecCodeSigningBadCertChainLength$2 = -67647;
 
-const int errSecCodeSigningNoBasicConstraints2 = -67648;
+const int errSecCodeSigningNoBasicConstraints$2 = -67648;
 
-const int errSecCodeSigningBadPathLengthConstraint2 = -67649;
+const int errSecCodeSigningBadPathLengthConstraint$2 = -67649;
 
-const int errSecCodeSigningNoExtendedKeyUsage2 = -67650;
+const int errSecCodeSigningNoExtendedKeyUsage$2 = -67650;
 
-const int errSecCodeSigningDevelopment2 = -67651;
+const int errSecCodeSigningDevelopment$2 = -67651;
 
-const int errSecResourceSignBadCertChainLength2 = -67652;
+const int errSecResourceSignBadCertChainLength$2 = -67652;
 
-const int errSecResourceSignBadExtKeyUsage2 = -67653;
+const int errSecResourceSignBadExtKeyUsage$2 = -67653;
 
-const int errSecTrustSettingDeny2 = -67654;
+const int errSecTrustSettingDeny$2 = -67654;
 
-const int errSecInvalidSubjectName2 = -67655;
+const int errSecInvalidSubjectName$2 = -67655;
 
-const int errSecUnknownQualifiedCertStatement2 = -67656;
+const int errSecUnknownQualifiedCertStatement$2 = -67656;
 
-const int errSecMobileMeRequestQueued2 = -67657;
+const int errSecMobileMeRequestQueued$2 = -67657;
 
-const int errSecMobileMeRequestRedirected2 = -67658;
+const int errSecMobileMeRequestRedirected$2 = -67658;
 
-const int errSecMobileMeServerError2 = -67659;
+const int errSecMobileMeServerError$2 = -67659;
 
-const int errSecMobileMeServerNotAvailable2 = -67660;
+const int errSecMobileMeServerNotAvailable$2 = -67660;
 
-const int errSecMobileMeServerAlreadyExists2 = -67661;
+const int errSecMobileMeServerAlreadyExists$2 = -67661;
 
-const int errSecMobileMeServerServiceErr2 = -67662;
+const int errSecMobileMeServerServiceErr$2 = -67662;
 
-const int errSecMobileMeRequestAlreadyPending2 = -67663;
+const int errSecMobileMeRequestAlreadyPending$2 = -67663;
 
-const int errSecMobileMeNoRequestPending2 = -67664;
+const int errSecMobileMeNoRequestPending$2 = -67664;
 
-const int errSecMobileMeCSRVerifyFailure2 = -67665;
+const int errSecMobileMeCSRVerifyFailure$2 = -67665;
 
-const int errSecMobileMeFailedConsistencyCheck2 = -67666;
+const int errSecMobileMeFailedConsistencyCheck$2 = -67666;
 
-const int errSecNotInitialized2 = -67667;
+const int errSecNotInitialized$2 = -67667;
 
-const int errSecInvalidHandleUsage2 = -67668;
+const int errSecInvalidHandleUsage$2 = -67668;
 
-const int errSecPVCReferentNotFound2 = -67669;
+const int errSecPVCReferentNotFound$2 = -67669;
 
-const int errSecFunctionIntegrityFail2 = -67670;
+const int errSecFunctionIntegrityFail$2 = -67670;
 
-const int errSecInternalError2 = -67671;
+const int errSecInternalError$2 = -67671;
 
-const int errSecMemoryError2 = -67672;
+const int errSecMemoryError$2 = -67672;
 
-const int errSecInvalidData2 = -67673;
+const int errSecInvalidData$2 = -67673;
 
-const int errSecMDSError2 = -67674;
+const int errSecMDSError$2 = -67674;
 
-const int errSecInvalidPointer2 = -67675;
+const int errSecInvalidPointer$2 = -67675;
 
-const int errSecSelfCheckFailed2 = -67676;
+const int errSecSelfCheckFailed$2 = -67676;
 
-const int errSecFunctionFailed2 = -67677;
+const int errSecFunctionFailed$2 = -67677;
 
-const int errSecModuleManifestVerifyFailed2 = -67678;
+const int errSecModuleManifestVerifyFailed$2 = -67678;
 
-const int errSecInvalidGUID2 = -67679;
+const int errSecInvalidGUID$2 = -67679;
 
-const int errSecInvalidHandle2 = -67680;
+const int errSecInvalidHandle$2 = -67680;
 
-const int errSecInvalidDBList2 = -67681;
+const int errSecInvalidDBList$2 = -67681;
 
-const int errSecInvalidPassthroughID2 = -67682;
+const int errSecInvalidPassthroughID$2 = -67682;
 
-const int errSecInvalidNetworkAddress2 = -67683;
+const int errSecInvalidNetworkAddress$2 = -67683;
 
-const int errSecCRLAlreadySigned2 = -67684;
+const int errSecCRLAlreadySigned$2 = -67684;
 
-const int errSecInvalidNumberOfFields2 = -67685;
+const int errSecInvalidNumberOfFields$2 = -67685;
 
-const int errSecVerificationFailure2 = -67686;
+const int errSecVerificationFailure$2 = -67686;
 
-const int errSecUnknownTag2 = -67687;
+const int errSecUnknownTag$2 = -67687;
 
-const int errSecInvalidSignature2 = -67688;
+const int errSecInvalidSignature$2 = -67688;
 
-const int errSecInvalidName2 = -67689;
+const int errSecInvalidName$2 = -67689;
 
-const int errSecInvalidCertificateRef2 = -67690;
+const int errSecInvalidCertificateRef$2 = -67690;
 
-const int errSecInvalidCertificateGroup2 = -67691;
+const int errSecInvalidCertificateGroup$2 = -67691;
 
-const int errSecTagNotFound2 = -67692;
+const int errSecTagNotFound$2 = -67692;
 
-const int errSecInvalidQuery2 = -67693;
+const int errSecInvalidQuery$2 = -67693;
 
-const int errSecInvalidValue2 = -67694;
+const int errSecInvalidValue$2 = -67694;
 
-const int errSecCallbackFailed2 = -67695;
+const int errSecCallbackFailed$2 = -67695;
 
-const int errSecACLDeleteFailed2 = -67696;
+const int errSecACLDeleteFailed$2 = -67696;
 
-const int errSecACLReplaceFailed2 = -67697;
+const int errSecACLReplaceFailed$2 = -67697;
 
-const int errSecACLAddFailed2 = -67698;
+const int errSecACLAddFailed$2 = -67698;
 
-const int errSecACLChangeFailed2 = -67699;
+const int errSecACLChangeFailed$2 = -67699;
 
-const int errSecInvalidAccessCredentials2 = -67700;
+const int errSecInvalidAccessCredentials$2 = -67700;
 
-const int errSecInvalidRecord2 = -67701;
+const int errSecInvalidRecord$2 = -67701;
 
-const int errSecInvalidACL2 = -67702;
+const int errSecInvalidACL$2 = -67702;
 
-const int errSecInvalidSampleValue2 = -67703;
+const int errSecInvalidSampleValue$2 = -67703;
 
-const int errSecIncompatibleVersion2 = -67704;
+const int errSecIncompatibleVersion$2 = -67704;
 
-const int errSecPrivilegeNotGranted2 = -67705;
+const int errSecPrivilegeNotGranted$2 = -67705;
 
-const int errSecInvalidScope2 = -67706;
+const int errSecInvalidScope$2 = -67706;
 
-const int errSecPVCAlreadyConfigured2 = -67707;
+const int errSecPVCAlreadyConfigured$2 = -67707;
 
-const int errSecInvalidPVC2 = -67708;
+const int errSecInvalidPVC$2 = -67708;
 
-const int errSecEMMLoadFailed2 = -67709;
+const int errSecEMMLoadFailed$2 = -67709;
 
-const int errSecEMMUnloadFailed2 = -67710;
+const int errSecEMMUnloadFailed$2 = -67710;
 
-const int errSecAddinLoadFailed2 = -67711;
+const int errSecAddinLoadFailed$2 = -67711;
 
-const int errSecInvalidKeyRef2 = -67712;
+const int errSecInvalidKeyRef$2 = -67712;
 
-const int errSecInvalidKeyHierarchy2 = -67713;
+const int errSecInvalidKeyHierarchy$2 = -67713;
 
-const int errSecAddinUnloadFailed2 = -67714;
+const int errSecAddinUnloadFailed$2 = -67714;
 
-const int errSecLibraryReferenceNotFound2 = -67715;
+const int errSecLibraryReferenceNotFound$2 = -67715;
 
-const int errSecInvalidAddinFunctionTable2 = -67716;
+const int errSecInvalidAddinFunctionTable$2 = -67716;
 
-const int errSecInvalidServiceMask2 = -67717;
+const int errSecInvalidServiceMask$2 = -67717;
 
-const int errSecModuleNotLoaded2 = -67718;
+const int errSecModuleNotLoaded$2 = -67718;
 
-const int errSecInvalidSubServiceID2 = -67719;
+const int errSecInvalidSubServiceID$2 = -67719;
 
-const int errSecAttributeNotInContext2 = -67720;
+const int errSecAttributeNotInContext$2 = -67720;
 
-const int errSecModuleManagerInitializeFailed2 = -67721;
+const int errSecModuleManagerInitializeFailed$2 = -67721;
 
-const int errSecModuleManagerNotFound2 = -67722;
+const int errSecModuleManagerNotFound$2 = -67722;
 
-const int errSecEventNotificationCallbackNotFound2 = -67723;
+const int errSecEventNotificationCallbackNotFound$2 = -67723;
 
-const int errSecInputLengthError2 = -67724;
+const int errSecInputLengthError$2 = -67724;
 
-const int errSecOutputLengthError2 = -67725;
+const int errSecOutputLengthError$2 = -67725;
 
-const int errSecPrivilegeNotSupported2 = -67726;
+const int errSecPrivilegeNotSupported$2 = -67726;
 
-const int errSecDeviceError2 = -67727;
+const int errSecDeviceError$2 = -67727;
 
-const int errSecAttachHandleBusy2 = -67728;
+const int errSecAttachHandleBusy$2 = -67728;
 
-const int errSecNotLoggedIn2 = -67729;
+const int errSecNotLoggedIn$2 = -67729;
 
-const int errSecAlgorithmMismatch2 = -67730;
+const int errSecAlgorithmMismatch$2 = -67730;
 
-const int errSecKeyUsageIncorrect2 = -67731;
+const int errSecKeyUsageIncorrect$2 = -67731;
 
-const int errSecKeyBlobTypeIncorrect2 = -67732;
+const int errSecKeyBlobTypeIncorrect$2 = -67732;
 
-const int errSecKeyHeaderInconsistent2 = -67733;
+const int errSecKeyHeaderInconsistent$2 = -67733;
 
-const int errSecUnsupportedKeyFormat2 = -67734;
+const int errSecUnsupportedKeyFormat$2 = -67734;
 
-const int errSecUnsupportedKeySize2 = -67735;
+const int errSecUnsupportedKeySize$2 = -67735;
 
-const int errSecInvalidKeyUsageMask2 = -67736;
+const int errSecInvalidKeyUsageMask$2 = -67736;
 
-const int errSecUnsupportedKeyUsageMask2 = -67737;
+const int errSecUnsupportedKeyUsageMask$2 = -67737;
 
-const int errSecInvalidKeyAttributeMask2 = -67738;
+const int errSecInvalidKeyAttributeMask$2 = -67738;
 
-const int errSecUnsupportedKeyAttributeMask2 = -67739;
+const int errSecUnsupportedKeyAttributeMask$2 = -67739;
 
-const int errSecInvalidKeyLabel2 = -67740;
+const int errSecInvalidKeyLabel$2 = -67740;
 
-const int errSecUnsupportedKeyLabel2 = -67741;
+const int errSecUnsupportedKeyLabel$2 = -67741;
 
-const int errSecInvalidKeyFormat2 = -67742;
+const int errSecInvalidKeyFormat$2 = -67742;
 
-const int errSecUnsupportedVectorOfBuffers2 = -67743;
+const int errSecUnsupportedVectorOfBuffers$2 = -67743;
 
-const int errSecInvalidInputVector2 = -67744;
+const int errSecInvalidInputVector$2 = -67744;
 
-const int errSecInvalidOutputVector2 = -67745;
+const int errSecInvalidOutputVector$2 = -67745;
 
-const int errSecInvalidContext2 = -67746;
+const int errSecInvalidContext$2 = -67746;
 
-const int errSecInvalidAlgorithm2 = -67747;
+const int errSecInvalidAlgorithm$2 = -67747;
 
-const int errSecInvalidAttributeKey2 = -67748;
+const int errSecInvalidAttributeKey$2 = -67748;
 
-const int errSecMissingAttributeKey2 = -67749;
+const int errSecMissingAttributeKey$2 = -67749;
 
-const int errSecInvalidAttributeInitVector2 = -67750;
+const int errSecInvalidAttributeInitVector$2 = -67750;
 
-const int errSecMissingAttributeInitVector2 = -67751;
+const int errSecMissingAttributeInitVector$2 = -67751;
 
-const int errSecInvalidAttributeSalt2 = -67752;
+const int errSecInvalidAttributeSalt$2 = -67752;
 
-const int errSecMissingAttributeSalt2 = -67753;
+const int errSecMissingAttributeSalt$2 = -67753;
 
-const int errSecInvalidAttributePadding2 = -67754;
+const int errSecInvalidAttributePadding$2 = -67754;
 
-const int errSecMissingAttributePadding2 = -67755;
+const int errSecMissingAttributePadding$2 = -67755;
 
-const int errSecInvalidAttributeRandom2 = -67756;
+const int errSecInvalidAttributeRandom$2 = -67756;
 
-const int errSecMissingAttributeRandom2 = -67757;
+const int errSecMissingAttributeRandom$2 = -67757;
 
-const int errSecInvalidAttributeSeed2 = -67758;
+const int errSecInvalidAttributeSeed$2 = -67758;
 
-const int errSecMissingAttributeSeed2 = -67759;
+const int errSecMissingAttributeSeed$2 = -67759;
 
-const int errSecInvalidAttributePassphrase2 = -67760;
+const int errSecInvalidAttributePassphrase$2 = -67760;
 
-const int errSecMissingAttributePassphrase2 = -67761;
+const int errSecMissingAttributePassphrase$2 = -67761;
 
-const int errSecInvalidAttributeKeyLength2 = -67762;
+const int errSecInvalidAttributeKeyLength$2 = -67762;
 
-const int errSecMissingAttributeKeyLength2 = -67763;
+const int errSecMissingAttributeKeyLength$2 = -67763;
 
-const int errSecInvalidAttributeBlockSize2 = -67764;
+const int errSecInvalidAttributeBlockSize$2 = -67764;
 
-const int errSecMissingAttributeBlockSize2 = -67765;
+const int errSecMissingAttributeBlockSize$2 = -67765;
 
-const int errSecInvalidAttributeOutputSize2 = -67766;
+const int errSecInvalidAttributeOutputSize$2 = -67766;
 
-const int errSecMissingAttributeOutputSize2 = -67767;
+const int errSecMissingAttributeOutputSize$2 = -67767;
 
-const int errSecInvalidAttributeRounds2 = -67768;
+const int errSecInvalidAttributeRounds$2 = -67768;
 
-const int errSecMissingAttributeRounds2 = -67769;
+const int errSecMissingAttributeRounds$2 = -67769;
 
-const int errSecInvalidAlgorithmParms2 = -67770;
+const int errSecInvalidAlgorithmParms$2 = -67770;
 
-const int errSecMissingAlgorithmParms2 = -67771;
+const int errSecMissingAlgorithmParms$2 = -67771;
 
-const int errSecInvalidAttributeLabel2 = -67772;
+const int errSecInvalidAttributeLabel$2 = -67772;
 
-const int errSecMissingAttributeLabel2 = -67773;
+const int errSecMissingAttributeLabel$2 = -67773;
 
-const int errSecInvalidAttributeKeyType2 = -67774;
+const int errSecInvalidAttributeKeyType$2 = -67774;
 
-const int errSecMissingAttributeKeyType2 = -67775;
+const int errSecMissingAttributeKeyType$2 = -67775;
 
-const int errSecInvalidAttributeMode2 = -67776;
+const int errSecInvalidAttributeMode$2 = -67776;
 
-const int errSecMissingAttributeMode2 = -67777;
+const int errSecMissingAttributeMode$2 = -67777;
 
-const int errSecInvalidAttributeEffectiveBits2 = -67778;
+const int errSecInvalidAttributeEffectiveBits$2 = -67778;
 
-const int errSecMissingAttributeEffectiveBits2 = -67779;
+const int errSecMissingAttributeEffectiveBits$2 = -67779;
 
-const int errSecInvalidAttributeStartDate2 = -67780;
+const int errSecInvalidAttributeStartDate$2 = -67780;
 
-const int errSecMissingAttributeStartDate2 = -67781;
+const int errSecMissingAttributeStartDate$2 = -67781;
 
-const int errSecInvalidAttributeEndDate2 = -67782;
+const int errSecInvalidAttributeEndDate$2 = -67782;
 
-const int errSecMissingAttributeEndDate2 = -67783;
+const int errSecMissingAttributeEndDate$2 = -67783;
 
-const int errSecInvalidAttributeVersion2 = -67784;
+const int errSecInvalidAttributeVersion$2 = -67784;
 
-const int errSecMissingAttributeVersion2 = -67785;
+const int errSecMissingAttributeVersion$2 = -67785;
 
-const int errSecInvalidAttributePrime2 = -67786;
+const int errSecInvalidAttributePrime$2 = -67786;
 
-const int errSecMissingAttributePrime2 = -67787;
+const int errSecMissingAttributePrime$2 = -67787;
 
-const int errSecInvalidAttributeBase2 = -67788;
+const int errSecInvalidAttributeBase$2 = -67788;
 
-const int errSecMissingAttributeBase2 = -67789;
+const int errSecMissingAttributeBase$2 = -67789;
 
-const int errSecInvalidAttributeSubprime2 = -67790;
+const int errSecInvalidAttributeSubprime$2 = -67790;
 
-const int errSecMissingAttributeSubprime2 = -67791;
+const int errSecMissingAttributeSubprime$2 = -67791;
 
-const int errSecInvalidAttributeIterationCount2 = -67792;
+const int errSecInvalidAttributeIterationCount$2 = -67792;
 
-const int errSecMissingAttributeIterationCount2 = -67793;
+const int errSecMissingAttributeIterationCount$2 = -67793;
 
-const int errSecInvalidAttributeDLDBHandle2 = -67794;
+const int errSecInvalidAttributeDLDBHandle$2 = -67794;
 
-const int errSecMissingAttributeDLDBHandle2 = -67795;
+const int errSecMissingAttributeDLDBHandle$2 = -67795;
 
-const int errSecInvalidAttributeAccessCredentials2 = -67796;
+const int errSecInvalidAttributeAccessCredentials$2 = -67796;
 
-const int errSecMissingAttributeAccessCredentials2 = -67797;
+const int errSecMissingAttributeAccessCredentials$2 = -67797;
 
-const int errSecInvalidAttributePublicKeyFormat2 = -67798;
+const int errSecInvalidAttributePublicKeyFormat$2 = -67798;
 
-const int errSecMissingAttributePublicKeyFormat2 = -67799;
+const int errSecMissingAttributePublicKeyFormat$2 = -67799;
 
-const int errSecInvalidAttributePrivateKeyFormat2 = -67800;
+const int errSecInvalidAttributePrivateKeyFormat$2 = -67800;
 
-const int errSecMissingAttributePrivateKeyFormat2 = -67801;
+const int errSecMissingAttributePrivateKeyFormat$2 = -67801;
 
-const int errSecInvalidAttributeSymmetricKeyFormat2 = -67802;
+const int errSecInvalidAttributeSymmetricKeyFormat$2 = -67802;
 
-const int errSecMissingAttributeSymmetricKeyFormat2 = -67803;
+const int errSecMissingAttributeSymmetricKeyFormat$2 = -67803;
 
-const int errSecInvalidAttributeWrappedKeyFormat2 = -67804;
+const int errSecInvalidAttributeWrappedKeyFormat$2 = -67804;
 
-const int errSecMissingAttributeWrappedKeyFormat2 = -67805;
+const int errSecMissingAttributeWrappedKeyFormat$2 = -67805;
 
-const int errSecStagedOperationInProgress2 = -67806;
+const int errSecStagedOperationInProgress$2 = -67806;
 
-const int errSecStagedOperationNotStarted2 = -67807;
+const int errSecStagedOperationNotStarted$2 = -67807;
 
-const int errSecVerifyFailed2 = -67808;
+const int errSecVerifyFailed$2 = -67808;
 
-const int errSecQuerySizeUnknown2 = -67809;
+const int errSecQuerySizeUnknown$2 = -67809;
 
-const int errSecBlockSizeMismatch2 = -67810;
+const int errSecBlockSizeMismatch$2 = -67810;
 
-const int errSecPublicKeyInconsistent2 = -67811;
+const int errSecPublicKeyInconsistent$2 = -67811;
 
-const int errSecDeviceVerifyFailed2 = -67812;
+const int errSecDeviceVerifyFailed$2 = -67812;
 
-const int errSecInvalidLoginName2 = -67813;
+const int errSecInvalidLoginName$2 = -67813;
 
-const int errSecAlreadyLoggedIn2 = -67814;
+const int errSecAlreadyLoggedIn$2 = -67814;
 
-const int errSecInvalidDigestAlgorithm2 = -67815;
+const int errSecInvalidDigestAlgorithm$2 = -67815;
 
-const int errSecInvalidCRLGroup2 = -67816;
+const int errSecInvalidCRLGroup$2 = -67816;
 
-const int errSecCertificateCannotOperate2 = -67817;
+const int errSecCertificateCannotOperate$2 = -67817;
 
-const int errSecCertificateExpired2 = -67818;
+const int errSecCertificateExpired$2 = -67818;
 
-const int errSecCertificateNotValidYet2 = -67819;
+const int errSecCertificateNotValidYet$2 = -67819;
 
-const int errSecCertificateRevoked2 = -67820;
+const int errSecCertificateRevoked$2 = -67820;
 
-const int errSecCertificateSuspended2 = -67821;
+const int errSecCertificateSuspended$2 = -67821;
 
-const int errSecInsufficientCredentials2 = -67822;
+const int errSecInsufficientCredentials$2 = -67822;
 
-const int errSecInvalidAction2 = -67823;
+const int errSecInvalidAction$2 = -67823;
 
-const int errSecInvalidAuthority2 = -67824;
+const int errSecInvalidAuthority$2 = -67824;
 
-const int errSecVerifyActionFailed2 = -67825;
+const int errSecVerifyActionFailed$2 = -67825;
 
-const int errSecInvalidCertAuthority2 = -67826;
+const int errSecInvalidCertAuthority$2 = -67826;
 
-const int errSecInvalidCRLAuthority2 = -67827;
+const int errSecInvalidCRLAuthority$2 = -67827;
 
-const int errSecInvaldCRLAuthority2 = -67827;
+const int errSecInvaldCRLAuthority$2 = -67827;
 
-const int errSecInvalidCRLEncoding2 = -67828;
+const int errSecInvalidCRLEncoding$2 = -67828;
 
-const int errSecInvalidCRLType2 = -67829;
+const int errSecInvalidCRLType$2 = -67829;
 
-const int errSecInvalidCRL2 = -67830;
+const int errSecInvalidCRL$2 = -67830;
 
-const int errSecInvalidFormType2 = -67831;
+const int errSecInvalidFormType$2 = -67831;
 
-const int errSecInvalidID2 = -67832;
+const int errSecInvalidID$2 = -67832;
 
-const int errSecInvalidIdentifier2 = -67833;
+const int errSecInvalidIdentifier$2 = -67833;
 
-const int errSecInvalidIndex2 = -67834;
+const int errSecInvalidIndex$2 = -67834;
 
-const int errSecInvalidPolicyIdentifiers2 = -67835;
+const int errSecInvalidPolicyIdentifiers$2 = -67835;
 
-const int errSecInvalidTimeString2 = -67836;
+const int errSecInvalidTimeString$2 = -67836;
 
-const int errSecInvalidReason2 = -67837;
+const int errSecInvalidReason$2 = -67837;
 
-const int errSecInvalidRequestInputs2 = -67838;
+const int errSecInvalidRequestInputs$2 = -67838;
 
-const int errSecInvalidResponseVector2 = -67839;
+const int errSecInvalidResponseVector$2 = -67839;
 
-const int errSecInvalidStopOnPolicy2 = -67840;
+const int errSecInvalidStopOnPolicy$2 = -67840;
 
-const int errSecInvalidTuple2 = -67841;
+const int errSecInvalidTuple$2 = -67841;
 
-const int errSecMultipleValuesUnsupported2 = -67842;
+const int errSecMultipleValuesUnsupported$2 = -67842;
 
-const int errSecNotTrusted2 = -67843;
+const int errSecNotTrusted$2 = -67843;
 
-const int errSecNoDefaultAuthority2 = -67844;
+const int errSecNoDefaultAuthority$2 = -67844;
 
-const int errSecRejectedForm2 = -67845;
+const int errSecRejectedForm$2 = -67845;
 
-const int errSecRequestLost2 = -67846;
+const int errSecRequestLost$2 = -67846;
 
-const int errSecRequestRejected2 = -67847;
+const int errSecRequestRejected$2 = -67847;
 
-const int errSecUnsupportedAddressType2 = -67848;
+const int errSecUnsupportedAddressType$2 = -67848;
 
-const int errSecUnsupportedService2 = -67849;
+const int errSecUnsupportedService$2 = -67849;
 
-const int errSecInvalidTupleGroup2 = -67850;
+const int errSecInvalidTupleGroup$2 = -67850;
 
-const int errSecInvalidBaseACLs2 = -67851;
+const int errSecInvalidBaseACLs$2 = -67851;
 
-const int errSecInvalidTupleCredentials2 = -67852;
+const int errSecInvalidTupleCredentials$2 = -67852;
 
-const int errSecInvalidTupleCredendtials2 = -67852;
+const int errSecInvalidTupleCredendtials$2 = -67852;
 
-const int errSecInvalidEncoding2 = -67853;
+const int errSecInvalidEncoding$2 = -67853;
 
-const int errSecInvalidValidityPeriod2 = -67854;
+const int errSecInvalidValidityPeriod$2 = -67854;
 
-const int errSecInvalidRequestor2 = -67855;
+const int errSecInvalidRequestor$2 = -67855;
 
-const int errSecRequestDescriptor2 = -67856;
+const int errSecRequestDescriptor$2 = -67856;
 
-const int errSecInvalidBundleInfo2 = -67857;
+const int errSecInvalidBundleInfo$2 = -67857;
 
-const int errSecInvalidCRLIndex2 = -67858;
+const int errSecInvalidCRLIndex$2 = -67858;
 
-const int errSecNoFieldValues2 = -67859;
+const int errSecNoFieldValues$2 = -67859;
 
-const int errSecUnsupportedFieldFormat2 = -67860;
+const int errSecUnsupportedFieldFormat$2 = -67860;
 
-const int errSecUnsupportedIndexInfo2 = -67861;
+const int errSecUnsupportedIndexInfo$2 = -67861;
 
-const int errSecUnsupportedLocality2 = -67862;
+const int errSecUnsupportedLocality$2 = -67862;
 
-const int errSecUnsupportedNumAttributes2 = -67863;
+const int errSecUnsupportedNumAttributes$2 = -67863;
 
-const int errSecUnsupportedNumIndexes2 = -67864;
+const int errSecUnsupportedNumIndexes$2 = -67864;
 
-const int errSecUnsupportedNumRecordTypes2 = -67865;
+const int errSecUnsupportedNumRecordTypes$2 = -67865;
 
-const int errSecFieldSpecifiedMultiple2 = -67866;
+const int errSecFieldSpecifiedMultiple$2 = -67866;
 
-const int errSecIncompatibleFieldFormat2 = -67867;
+const int errSecIncompatibleFieldFormat$2 = -67867;
 
-const int errSecInvalidParsingModule2 = -67868;
+const int errSecInvalidParsingModule$2 = -67868;
 
-const int errSecDatabaseLocked2 = -67869;
+const int errSecDatabaseLocked$2 = -67869;
 
-const int errSecDatastoreIsOpen2 = -67870;
+const int errSecDatastoreIsOpen$2 = -67870;
 
-const int errSecMissingValue2 = -67871;
+const int errSecMissingValue$2 = -67871;
 
-const int errSecUnsupportedQueryLimits2 = -67872;
+const int errSecUnsupportedQueryLimits$2 = -67872;
 
-const int errSecUnsupportedNumSelectionPreds2 = -67873;
+const int errSecUnsupportedNumSelectionPreds$2 = -67873;
 
-const int errSecUnsupportedOperator2 = -67874;
+const int errSecUnsupportedOperator$2 = -67874;
 
-const int errSecInvalidDBLocation2 = -67875;
+const int errSecInvalidDBLocation$2 = -67875;
 
-const int errSecInvalidAccessRequest2 = -67876;
+const int errSecInvalidAccessRequest$2 = -67876;
 
-const int errSecInvalidIndexInfo2 = -67877;
+const int errSecInvalidIndexInfo$2 = -67877;
 
-const int errSecInvalidNewOwner2 = -67878;
+const int errSecInvalidNewOwner$2 = -67878;
 
-const int errSecInvalidModifyMode2 = -67879;
+const int errSecInvalidModifyMode$2 = -67879;
 
-const int errSecMissingRequiredExtension2 = -67880;
+const int errSecMissingRequiredExtension$2 = -67880;
 
-const int errSecExtendedKeyUsageNotCritical2 = -67881;
+const int errSecExtendedKeyUsageNotCritical$2 = -67881;
 
-const int errSecTimestampMissing2 = -67882;
+const int errSecTimestampMissing$2 = -67882;
 
-const int errSecTimestampInvalid2 = -67883;
+const int errSecTimestampInvalid$2 = -67883;
 
-const int errSecTimestampNotTrusted2 = -67884;
+const int errSecTimestampNotTrusted$2 = -67884;
 
-const int errSecTimestampServiceNotAvailable2 = -67885;
+const int errSecTimestampServiceNotAvailable$2 = -67885;
 
-const int errSecTimestampBadAlg2 = -67886;
+const int errSecTimestampBadAlg$2 = -67886;
 
-const int errSecTimestampBadRequest2 = -67887;
+const int errSecTimestampBadRequest$2 = -67887;
 
-const int errSecTimestampBadDataFormat2 = -67888;
+const int errSecTimestampBadDataFormat$2 = -67888;
 
-const int errSecTimestampTimeNotAvailable2 = -67889;
+const int errSecTimestampTimeNotAvailable$2 = -67889;
 
-const int errSecTimestampUnacceptedPolicy2 = -67890;
+const int errSecTimestampUnacceptedPolicy$2 = -67890;
 
-const int errSecTimestampUnacceptedExtension2 = -67891;
+const int errSecTimestampUnacceptedExtension$2 = -67891;
 
-const int errSecTimestampAddInfoNotAvailable2 = -67892;
+const int errSecTimestampAddInfoNotAvailable$2 = -67892;
 
-const int errSecTimestampSystemFailure2 = -67893;
+const int errSecTimestampSystemFailure$2 = -67893;
 
-const int errSecSigningTimeMissing2 = -67894;
+const int errSecSigningTimeMissing$2 = -67894;
 
-const int errSecTimestampRejection2 = -67895;
+const int errSecTimestampRejection$2 = -67895;
 
-const int errSecTimestampWaiting2 = -67896;
+const int errSecTimestampWaiting$2 = -67896;
 
-const int errSecTimestampRevocationWarning2 = -67897;
+const int errSecTimestampRevocationWarning$2 = -67897;
 
-const int errSecTimestampRevocationNotification2 = -67898;
+const int errSecTimestampRevocationNotification$2 = -67898;
 
-const int errSecCertificatePolicyNotAllowed2 = -67899;
+const int errSecCertificatePolicyNotAllowed$2 = -67899;
 
-const int errSecCertificateNameNotAllowed2 = -67900;
+const int errSecCertificateNameNotAllowed$2 = -67900;
 
-const int errSecCertificateValidityPeriodTooLong2 = -67901;
+const int errSecCertificateValidityPeriodTooLong$2 = -67901;
 
-const int errSecCertificateIsCA2 = -67902;
+const int errSecCertificateIsCA$2 = -67902;
 
-const int errSecCertificateDuplicateExtension2 = -67903;
+const int errSecCertificateDuplicateExtension$2 = -67903;
