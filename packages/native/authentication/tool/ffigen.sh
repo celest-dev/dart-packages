@@ -2,6 +2,10 @@
 
 set -euo pipefail
 
+echo "Generating FFI bindings..."
+dart run ffigen --config=ffigen.ios.yaml
+dart run ffigen --config=ffigen.macos.yaml
+
 echo "Building example app..."
 pushd example
 flutter pub get
@@ -10,7 +14,3 @@ popd
 
 echo "Generating JNI bindings..."
 dart run jnigen --config=jnigen.yaml
-
-echo "Generating FFI bindings..."
-dart run ffigen --config=ffigen.ios.yaml
-dart run ffigen --config=ffigen.macos.yaml

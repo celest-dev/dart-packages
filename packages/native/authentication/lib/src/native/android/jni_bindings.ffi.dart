@@ -240,7 +240,7 @@ class NativeAuthentication extends jni$_.JObject {
   /// from: `static public final int RESULT_CANCELED`
   static const RESULT_CANCELED = 2;
   static final _id_new$ = _class.constructorId(
-    r'(Lio/flutter/embedding/android/FlutterActivity;Ldev/celest/native_authentication/Callback;)V',
+    r'(Landroid/app/Activity;Ldev/celest/native_authentication/Callback;)V',
   );
 
   static final _new$ = jni$_.ProtectedJniExtensions.lookup<
@@ -260,18 +260,18 @@ class NativeAuthentication extends jni$_.JObject {
               jni$_.Pointer<jni$_.Void>,
               jni$_.Pointer<jni$_.Void>)>();
 
-  /// from: `public void <init>(io.flutter.embedding.android.FlutterActivity flutterActivity, dev.celest.native_authentication.Callback callback)`
+  /// from: `public void <init>(android.app.Activity activity, dev.celest.native_authentication.Callback callback)`
   /// The returned object must be released after use, by calling the [release] method.
   factory NativeAuthentication(
-    jni$_.JObject flutterActivity,
+    Activity activity,
     Callback<CallbackResult> callback,
   ) {
-    final _$flutterActivity = flutterActivity.reference;
+    final _$activity = activity.reference;
     final _$callback = callback.reference;
     return NativeAuthentication.fromReference(_new$(
             _class.reference.pointer,
             _id_new$ as jni$_.JMethodIDPtr,
-            _$flutterActivity.pointer,
+            _$activity.pointer,
             _$callback.pointer)
         .reference);
   }

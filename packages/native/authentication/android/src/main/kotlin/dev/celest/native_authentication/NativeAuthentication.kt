@@ -99,20 +99,7 @@ class NativeAuthentication(
 
     private var customTabsClient: CustomTabsClient? = null
     private var customTabsSession: CustomTabsSession? = null
-    private val customTabsConnection = object : CustomTabsServiceConnection() {
-        override fun onServiceDisconnected(name: ComponentName?) {
-            Log.d(TAG, "onServiceDisconnected")
-            customTabsClient = null
-            customTabsSession = null
-        }
-
-        override fun onCustomTabsServiceConnected(name: ComponentName, client: CustomTabsClient) {
-            Log.d(TAG, "onCustomTabsServiceConnected")
-            customTabsClient = client
-            client.warmup(0)
-            customTabsSession = client.newSession(CustomTabsCallback())
-        }
-    }
+    private lateinit var customTabsConnection: CustomTabsServiceConnection
 
     private fun bindCustomTabsService(): Boolean {
         if (customTabsClient != null) {
@@ -122,6 +109,20 @@ class NativeAuthentication(
         if (packageName == null) {
             Log.w(TAG, "Custom tabs service is unavailable")
             return false
+        }
+        customTabsConnection = object : CustomTabsServiceConnection() {
+            override fun onCustomTabsServiceConnected(name: ComponentName, client: CustomTabsClient) {
+                Log.d(TAG, "onCustomTabsServiceConnected")
+                customTabsClient = client
+                client.warmup(0)
+                customTabsSession = client.newSession(CustomTabsCallback())
+            }
+
+            override fun onServiceDisconnected(name: ComponentName?) {
+                Log.d(TAG, "onServiceDisconnected")
+                customTabsClient = null
+                customTabsSession = null
+            }
         }
         return CustomTabsClient.bindCustomTabsService(
             mainActivity, packageName,

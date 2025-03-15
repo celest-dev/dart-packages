@@ -17,20 +17,15 @@ external ffi.Pointer<objc.ObjCBlockImpl>
 );
 
 @ffi.Native<
-        ffi.Pointer<objc.ObjCBlockImpl> Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>,
-            ffi.Pointer<
-                ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>(
-    isLeaf: true)
+    ffi.Pointer<objc.ObjCBlockImpl> Function(
+        ffi.Pointer<objc.ObjCBlockImpl>,
+        ffi.Pointer<objc.ObjCBlockImpl>,
+        ffi.Pointer<objc.DOBJC_Context>)>(isLeaf: true)
 external ffi.Pointer<objc.ObjCBlockImpl>
     _AuthenticationServicesIos_wrapBlockingBlock_xtuoz7(
   ffi.Pointer<objc.ObjCBlockImpl> block,
   ffi.Pointer<objc.ObjCBlockImpl> listnerBlock,
-  ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>> newWaiter,
-  ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
-      awaitWaiter,
+  ffi.Pointer<objc.DOBJC_Context> context,
 );
 
 @ffi.Native<
@@ -42,95 +37,15 @@ external ffi.Pointer<objc.ObjCBlockImpl>
 );
 
 @ffi.Native<
-        ffi.Pointer<objc.ObjCBlockImpl> Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>,
-            ffi.Pointer<
-                ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>(
-    isLeaf: true)
+    ffi.Pointer<objc.ObjCBlockImpl> Function(
+        ffi.Pointer<objc.ObjCBlockImpl>,
+        ffi.Pointer<objc.ObjCBlockImpl>,
+        ffi.Pointer<objc.DOBJC_Context>)>(isLeaf: true)
 external ffi.Pointer<objc.ObjCBlockImpl>
     _AuthenticationServicesIos_wrapBlockingBlock_1s56lr9(
   ffi.Pointer<objc.ObjCBlockImpl> block,
   ffi.Pointer<objc.ObjCBlockImpl> listnerBlock,
-  ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>> newWaiter,
-  ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
-      awaitWaiter,
-);
-
-@ffi.Native<
-    ffi.Pointer<objc.ObjCBlockImpl> Function(
-        ffi.Pointer<objc.ObjCBlockImpl>)>(isLeaf: true)
-external ffi.Pointer<objc.ObjCBlockImpl>
-    _AuthenticationServicesIos_wrapListenerBlock_18v1jvf(
-  ffi.Pointer<objc.ObjCBlockImpl> block,
-);
-
-@ffi.Native<
-        ffi.Pointer<objc.ObjCBlockImpl> Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>,
-            ffi.Pointer<
-                ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>(
-    isLeaf: true)
-external ffi.Pointer<objc.ObjCBlockImpl>
-    _AuthenticationServicesIos_wrapBlockingBlock_18v1jvf(
-  ffi.Pointer<objc.ObjCBlockImpl> block,
-  ffi.Pointer<objc.ObjCBlockImpl> listnerBlock,
-  ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>> newWaiter,
-  ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
-      awaitWaiter,
-);
-
-@ffi.Native<
-    ffi.Pointer<objc.ObjCBlockImpl> Function(
-        ffi.Pointer<objc.ObjCBlockImpl>)>(isLeaf: true)
-external ffi.Pointer<objc.ObjCBlockImpl>
-    _AuthenticationServicesIos_wrapListenerBlock_ovsamd(
-  ffi.Pointer<objc.ObjCBlockImpl> block,
-);
-
-@ffi.Native<
-        ffi.Pointer<objc.ObjCBlockImpl> Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>,
-            ffi.Pointer<
-                ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>(
-    isLeaf: true)
-external ffi.Pointer<objc.ObjCBlockImpl>
-    _AuthenticationServicesIos_wrapBlockingBlock_ovsamd(
-  ffi.Pointer<objc.ObjCBlockImpl> block,
-  ffi.Pointer<objc.ObjCBlockImpl> listnerBlock,
-  ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>> newWaiter,
-  ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
-      awaitWaiter,
-);
-
-@ffi.Native<
-    ffi.Pointer<objc.ObjCBlockImpl> Function(
-        ffi.Pointer<objc.ObjCBlockImpl>)>(isLeaf: true)
-external ffi.Pointer<objc.ObjCBlockImpl>
-    _AuthenticationServicesIos_wrapListenerBlock_fjrv01(
-  ffi.Pointer<objc.ObjCBlockImpl> block,
-);
-
-@ffi.Native<
-        ffi.Pointer<objc.ObjCBlockImpl> Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>,
-            ffi.Pointer<
-                ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>(
-    isLeaf: true)
-external ffi.Pointer<objc.ObjCBlockImpl>
-    _AuthenticationServicesIos_wrapBlockingBlock_fjrv01(
-  ffi.Pointer<objc.ObjCBlockImpl> block,
-  ffi.Pointer<objc.ObjCBlockImpl> listnerBlock,
-  ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>> newWaiter,
-  ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
-      awaitWaiter,
+  ffi.Pointer<objc.DOBJC_Context> context,
 );
 
 @ffi.Native<
@@ -142,20 +57,33 @@ external ffi.Pointer<objc.ObjCBlockImpl>
 );
 
 @ffi.Native<
-        ffi.Pointer<objc.ObjCBlockImpl> Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>,
-            ffi.Pointer<
-                ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>(
-    isLeaf: true)
+    ffi.Pointer<objc.ObjCBlockImpl> Function(
+        ffi.Pointer<objc.ObjCBlockImpl>,
+        ffi.Pointer<objc.ObjCBlockImpl>,
+        ffi.Pointer<objc.DOBJC_Context>)>(isLeaf: true)
 external ffi.Pointer<objc.ObjCBlockImpl>
     _AuthenticationServicesIos_wrapBlockingBlock_pfv6jd(
   ffi.Pointer<objc.ObjCBlockImpl> block,
   ffi.Pointer<objc.ObjCBlockImpl> listnerBlock,
-  ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>> newWaiter,
-  ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
-      awaitWaiter,
+  ffi.Pointer<objc.DOBJC_Context> context,
+);
+
+@ffi.Native<
+    ffi.Pointer<objc.ObjCObject> Function(
+        ffi.Pointer<objc.ObjCObject>, ffi.Pointer<ffi.Void>)>()
+external ffi.Pointer<objc.ObjCObject>
+    _AuthenticationServicesIos_protocolTrampoline_1mbt9g9(
+  ffi.Pointer<objc.ObjCObject> target,
+  ffi.Pointer<ffi.Void> arg0,
+);
+
+@ffi.Native<
+    instancetype Function(ffi.Pointer<objc.ObjCObject>, ffi.Pointer<ffi.Void>,
+        ffi.Pointer<objc.ObjCObject>)>()
+external instancetype _AuthenticationServicesIos_protocolTrampoline_xr62hr(
+  ffi.Pointer<objc.ObjCObject> target,
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<objc.ObjCObject> arg1,
 );
 
 enum UIUserInterfaceIdiom {
@@ -179,7 +107,7 @@ enum UIUserInterfaceIdiom {
         5 => UIUserInterfaceIdiomMac,
         6 => UIUserInterfaceIdiomVision,
         _ =>
-          throw ArgumentError("Unknown value for UIUserInterfaceIdiom: $value"),
+          throw ArgumentError('Unknown value for UIUserInterfaceIdiom: $value'),
       };
 }
 
@@ -211,7 +139,7 @@ class UIDevice extends objc.NSObject {
   UIDevice._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UIDevice', iOS: (false, (2, 0, 0)));
+    objc.checkOsVersionInternal('UIDevice', iOS: (false, (2, 0, 0)));
   }
 
   /// Constructs a [UIDevice] that points to the same underlying object as [other].
@@ -231,14 +159,16 @@ class UIDevice extends objc.NSObject {
 
   /// currentDevice
   static UIDevice getCurrentDevice() {
-    objc.checkOsVersion('UIDevice.currentDevice', iOS: (false, (2, 0, 0)));
+    objc.checkOsVersionInternal('UIDevice.currentDevice',
+        iOS: (false, (2, 0, 0)));
     final _ret = _objc_msgSend_151sglz(_class_UIDevice, _sel_currentDevice);
     return UIDevice.castFromPointer(_ret, retain: true, release: true);
   }
 
   /// systemVersion
   objc.NSString get systemVersion {
-    objc.checkOsVersion('UIDevice.systemVersion', iOS: (false, (2, 0, 0)));
+    objc.checkOsVersionInternal('UIDevice.systemVersion',
+        iOS: (false, (2, 0, 0)));
     final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_systemVersion);
     return objc.NSString.castFromPointer(_ret, retain: true, release: true);
   }
@@ -260,7 +190,7 @@ enum UIStatusBarStyle {
         1 => UIStatusBarStyleLightContent,
         3 => UIStatusBarStyleDarkContent,
         2 => UIStatusBarStyleBlackOpaque,
-        _ => throw ArgumentError("Unknown value for UIStatusBarStyle: $value"),
+        _ => throw ArgumentError('Unknown value for UIStatusBarStyle: $value'),
       };
 
   @override
@@ -284,7 +214,7 @@ enum UIStatusBarAnimation {
         1 => UIStatusBarAnimationFade,
         2 => UIStatusBarAnimationSlide,
         _ =>
-          throw ArgumentError("Unknown value for UIStatusBarAnimation: $value"),
+          throw ArgumentError('Unknown value for UIStatusBarAnimation: $value'),
       };
 }
 
@@ -318,7 +248,7 @@ class UIResponder extends objc.NSObject
   UIResponder._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UIResponder', iOS: (false, (2, 0, 0)));
+    objc.checkOsVersionInternal('UIResponder', iOS: (false, (2, 0, 0)));
   }
 
   /// Constructs a [UIResponder] that points to the same underlying object as [other].
@@ -365,7 +295,7 @@ final _objc_msgSend_91o635 = objc.msgSendPointer
 extension UIRemoteNotifications on UIApplication {
   /// registerForRemoteNotifications
   void registerForRemoteNotifications() {
-    objc.checkOsVersion('UIApplication.registerForRemoteNotifications',
+    objc.checkOsVersionInternal('UIApplication.registerForRemoteNotifications',
         iOS: (false, (8, 0, 0)));
     _objc_msgSend_1pl9qdv(
         this.ref.pointer, _sel_registerForRemoteNotifications);
@@ -373,7 +303,8 @@ extension UIRemoteNotifications on UIApplication {
 
   /// unregisterForRemoteNotifications
   void unregisterForRemoteNotifications() {
-    objc.checkOsVersion('UIApplication.unregisterForRemoteNotifications',
+    objc.checkOsVersionInternal(
+        'UIApplication.unregisterForRemoteNotifications',
         iOS: (false, (3, 0, 0)));
     _objc_msgSend_1pl9qdv(
         this.ref.pointer, _sel_unregisterForRemoteNotifications);
@@ -381,7 +312,8 @@ extension UIRemoteNotifications on UIApplication {
 
   /// isRegisteredForRemoteNotifications
   bool get registeredForRemoteNotifications {
-    objc.checkOsVersion('UIApplication.isRegisteredForRemoteNotifications',
+    objc.checkOsVersionInternal(
+        'UIApplication.isRegisteredForRemoteNotifications',
         iOS: (false, (8, 0, 0)));
     return _objc_msgSend_91o635(
         this.ref.pointer, _sel_isRegisteredForRemoteNotifications);
@@ -403,7 +335,8 @@ late final _sel_endReceivingRemoteControlEvents =
 extension UIRemoteControlEvents on UIApplication {
   /// beginReceivingRemoteControlEvents
   void beginReceivingRemoteControlEvents() {
-    objc.checkOsVersion('UIApplication.beginReceivingRemoteControlEvents',
+    objc.checkOsVersionInternal(
+        'UIApplication.beginReceivingRemoteControlEvents',
         iOS: (false, (4, 0, 0)));
     _objc_msgSend_1pl9qdv(
         this.ref.pointer, _sel_beginReceivingRemoteControlEvents);
@@ -411,7 +344,7 @@ extension UIRemoteControlEvents on UIApplication {
 
   /// endReceivingRemoteControlEvents
   void endReceivingRemoteControlEvents() {
-    objc.checkOsVersion('UIApplication.endReceivingRemoteControlEvents',
+    objc.checkOsVersionInternal('UIApplication.endReceivingRemoteControlEvents',
         iOS: (false, (4, 0, 0)));
     _objc_msgSend_1pl9qdv(
         this.ref.pointer, _sel_endReceivingRemoteControlEvents);
@@ -438,7 +371,8 @@ final _objc_msgSend_xtuoz7 = objc.msgSendPointer
 extension UIShortcutItems on UIApplication {
   /// shortcutItems
   objc.NSArray? get shortcutItems {
-    objc.checkOsVersion('UIApplication.shortcutItems', iOS: (false, (9, 0, 0)));
+    objc.checkOsVersionInternal('UIApplication.shortcutItems',
+        iOS: (false, (9, 0, 0)));
     final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_shortcutItems);
     return _ret.address == 0
         ? null
@@ -447,7 +381,7 @@ extension UIShortcutItems on UIApplication {
 
   /// setShortcutItems:
   set shortcutItems(objc.NSArray? value) {
-    objc.checkOsVersion('UIApplication.setShortcutItems:',
+    objc.checkOsVersionInternal('UIApplication.setShortcutItems:',
         iOS: (false, (9, 0, 0)));
     _objc_msgSend_xtuoz7(this.ref.pointer, _sel_setShortcutItems_,
         value?.ref.pointer ?? ffi.nullptr);
@@ -560,15 +494,20 @@ abstract final class ObjCBlock_ffiVoid_NSError {
   /// This block must be invoked by native code running on the same thread as
   /// the isolate that registered it. Invoking the block on the wrong thread
   /// will result in a crash.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
   static objc.ObjCBlock<ffi.Void Function(objc.NSError?)> fromFunction(
-          void Function(objc.NSError?) fn) =>
+          void Function(objc.NSError?) fn,
+          {bool keepIsolateAlive = true}) =>
       objc.ObjCBlock<ffi.Void Function(objc.NSError?)>(
           objc.newClosureBlock(
               _ObjCBlock_ffiVoid_NSError_closureCallable,
               (ffi.Pointer<objc.ObjCObject> arg0) => fn(arg0.address == 0
                   ? null
                   : objc.NSError.castFromPointer(arg0,
-                      retain: true, release: true))),
+                      retain: true, release: true)),
+              keepIsolateAlive),
           retain: false,
           release: true);
 
@@ -579,16 +518,17 @@ abstract final class ObjCBlock_ffiVoid_NSError {
   /// but only supports void functions, and is not run synchronously. See
   /// NativeCallable.listener for more details.
   ///
-  /// Note that unlike the default behavior of NativeCallable.listener, listener
-  /// blocks do not keep the isolate alive.
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
   static objc.ObjCBlock<ffi.Void Function(objc.NSError?)> listener(
-      void Function(objc.NSError?) fn) {
+      void Function(objc.NSError?) fn,
+      {bool keepIsolateAlive = true}) {
     final raw = objc.newClosureBlock(
         _ObjCBlock_ffiVoid_NSError_listenerCallable.nativeFunction.cast(),
         (ffi.Pointer<objc.ObjCObject> arg0) => fn(arg0.address == 0
             ? null
-            : objc.NSError.castFromPointer(arg0,
-                retain: false, release: true)));
+            : objc.NSError.castFromPointer(arg0, retain: false, release: true)),
+        keepIsolateAlive);
     final wrapper = _AuthenticationServicesIos_wrapListenerBlock_xtuoz7(raw);
     objc.objectRelease(raw.cast());
     return objc.ObjCBlock<ffi.Void Function(objc.NSError?)>(wrapper,
@@ -601,26 +541,28 @@ abstract final class ObjCBlock_ffiVoid_NSError {
   /// caller until the callback is handled by the Dart isolate that created
   /// the block. Async functions are not supported.
   ///
-  /// This block does not keep the owner isolate alive. If the owner isolate has
-  /// shut down, and the block is invoked by native code, it may block
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC. If the owner isolate
+  /// has shut down, and the block is invoked by native code, it may block
   /// indefinitely, or have other undefined behavior.
   static objc.ObjCBlock<ffi.Void Function(objc.NSError?)> blocking(
-      void Function(objc.NSError?) fn) {
+      void Function(objc.NSError?) fn,
+      {bool keepIsolateAlive = true}) {
     final raw = objc.newClosureBlock(
         _ObjCBlock_ffiVoid_NSError_blockingCallable.nativeFunction.cast(),
         (ffi.Pointer<objc.ObjCObject> arg0) => fn(arg0.address == 0
             ? null
-            : objc.NSError.castFromPointer(arg0,
-                retain: false, release: true)));
+            : objc.NSError.castFromPointer(arg0, retain: false, release: true)),
+        keepIsolateAlive);
     final rawListener = objc.newClosureBlock(
         _ObjCBlock_ffiVoid_NSError_blockingListenerCallable.nativeFunction
             .cast(),
         (ffi.Pointer<objc.ObjCObject> arg0) => fn(arg0.address == 0
             ? null
-            : objc.NSError.castFromPointer(arg0,
-                retain: false, release: true)));
-    final wrapper = objc.wrapBlockingBlock(
-        _AuthenticationServicesIos_wrapBlockingBlock_xtuoz7, raw, rawListener);
+            : objc.NSError.castFromPointer(arg0, retain: false, release: true)),
+        keepIsolateAlive);
+    final wrapper = _AuthenticationServicesIos_wrapBlockingBlock_xtuoz7(
+        raw, rawListener, objc.objCContext);
     objc.objectRelease(raw.cast());
     objc.objectRelease(rawListener.cast());
     return objc.ObjCBlock<ffi.Void Function(objc.NSError?)>(wrapper,
@@ -664,7 +606,7 @@ late final _sel_alternateIconName = objc.registerName("alternateIconName");
 extension UIAlternateApplicationIcons on UIApplication {
   /// supportsAlternateIcons
   bool get supportsAlternateIcons {
-    objc.checkOsVersion('UIApplication.supportsAlternateIcons',
+    objc.checkOsVersionInternal('UIApplication.supportsAlternateIcons',
         iOS: (false, (10, 3, 0)));
     return _objc_msgSend_91o635(this.ref.pointer, _sel_supportsAlternateIcons);
   }
@@ -672,7 +614,8 @@ extension UIAlternateApplicationIcons on UIApplication {
   /// setAlternateIconName:completionHandler:
   void setAlternateIconName_completionHandler_(objc.NSString? alternateIconName,
       objc.ObjCBlock<ffi.Void Function(objc.NSError?)>? completionHandler) {
-    objc.checkOsVersion('UIApplication.setAlternateIconName:completionHandler:',
+    objc.checkOsVersionInternal(
+        'UIApplication.setAlternateIconName:completionHandler:',
         iOS: (false, (10, 3, 0)));
     _objc_msgSend_o762yo(
         this.ref.pointer,
@@ -683,7 +626,7 @@ extension UIAlternateApplicationIcons on UIApplication {
 
   /// alternateIconName
   objc.NSString? get alternateIconName {
-    objc.checkOsVersion('UIApplication.alternateIconName',
+    objc.checkOsVersionInternal('UIApplication.alternateIconName',
         iOS: (false, (10, 3, 0)));
     final _ret =
         _objc_msgSend_151sglz(this.ref.pointer, _sel_alternateIconName);
@@ -741,21 +684,22 @@ final _objc_msgSend_pfv6jd = objc.msgSendPointer
 extension UIStateRestoration on UIApplication {
   /// extendStateRestoration
   void extendStateRestoration() {
-    objc.checkOsVersion('UIApplication.extendStateRestoration',
+    objc.checkOsVersionInternal('UIApplication.extendStateRestoration',
         iOS: (false, (6, 0, 0)));
     _objc_msgSend_1pl9qdv(this.ref.pointer, _sel_extendStateRestoration);
   }
 
   /// completeStateRestoration
   void completeStateRestoration() {
-    objc.checkOsVersion('UIApplication.completeStateRestoration',
+    objc.checkOsVersionInternal('UIApplication.completeStateRestoration',
         iOS: (false, (6, 0, 0)));
     _objc_msgSend_1pl9qdv(this.ref.pointer, _sel_completeStateRestoration);
   }
 
   /// ignoreSnapshotOnNextApplicationLaunch
   void ignoreSnapshotOnNextApplicationLaunch() {
-    objc.checkOsVersion('UIApplication.ignoreSnapshotOnNextApplicationLaunch',
+    objc.checkOsVersionInternal(
+        'UIApplication.ignoreSnapshotOnNextApplicationLaunch',
         iOS: (false, (7, 0, 0)));
     _objc_msgSend_1pl9qdv(
         this.ref.pointer, _sel_ignoreSnapshotOnNextApplicationLaunch);
@@ -764,7 +708,7 @@ extension UIStateRestoration on UIApplication {
   /// registerObjectForStateRestoration:restorationIdentifier:
   static void registerObjectForStateRestoration_restorationIdentifier_(
       UIStateRestoring object, objc.NSString restorationIdentifier) {
-    objc.checkOsVersion(
+    objc.checkOsVersionInternal(
         'UIApplication.registerObjectForStateRestoration:restorationIdentifier:',
         iOS: (false, (7, 0, 0)));
     _objc_msgSend_pfv6jd(
@@ -790,7 +734,7 @@ enum UIApplicationCategoryDefaultStatus {
         1 => UIApplicationCategoryDefaultStatusIsDefault,
         2 => UIApplicationCategoryDefaultStatusNotDefault,
         _ => throw ArgumentError(
-            "Unknown value for UIApplicationCategoryDefaultStatus: $value"),
+            'Unknown value for UIApplicationCategoryDefaultStatus: $value'),
       };
 }
 
@@ -804,7 +748,7 @@ enum UIApplicationCategory {
   static UIApplicationCategory fromValue(int value) => switch (value) {
         1 => UIApplicationCategoryWebBrowser,
         _ => throw ArgumentError(
-            "Unknown value for UIApplicationCategory: $value"),
+            'Unknown value for UIApplicationCategory: $value'),
       };
 }
 
@@ -833,7 +777,7 @@ extension DefaultApplication on UIApplication {
   UIApplicationCategoryDefaultStatus defaultStatusForCategory_error_(
       UIApplicationCategory category,
       ffi.Pointer<ffi.Pointer<objc.ObjCObject>> error) {
-    objc.checkOsVersion('UIApplication.defaultStatusForCategory:error:',
+    objc.checkOsVersionInternal('UIApplication.defaultStatusForCategory:error:',
         iOS: (false, (18, 2, 0)));
     final _ret = _objc_msgSend_1yelsrr(this.ref.pointer,
         _sel_defaultStatusForCategory_error_, category.value, error);
@@ -852,7 +796,7 @@ class UIApplication extends UIResponder {
   UIApplication._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UIApplication', iOS: (false, (2, 0, 0)));
+    objc.checkOsVersionInternal('UIApplication', iOS: (false, (2, 0, 0)));
   }
 
   /// Constructs a [UIApplication] that points to the same underlying object as [other].
@@ -879,7 +823,7 @@ class UIApplication extends UIResponder {
 
   /// connectedScenes
   objc.NSSet get connectedScenes {
-    objc.checkOsVersion('UIApplication.connectedScenes',
+    objc.checkOsVersionInternal('UIApplication.connectedScenes',
         iOS: (false, (13, 0, 0)));
     final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_connectedScenes);
     return objc.NSSet.castFromPointer(_ret, retain: true, release: true);
@@ -898,7 +842,7 @@ class UISceneSession extends objc.NSObject implements objc.NSSecureCoding {
   UISceneSession._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UISceneSession', iOS: (false, (13, 0, 0)));
+    objc.checkOsVersionInternal('UISceneSession', iOS: (false, (13, 0, 0)));
   }
 
   /// Constructs a [UISceneSession] that points to the same underlying object as [other].
@@ -919,7 +863,8 @@ class UISceneConnectionOptions extends objc.NSObject {
   UISceneConnectionOptions._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UISceneConnectionOptions', iOS: (false, (13, 0, 0)));
+    objc.checkOsVersionInternal('UISceneConnectionOptions',
+        iOS: (false, (13, 0, 0)));
   }
 
   /// Constructs a [UISceneConnectionOptions] that points to the same underlying object as [other].
@@ -988,7 +933,7 @@ enum UISceneActivationState {
         1 => UISceneActivationStateForegroundInactive,
         2 => UISceneActivationStateBackground,
         _ => throw ArgumentError(
-            "Unknown value for UISceneActivationState: $value"),
+            'Unknown value for UISceneActivationState: $value'),
       };
 }
 
@@ -1010,7 +955,7 @@ class UISceneOpenExternalURLOptions extends objc.NSObject {
   UISceneOpenExternalURLOptions._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UISceneOpenExternalURLOptions',
+    objc.checkOsVersionInternal('UISceneOpenExternalURLOptions',
         iOS: (false, (13, 0, 0)));
   }
 
@@ -1116,11 +1061,15 @@ abstract final class ObjCBlock_ffiVoid_bool {
   /// This block must be invoked by native code running on the same thread as
   /// the isolate that registered it. Invoking the block on the wrong thread
   /// will result in a crash.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
   static objc.ObjCBlock<ffi.Void Function(ffi.Bool)> fromFunction(
-          void Function(bool) fn) =>
+          void Function(bool) fn,
+          {bool keepIsolateAlive = true}) =>
       objc.ObjCBlock<ffi.Void Function(ffi.Bool)>(
-          objc.newClosureBlock(
-              _ObjCBlock_ffiVoid_bool_closureCallable, (bool arg0) => fn(arg0)),
+          objc.newClosureBlock(_ObjCBlock_ffiVoid_bool_closureCallable,
+              (bool arg0) => fn(arg0), keepIsolateAlive),
           retain: false,
           release: true);
 
@@ -1131,13 +1080,15 @@ abstract final class ObjCBlock_ffiVoid_bool {
   /// but only supports void functions, and is not run synchronously. See
   /// NativeCallable.listener for more details.
   ///
-  /// Note that unlike the default behavior of NativeCallable.listener, listener
-  /// blocks do not keep the isolate alive.
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
   static objc.ObjCBlock<ffi.Void Function(ffi.Bool)> listener(
-      void Function(bool) fn) {
+      void Function(bool) fn,
+      {bool keepIsolateAlive = true}) {
     final raw = objc.newClosureBlock(
         _ObjCBlock_ffiVoid_bool_listenerCallable.nativeFunction.cast(),
-        (bool arg0) => fn(arg0));
+        (bool arg0) => fn(arg0),
+        keepIsolateAlive);
     final wrapper = _AuthenticationServicesIos_wrapListenerBlock_1s56lr9(raw);
     objc.objectRelease(raw.cast());
     return objc.ObjCBlock<ffi.Void Function(ffi.Bool)>(wrapper,
@@ -1150,19 +1101,23 @@ abstract final class ObjCBlock_ffiVoid_bool {
   /// caller until the callback is handled by the Dart isolate that created
   /// the block. Async functions are not supported.
   ///
-  /// This block does not keep the owner isolate alive. If the owner isolate has
-  /// shut down, and the block is invoked by native code, it may block
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC. If the owner isolate
+  /// has shut down, and the block is invoked by native code, it may block
   /// indefinitely, or have other undefined behavior.
   static objc.ObjCBlock<ffi.Void Function(ffi.Bool)> blocking(
-      void Function(bool) fn) {
+      void Function(bool) fn,
+      {bool keepIsolateAlive = true}) {
     final raw = objc.newClosureBlock(
         _ObjCBlock_ffiVoid_bool_blockingCallable.nativeFunction.cast(),
-        (bool arg0) => fn(arg0));
+        (bool arg0) => fn(arg0),
+        keepIsolateAlive);
     final rawListener = objc.newClosureBlock(
         _ObjCBlock_ffiVoid_bool_blockingListenerCallable.nativeFunction.cast(),
-        (bool arg0) => fn(arg0));
-    final wrapper = objc.wrapBlockingBlock(
-        _AuthenticationServicesIos_wrapBlockingBlock_1s56lr9, raw, rawListener);
+        (bool arg0) => fn(arg0),
+        keepIsolateAlive);
+    final wrapper = _AuthenticationServicesIos_wrapBlockingBlock_1s56lr9(
+        raw, rawListener, objc.objCContext);
     objc.objectRelease(raw.cast());
     objc.objectRelease(rawListener.cast());
     return objc.ObjCBlock<ffi.Void Function(ffi.Bool)>(wrapper,
@@ -1214,7 +1169,7 @@ class UISceneActivationConditions extends objc.NSObject
   UISceneActivationConditions._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UISceneActivationConditions',
+    objc.checkOsVersionInternal('UISceneActivationConditions',
         iOS: (false, (13, 0, 0)));
   }
 
@@ -1240,7 +1195,7 @@ class UIScene extends UIResponder {
   UIScene._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UIScene', iOS: (false, (13, 0, 0)));
+    objc.checkOsVersionInternal('UIScene', iOS: (false, (13, 0, 0)));
   }
 
   /// Constructs a [UIScene] that points to the same underlying object as [other].
@@ -1261,7 +1216,7 @@ class UIScene extends UIResponder {
   /// initWithSession:connectionOptions:
   UIScene initWithSession_connectionOptions_(
       UISceneSession session, UISceneConnectionOptions connectionOptions) {
-    objc.checkOsVersion('UIScene.initWithSession:connectionOptions:',
+    objc.checkOsVersionInternal('UIScene.initWithSession:connectionOptions:',
         iOS: (false, (13, 0, 0)));
     final _ret = _objc_msgSend_15qeuct(
         this.ref.retainAndReturnPointer(),
@@ -1273,14 +1228,14 @@ class UIScene extends UIResponder {
 
   /// session
   UISceneSession get session {
-    objc.checkOsVersion('UIScene.session', iOS: (false, (13, 0, 0)));
+    objc.checkOsVersionInternal('UIScene.session', iOS: (false, (13, 0, 0)));
     final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_session);
     return UISceneSession.castFromPointer(_ret, retain: true, release: true);
   }
 
   /// delegate
   UISceneDelegate? get delegate {
-    objc.checkOsVersion('UIScene.delegate', iOS: (false, (13, 0, 0)));
+    objc.checkOsVersionInternal('UIScene.delegate', iOS: (false, (13, 0, 0)));
     final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_delegate);
     return _ret.address == 0
         ? null
@@ -1289,14 +1244,16 @@ class UIScene extends UIResponder {
 
   /// setDelegate:
   set delegate(UISceneDelegate? value) {
-    objc.checkOsVersion('UIScene.setDelegate:', iOS: (false, (13, 0, 0)));
+    objc.checkOsVersionInternal('UIScene.setDelegate:',
+        iOS: (false, (13, 0, 0)));
     _objc_msgSend_xtuoz7(
         this.ref.pointer, _sel_setDelegate_, value?.ref.pointer ?? ffi.nullptr);
   }
 
   /// activationState
   UISceneActivationState get activationState {
-    objc.checkOsVersion('UIScene.activationState', iOS: (false, (13, 0, 0)));
+    objc.checkOsVersionInternal('UIScene.activationState',
+        iOS: (false, (13, 0, 0)));
     final _ret = _objc_msgSend_ma5inq(this.ref.pointer, _sel_activationState);
     return UISceneActivationState.fromValue(_ret);
   }
@@ -1306,7 +1263,7 @@ class UIScene extends UIResponder {
       objc.NSURL url,
       UISceneOpenExternalURLOptions? options,
       objc.ObjCBlock<ffi.Void Function(ffi.Bool)>? completion) {
-    objc.checkOsVersion('UIScene.openURL:options:completionHandler:',
+    objc.checkOsVersionInternal('UIScene.openURL:options:completionHandler:',
         iOS: (false, (13, 0, 0)));
     _objc_msgSend_18qun1e(
         this.ref.pointer,
@@ -1318,34 +1275,35 @@ class UIScene extends UIResponder {
 
   /// title
   objc.NSString get title {
-    objc.checkOsVersion('UIScene.title', iOS: (false, (13, 0, 0)));
+    objc.checkOsVersionInternal('UIScene.title', iOS: (false, (13, 0, 0)));
     final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_title);
     return objc.NSString.castFromPointer(_ret, retain: true, release: true);
   }
 
   /// setTitle:
   set title(objc.NSString value) {
-    objc.checkOsVersion('UIScene.setTitle:', iOS: (false, (13, 0, 0)));
+    objc.checkOsVersionInternal('UIScene.setTitle:', iOS: (false, (13, 0, 0)));
     _objc_msgSend_xtuoz7(this.ref.pointer, _sel_setTitle_, value.ref.pointer);
   }
 
   /// subtitle
   objc.NSString get subtitle {
-    objc.checkOsVersion('UIScene.subtitle', iOS: (false, (15, 0, 0)));
+    objc.checkOsVersionInternal('UIScene.subtitle', iOS: (false, (15, 0, 0)));
     final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_subtitle);
     return objc.NSString.castFromPointer(_ret, retain: true, release: true);
   }
 
   /// setSubtitle:
   set subtitle(objc.NSString value) {
-    objc.checkOsVersion('UIScene.setSubtitle:', iOS: (false, (15, 0, 0)));
+    objc.checkOsVersionInternal('UIScene.setSubtitle:',
+        iOS: (false, (15, 0, 0)));
     _objc_msgSend_xtuoz7(
         this.ref.pointer, _sel_setSubtitle_, value.ref.pointer);
   }
 
   /// activationConditions
   UISceneActivationConditions get activationConditions {
-    objc.checkOsVersion('UIScene.activationConditions',
+    objc.checkOsVersionInternal('UIScene.activationConditions',
         iOS: (false, (13, 0, 0)));
     final _ret =
         _objc_msgSend_151sglz(this.ref.pointer, _sel_activationConditions);
@@ -1355,7 +1313,7 @@ class UIScene extends UIResponder {
 
   /// setActivationConditions:
   set activationConditions(UISceneActivationConditions value) {
-    objc.checkOsVersion('UIScene.setActivationConditions:',
+    objc.checkOsVersionInternal('UIScene.setActivationConditions:',
         iOS: (false, (13, 0, 0)));
     _objc_msgSend_xtuoz7(
         this.ref.pointer, _sel_setActivationConditions_, value.ref.pointer);
@@ -1404,7 +1362,7 @@ interface class UITraitChangeObservable extends objc.ObjCProtocolBase {
 }
 
 ///
-extension on UIWindowScene {}
+extension unnamed on UIWindowScene {}
 
 late final _sel_windows = objc.registerName("windows");
 
@@ -1413,7 +1371,7 @@ class UIWindowScene extends UIScene {
   UIWindowScene._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UIWindowScene', iOS: (false, (13, 0, 0)));
+    objc.checkOsVersionInternal('UIWindowScene', iOS: (false, (13, 0, 0)));
   }
 
   /// Constructs a [UIWindowScene] that points to the same underlying object as [other].
@@ -1433,7 +1391,8 @@ class UIWindowScene extends UIScene {
 
   /// windows
   objc.NSArray get windows {
-    objc.checkOsVersion('UIWindowScene.windows', iOS: (false, (13, 0, 0)));
+    objc.checkOsVersionInternal('UIWindowScene.windows',
+        iOS: (false, (13, 0, 0)));
     final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_windows);
     return objc.NSArray.castFromPointer(_ret, retain: true, release: true);
   }
@@ -1554,1766 +1513,6 @@ final _objc_msgSend_e3qsqz = objc.msgSendPointer
     .asFunction<
         bool Function(ffi.Pointer<objc.ObjCObject>,
             ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.ObjCProtocol>)>();
-late final _sel_canBecomeFocused = objc.registerName("canBecomeFocused");
-bool _ObjCBlock_bool_ffiVoid_fnPtrTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    block.ref.target
-        .cast<
-            ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void> arg0)>>()
-        .asFunction<bool Function(ffi.Pointer<ffi.Void>)>()(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_bool_ffiVoid_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Bool Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_bool_ffiVoid_fnPtrTrampoline, false)
-        .cast();
-bool _ObjCBlock_bool_ffiVoid_closureTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    (objc.getBlockClosure(block) as bool Function(ffi.Pointer<ffi.Void>))(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_bool_ffiVoid_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Bool Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_bool_ffiVoid_closureTrampoline, false)
-        .cast();
-
-/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_bool_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>(pointer,
-              retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>
-      fromFunctionPointer(
-              ffi.Pointer<
-                      ffi.NativeFunction<
-                          ffi.Bool Function(ffi.Pointer<ffi.Void> arg0)>>
-                  ptr) =>
-          objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>(
-              objc.newPointerBlock(_ObjCBlock_bool_ffiVoid_fnPtrCallable, ptr.cast()),
-              retain: false,
-              release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)> fromFunction(
-          bool Function(ffi.Pointer<ffi.Void>) fn) =>
-      objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>(
-          objc.newClosureBlock(_ObjCBlock_bool_ffiVoid_closureCallable,
-              (ffi.Pointer<ffi.Void> arg0) => fn(arg0)),
-          retain: false,
-          release: true);
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_bool_ffiVoid_CallExtension
-    on objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)> {
-  bool call(ffi.Pointer<ffi.Void> arg0) => ref.pointer.ref.invoke
-      .cast<
-          ffi.NativeFunction<
-              ffi.Bool Function(ffi.Pointer<objc.ObjCBlockImpl> block,
-                  ffi.Pointer<ffi.Void> arg0)>>()
-      .asFunction<
-          bool Function(ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0);
-}
-
-final class CGPoint extends ffi.Struct {
-  @ffi.Double()
-  external double x;
-
-  @ffi.Double()
-  external double y;
-}
-
-final class CGSize extends ffi.Struct {
-  @ffi.Double()
-  external double width;
-
-  @ffi.Double()
-  external double height;
-}
-
-final class CGRect extends ffi.Struct {
-  external CGPoint origin;
-
-  external CGSize size;
-}
-
-late final _sel_frame = objc.registerName("frame");
-final _objc_msgSend_bu1hbw = objc.msgSendPointer
-    .cast<
-        ffi.NativeFunction<
-            CGRect Function(ffi.Pointer<objc.ObjCObject>,
-                ffi.Pointer<objc.ObjCSelector>)>>()
-    .asFunction<
-        CGRect Function(
-            ffi.Pointer<objc.ObjCObject>, ffi.Pointer<objc.ObjCSelector>)>();
-final _objc_msgSend_bu1hbwStret = objc.msgSendStretPointer
-    .cast<
-        ffi.NativeFunction<
-            ffi.Void Function(ffi.Pointer<CGRect>, ffi.Pointer<objc.ObjCObject>,
-                ffi.Pointer<objc.ObjCSelector>)>>()
-    .asFunction<
-        void Function(ffi.Pointer<CGRect>, ffi.Pointer<objc.ObjCObject>,
-            ffi.Pointer<objc.ObjCSelector>)>();
-CGRect _ObjCBlock_CGRect_ffiVoid_fnPtrTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    block.ref.target
-        .cast<ffi.NativeFunction<CGRect Function(ffi.Pointer<ffi.Void> arg0)>>()
-        .asFunction<CGRect Function(ffi.Pointer<ffi.Void>)>()(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_CGRect_ffiVoid_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                CGRect Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_CGRect_ffiVoid_fnPtrTrampoline)
-        .cast();
-CGRect _ObjCBlock_CGRect_ffiVoid_closureTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    (objc.getBlockClosure(block) as CGRect Function(
-        ffi.Pointer<ffi.Void>))(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_CGRect_ffiVoid_closureCallable =
-    ffi.Pointer.fromFunction<
-                CGRect Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_CGRect_ffiVoid_closureTrampoline)
-        .cast();
-
-/// Construction methods for `objc.ObjCBlock<CGRect Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_CGRect_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<CGRect Function(ffi.Pointer<ffi.Void>)> castFromPointer(
-          ffi.Pointer<objc.ObjCBlockImpl> pointer,
-          {bool retain = false,
-          bool release = false}) =>
-      objc.ObjCBlock<CGRect Function(ffi.Pointer<ffi.Void>)>(pointer,
-          retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<CGRect Function(ffi.Pointer<ffi.Void>)> fromFunctionPointer(
-          ffi.Pointer<
-                  ffi
-                  .NativeFunction<CGRect Function(ffi.Pointer<ffi.Void> arg0)>>
-              ptr) =>
-      objc.ObjCBlock<CGRect Function(ffi.Pointer<ffi.Void>)>(
-          objc.newPointerBlock(
-              _ObjCBlock_CGRect_ffiVoid_fnPtrCallable, ptr.cast()),
-          retain: false,
-          release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<CGRect Function(ffi.Pointer<ffi.Void>)> fromFunction(
-          CGRect Function(ffi.Pointer<ffi.Void>) fn) =>
-      objc.ObjCBlock<CGRect Function(ffi.Pointer<ffi.Void>)>(
-          objc.newClosureBlock(_ObjCBlock_CGRect_ffiVoid_closureCallable,
-              (ffi.Pointer<ffi.Void> arg0) => fn(arg0)),
-          retain: false,
-          release: true);
-}
-
-/// Call operator for `objc.ObjCBlock<CGRect Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_CGRect_ffiVoid_CallExtension
-    on objc.ObjCBlock<CGRect Function(ffi.Pointer<ffi.Void>)> {
-  CGRect call(ffi.Pointer<ffi.Void> arg0) => ref.pointer.ref.invoke
-      .cast<
-          ffi.NativeFunction<
-              CGRect Function(ffi.Pointer<objc.ObjCBlockImpl> block,
-                  ffi.Pointer<ffi.Void> arg0)>>()
-      .asFunction<
-          CGRect Function(ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0);
-}
-
-/// WARNING: UIFocusEffect is a stub. To generate bindings for this class, include
-/// UIFocusEffect in your config's objc-interfaces list.
-///
-/// UIFocusEffect
-class UIFocusEffect extends objc.NSObject implements objc.NSCopying {
-  UIFocusEffect._(ffi.Pointer<objc.ObjCObject> pointer,
-      {bool retain = false, bool release = false})
-      : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UIFocusEffect', iOS: (false, (15, 0, 0)));
-  }
-
-  /// Constructs a [UIFocusEffect] that points to the same underlying object as [other].
-  UIFocusEffect.castFrom(objc.ObjCObjectBase other)
-      : this._(other.ref.pointer, retain: true, release: true);
-
-  /// Constructs a [UIFocusEffect] that wraps the given raw object pointer.
-  UIFocusEffect.castFromPointer(ffi.Pointer<objc.ObjCObject> other,
-      {bool retain = false, bool release = false})
-      : this._(other, retain: retain, release: release);
-}
-
-late final _sel_focusEffect = objc.registerName("focusEffect");
-ffi.Pointer<objc.ObjCObject> _ObjCBlock_UIFocusEffect_ffiVoid_fnPtrTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    block.ref.target
-        .cast<
-            ffi.NativeFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<ffi.Void> arg0)>>()
-        .asFunction<
-            ffi.Pointer<objc.ObjCObject> Function(
-                ffi.Pointer<ffi.Void>)>()(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_UIFocusEffect_ffiVoid_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_UIFocusEffect_ffiVoid_fnPtrTrampoline)
-        .cast();
-ffi.Pointer<objc.ObjCObject> _ObjCBlock_UIFocusEffect_ffiVoid_closureTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    (objc.getBlockClosure(block) as ffi.Pointer<objc.ObjCObject> Function(
-        ffi.Pointer<ffi.Void>))(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_UIFocusEffect_ffiVoid_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_UIFocusEffect_ffiVoid_closureTrampoline)
-        .cast();
-
-/// Construction methods for `objc.ObjCBlock<UIFocusEffect? Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_UIFocusEffect_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<UIFocusEffect? Function(ffi.Pointer<ffi.Void>)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<UIFocusEffect? Function(ffi.Pointer<ffi.Void>)>(
-              pointer,
-              retain: retain,
-              release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<UIFocusEffect? Function(ffi.Pointer<ffi.Void>)> fromFunctionPointer(
-          ffi.Pointer<
-                  ffi.NativeFunction<
-                      ffi.Pointer<objc.ObjCObject> Function(
-                          ffi.Pointer<ffi.Void> arg0)>>
-              ptr) =>
-      objc.ObjCBlock<UIFocusEffect? Function(ffi.Pointer<ffi.Void>)>(
-          objc.newPointerBlock(
-              _ObjCBlock_UIFocusEffect_ffiVoid_fnPtrCallable, ptr.cast()),
-          retain: false,
-          release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<UIFocusEffect? Function(ffi.Pointer<ffi.Void>)>
-      fromFunction(UIFocusEffect? Function(ffi.Pointer<ffi.Void>) fn) =>
-          objc.ObjCBlock<UIFocusEffect? Function(ffi.Pointer<ffi.Void>)>(
-              objc.newClosureBlock(
-                  _ObjCBlock_UIFocusEffect_ffiVoid_closureCallable,
-                  (ffi.Pointer<ffi.Void> arg0) =>
-                      fn(arg0)?.ref.retainAndAutorelease() ?? ffi.nullptr),
-              retain: false,
-              release: true);
-}
-
-/// Call operator for `objc.ObjCBlock<UIFocusEffect? Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_UIFocusEffect_ffiVoid_CallExtension
-    on objc.ObjCBlock<UIFocusEffect? Function(ffi.Pointer<ffi.Void>)> {
-  UIFocusEffect? call(ffi.Pointer<ffi.Void> arg0) => ref.pointer.ref.invoke
-              .cast<
-                  ffi.NativeFunction<
-                      ffi.Pointer<objc.ObjCObject> Function(
-                          ffi.Pointer<objc.ObjCBlockImpl> block,
-                          ffi.Pointer<ffi.Void> arg0)>>()
-              .asFunction<
-                  ffi.Pointer<objc.ObjCObject> Function(
-                      ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>()
-              (ref.pointer, arg0)
-              .address ==
-          0
-      ? null
-      : UIFocusEffect.castFromPointer(
-          ref.pointer.ref.invoke
-              .cast<ffi.NativeFunction<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0)>>()
-              .asFunction<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0),
-          retain: true,
-          release: true);
-}
-
-late final _sel_focusGroupPriority = objc.registerName("focusGroupPriority");
-int _ObjCBlock_UIFocusGroupPriority_ffiVoid_fnPtrTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    block.ref.target
-        .cast<
-            ffi.NativeFunction<ffi.Long Function(ffi.Pointer<ffi.Void> arg0)>>()
-        .asFunction<int Function(ffi.Pointer<ffi.Void>)>()(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_UIFocusGroupPriority_ffiVoid_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Long Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_UIFocusGroupPriority_ffiVoid_fnPtrTrampoline, 0)
-        .cast();
-int _ObjCBlock_UIFocusGroupPriority_ffiVoid_closureTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    (objc.getBlockClosure(block) as int Function(ffi.Pointer<ffi.Void>))(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_UIFocusGroupPriority_ffiVoid_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Long Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_UIFocusGroupPriority_ffiVoid_closureTrampoline, 0)
-        .cast();
-
-/// Construction methods for `objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_UIFocusGroupPriority_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>(pointer,
-              retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)> fromFunctionPointer(
-          ffi.Pointer<
-                  ffi.NativeFunction<
-                      ffi.Long Function(ffi.Pointer<ffi.Void> arg0)>>
-              ptr) =>
-      objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>(
-          objc.newPointerBlock(
-              _ObjCBlock_UIFocusGroupPriority_ffiVoid_fnPtrCallable, ptr.cast()),
-          retain: false,
-          release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)> fromFunction(
-          int Function(ffi.Pointer<ffi.Void>) fn) =>
-      objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>(
-          objc.newClosureBlock(
-              _ObjCBlock_UIFocusGroupPriority_ffiVoid_closureCallable,
-              (ffi.Pointer<ffi.Void> arg0) => fn(arg0)),
-          retain: false,
-          release: true);
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_UIFocusGroupPriority_ffiVoid_CallExtension
-    on objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)> {
-  int call(ffi.Pointer<ffi.Void> arg0) => ref.pointer.ref.invoke
-      .cast<
-          ffi.NativeFunction<
-              ffi.Long Function(ffi.Pointer<objc.ObjCBlockImpl> block,
-                  ffi.Pointer<ffi.Void> arg0)>>()
-      .asFunction<
-          int Function(ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0);
-}
-
-/// iOS: introduced 18.0.0
-enum UIFocusItemDeferralMode {
-  UIFocusItemDeferralModeAutomatic(0),
-  UIFocusItemDeferralModeAlways(1),
-  UIFocusItemDeferralModeNever(2);
-
-  final int value;
-  const UIFocusItemDeferralMode(this.value);
-
-  static UIFocusItemDeferralMode fromValue(int value) => switch (value) {
-        0 => UIFocusItemDeferralModeAutomatic,
-        1 => UIFocusItemDeferralModeAlways,
-        2 => UIFocusItemDeferralModeNever,
-        _ => throw ArgumentError(
-            "Unknown value for UIFocusItemDeferralMode: $value"),
-      };
-}
-
-late final _sel_focusItemDeferralMode =
-    objc.registerName("focusItemDeferralMode");
-final _objc_msgSend_1lv2zxu = objc.msgSendPointer
-    .cast<
-        ffi.NativeFunction<
-            ffi.Long Function(ffi.Pointer<objc.ObjCObject>,
-                ffi.Pointer<objc.ObjCSelector>)>>()
-    .asFunction<
-        int Function(
-            ffi.Pointer<objc.ObjCObject>, ffi.Pointer<objc.ObjCSelector>)>();
-int _ObjCBlock_UIFocusItemDeferralMode_ffiVoid_fnPtrTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    block.ref.target
-        .cast<
-            ffi.NativeFunction<ffi.Long Function(ffi.Pointer<ffi.Void> arg0)>>()
-        .asFunction<int Function(ffi.Pointer<ffi.Void>)>()(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_UIFocusItemDeferralMode_ffiVoid_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Long Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_UIFocusItemDeferralMode_ffiVoid_fnPtrTrampoline, 0)
-        .cast();
-int _ObjCBlock_UIFocusItemDeferralMode_ffiVoid_closureTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    (objc.getBlockClosure(block) as int Function(ffi.Pointer<ffi.Void>))(arg0);
-ffi.Pointer<ffi.Void>
-    _ObjCBlock_UIFocusItemDeferralMode_ffiVoid_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Long Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_UIFocusItemDeferralMode_ffiVoid_closureTrampoline, 0)
-        .cast();
-
-/// Construction methods for `objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_UIFocusItemDeferralMode_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>(pointer,
-              retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<
-      ffi.Long Function(ffi.Pointer<ffi.Void>)> fromFunctionPointer(
-          ffi.Pointer<ffi.NativeFunction<ffi.Long Function(ffi.Pointer<ffi.Void> arg0)>>
-              ptr) =>
-      objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>(
-          objc.newPointerBlock(
-              _ObjCBlock_UIFocusItemDeferralMode_ffiVoid_fnPtrCallable,
-              ptr.cast()),
-          retain: false,
-          release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)> fromFunction(
-          UIFocusItemDeferralMode Function(ffi.Pointer<ffi.Void>) fn) =>
-      objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>(
-          objc.newClosureBlock(
-              _ObjCBlock_UIFocusItemDeferralMode_ffiVoid_closureCallable,
-              (ffi.Pointer<ffi.Void> arg0) => fn(arg0).value),
-          retain: false,
-          release: true);
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_UIFocusItemDeferralMode_ffiVoid_CallExtension
-    on objc.ObjCBlock<ffi.Long Function(ffi.Pointer<ffi.Void>)> {
-  UIFocusItemDeferralMode call(ffi.Pointer<ffi.Void> arg0) =>
-      UIFocusItemDeferralMode.fromValue(ref.pointer.ref.invoke
-          .cast<
-              ffi.NativeFunction<
-                  ffi.Long Function(ffi.Pointer<objc.ObjCBlockImpl> block,
-                      ffi.Pointer<ffi.Void> arg0)>>()
-          .asFunction<
-              int Function(ffi.Pointer<objc.ObjCBlockImpl>,
-                  ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0));
-}
-
-late final _sel_isTransparentFocusItem =
-    objc.registerName("isTransparentFocusItem");
-
-/// WARNING: UIFocusMovementHint is a stub. To generate bindings for this class, include
-/// UIFocusMovementHint in your config's objc-interfaces list.
-///
-/// UIFocusMovementHint
-class UIFocusMovementHint extends objc.NSObject implements objc.NSCopying {
-  UIFocusMovementHint._(ffi.Pointer<objc.ObjCObject> pointer,
-      {bool retain = false, bool release = false})
-      : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UIFocusMovementHint', iOS: (false, (12, 0, 0)));
-  }
-
-  /// Constructs a [UIFocusMovementHint] that points to the same underlying object as [other].
-  UIFocusMovementHint.castFrom(objc.ObjCObjectBase other)
-      : this._(other.ref.pointer, retain: true, release: true);
-
-  /// Constructs a [UIFocusMovementHint] that wraps the given raw object pointer.
-  UIFocusMovementHint.castFromPointer(ffi.Pointer<objc.ObjCObject> other,
-      {bool retain = false, bool release = false})
-      : this._(other, retain: retain, release: release);
-}
-
-late final _sel_didHintFocusMovement_ =
-    objc.registerName("didHintFocusMovement:");
-void _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_fnPtrTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block,
-        ffi.Pointer<ffi.Void> arg0,
-        ffi.Pointer<objc.ObjCObject> arg1) =>
-    block.ref.target
-        .cast<
-            ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<ffi.Void> arg0,
-                    ffi.Pointer<objc.ObjCObject> arg1)>>()
-        .asFunction<
-            void Function(ffi.Pointer<ffi.Void>,
-                ffi.Pointer<objc.ObjCObject>)>()(arg0, arg1);
-ffi.Pointer<ffi.Void>
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Void Function(ffi.Pointer<objc.ObjCBlockImpl>,
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>)>(
-            _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_fnPtrTrampoline)
-        .cast();
-void _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_closureTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block,
-        ffi.Pointer<ffi.Void> arg0,
-        ffi.Pointer<objc.ObjCObject> arg1) =>
-    (objc.getBlockClosure(block) as void Function(
-        ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>))(arg0, arg1);
-ffi.Pointer<ffi.Void>
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Void Function(ffi.Pointer<objc.ObjCBlockImpl>,
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>)>(
-            _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_closureTrampoline)
-        .cast();
-void _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_listenerTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> arg0,
-    ffi.Pointer<objc.ObjCObject> arg1) {
-  (objc.getBlockClosure(block) as void Function(
-      ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>))(arg0, arg1);
-  objc.objectRelease(block.cast());
-}
-
-ffi.NativeCallable<
-        ffi.Void Function(ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>)>
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_listenerCallable = ffi
-        .NativeCallable<
-            ffi.Void Function(ffi.Pointer<objc.ObjCBlockImpl>,
-                ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>)>.listener(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_listenerTrampoline)
-      ..keepIsolateAlive = false;
-void _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_blockingTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> waiter,
-    ffi.Pointer<ffi.Void> arg0,
-    ffi.Pointer<objc.ObjCObject> arg1) {
-  try {
-    (objc.getBlockClosure(block) as void Function(
-        ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>))(arg0, arg1);
-  } catch (e) {
-  } finally {
-    objc.signalWaiter(waiter);
-    objc.objectRelease(block.cast());
-  }
-}
-
-ffi.NativeCallable<
-        ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCObject>)>
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_blockingCallable = ffi
-        .NativeCallable<
-            ffi.Void Function(
-                ffi.Pointer<objc.ObjCBlockImpl>,
-                ffi.Pointer<ffi.Void>,
-                ffi.Pointer<ffi.Void>,
-                ffi.Pointer<objc.ObjCObject>)>.isolateLocal(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_blockingTrampoline)
-      ..keepIsolateAlive = false;
-ffi.NativeCallable<
-        ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCObject>)>
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_blockingListenerCallable =
-    ffi.NativeCallable<
-            ffi.Void Function(
-                ffi.Pointer<objc.ObjCBlockImpl>,
-                ffi.Pointer<ffi.Void>,
-                ffi.Pointer<ffi.Void>,
-                ffi.Pointer<objc.ObjCObject>)>.listener(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_blockingTrampoline)
-      ..keepIsolateAlive = false;
-
-/// Construction methods for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint)>`.
-abstract final class ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc
-      .ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<
-                  ffi.Void Function(
-                      ffi.Pointer<ffi.Void>, UIFocusMovementHint)>(pointer,
-              retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint)>
-      fromFunctionPointer(
-              ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObject> arg1)>>
-                  ptr) =>
-          objc.ObjCBlock<
-                  ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint)>(
-              objc.newPointerBlock(
-                  _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_fnPtrCallable,
-                  ptr.cast()),
-              retain: false,
-              release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint)> fromFunction(
-          void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint) fn) =>
-      objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint)>(
-          objc.newClosureBlock(
-              _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_closureCallable,
-              (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObject> arg1) =>
-                  fn(
-                      arg0,
-                      UIFocusMovementHint.castFromPointer(arg1,
-                          retain: true, release: true))),
-          retain: false,
-          release: true);
-
-  /// Creates a listener block from a Dart function.
-  ///
-  /// This is based on FFI's NativeCallable.listener, and has the same
-  /// capabilities and limitations. This block can be invoked from any thread,
-  /// but only supports void functions, and is not run synchronously. See
-  /// NativeCallable.listener for more details.
-  ///
-  /// Note that unlike the default behavior of NativeCallable.listener, listener
-  /// blocks do not keep the isolate alive.
-  static objc
-      .ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint)>
-      listener(void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint) fn) {
-    final raw = objc.newClosureBlock(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_listenerCallable
-            .nativeFunction
-            .cast(),
-        (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObject> arg1) => fn(
-            arg0,
-            UIFocusMovementHint.castFromPointer(arg1,
-                retain: false, release: true)));
-    final wrapper = _AuthenticationServicesIos_wrapListenerBlock_18v1jvf(raw);
-    objc.objectRelease(raw.cast());
-    return objc.ObjCBlock<
-        ffi.Void Function(ffi.Pointer<ffi.Void>,
-            UIFocusMovementHint)>(wrapper, retain: false, release: true);
-  }
-
-  /// Creates a blocking block from a Dart function.
-  ///
-  /// This callback can be invoked from any native thread, and will block the
-  /// caller until the callback is handled by the Dart isolate that created
-  /// the block. Async functions are not supported.
-  ///
-  /// This block does not keep the owner isolate alive. If the owner isolate has
-  /// shut down, and the block is invoked by native code, it may block
-  /// indefinitely, or have other undefined behavior.
-  static objc
-      .ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint)>
-      blocking(void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint) fn) {
-    final raw = objc.newClosureBlock(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_blockingCallable
-            .nativeFunction
-            .cast(),
-        (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObject> arg1) => fn(
-            arg0,
-            UIFocusMovementHint.castFromPointer(arg1,
-                retain: false, release: true)));
-    final rawListener = objc.newClosureBlock(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_blockingListenerCallable
-            .nativeFunction
-            .cast(),
-        (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObject> arg1) => fn(
-            arg0,
-            UIFocusMovementHint.castFromPointer(arg1,
-                retain: false, release: true)));
-    final wrapper = objc.wrapBlockingBlock(
-        _AuthenticationServicesIos_wrapBlockingBlock_18v1jvf, raw, rawListener);
-    objc.objectRelease(raw.cast());
-    objc.objectRelease(rawListener.cast());
-    return objc.ObjCBlock<
-        ffi.Void Function(ffi.Pointer<ffi.Void>,
-            UIFocusMovementHint)>(wrapper, retain: false, release: true);
-  }
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint)>`.
-extension ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint_CallExtension on objc
-    .ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusMovementHint)> {
-  void call(ffi.Pointer<ffi.Void> arg0, UIFocusMovementHint arg1) =>
-      ref.pointer.ref.invoke
-              .cast<
-                  ffi.NativeFunction<
-                      ffi.Void Function(
-                          ffi.Pointer<objc.ObjCBlockImpl> block,
-                          ffi.Pointer<ffi.Void> arg0,
-                          ffi.Pointer<objc.ObjCObject> arg1)>>()
-              .asFunction<
-                  void Function(ffi.Pointer<objc.ObjCBlockImpl>,
-                      ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>)>()(
-          ref.pointer, arg0, arg1.ref.pointer);
-}
-
-late final _sel_preferredFocusEnvironments =
-    objc.registerName("preferredFocusEnvironments");
-ffi.Pointer<objc.ObjCObject> _ObjCBlock_objcObjCObject_ffiVoid_fnPtrTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    block.ref.target
-        .cast<
-            ffi.NativeFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<ffi.Void> arg0)>>()
-        .asFunction<
-            ffi.Pointer<objc.ObjCObject> Function(
-                ffi.Pointer<ffi.Void>)>()(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_objcObjCObject_ffiVoid_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_objcObjCObject_ffiVoid_fnPtrTrampoline)
-        .cast();
-ffi.Pointer<objc.ObjCObject>
-    _ObjCBlock_objcObjCObject_ffiVoid_closureTrampoline(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<ffi.Void> arg0) =>
-        (objc.getBlockClosure(block) as ffi.Pointer<objc.ObjCObject> Function(
-            ffi.Pointer<ffi.Void>))(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_objcObjCObject_ffiVoid_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_objcObjCObject_ffiVoid_closureTrampoline)
-        .cast();
-
-/// Construction methods for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_objcObjCObject_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc
-      .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<
-                  ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
-              pointer,
-              retain: retain,
-              release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
-      fromFunctionPointer(
-              ffi.Pointer<
-                      ffi.NativeFunction<
-                          ffi.Pointer<objc.ObjCObject> Function(
-                              ffi.Pointer<ffi.Void> arg0)>>
-                  ptr) =>
-          objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
-              objc.newPointerBlock(_ObjCBlock_objcObjCObject_ffiVoid_fnPtrCallable, ptr.cast()),
-              retain: false,
-              release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc
-      .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
-      fromFunction(objc.ObjCObjectBase Function(ffi.Pointer<ffi.Void>) fn) =>
-          objc.ObjCBlock<
-                  ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
-              objc.newClosureBlock(
-                  _ObjCBlock_objcObjCObject_ffiVoid_closureCallable,
-                  (ffi.Pointer<ffi.Void> arg0) =>
-                      fn(arg0).ref.retainAndAutorelease()),
-              retain: false,
-              release: true);
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_objcObjCObject_ffiVoid_CallExtension on objc
-    .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)> {
-  objc.ObjCObjectBase call(ffi.Pointer<ffi.Void> arg0) => objc.ObjCObjectBase(
-      ref.pointer.ref.invoke
-          .cast<
-              ffi.NativeFunction<
-                  ffi.Pointer<objc.ObjCObject> Function(
-                      ffi.Pointer<objc.ObjCBlockImpl> block,
-                      ffi.Pointer<ffi.Void> arg0)>>()
-          .asFunction<
-              ffi.Pointer<objc.ObjCObject> Function(
-                  ffi.Pointer<objc.ObjCBlockImpl>,
-                  ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0),
-      retain: true,
-      release: true);
-}
-
-late final _sel_parentFocusEnvironment =
-    objc.registerName("parentFocusEnvironment");
-ffi.Pointer<objc.ObjCObject>
-    _ObjCBlock_idUIFocusEnvironment_ffiVoid_fnPtrTrampoline(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<ffi.Void> arg0) =>
-        block.ref.target
-            .cast<
-                ffi.NativeFunction<
-                    ffi.Pointer<objc.ObjCObject> Function(
-                        ffi.Pointer<ffi.Void> arg0)>>()
-            .asFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<ffi.Void>)>()(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_idUIFocusEnvironment_ffiVoid_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_idUIFocusEnvironment_ffiVoid_fnPtrTrampoline)
-        .cast();
-ffi.Pointer<objc.ObjCObject>
-    _ObjCBlock_idUIFocusEnvironment_ffiVoid_closureTrampoline(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<ffi.Void> arg0) =>
-        (objc.getBlockClosure(block) as ffi.Pointer<objc.ObjCObject> Function(
-            ffi.Pointer<ffi.Void>))(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_idUIFocusEnvironment_ffiVoid_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_idUIFocusEnvironment_ffiVoid_closureTrampoline)
-        .cast();
-
-/// Construction methods for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_idUIFocusEnvironment_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc
-      .ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<
-                  ffi.Pointer<objc.ObjCObject>? Function(
-                      ffi.Pointer<ffi.Void>)>(pointer,
-              retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>
-      fromFunctionPointer(
-              ffi.Pointer<
-                      ffi.NativeFunction<
-                          ffi.Pointer<objc.ObjCObject> Function(
-                              ffi.Pointer<ffi.Void> arg0)>>
-                  ptr) =>
-          objc.ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>(
-              objc.newPointerBlock(_ObjCBlock_idUIFocusEnvironment_ffiVoid_fnPtrCallable, ptr.cast()),
-              retain: false,
-              release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc
-      .ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>
-      fromFunction(UIFocusEnvironment? Function(ffi.Pointer<ffi.Void>) fn) =>
-          objc.ObjCBlock<
-                  ffi.Pointer<objc.ObjCObject>? Function(
-                      ffi.Pointer<ffi.Void>)>(
-              objc.newClosureBlock(
-                  _ObjCBlock_idUIFocusEnvironment_ffiVoid_closureCallable,
-                  (ffi.Pointer<ffi.Void> arg0) =>
-                      fn(arg0)?.ref.retainAndAutorelease() ?? ffi.nullptr),
-              retain: false,
-              release: true);
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_idUIFocusEnvironment_ffiVoid_CallExtension on objc
-    .ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)> {
-  UIFocusEnvironment? call(ffi.Pointer<ffi.Void> arg0) => ref.pointer.ref.invoke
-              .cast<
-                  ffi.NativeFunction<
-                      ffi.Pointer<objc.ObjCObject> Function(
-                          ffi.Pointer<objc.ObjCBlockImpl> block,
-                          ffi.Pointer<ffi.Void> arg0)>>()
-              .asFunction<
-                  ffi.Pointer<objc.ObjCObject> Function(
-                      ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>()
-              (ref.pointer, arg0)
-              .address ==
-          0
-      ? null
-      : UIFocusEnvironment.castFromPointer(
-          ref.pointer.ref.invoke
-              .cast<ffi.NativeFunction<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0)>>()
-              .asFunction<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0),
-          retain: true,
-          release: true);
-}
-
-/// WARNING: UIFocusItemContainer is a stub. To generate bindings for this class, include
-/// UIFocusItemContainer in your config's objc-protocols list.
-///
-/// UIFocusItemContainer
-interface class UIFocusItemContainer extends objc.ObjCProtocolBase
-    implements objc.NSObjectProtocol {
-  UIFocusItemContainer._(ffi.Pointer<objc.ObjCObject> pointer,
-      {bool retain = false, bool release = false})
-      : super(pointer, retain: retain, release: release);
-
-  /// Constructs a [UIFocusItemContainer] that points to the same underlying object as [other].
-  UIFocusItemContainer.castFrom(objc.ObjCObjectBase other)
-      : this._(other.ref.pointer, retain: true, release: true);
-
-  /// Constructs a [UIFocusItemContainer] that wraps the given raw object pointer.
-  UIFocusItemContainer.castFromPointer(ffi.Pointer<objc.ObjCObject> other,
-      {bool retain = false, bool release = false})
-      : this._(other, retain: retain, release: release);
-}
-
-late final _sel_focusItemContainer = objc.registerName("focusItemContainer");
-ffi.Pointer<objc.ObjCObject>
-    _ObjCBlock_idUIFocusItemContainer_ffiVoid_fnPtrTrampoline(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<ffi.Void> arg0) =>
-        block.ref.target
-            .cast<
-                ffi.NativeFunction<
-                    ffi.Pointer<objc.ObjCObject> Function(
-                        ffi.Pointer<ffi.Void> arg0)>>()
-            .asFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<ffi.Void>)>()(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_idUIFocusItemContainer_ffiVoid_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_idUIFocusItemContainer_ffiVoid_fnPtrTrampoline)
-        .cast();
-ffi.Pointer<objc.ObjCObject>
-    _ObjCBlock_idUIFocusItemContainer_ffiVoid_closureTrampoline(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<ffi.Void> arg0) =>
-        (objc.getBlockClosure(block) as ffi.Pointer<objc.ObjCObject> Function(
-            ffi.Pointer<ffi.Void>))(arg0);
-ffi.Pointer<ffi.Void>
-    _ObjCBlock_idUIFocusItemContainer_ffiVoid_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_idUIFocusItemContainer_ffiVoid_closureTrampoline)
-        .cast();
-
-/// Construction methods for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_idUIFocusItemContainer_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc
-      .ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<
-                  ffi.Pointer<objc.ObjCObject>? Function(
-                      ffi.Pointer<ffi.Void>)>(pointer,
-              retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>
-      fromFunctionPointer(
-              ffi.Pointer<
-                      ffi.NativeFunction<
-                          ffi.Pointer<objc.ObjCObject> Function(
-                              ffi.Pointer<ffi.Void> arg0)>>
-                  ptr) =>
-          objc.ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>(
-              objc.newPointerBlock(_ObjCBlock_idUIFocusItemContainer_ffiVoid_fnPtrCallable, ptr.cast()),
-              retain: false,
-              release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc
-      .ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>
-      fromFunction(UIFocusItemContainer? Function(ffi.Pointer<ffi.Void>) fn) =>
-          objc.ObjCBlock<
-                  ffi.Pointer<objc.ObjCObject>? Function(
-                      ffi.Pointer<ffi.Void>)>(
-              objc.newClosureBlock(
-                  _ObjCBlock_idUIFocusItemContainer_ffiVoid_closureCallable,
-                  (ffi.Pointer<ffi.Void> arg0) =>
-                      fn(arg0)?.ref.retainAndAutorelease() ?? ffi.nullptr),
-              retain: false,
-              release: true);
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_idUIFocusItemContainer_ffiVoid_CallExtension on objc
-    .ObjCBlock<ffi.Pointer<objc.ObjCObject>? Function(ffi.Pointer<ffi.Void>)> {
-  UIFocusItemContainer? call(ffi.Pointer<ffi.Void> arg0) => ref.pointer.ref.invoke
-              .cast<
-                  ffi.NativeFunction<
-                      ffi.Pointer<objc.ObjCObject> Function(
-                          ffi.Pointer<objc.ObjCBlockImpl> block,
-                          ffi.Pointer<ffi.Void> arg0)>>()
-              .asFunction<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>()
-              (ref.pointer, arg0)
-              .address ==
-          0
-      ? null
-      : UIFocusItemContainer.castFromPointer(
-          ref.pointer.ref.invoke.cast<ffi.NativeFunction<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0)>>().asFunction<
-              ffi.Pointer<objc.ObjCObject> Function(
-                  ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0),
-          retain: true,
-          release: true);
-}
-
-late final _sel_setNeedsFocusUpdate = objc.registerName("setNeedsFocusUpdate");
-void _ObjCBlock_ffiVoid_ffiVoid_fnPtrTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    block.ref.target
-        .cast<
-            ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void> arg0)>>()
-        .asFunction<void Function(ffi.Pointer<ffi.Void>)>()(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_ffiVoid_ffiVoid_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Void Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_ffiVoid_ffiVoid_fnPtrTrampoline)
-        .cast();
-void _ObjCBlock_ffiVoid_ffiVoid_closureTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    (objc.getBlockClosure(block) as void Function(ffi.Pointer<ffi.Void>))(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_ffiVoid_ffiVoid_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Void Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_ffiVoid_ffiVoid_closureTrampoline)
-        .cast();
-void _ObjCBlock_ffiVoid_ffiVoid_listenerTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) {
-  (objc.getBlockClosure(block) as void Function(ffi.Pointer<ffi.Void>))(arg0);
-  objc.objectRelease(block.cast());
-}
-
-ffi.NativeCallable<
-        ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>
-    _ObjCBlock_ffiVoid_ffiVoid_listenerCallable = ffi.NativeCallable<
-            ffi.Void Function(ffi.Pointer<objc.ObjCBlockImpl>,
-                ffi.Pointer<ffi.Void>)>.listener(
-        _ObjCBlock_ffiVoid_ffiVoid_listenerTrampoline)
-      ..keepIsolateAlive = false;
-void _ObjCBlock_ffiVoid_ffiVoid_blockingTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> waiter,
-    ffi.Pointer<ffi.Void> arg0) {
-  try {
-    (objc.getBlockClosure(block) as void Function(ffi.Pointer<ffi.Void>))(arg0);
-  } catch (e) {
-  } finally {
-    objc.signalWaiter(waiter);
-    objc.objectRelease(block.cast());
-  }
-}
-
-ffi.NativeCallable<
-        ffi.Void Function(ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>
-    _ObjCBlock_ffiVoid_ffiVoid_blockingCallable = ffi.NativeCallable<
-            ffi.Void Function(ffi.Pointer<objc.ObjCBlockImpl>,
-                ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>.isolateLocal(
-        _ObjCBlock_ffiVoid_ffiVoid_blockingTrampoline)
-      ..keepIsolateAlive = false;
-ffi.NativeCallable<
-        ffi.Void Function(ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>
-    _ObjCBlock_ffiVoid_ffiVoid_blockingListenerCallable = ffi.NativeCallable<
-            ffi.Void Function(ffi.Pointer<objc.ObjCBlockImpl>,
-                ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>.listener(
-        _ObjCBlock_ffiVoid_ffiVoid_blockingTrampoline)
-      ..keepIsolateAlive = false;
-
-/// Construction methods for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_ffiVoid_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)>(pointer,
-              retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)> fromFunctionPointer(
-          ffi.Pointer<
-                  ffi.NativeFunction<
-                      ffi.Void Function(ffi.Pointer<ffi.Void> arg0)>>
-              ptr) =>
-      objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
-          objc.newPointerBlock(
-              _ObjCBlock_ffiVoid_ffiVoid_fnPtrCallable, ptr.cast()),
-          retain: false,
-          release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)> fromFunction(
-          void Function(ffi.Pointer<ffi.Void>) fn) =>
-      objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
-          objc.newClosureBlock(_ObjCBlock_ffiVoid_ffiVoid_closureCallable,
-              (ffi.Pointer<ffi.Void> arg0) => fn(arg0)),
-          retain: false,
-          release: true);
-
-  /// Creates a listener block from a Dart function.
-  ///
-  /// This is based on FFI's NativeCallable.listener, and has the same
-  /// capabilities and limitations. This block can be invoked from any thread,
-  /// but only supports void functions, and is not run synchronously. See
-  /// NativeCallable.listener for more details.
-  ///
-  /// Note that unlike the default behavior of NativeCallable.listener, listener
-  /// blocks do not keep the isolate alive.
-  static objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)> listener(
-      void Function(ffi.Pointer<ffi.Void>) fn) {
-    final raw = objc.newClosureBlock(
-        _ObjCBlock_ffiVoid_ffiVoid_listenerCallable.nativeFunction.cast(),
-        (ffi.Pointer<ffi.Void> arg0) => fn(arg0));
-    final wrapper = _AuthenticationServicesIos_wrapListenerBlock_ovsamd(raw);
-    objc.objectRelease(raw.cast());
-    return objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)>(wrapper,
-        retain: false, release: true);
-  }
-
-  /// Creates a blocking block from a Dart function.
-  ///
-  /// This callback can be invoked from any native thread, and will block the
-  /// caller until the callback is handled by the Dart isolate that created
-  /// the block. Async functions are not supported.
-  ///
-  /// This block does not keep the owner isolate alive. If the owner isolate has
-  /// shut down, and the block is invoked by native code, it may block
-  /// indefinitely, or have other undefined behavior.
-  static objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)> blocking(
-      void Function(ffi.Pointer<ffi.Void>) fn) {
-    final raw = objc.newClosureBlock(
-        _ObjCBlock_ffiVoid_ffiVoid_blockingCallable.nativeFunction.cast(),
-        (ffi.Pointer<ffi.Void> arg0) => fn(arg0));
-    final rawListener = objc.newClosureBlock(
-        _ObjCBlock_ffiVoid_ffiVoid_blockingListenerCallable.nativeFunction
-            .cast(),
-        (ffi.Pointer<ffi.Void> arg0) => fn(arg0));
-    final wrapper = objc.wrapBlockingBlock(
-        _AuthenticationServicesIos_wrapBlockingBlock_ovsamd, raw, rawListener);
-    objc.objectRelease(raw.cast());
-    objc.objectRelease(rawListener.cast());
-    return objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)>(wrapper,
-        retain: false, release: true);
-  }
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_ffiVoid_ffiVoid_CallExtension
-    on objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)> {
-  void call(ffi.Pointer<ffi.Void> arg0) => ref.pointer.ref.invoke
-      .cast<
-          ffi.NativeFunction<
-              ffi.Void Function(ffi.Pointer<objc.ObjCBlockImpl> block,
-                  ffi.Pointer<ffi.Void> arg0)>>()
-      .asFunction<
-          void Function(ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0);
-}
-
-late final _sel_updateFocusIfNeeded = objc.registerName("updateFocusIfNeeded");
-
-/// WARNING: UIFocusUpdateContext is a stub. To generate bindings for this class, include
-/// UIFocusUpdateContext in your config's objc-interfaces list.
-///
-/// UIFocusUpdateContext
-class UIFocusUpdateContext extends objc.NSObject {
-  UIFocusUpdateContext._(ffi.Pointer<objc.ObjCObject> pointer,
-      {bool retain = false, bool release = false})
-      : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UIFocusUpdateContext', iOS: (false, (9, 0, 0)));
-  }
-
-  /// Constructs a [UIFocusUpdateContext] that points to the same underlying object as [other].
-  UIFocusUpdateContext.castFrom(objc.ObjCObjectBase other)
-      : this._(other.ref.pointer, retain: true, release: true);
-
-  /// Constructs a [UIFocusUpdateContext] that wraps the given raw object pointer.
-  UIFocusUpdateContext.castFromPointer(ffi.Pointer<objc.ObjCObject> other,
-      {bool retain = false, bool release = false})
-      : this._(other, retain: retain, release: release);
-}
-
-late final _sel_shouldUpdateFocusInContext_ =
-    objc.registerName("shouldUpdateFocusInContext:");
-bool _ObjCBlock_bool_ffiVoid_UIFocusUpdateContext_fnPtrTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block,
-        ffi.Pointer<ffi.Void> arg0,
-        ffi.Pointer<objc.ObjCObject> arg1) =>
-    block.ref.target
-        .cast<
-            ffi.NativeFunction<
-                ffi.Bool Function(ffi.Pointer<ffi.Void> arg0,
-                    ffi.Pointer<objc.ObjCObject> arg1)>>()
-        .asFunction<
-            bool Function(ffi.Pointer<ffi.Void>,
-                ffi.Pointer<objc.ObjCObject>)>()(arg0, arg1);
-ffi.Pointer<ffi.Void>
-    _ObjCBlock_bool_ffiVoid_UIFocusUpdateContext_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Bool Function(ffi.Pointer<objc.ObjCBlockImpl>,
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>)>(
-            _ObjCBlock_bool_ffiVoid_UIFocusUpdateContext_fnPtrTrampoline, false)
-        .cast();
-bool _ObjCBlock_bool_ffiVoid_UIFocusUpdateContext_closureTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block,
-        ffi.Pointer<ffi.Void> arg0,
-        ffi.Pointer<objc.ObjCObject> arg1) =>
-    (objc.getBlockClosure(block) as bool Function(
-        ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>))(arg0, arg1);
-ffi.Pointer<ffi.Void>
-    _ObjCBlock_bool_ffiVoid_UIFocusUpdateContext_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Bool Function(ffi.Pointer<objc.ObjCBlockImpl>,
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>)>(
-            _ObjCBlock_bool_ffiVoid_UIFocusUpdateContext_closureTrampoline,
-            false)
-        .cast();
-
-/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext)>`.
-abstract final class ObjCBlock_bool_ffiVoid_UIFocusUpdateContext {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc
-      .ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<
-                  ffi.Bool Function(
-                      ffi.Pointer<ffi.Void>, UIFocusUpdateContext)>(pointer,
-              retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext)>
-      fromFunctionPointer(
-              ffi.Pointer<
-                      ffi.NativeFunction<
-                          ffi.Bool Function(ffi.Pointer<ffi.Void> arg0,
-                              ffi.Pointer<objc.ObjCObject> arg1)>>
-                  ptr) =>
-          objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext)>(
-              objc.newPointerBlock(_ObjCBlock_bool_ffiVoid_UIFocusUpdateContext_fnPtrCallable, ptr.cast()),
-              retain: false,
-              release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext)> fromFunction(
-          bool Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext) fn) =>
-      objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext)>(
-          objc.newClosureBlock(
-              _ObjCBlock_bool_ffiVoid_UIFocusUpdateContext_closureCallable,
-              (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObject> arg1) =>
-                  fn(
-                      arg0,
-                      UIFocusUpdateContext.castFromPointer(arg1,
-                          retain: true, release: true))),
-          retain: false,
-          release: true);
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext)>`.
-extension ObjCBlock_bool_ffiVoid_UIFocusUpdateContext_CallExtension on objc
-    .ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext)> {
-  bool call(ffi.Pointer<ffi.Void> arg0, UIFocusUpdateContext arg1) =>
-      ref.pointer.ref.invoke
-              .cast<
-                  ffi.NativeFunction<
-                      ffi.Bool Function(
-                          ffi.Pointer<objc.ObjCBlockImpl> block,
-                          ffi.Pointer<ffi.Void> arg0,
-                          ffi.Pointer<objc.ObjCObject> arg1)>>()
-              .asFunction<
-                  bool Function(ffi.Pointer<objc.ObjCBlockImpl>,
-                      ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>)>()(
-          ref.pointer, arg0, arg1.ref.pointer);
-}
-
-/// WARNING: UIFocusAnimationCoordinator is a stub. To generate bindings for this class, include
-/// UIFocusAnimationCoordinator in your config's objc-interfaces list.
-///
-/// UIFocusAnimationCoordinator
-class UIFocusAnimationCoordinator extends objc.NSObject {
-  UIFocusAnimationCoordinator._(ffi.Pointer<objc.ObjCObject> pointer,
-      {bool retain = false, bool release = false})
-      : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UIFocusAnimationCoordinator', iOS: (false, (9, 0, 0)));
-  }
-
-  /// Constructs a [UIFocusAnimationCoordinator] that points to the same underlying object as [other].
-  UIFocusAnimationCoordinator.castFrom(objc.ObjCObjectBase other)
-      : this._(other.ref.pointer, retain: true, release: true);
-
-  /// Constructs a [UIFocusAnimationCoordinator] that wraps the given raw object pointer.
-  UIFocusAnimationCoordinator.castFromPointer(
-      ffi.Pointer<objc.ObjCObject> other,
-      {bool retain = false,
-      bool release = false})
-      : this._(other, retain: retain, release: release);
-}
-
-late final _sel_didUpdateFocusInContext_withAnimationCoordinator_ =
-    objc.registerName("didUpdateFocusInContext:withAnimationCoordinator:");
-void
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_fnPtrTrampoline(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<ffi.Void> arg0,
-            ffi.Pointer<objc.ObjCObject> arg1,
-            ffi.Pointer<objc.ObjCObject> arg2) =>
-        block.ref.target
-            .cast<
-                ffi.NativeFunction<
-                    ffi.Void Function(
-                        ffi.Pointer<ffi.Void> arg0,
-                        ffi.Pointer<objc.ObjCObject> arg1,
-                        ffi.Pointer<objc.ObjCObject> arg2)>>()
-            .asFunction<
-                void Function(
-                    ffi.Pointer<ffi.Void>,
-                    ffi.Pointer<objc.ObjCObject>,
-                    ffi.Pointer<objc.ObjCObject>)>()(arg0, arg1, arg2);
-ffi.Pointer<ffi.Void>
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Void Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>,
-                    ffi.Pointer<ffi.Void>,
-                    ffi.Pointer<objc.ObjCObject>,
-                    ffi.Pointer<objc.ObjCObject>)>(
-            _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_fnPtrTrampoline)
-        .cast();
-void
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_closureTrampoline(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<ffi.Void> arg0,
-            ffi.Pointer<objc.ObjCObject> arg1,
-            ffi.Pointer<objc.ObjCObject> arg2) =>
-        (objc.getBlockClosure(block) as void Function(
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCObject>,
-            ffi.Pointer<objc.ObjCObject>))(arg0, arg1, arg2);
-ffi.Pointer<ffi.Void>
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Void Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>,
-                    ffi.Pointer<ffi.Void>,
-                    ffi.Pointer<objc.ObjCObject>,
-                    ffi.Pointer<objc.ObjCObject>)>(
-            _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_closureTrampoline)
-        .cast();
-void
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_listenerTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block,
-        ffi.Pointer<ffi.Void> arg0,
-        ffi.Pointer<objc.ObjCObject> arg1,
-        ffi.Pointer<objc.ObjCObject> arg2) {
-  (objc.getBlockClosure(block) as void Function(
-      ffi.Pointer<ffi.Void>,
-      ffi.Pointer<objc.ObjCObject>,
-      ffi.Pointer<objc.ObjCObject>))(arg0, arg1, arg2);
-  objc.objectRelease(block.cast());
-}
-
-ffi.NativeCallable<
-        ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCObject>,
-            ffi.Pointer<objc.ObjCObject>)>
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_listenerCallable =
-    ffi.NativeCallable<
-            ffi.Void Function(
-                ffi.Pointer<objc.ObjCBlockImpl>,
-                ffi.Pointer<ffi.Void>,
-                ffi.Pointer<objc.ObjCObject>,
-                ffi.Pointer<objc.ObjCObject>)>.listener(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_listenerTrampoline)
-      ..keepIsolateAlive = false;
-void
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_blockingTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block,
-        ffi.Pointer<ffi.Void> waiter,
-        ffi.Pointer<ffi.Void> arg0,
-        ffi.Pointer<objc.ObjCObject> arg1,
-        ffi.Pointer<objc.ObjCObject> arg2) {
-  try {
-    (objc.getBlockClosure(block) as void Function(
-        ffi.Pointer<ffi.Void>,
-        ffi.Pointer<objc.ObjCObject>,
-        ffi.Pointer<objc.ObjCObject>))(arg0, arg1, arg2);
-  } catch (e) {
-  } finally {
-    objc.signalWaiter(waiter);
-    objc.objectRelease(block.cast());
-  }
-}
-
-ffi.NativeCallable<
-        ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCObject>,
-            ffi.Pointer<objc.ObjCObject>)>
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_blockingCallable =
-    ffi.NativeCallable<
-            ffi.Void Function(
-                ffi.Pointer<objc.ObjCBlockImpl>,
-                ffi.Pointer<ffi.Void>,
-                ffi.Pointer<ffi.Void>,
-                ffi.Pointer<objc.ObjCObject>,
-                ffi.Pointer<objc.ObjCObject>)>.isolateLocal(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_blockingTrampoline)
-      ..keepIsolateAlive = false;
-ffi.NativeCallable<
-        ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCObject>,
-            ffi.Pointer<objc.ObjCObject>)>
-    _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_blockingListenerCallable =
-    ffi.NativeCallable<
-            ffi.Void Function(
-                ffi.Pointer<objc.ObjCBlockImpl>,
-                ffi.Pointer<ffi.Void>,
-                ffi.Pointer<ffi.Void>,
-                ffi.Pointer<objc.ObjCObject>,
-                ffi.Pointer<objc.ObjCObject>)>.listener(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_blockingTrampoline)
-      ..keepIsolateAlive = false;
-
-/// Construction methods for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext, UIFocusAnimationCoordinator)>`.
-abstract final class ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<
-          ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext,
-              UIFocusAnimationCoordinator)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<
-                  ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext,
-                      UIFocusAnimationCoordinator)>(pointer,
-              retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext, UIFocusAnimationCoordinator)> fromFunctionPointer(
-          ffi.Pointer<
-                  ffi.NativeFunction<
-                      ffi.Void Function(
-                          ffi.Pointer<ffi.Void> arg0,
-                          ffi.Pointer<objc.ObjCObject> arg1,
-                          ffi.Pointer<objc.ObjCObject> arg2)>>
-              ptr) =>
-      objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext, UIFocusAnimationCoordinator)>(
-          objc.newPointerBlock(_ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_fnPtrCallable, ptr.cast()),
-          retain: false,
-          release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext, UIFocusAnimationCoordinator)>
-      fromFunction(void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext, UIFocusAnimationCoordinator) fn) =>
-          objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext, UIFocusAnimationCoordinator)>(
-              objc.newClosureBlock(
-                  _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_closureCallable,
-                  (ffi.Pointer<ffi.Void> arg0,
-                          ffi.Pointer<objc.ObjCObject> arg1,
-                          ffi.Pointer<objc.ObjCObject> arg2) =>
-                      fn(
-                          arg0,
-                          UIFocusUpdateContext.castFromPointer(arg1, retain: true, release: true),
-                          UIFocusAnimationCoordinator.castFromPointer(arg2, retain: true, release: true))),
-              retain: false,
-              release: true);
-
-  /// Creates a listener block from a Dart function.
-  ///
-  /// This is based on FFI's NativeCallable.listener, and has the same
-  /// capabilities and limitations. This block can be invoked from any thread,
-  /// but only supports void functions, and is not run synchronously. See
-  /// NativeCallable.listener for more details.
-  ///
-  /// Note that unlike the default behavior of NativeCallable.listener, listener
-  /// blocks do not keep the isolate alive.
-  static objc.ObjCBlock<
-      ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext,
-          UIFocusAnimationCoordinator)> listener(
-      void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext,
-              UIFocusAnimationCoordinator)
-          fn) {
-    final raw = objc.newClosureBlock(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_listenerCallable
-            .nativeFunction
-            .cast(),
-        (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObject> arg1,
-                ffi.Pointer<objc.ObjCObject> arg2) =>
-            fn(
-                arg0,
-                UIFocusUpdateContext.castFromPointer(arg1,
-                    retain: false, release: true),
-                UIFocusAnimationCoordinator.castFromPointer(arg2,
-                    retain: false, release: true)));
-    final wrapper = _AuthenticationServicesIos_wrapListenerBlock_fjrv01(raw);
-    objc.objectRelease(raw.cast());
-    return objc.ObjCBlock<
-            ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext,
-                UIFocusAnimationCoordinator)>(wrapper,
-        retain: false, release: true);
-  }
-
-  /// Creates a blocking block from a Dart function.
-  ///
-  /// This callback can be invoked from any native thread, and will block the
-  /// caller until the callback is handled by the Dart isolate that created
-  /// the block. Async functions are not supported.
-  ///
-  /// This block does not keep the owner isolate alive. If the owner isolate has
-  /// shut down, and the block is invoked by native code, it may block
-  /// indefinitely, or have other undefined behavior.
-  static objc.ObjCBlock<
-      ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext,
-          UIFocusAnimationCoordinator)> blocking(
-      void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext,
-              UIFocusAnimationCoordinator)
-          fn) {
-    final raw = objc.newClosureBlock(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_blockingCallable
-            .nativeFunction
-            .cast(),
-        (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObject> arg1,
-                ffi.Pointer<objc.ObjCObject> arg2) =>
-            fn(
-                arg0,
-                UIFocusUpdateContext.castFromPointer(arg1,
-                    retain: false, release: true),
-                UIFocusAnimationCoordinator.castFromPointer(arg2,
-                    retain: false, release: true)));
-    final rawListener = objc.newClosureBlock(
-        _ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_blockingListenerCallable
-            .nativeFunction
-            .cast(),
-        (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObject> arg1,
-                ffi.Pointer<objc.ObjCObject> arg2) =>
-            fn(
-                arg0,
-                UIFocusUpdateContext.castFromPointer(arg1,
-                    retain: false, release: true),
-                UIFocusAnimationCoordinator.castFromPointer(arg2,
-                    retain: false, release: true)));
-    final wrapper = objc.wrapBlockingBlock(
-        _AuthenticationServicesIos_wrapBlockingBlock_fjrv01, raw, rawListener);
-    objc.objectRelease(raw.cast());
-    objc.objectRelease(rawListener.cast());
-    return objc.ObjCBlock<
-            ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext,
-                UIFocusAnimationCoordinator)>(wrapper,
-        retain: false, release: true);
-  }
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext, UIFocusAnimationCoordinator)>`.
-extension ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator_CallExtension
-    on objc.ObjCBlock<
-        ffi.Void Function(ffi.Pointer<ffi.Void>, UIFocusUpdateContext,
-            UIFocusAnimationCoordinator)> {
-  void call(ffi.Pointer<ffi.Void> arg0, UIFocusUpdateContext arg1,
-          UIFocusAnimationCoordinator arg2) =>
-      ref.pointer.ref.invoke
-              .cast<
-                  ffi.NativeFunction<
-                      ffi.Void Function(
-                          ffi.Pointer<objc.ObjCBlockImpl> block,
-                          ffi.Pointer<ffi.Void> arg0,
-                          ffi.Pointer<objc.ObjCObject> arg1,
-                          ffi.Pointer<objc.ObjCObject> arg2)>>()
-              .asFunction<
-                  void Function(
-                      ffi.Pointer<objc.ObjCBlockImpl>,
-                      ffi.Pointer<ffi.Void>,
-                      ffi.Pointer<objc.ObjCObject>,
-                      ffi.Pointer<objc.ObjCObject>)>()(
-          ref.pointer, arg0, arg1.ref.pointer, arg2.ref.pointer);
-}
-
-late final _sel_focusGroupIdentifier =
-    objc.registerName("focusGroupIdentifier");
-ffi.Pointer<objc.ObjCObject> _ObjCBlock_NSString_ffiVoid_fnPtrTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    block.ref.target
-        .cast<
-            ffi.NativeFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<ffi.Void> arg0)>>()
-        .asFunction<
-            ffi.Pointer<objc.ObjCObject> Function(
-                ffi.Pointer<ffi.Void>)>()(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_NSString_ffiVoid_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_NSString_ffiVoid_fnPtrTrampoline)
-        .cast();
-ffi.Pointer<objc.ObjCObject> _ObjCBlock_NSString_ffiVoid_closureTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    (objc.getBlockClosure(block) as ffi.Pointer<objc.ObjCObject> Function(
-        ffi.Pointer<ffi.Void>))(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_NSString_ffiVoid_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_NSString_ffiVoid_closureTrampoline)
-        .cast();
-
-/// Construction methods for `objc.ObjCBlock<objc.NSString? Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_NSString_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<objc.NSString? Function(ffi.Pointer<ffi.Void>)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<objc.NSString? Function(ffi.Pointer<ffi.Void>)>(
-              pointer,
-              retain: retain,
-              release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<objc.NSString? Function(ffi.Pointer<ffi.Void>)>
-      fromFunctionPointer(
-              ffi.Pointer<
-                      ffi.NativeFunction<
-                          ffi.Pointer<objc.ObjCObject> Function(
-                              ffi.Pointer<ffi.Void> arg0)>>
-                  ptr) =>
-          objc.ObjCBlock<objc.NSString? Function(ffi.Pointer<ffi.Void>)>(
-              objc.newPointerBlock(_ObjCBlock_NSString_ffiVoid_fnPtrCallable, ptr.cast()),
-              retain: false,
-              release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<objc.NSString? Function(ffi.Pointer<ffi.Void>)>
-      fromFunction(objc.NSString? Function(ffi.Pointer<ffi.Void>) fn) =>
-          objc.ObjCBlock<objc.NSString? Function(ffi.Pointer<ffi.Void>)>(
-              objc.newClosureBlock(
-                  _ObjCBlock_NSString_ffiVoid_closureCallable,
-                  (ffi.Pointer<ffi.Void> arg0) =>
-                      fn(arg0)?.ref.retainAndAutorelease() ?? ffi.nullptr),
-              retain: false,
-              release: true);
-}
-
-/// Call operator for `objc.ObjCBlock<objc.NSString? Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_NSString_ffiVoid_CallExtension
-    on objc.ObjCBlock<objc.NSString? Function(ffi.Pointer<ffi.Void>)> {
-  objc.NSString? call(ffi.Pointer<ffi.Void> arg0) => ref.pointer.ref.invoke
-              .cast<
-                  ffi.NativeFunction<
-                      ffi.Pointer<objc.ObjCObject> Function(
-                          ffi.Pointer<objc.ObjCBlockImpl> block,
-                          ffi.Pointer<ffi.Void> arg0)>>()
-              .asFunction<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>()
-              (ref.pointer, arg0)
-              .address ==
-          0
-      ? null
-      : objc.NSString.castFromPointer(
-          ref.pointer.ref.invoke
-              .cast<ffi.NativeFunction<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0)>>()
-              .asFunction<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0),
-          retain: true,
-          release: true);
-}
 
 /// UIFocusItem
 interface class UIFocusItem extends objc.ObjCProtocolBase
@@ -3337,567 +1536,51 @@ interface class UIFocusItem extends objc.ObjCProtocolBase
         obj.ref.pointer, _sel_conformsToProtocol_, _protocol_UIFocusItem);
   }
 
+  /// Returns the [objc.Protocol] object for this protocol.
+  static objc.Protocol get $protocol =>
+      objc.Protocol.castFromPointer(_protocol_UIFocusItem.cast());
+
   /// Builds an object that implements the UIFocusItem protocol. To implement
   /// multiple protocols, use [addToBuilder] or [objc.ObjCProtocolBuilder] directly.
-  static UIFocusItem implement(
-      {required bool Function() canBecomeFocused,
-      required CGRect Function() frame,
-      UIFocusEffect? Function()? focusEffect,
-      int Function()? focusGroupPriority,
-      UIFocusItemDeferralMode Function()? focusItemDeferralMode,
-      bool Function()? isTransparentFocusItem,
-      void Function(UIFocusMovementHint)? didHintFocusMovement_,
-      required objc.ObjCObjectBase Function() preferredFocusEnvironments,
-      required UIFocusEnvironment? Function() parentFocusEnvironment,
-      required UIFocusItemContainer? Function() focusItemContainer,
-      required void Function() setNeedsFocusUpdate,
-      required void Function() updateFocusIfNeeded,
-      required bool Function(UIFocusUpdateContext) shouldUpdateFocusInContext_,
-      required void Function(UIFocusUpdateContext, UIFocusAnimationCoordinator)
-          didUpdateFocusInContext_withAnimationCoordinator_,
-      objc.NSString? Function()? focusGroupIdentifier}) {
-    final builder = objc.ObjCProtocolBuilder();
-    UIFocusItem.canBecomeFocused.implement(builder, canBecomeFocused);
-    UIFocusItem.frame.implement(builder, frame);
-    UIFocusItem.focusEffect.implement(builder, focusEffect);
-    UIFocusItem.focusGroupPriority.implement(builder, focusGroupPriority);
-    UIFocusItem.focusItemDeferralMode.implement(builder, focusItemDeferralMode);
-    UIFocusItem.isTransparentFocusItem
-        .implement(builder, isTransparentFocusItem);
-    UIFocusItem.didHintFocusMovement_.implement(builder, didHintFocusMovement_);
-    UIFocusItem.preferredFocusEnvironments
-        .implement(builder, preferredFocusEnvironments);
-    UIFocusItem.parentFocusEnvironment
-        .implement(builder, parentFocusEnvironment);
-    UIFocusItem.focusItemContainer.implement(builder, focusItemContainer);
-    UIFocusItem.setNeedsFocusUpdate.implement(builder, setNeedsFocusUpdate);
-    UIFocusItem.updateFocusIfNeeded.implement(builder, updateFocusIfNeeded);
-    UIFocusItem.shouldUpdateFocusInContext_
-        .implement(builder, shouldUpdateFocusInContext_);
-    UIFocusItem.didUpdateFocusInContext_withAnimationCoordinator_
-        .implement(builder, didUpdateFocusInContext_withAnimationCoordinator_);
-    UIFocusItem.focusGroupIdentifier.implement(builder, focusGroupIdentifier);
-    return UIFocusItem.castFrom(builder.build());
+  ///
+  /// If `$keepIsolateAlive` is true, this protocol will keep this isolate
+  /// alive until it is garbage collected by both Dart and ObjC.
+  static UIFocusItem implement({bool $keepIsolateAlive = true}) {
+    final builder = objc.ObjCProtocolBuilder(debugName: 'UIFocusItem');
+
+    builder.addProtocol($protocol);
+    return UIFocusItem.castFrom(
+        builder.build(keepIsolateAlive: $keepIsolateAlive));
   }
 
   /// Adds the implementation of the UIFocusItem protocol to an existing
   /// [objc.ObjCProtocolBuilder].
+  ///
+  /// Note: You cannot call this method after you have called `builder.build`.
   static void addToBuilder(objc.ObjCProtocolBuilder builder,
-      {required bool Function() canBecomeFocused,
-      required CGRect Function() frame,
-      UIFocusEffect? Function()? focusEffect,
-      int Function()? focusGroupPriority,
-      UIFocusItemDeferralMode Function()? focusItemDeferralMode,
-      bool Function()? isTransparentFocusItem,
-      void Function(UIFocusMovementHint)? didHintFocusMovement_,
-      required objc.ObjCObjectBase Function() preferredFocusEnvironments,
-      required UIFocusEnvironment? Function() parentFocusEnvironment,
-      required UIFocusItemContainer? Function() focusItemContainer,
-      required void Function() setNeedsFocusUpdate,
-      required void Function() updateFocusIfNeeded,
-      required bool Function(UIFocusUpdateContext) shouldUpdateFocusInContext_,
-      required void Function(UIFocusUpdateContext, UIFocusAnimationCoordinator)
-          didUpdateFocusInContext_withAnimationCoordinator_,
-      objc.NSString? Function()? focusGroupIdentifier}) {
-    UIFocusItem.canBecomeFocused.implement(builder, canBecomeFocused);
-    UIFocusItem.frame.implement(builder, frame);
-    UIFocusItem.focusEffect.implement(builder, focusEffect);
-    UIFocusItem.focusGroupPriority.implement(builder, focusGroupPriority);
-    UIFocusItem.focusItemDeferralMode.implement(builder, focusItemDeferralMode);
-    UIFocusItem.isTransparentFocusItem
-        .implement(builder, isTransparentFocusItem);
-    UIFocusItem.didHintFocusMovement_.implement(builder, didHintFocusMovement_);
-    UIFocusItem.preferredFocusEnvironments
-        .implement(builder, preferredFocusEnvironments);
-    UIFocusItem.parentFocusEnvironment
-        .implement(builder, parentFocusEnvironment);
-    UIFocusItem.focusItemContainer.implement(builder, focusItemContainer);
-    UIFocusItem.setNeedsFocusUpdate.implement(builder, setNeedsFocusUpdate);
-    UIFocusItem.updateFocusIfNeeded.implement(builder, updateFocusIfNeeded);
-    UIFocusItem.shouldUpdateFocusInContext_
-        .implement(builder, shouldUpdateFocusInContext_);
-    UIFocusItem.didUpdateFocusInContext_withAnimationCoordinator_
-        .implement(builder, didUpdateFocusInContext_withAnimationCoordinator_);
-    UIFocusItem.focusGroupIdentifier.implement(builder, focusGroupIdentifier);
+      {bool $keepIsolateAlive = true}) {
+    builder.addProtocol($protocol);
   }
+}
 
-  /// Builds an object that implements the UIFocusItem protocol. To implement
-  /// multiple protocols, use [addToBuilder] or [objc.ObjCProtocolBuilder] directly. All
-  /// methods that can be implemented as listeners will be.
-  static UIFocusItem implementAsListener(
-      {required bool Function() canBecomeFocused,
-      required CGRect Function() frame,
-      UIFocusEffect? Function()? focusEffect,
-      int Function()? focusGroupPriority,
-      UIFocusItemDeferralMode Function()? focusItemDeferralMode,
-      bool Function()? isTransparentFocusItem,
-      void Function(UIFocusMovementHint)? didHintFocusMovement_,
-      required objc.ObjCObjectBase Function() preferredFocusEnvironments,
-      required UIFocusEnvironment? Function() parentFocusEnvironment,
-      required UIFocusItemContainer? Function() focusItemContainer,
-      required void Function() setNeedsFocusUpdate,
-      required void Function() updateFocusIfNeeded,
-      required bool Function(UIFocusUpdateContext) shouldUpdateFocusInContext_,
-      required void Function(UIFocusUpdateContext, UIFocusAnimationCoordinator)
-          didUpdateFocusInContext_withAnimationCoordinator_,
-      objc.NSString? Function()? focusGroupIdentifier}) {
-    final builder = objc.ObjCProtocolBuilder();
-    UIFocusItem.canBecomeFocused.implement(builder, canBecomeFocused);
-    UIFocusItem.frame.implement(builder, frame);
-    UIFocusItem.focusEffect.implement(builder, focusEffect);
-    UIFocusItem.focusGroupPriority.implement(builder, focusGroupPriority);
-    UIFocusItem.focusItemDeferralMode.implement(builder, focusItemDeferralMode);
-    UIFocusItem.isTransparentFocusItem
-        .implement(builder, isTransparentFocusItem);
-    UIFocusItem.didHintFocusMovement_
-        .implementAsListener(builder, didHintFocusMovement_);
-    UIFocusItem.preferredFocusEnvironments
-        .implement(builder, preferredFocusEnvironments);
-    UIFocusItem.parentFocusEnvironment
-        .implement(builder, parentFocusEnvironment);
-    UIFocusItem.focusItemContainer.implement(builder, focusItemContainer);
-    UIFocusItem.setNeedsFocusUpdate
-        .implementAsListener(builder, setNeedsFocusUpdate);
-    UIFocusItem.updateFocusIfNeeded
-        .implementAsListener(builder, updateFocusIfNeeded);
-    UIFocusItem.shouldUpdateFocusInContext_
-        .implement(builder, shouldUpdateFocusInContext_);
-    UIFocusItem.didUpdateFocusInContext_withAnimationCoordinator_
-        .implementAsListener(
-            builder, didUpdateFocusInContext_withAnimationCoordinator_);
-    UIFocusItem.focusGroupIdentifier.implement(builder, focusGroupIdentifier);
-    return UIFocusItem.castFrom(builder.build());
-  }
+/// WARNING: UIFocusItemContainer is a stub. To generate bindings for this class, include
+/// UIFocusItemContainer in your config's objc-protocols list.
+///
+/// UIFocusItemContainer
+interface class UIFocusItemContainer extends objc.ObjCProtocolBase
+    implements objc.NSObjectProtocol {
+  UIFocusItemContainer._(ffi.Pointer<objc.ObjCObject> pointer,
+      {bool retain = false, bool release = false})
+      : super(pointer, retain: retain, release: release);
 
-  /// Adds the implementation of the UIFocusItem protocol to an existing
-  /// [objc.ObjCProtocolBuilder]. All methods that can be implemented as listeners will
-  /// be.
-  static void addToBuilderAsListener(objc.ObjCProtocolBuilder builder,
-      {required bool Function() canBecomeFocused,
-      required CGRect Function() frame,
-      UIFocusEffect? Function()? focusEffect,
-      int Function()? focusGroupPriority,
-      UIFocusItemDeferralMode Function()? focusItemDeferralMode,
-      bool Function()? isTransparentFocusItem,
-      void Function(UIFocusMovementHint)? didHintFocusMovement_,
-      required objc.ObjCObjectBase Function() preferredFocusEnvironments,
-      required UIFocusEnvironment? Function() parentFocusEnvironment,
-      required UIFocusItemContainer? Function() focusItemContainer,
-      required void Function() setNeedsFocusUpdate,
-      required void Function() updateFocusIfNeeded,
-      required bool Function(UIFocusUpdateContext) shouldUpdateFocusInContext_,
-      required void Function(UIFocusUpdateContext, UIFocusAnimationCoordinator)
-          didUpdateFocusInContext_withAnimationCoordinator_,
-      objc.NSString? Function()? focusGroupIdentifier}) {
-    UIFocusItem.canBecomeFocused.implement(builder, canBecomeFocused);
-    UIFocusItem.frame.implement(builder, frame);
-    UIFocusItem.focusEffect.implement(builder, focusEffect);
-    UIFocusItem.focusGroupPriority.implement(builder, focusGroupPriority);
-    UIFocusItem.focusItemDeferralMode.implement(builder, focusItemDeferralMode);
-    UIFocusItem.isTransparentFocusItem
-        .implement(builder, isTransparentFocusItem);
-    UIFocusItem.didHintFocusMovement_
-        .implementAsListener(builder, didHintFocusMovement_);
-    UIFocusItem.preferredFocusEnvironments
-        .implement(builder, preferredFocusEnvironments);
-    UIFocusItem.parentFocusEnvironment
-        .implement(builder, parentFocusEnvironment);
-    UIFocusItem.focusItemContainer.implement(builder, focusItemContainer);
-    UIFocusItem.setNeedsFocusUpdate
-        .implementAsListener(builder, setNeedsFocusUpdate);
-    UIFocusItem.updateFocusIfNeeded
-        .implementAsListener(builder, updateFocusIfNeeded);
-    UIFocusItem.shouldUpdateFocusInContext_
-        .implement(builder, shouldUpdateFocusInContext_);
-    UIFocusItem.didUpdateFocusInContext_withAnimationCoordinator_
-        .implementAsListener(
-            builder, didUpdateFocusInContext_withAnimationCoordinator_);
-    UIFocusItem.focusGroupIdentifier.implement(builder, focusGroupIdentifier);
-  }
+  /// Constructs a [UIFocusItemContainer] that points to the same underlying object as [other].
+  UIFocusItemContainer.castFrom(objc.ObjCObjectBase other)
+      : this._(other.ref.pointer, retain: true, release: true);
 
-  /// Builds an object that implements the UIFocusItem protocol. To implement
-  /// multiple protocols, use [addToBuilder] or [objc.ObjCProtocolBuilder] directly. All
-  /// methods that can be implemented as blocking listeners will be.
-  static UIFocusItem implementAsBlocking(
-      {required bool Function() canBecomeFocused,
-      required CGRect Function() frame,
-      UIFocusEffect? Function()? focusEffect,
-      int Function()? focusGroupPriority,
-      UIFocusItemDeferralMode Function()? focusItemDeferralMode,
-      bool Function()? isTransparentFocusItem,
-      void Function(UIFocusMovementHint)? didHintFocusMovement_,
-      required objc.ObjCObjectBase Function() preferredFocusEnvironments,
-      required UIFocusEnvironment? Function() parentFocusEnvironment,
-      required UIFocusItemContainer? Function() focusItemContainer,
-      required void Function() setNeedsFocusUpdate,
-      required void Function() updateFocusIfNeeded,
-      required bool Function(UIFocusUpdateContext) shouldUpdateFocusInContext_,
-      required void Function(UIFocusUpdateContext, UIFocusAnimationCoordinator)
-          didUpdateFocusInContext_withAnimationCoordinator_,
-      objc.NSString? Function()? focusGroupIdentifier}) {
-    final builder = objc.ObjCProtocolBuilder();
-    UIFocusItem.canBecomeFocused.implement(builder, canBecomeFocused);
-    UIFocusItem.frame.implement(builder, frame);
-    UIFocusItem.focusEffect.implement(builder, focusEffect);
-    UIFocusItem.focusGroupPriority.implement(builder, focusGroupPriority);
-    UIFocusItem.focusItemDeferralMode.implement(builder, focusItemDeferralMode);
-    UIFocusItem.isTransparentFocusItem
-        .implement(builder, isTransparentFocusItem);
-    UIFocusItem.didHintFocusMovement_
-        .implementAsBlocking(builder, didHintFocusMovement_);
-    UIFocusItem.preferredFocusEnvironments
-        .implement(builder, preferredFocusEnvironments);
-    UIFocusItem.parentFocusEnvironment
-        .implement(builder, parentFocusEnvironment);
-    UIFocusItem.focusItemContainer.implement(builder, focusItemContainer);
-    UIFocusItem.setNeedsFocusUpdate
-        .implementAsBlocking(builder, setNeedsFocusUpdate);
-    UIFocusItem.updateFocusIfNeeded
-        .implementAsBlocking(builder, updateFocusIfNeeded);
-    UIFocusItem.shouldUpdateFocusInContext_
-        .implement(builder, shouldUpdateFocusInContext_);
-    UIFocusItem.didUpdateFocusInContext_withAnimationCoordinator_
-        .implementAsBlocking(
-            builder, didUpdateFocusInContext_withAnimationCoordinator_);
-    UIFocusItem.focusGroupIdentifier.implement(builder, focusGroupIdentifier);
-    return UIFocusItem.castFrom(builder.build());
-  }
-
-  /// Adds the implementation of the UIFocusItem protocol to an existing
-  /// [objc.ObjCProtocolBuilder]. All methods that can be implemented as blocking
-  /// listeners will be.
-  static void addToBuilderAsBlocking(objc.ObjCProtocolBuilder builder,
-      {required bool Function() canBecomeFocused,
-      required CGRect Function() frame,
-      UIFocusEffect? Function()? focusEffect,
-      int Function()? focusGroupPriority,
-      UIFocusItemDeferralMode Function()? focusItemDeferralMode,
-      bool Function()? isTransparentFocusItem,
-      void Function(UIFocusMovementHint)? didHintFocusMovement_,
-      required objc.ObjCObjectBase Function() preferredFocusEnvironments,
-      required UIFocusEnvironment? Function() parentFocusEnvironment,
-      required UIFocusItemContainer? Function() focusItemContainer,
-      required void Function() setNeedsFocusUpdate,
-      required void Function() updateFocusIfNeeded,
-      required bool Function(UIFocusUpdateContext) shouldUpdateFocusInContext_,
-      required void Function(UIFocusUpdateContext, UIFocusAnimationCoordinator)
-          didUpdateFocusInContext_withAnimationCoordinator_,
-      objc.NSString? Function()? focusGroupIdentifier}) {
-    UIFocusItem.canBecomeFocused.implement(builder, canBecomeFocused);
-    UIFocusItem.frame.implement(builder, frame);
-    UIFocusItem.focusEffect.implement(builder, focusEffect);
-    UIFocusItem.focusGroupPriority.implement(builder, focusGroupPriority);
-    UIFocusItem.focusItemDeferralMode.implement(builder, focusItemDeferralMode);
-    UIFocusItem.isTransparentFocusItem
-        .implement(builder, isTransparentFocusItem);
-    UIFocusItem.didHintFocusMovement_
-        .implementAsBlocking(builder, didHintFocusMovement_);
-    UIFocusItem.preferredFocusEnvironments
-        .implement(builder, preferredFocusEnvironments);
-    UIFocusItem.parentFocusEnvironment
-        .implement(builder, parentFocusEnvironment);
-    UIFocusItem.focusItemContainer.implement(builder, focusItemContainer);
-    UIFocusItem.setNeedsFocusUpdate
-        .implementAsBlocking(builder, setNeedsFocusUpdate);
-    UIFocusItem.updateFocusIfNeeded
-        .implementAsBlocking(builder, updateFocusIfNeeded);
-    UIFocusItem.shouldUpdateFocusInContext_
-        .implement(builder, shouldUpdateFocusInContext_);
-    UIFocusItem.didUpdateFocusInContext_withAnimationCoordinator_
-        .implementAsBlocking(
-            builder, didUpdateFocusInContext_withAnimationCoordinator_);
-    UIFocusItem.focusGroupIdentifier.implement(builder, focusGroupIdentifier);
-  }
-
-  /// canBecomeFocused
-  static final canBecomeFocused = objc.ObjCProtocolMethod<bool Function()>(
-    _protocol_UIFocusItem,
-    _sel_canBecomeFocused,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_canBecomeFocused,
-      isRequired: true,
-      isInstanceMethod: true,
-    ),
-    (bool Function() func) => ObjCBlock_bool_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-        func()),
-  );
-
-  /// frame
-  static final frame = objc.ObjCProtocolMethod<CGRect Function()>(
-    _protocol_UIFocusItem,
-    _sel_frame,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_frame,
-      isRequired: true,
-      isInstanceMethod: true,
-    ),
-    (CGRect Function() func) => ObjCBlock_CGRect_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-        func()),
-  );
-
-  /// focusEffect
-  static final focusEffect = objc.ObjCProtocolMethod<UIFocusEffect? Function()>(
-    _protocol_UIFocusItem,
-    _sel_focusEffect,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_focusEffect,
-      isRequired: false,
-      isInstanceMethod: true,
-    ),
-    (UIFocusEffect? Function() func) =>
-        ObjCBlock_UIFocusEffect_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-            func()),
-  );
-
-  /// focusGroupPriority
-  static final focusGroupPriority = objc.ObjCProtocolMethod<int Function()>(
-    _protocol_UIFocusItem,
-    _sel_focusGroupPriority,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_focusGroupPriority,
-      isRequired: false,
-      isInstanceMethod: true,
-    ),
-    (int Function() func) =>
-        ObjCBlock_UIFocusGroupPriority_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-            func()),
-  );
-
-  /// focusItemDeferralMode
-  static final focusItemDeferralMode =
-      objc.ObjCProtocolMethod<UIFocusItemDeferralMode Function()>(
-    _protocol_UIFocusItem,
-    _sel_focusItemDeferralMode,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_focusItemDeferralMode,
-      isRequired: false,
-      isInstanceMethod: true,
-    ),
-    (UIFocusItemDeferralMode Function() func) =>
-        ObjCBlock_UIFocusItemDeferralMode_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-            func()),
-  );
-
-  /// isTransparentFocusItem
-  static final isTransparentFocusItem =
-      objc.ObjCProtocolMethod<bool Function()>(
-    _protocol_UIFocusItem,
-    _sel_isTransparentFocusItem,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_isTransparentFocusItem,
-      isRequired: false,
-      isInstanceMethod: true,
-    ),
-    (bool Function() func) => ObjCBlock_bool_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-        func()),
-  );
-
-  /// didHintFocusMovement:
-  static final didHintFocusMovement_ =
-      objc.ObjCProtocolListenableMethod<void Function(UIFocusMovementHint)>(
-    _protocol_UIFocusItem,
-    _sel_didHintFocusMovement_,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_didHintFocusMovement_,
-      isRequired: false,
-      isInstanceMethod: true,
-    ),
-    (void Function(UIFocusMovementHint) func) =>
-        ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint.fromFunction(
-            (ffi.Pointer<ffi.Void> _, UIFocusMovementHint arg1) => func(arg1)),
-    (void Function(UIFocusMovementHint) func) =>
-        ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint.listener(
-            (ffi.Pointer<ffi.Void> _, UIFocusMovementHint arg1) => func(arg1)),
-    (void Function(UIFocusMovementHint) func) =>
-        ObjCBlock_ffiVoid_ffiVoid_UIFocusMovementHint.blocking(
-            (ffi.Pointer<ffi.Void> _, UIFocusMovementHint arg1) => func(arg1)),
-  );
-
-  /// preferredFocusEnvironments
-  static final preferredFocusEnvironments =
-      objc.ObjCProtocolMethod<objc.ObjCObjectBase Function()>(
-    _protocol_UIFocusItem,
-    _sel_preferredFocusEnvironments,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_preferredFocusEnvironments,
-      isRequired: true,
-      isInstanceMethod: true,
-    ),
-    (objc.ObjCObjectBase Function() func) =>
-        ObjCBlock_objcObjCObject_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-            func()),
-  );
-
-  /// parentFocusEnvironment
-  static final parentFocusEnvironment =
-      objc.ObjCProtocolMethod<UIFocusEnvironment? Function()>(
-    _protocol_UIFocusItem,
-    _sel_parentFocusEnvironment,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_parentFocusEnvironment,
-      isRequired: true,
-      isInstanceMethod: true,
-    ),
-    (UIFocusEnvironment? Function() func) =>
-        ObjCBlock_idUIFocusEnvironment_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-            func()),
-  );
-
-  /// focusItemContainer
-  static final focusItemContainer =
-      objc.ObjCProtocolMethod<UIFocusItemContainer? Function()>(
-    _protocol_UIFocusItem,
-    _sel_focusItemContainer,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_focusItemContainer,
-      isRequired: true,
-      isInstanceMethod: true,
-    ),
-    (UIFocusItemContainer? Function() func) =>
-        ObjCBlock_idUIFocusItemContainer_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-            func()),
-  );
-
-  /// setNeedsFocusUpdate
-  static final setNeedsFocusUpdate =
-      objc.ObjCProtocolListenableMethod<void Function()>(
-    _protocol_UIFocusItem,
-    _sel_setNeedsFocusUpdate,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_setNeedsFocusUpdate,
-      isRequired: true,
-      isInstanceMethod: true,
-    ),
-    (void Function() func) => ObjCBlock_ffiVoid_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-        func()),
-    (void Function() func) => ObjCBlock_ffiVoid_ffiVoid.listener((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-        func()),
-    (void Function() func) => ObjCBlock_ffiVoid_ffiVoid.blocking((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-        func()),
-  );
-
-  /// updateFocusIfNeeded
-  static final updateFocusIfNeeded =
-      objc.ObjCProtocolListenableMethod<void Function()>(
-    _protocol_UIFocusItem,
-    _sel_updateFocusIfNeeded,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_updateFocusIfNeeded,
-      isRequired: true,
-      isInstanceMethod: true,
-    ),
-    (void Function() func) => ObjCBlock_ffiVoid_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-        func()),
-    (void Function() func) => ObjCBlock_ffiVoid_ffiVoid.listener((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-        func()),
-    (void Function() func) => ObjCBlock_ffiVoid_ffiVoid.blocking((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-        func()),
-  );
-
-  /// shouldUpdateFocusInContext:
-  static final shouldUpdateFocusInContext_ =
-      objc.ObjCProtocolMethod<bool Function(UIFocusUpdateContext)>(
-    _protocol_UIFocusItem,
-    _sel_shouldUpdateFocusInContext_,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_shouldUpdateFocusInContext_,
-      isRequired: true,
-      isInstanceMethod: true,
-    ),
-    (bool Function(UIFocusUpdateContext) func) =>
-        ObjCBlock_bool_ffiVoid_UIFocusUpdateContext.fromFunction(
-            (ffi.Pointer<ffi.Void> _, UIFocusUpdateContext arg1) => func(arg1)),
-  );
-
-  /// didUpdateFocusInContext:withAnimationCoordinator:
-  static final didUpdateFocusInContext_withAnimationCoordinator_ =
-      objc.ObjCProtocolListenableMethod<
-          void Function(UIFocusUpdateContext, UIFocusAnimationCoordinator)>(
-    _protocol_UIFocusItem,
-    _sel_didUpdateFocusInContext_withAnimationCoordinator_,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_didUpdateFocusInContext_withAnimationCoordinator_,
-      isRequired: true,
-      isInstanceMethod: true,
-    ),
-    (void Function(UIFocusUpdateContext, UIFocusAnimationCoordinator) func) =>
-        ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator
-            .fromFunction((ffi.Pointer<ffi.Void> _, UIFocusUpdateContext arg1,
-                    UIFocusAnimationCoordinator arg2) =>
-                func(arg1, arg2)),
-    (void Function(UIFocusUpdateContext, UIFocusAnimationCoordinator) func) =>
-        ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator
-            .listener((ffi.Pointer<ffi.Void> _, UIFocusUpdateContext arg1,
-                    UIFocusAnimationCoordinator arg2) =>
-                func(arg1, arg2)),
-    (void Function(UIFocusUpdateContext, UIFocusAnimationCoordinator) func) =>
-        ObjCBlock_ffiVoid_ffiVoid_UIFocusUpdateContext_UIFocusAnimationCoordinator
-            .blocking((ffi.Pointer<ffi.Void> _, UIFocusUpdateContext arg1,
-                    UIFocusAnimationCoordinator arg2) =>
-                func(arg1, arg2)),
-  );
-
-  /// focusGroupIdentifier
-  static final focusGroupIdentifier =
-      objc.ObjCProtocolMethod<objc.NSString? Function()>(
-    _protocol_UIFocusItem,
-    _sel_focusGroupIdentifier,
-    objc.getProtocolMethodSignature(
-      _protocol_UIFocusItem,
-      _sel_focusGroupIdentifier,
-      isRequired: false,
-      isInstanceMethod: true,
-    ),
-    (objc.NSString? Function() func) =>
-        ObjCBlock_NSString_ffiVoid.fromFunction((
-      ffi.Pointer<ffi.Void> _,
-    ) =>
-            func()),
-  );
+  /// Constructs a [UIFocusItemContainer] that wraps the given raw object pointer.
+  UIFocusItemContainer.castFromPointer(ffi.Pointer<objc.ObjCObject> other,
+      {bool retain = false, bool release = false})
+      : this._(other, retain: retain, release: release);
 }
 
 /// WARNING: CALayerDelegate is a stub. To generate bindings for this class, include
@@ -3935,7 +1618,7 @@ class UIView extends UIResponder
   UIView._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UIView', iOS: (false, (2, 0, 0)));
+    objc.checkOsVersionInternal('UIView', iOS: (false, (2, 0, 0)));
   }
 
   /// Constructs a [UIView] that points to the same underlying object as [other].
@@ -3962,7 +1645,7 @@ class UIWindow extends UIView {
   UIWindow._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('UIWindow', iOS: (false, (2, 0, 0)));
+    objc.checkOsVersionInternal('UIWindow', iOS: (false, (2, 0, 0)));
   }
 
   /// Constructs a [UIWindow] that points to the same underlying object as [other].
@@ -3982,7 +1665,8 @@ class UIWindow extends UIView {
 
   /// isKeyWindow
   bool get keyWindow {
-    objc.checkOsVersion('UIWindow.isKeyWindow', iOS: (false, (2, 0, 0)));
+    objc.checkOsVersionInternal('UIWindow.isKeyWindow',
+        iOS: (false, (2, 0, 0)));
     return _objc_msgSend_91o635(this.ref.pointer, _sel_isKeyWindow);
   }
 }
@@ -4010,7 +1694,7 @@ enum ASWebAuthenticationSessionErrorCode {
         2 => ASWebAuthenticationSessionErrorCodePresentationContextNotProvided,
         3 => ASWebAuthenticationSessionErrorCodePresentationContextInvalid,
         _ => throw ArgumentError(
-            "Unknown value for ASWebAuthenticationSessionErrorCode: $value"),
+            'Unknown value for ASWebAuthenticationSessionErrorCode: $value'),
       };
 }
 
@@ -4142,17 +1826,21 @@ abstract final class ObjCBlock_ffiVoid_NSURL_NSError {
   /// This block must be invoked by native code running on the same thread as
   /// the isolate that registered it. Invoking the block on the wrong thread
   /// will result in a crash.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
   static objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)> fromFunction(
-          void Function(objc.NSURL?, objc.NSError?) fn) =>
+          void Function(objc.NSURL?, objc.NSError?) fn,
+          {bool keepIsolateAlive = true}) =>
       objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)>(
           objc.newClosureBlock(
               _ObjCBlock_ffiVoid_NSURL_NSError_closureCallable,
               (ffi.Pointer<objc.ObjCObject> arg0, ffi.Pointer<objc.ObjCObject> arg1) => fn(
                   arg0.address == 0
                       ? null
-                      : objc.NSURL
-                          .castFromPointer(arg0, retain: true, release: true),
-                  arg1.address == 0 ? null : objc.NSError.castFromPointer(arg1, retain: true, release: true))),
+                      : objc.NSURL.castFromPointer(arg0, retain: true, release: true),
+                  arg1.address == 0 ? null : objc.NSError.castFromPointer(arg1, retain: true, release: true)),
+              keepIsolateAlive),
           retain: false,
           release: true);
 
@@ -4163,10 +1851,11 @@ abstract final class ObjCBlock_ffiVoid_NSURL_NSError {
   /// but only supports void functions, and is not run synchronously. See
   /// NativeCallable.listener for more details.
   ///
-  /// Note that unlike the default behavior of NativeCallable.listener, listener
-  /// blocks do not keep the isolate alive.
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
   static objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)> listener(
-      void Function(objc.NSURL?, objc.NSError?) fn) {
+      void Function(objc.NSURL?, objc.NSError?) fn,
+      {bool keepIsolateAlive = true}) {
     final raw = objc.newClosureBlock(
         _ObjCBlock_ffiVoid_NSURL_NSError_listenerCallable.nativeFunction.cast(),
         (ffi.Pointer<objc.ObjCObject> arg0,
@@ -4179,7 +1868,8 @@ abstract final class ObjCBlock_ffiVoid_NSURL_NSError {
                 arg1.address == 0
                     ? null
                     : objc.NSError.castFromPointer(arg1,
-                        retain: false, release: true)));
+                        retain: false, release: true)),
+        keepIsolateAlive);
     final wrapper = _AuthenticationServicesIos_wrapListenerBlock_pfv6jd(raw);
     objc.objectRelease(raw.cast());
     return objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)>(
@@ -4194,11 +1884,13 @@ abstract final class ObjCBlock_ffiVoid_NSURL_NSError {
   /// caller until the callback is handled by the Dart isolate that created
   /// the block. Async functions are not supported.
   ///
-  /// This block does not keep the owner isolate alive. If the owner isolate has
-  /// shut down, and the block is invoked by native code, it may block
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC. If the owner isolate
+  /// has shut down, and the block is invoked by native code, it may block
   /// indefinitely, or have other undefined behavior.
   static objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)> blocking(
-      void Function(objc.NSURL?, objc.NSError?) fn) {
+      void Function(objc.NSURL?, objc.NSError?) fn,
+      {bool keepIsolateAlive = true}) {
     final raw = objc.newClosureBlock(
         _ObjCBlock_ffiVoid_NSURL_NSError_blockingCallable.nativeFunction.cast(),
         (ffi.Pointer<objc.ObjCObject> arg0,
@@ -4211,7 +1903,8 @@ abstract final class ObjCBlock_ffiVoid_NSURL_NSError {
                 arg1.address == 0
                     ? null
                     : objc.NSError.castFromPointer(arg1,
-                        retain: false, release: true)));
+                        retain: false, release: true)),
+        keepIsolateAlive);
     final rawListener = objc.newClosureBlock(
         _ObjCBlock_ffiVoid_NSURL_NSError_blockingListenerCallable.nativeFunction
             .cast(),
@@ -4225,9 +1918,10 @@ abstract final class ObjCBlock_ffiVoid_NSURL_NSError {
                 arg1.address == 0
                     ? null
                     : objc.NSError.castFromPointer(arg1,
-                        retain: false, release: true)));
-    final wrapper = objc.wrapBlockingBlock(
-        _AuthenticationServicesIos_wrapBlockingBlock_pfv6jd, raw, rawListener);
+                        retain: false, release: true)),
+        keepIsolateAlive);
+    final wrapper = _AuthenticationServicesIos_wrapBlockingBlock_pfv6jd(
+        raw, rawListener, objc.objCContext);
     objc.objectRelease(raw.cast());
     objc.objectRelease(rawListener.cast());
     return objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)>(
@@ -4305,6 +1999,106 @@ final _objc_msgSend_1cwp428 = objc.msgSendPointer
             ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.NSZone>)>();
 late final _sel_alloc = objc.registerName("alloc");
 late final _sel_self = objc.registerName("self");
+ffi.Pointer<objc.ObjCObject> _ObjCBlock_objcObjCObject_ffiVoid_fnPtrTrampoline(
+        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
+    block.ref.target
+        .cast<
+            ffi.NativeFunction<
+                ffi.Pointer<objc.ObjCObject> Function(
+                    ffi.Pointer<ffi.Void> arg0)>>()
+        .asFunction<
+            ffi.Pointer<objc.ObjCObject> Function(
+                ffi.Pointer<ffi.Void>)>()(arg0);
+ffi.Pointer<ffi.Void> _ObjCBlock_objcObjCObject_ffiVoid_fnPtrCallable =
+    ffi.Pointer.fromFunction<
+                ffi.Pointer<objc.ObjCObject> Function(
+                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
+            _ObjCBlock_objcObjCObject_ffiVoid_fnPtrTrampoline)
+        .cast();
+ffi.Pointer<objc.ObjCObject>
+    _ObjCBlock_objcObjCObject_ffiVoid_closureTrampoline(
+            ffi.Pointer<objc.ObjCBlockImpl> block,
+            ffi.Pointer<ffi.Void> arg0) =>
+        (objc.getBlockClosure(block) as ffi.Pointer<objc.ObjCObject> Function(
+            ffi.Pointer<ffi.Void>))(arg0);
+ffi.Pointer<ffi.Void> _ObjCBlock_objcObjCObject_ffiVoid_closureCallable =
+    ffi.Pointer.fromFunction<
+                ffi.Pointer<objc.ObjCObject> Function(
+                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
+            _ObjCBlock_objcObjCObject_ffiVoid_closureTrampoline)
+        .cast();
+
+/// Construction methods for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>`.
+abstract final class ObjCBlock_objcObjCObject_ffiVoid {
+  /// Returns a block that wraps the given raw block pointer.
+  static objc
+      .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
+      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
+              {bool retain = false, bool release = false}) =>
+          objc.ObjCBlock<
+                  ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
+              pointer,
+              retain: retain,
+              release: release);
+
+  /// Creates a block from a C function pointer.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  static objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
+      fromFunctionPointer(
+              ffi.Pointer<
+                      ffi.NativeFunction<
+                          ffi.Pointer<objc.ObjCObject> Function(
+                              ffi.Pointer<ffi.Void> arg0)>>
+                  ptr) =>
+          objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
+              objc.newPointerBlock(_ObjCBlock_objcObjCObject_ffiVoid_fnPtrCallable, ptr.cast()),
+              retain: false,
+              release: true);
+
+  /// Creates a block from a Dart function.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
+  static objc
+      .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
+      fromFunction(objc.ObjCObjectBase Function(ffi.Pointer<ffi.Void>) fn,
+              {bool keepIsolateAlive = true}) =>
+          objc.ObjCBlock<
+                  ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
+              objc.newClosureBlock(
+                  _ObjCBlock_objcObjCObject_ffiVoid_closureCallable,
+                  (ffi.Pointer<ffi.Void> arg0) =>
+                      fn(arg0).ref.retainAndAutorelease(),
+                  keepIsolateAlive),
+              retain: false,
+              release: true);
+}
+
+/// Call operator for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>`.
+extension ObjCBlock_objcObjCObject_ffiVoid_CallExtension on objc
+    .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)> {
+  objc.ObjCObjectBase call(ffi.Pointer<ffi.Void> arg0) => objc.ObjCObjectBase(
+      ref.pointer.ref.invoke
+          .cast<
+              ffi.NativeFunction<
+                  ffi.Pointer<objc.ObjCObject> Function(
+                      ffi.Pointer<objc.ObjCBlockImpl> block,
+                      ffi.Pointer<ffi.Void> arg0)>>()
+          .asFunction<
+              ffi.Pointer<objc.ObjCObject> Function(
+                  ffi.Pointer<objc.ObjCBlockImpl>,
+                  ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0),
+      retain: true,
+      release: true);
+}
+
 late final _sel_retain = objc.registerName("retain");
 late final _sel_autorelease = objc.registerName("autorelease");
 
@@ -4335,7 +2129,7 @@ class ASWebAuthenticationSessionCallback extends objc.NSObject {
   /// @param customScheme The custom scheme that the app expects in the callback URL.
   static ASWebAuthenticationSessionCallback callbackWithCustomScheme_(
       objc.NSString customScheme) {
-    objc.checkOsVersion(
+    objc.checkOsVersionInternal(
         'ASWebAuthenticationSessionCallback.callbackWithCustomScheme:',
         iOS: (false, (17, 4, 0)),
         macOS: (false, (14, 4, 0)));
@@ -4353,7 +2147,7 @@ class ASWebAuthenticationSessionCallback extends objc.NSObject {
   /// @param path The path that the app expects in the callback URL.
   static ASWebAuthenticationSessionCallback callbackWithHTTPSHost_path_(
       objc.NSString host, objc.NSString path) {
-    objc.checkOsVersion(
+    objc.checkOsVersionInternal(
         'ASWebAuthenticationSessionCallback.callbackWithHTTPSHost:path:',
         iOS: (false, (17, 4, 0)),
         macOS: (false, (14, 4, 0)));
@@ -4370,15 +2164,17 @@ class ASWebAuthenticationSessionCallback extends objc.NSObject {
   /// This is mainly meant for web browsers adopting the ASWebAuthenticationWebBrowser API, but may also be useful for other apps for debugging purposes.
   /// @param url The URL to check.
   bool matchesURL_(objc.NSURL url) {
-    objc.checkOsVersion('ASWebAuthenticationSessionCallback.matchesURL:',
-        iOS: (false, (17, 4, 0)), macOS: (false, (14, 4, 0)));
+    objc.checkOsVersionInternal(
+        'ASWebAuthenticationSessionCallback.matchesURL:',
+        iOS: (false, (17, 4, 0)),
+        macOS: (false, (14, 4, 0)));
     return _objc_msgSend_19nvye5(
         this.ref.pointer, _sel_matchesURL_, url.ref.pointer);
   }
 
   /// init
   ASWebAuthenticationSessionCallback init() {
-    objc.checkOsVersion('ASWebAuthenticationSessionCallback.init',
+    objc.checkOsVersionInternal('ASWebAuthenticationSessionCallback.init',
         iOS: (false, (2, 0, 0)), macOS: (false, (10, 0, 0)));
     final _ret =
         _objc_msgSend_151sglz(this.ref.retainAndReturnPointer(), _sel_init);
@@ -4387,7 +2183,7 @@ class ASWebAuthenticationSessionCallback extends objc.NSObject {
   }
 
   /// new
-  static ASWebAuthenticationSessionCallback new1() {
+  static ASWebAuthenticationSessionCallback new$() {
     final _ret = _objc_msgSend_151sglz(
         _class_ASWebAuthenticationSessionCallback, _sel_new);
     return ASWebAuthenticationSessionCallback.castFromPointer(_ret,
@@ -4412,7 +2208,7 @@ class ASWebAuthenticationSessionCallback extends objc.NSObject {
   }
 
   /// self
-  ASWebAuthenticationSessionCallback self1() {
+  ASWebAuthenticationSessionCallback self$1() {
     final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_self);
     return ASWebAuthenticationSessionCallback.castFromPointer(_ret,
         retain: true, release: true);
@@ -4431,6 +2227,9 @@ class ASWebAuthenticationSessionCallback extends objc.NSObject {
     return ASWebAuthenticationSessionCallback.castFromPointer(_ret,
         retain: true, release: true);
   }
+
+  /// Returns a new instance of ASWebAuthenticationSessionCallback constructed with the default `new` method.
+  factory ASWebAuthenticationSessionCallback() => new$();
 }
 
 late final _sel_initWithURL_callback_completionHandler_ =
@@ -4516,19 +2315,23 @@ abstract final class ObjCBlock_ASPresentationAnchor_ffiVoid_ASWebAuthenticationS
   /// This block must be invoked by native code running on the same thread as
   /// the isolate that registered it. Invoking the block on the wrong thread
   /// will result in a crash.
-  static objc.ObjCBlock<UIWindow Function(ffi.Pointer<ffi.Void>, ASWebAuthenticationSession)>
-      fromFunction(UIWindow Function(ffi.Pointer<ffi.Void>, ASWebAuthenticationSession) fn) =>
-          objc.ObjCBlock<UIWindow Function(ffi.Pointer<ffi.Void>, ASWebAuthenticationSession)>(
-              objc.newClosureBlock(
-                  _ObjCBlock_ASPresentationAnchor_ffiVoid_ASWebAuthenticationSession_closureCallable,
-                  (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObject> arg1) => fn(
-                          arg0,
-                          ASWebAuthenticationSession.castFromPointer(arg1,
-                              retain: true, release: true))
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
+  static objc.ObjCBlock<UIWindow Function(ffi.Pointer<ffi.Void>, ASWebAuthenticationSession)> fromFunction(
+          UIWindow Function(ffi.Pointer<ffi.Void>, ASWebAuthenticationSession)
+              fn,
+          {bool keepIsolateAlive = true}) =>
+      objc.ObjCBlock<UIWindow Function(ffi.Pointer<ffi.Void>, ASWebAuthenticationSession)>(
+          objc.newClosureBlock(
+              _ObjCBlock_ASPresentationAnchor_ffiVoid_ASWebAuthenticationSession_closureCallable,
+              (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObject> arg1) =>
+                  fn(arg0, ASWebAuthenticationSession.castFromPointer(arg1, retain: true, release: true))
                       .ref
-                      .retainAndAutorelease()),
-              retain: false,
-              release: true);
+                      .retainAndAutorelease(),
+              keepIsolateAlive),
+          retain: false,
+          release: true);
 }
 
 /// Call operator for `objc.ObjCBlock<UIWindow Function(ffi.Pointer<ffi.Void>, ASWebAuthenticationSession)>`.
@@ -4581,27 +2384,41 @@ interface class ASWebAuthenticationPresentationContextProviding
         _protocol_ASWebAuthenticationPresentationContextProviding);
   }
 
+  /// Returns the [objc.Protocol] object for this protocol.
+  static objc.Protocol get $protocol => objc.Protocol.castFromPointer(
+      _protocol_ASWebAuthenticationPresentationContextProviding.cast());
+
   /// Builds an object that implements the ASWebAuthenticationPresentationContextProviding protocol. To implement
   /// multiple protocols, use [addToBuilder] or [objc.ObjCProtocolBuilder] directly.
+  ///
+  /// If `$keepIsolateAlive` is true, this protocol will keep this isolate
+  /// alive until it is garbage collected by both Dart and ObjC.
   static ASWebAuthenticationPresentationContextProviding implement(
       {required UIWindow Function(ASWebAuthenticationSession)
-          presentationAnchorForWebAuthenticationSession_}) {
-    final builder = objc.ObjCProtocolBuilder();
+          presentationAnchorForWebAuthenticationSession_,
+      bool $keepIsolateAlive = true}) {
+    final builder = objc.ObjCProtocolBuilder(
+        debugName: 'ASWebAuthenticationPresentationContextProviding');
     ASWebAuthenticationPresentationContextProviding
         .presentationAnchorForWebAuthenticationSession_
         .implement(builder, presentationAnchorForWebAuthenticationSession_);
+    builder.addProtocol($protocol);
     return ASWebAuthenticationPresentationContextProviding.castFrom(
-        builder.build());
+        builder.build(keepIsolateAlive: $keepIsolateAlive));
   }
 
   /// Adds the implementation of the ASWebAuthenticationPresentationContextProviding protocol to an existing
   /// [objc.ObjCProtocolBuilder].
+  ///
+  /// Note: You cannot call this method after you have called `builder.build`.
   static void addToBuilder(objc.ObjCProtocolBuilder builder,
       {required UIWindow Function(ASWebAuthenticationSession)
-          presentationAnchorForWebAuthenticationSession_}) {
+          presentationAnchorForWebAuthenticationSession_,
+      bool $keepIsolateAlive = true}) {
     ASWebAuthenticationPresentationContextProviding
         .presentationAnchorForWebAuthenticationSession_
         .implement(builder, presentationAnchorForWebAuthenticationSession_);
+    builder.addProtocol($protocol);
   }
 
   /// ! @abstract Return the ASPresentationAnchor in the closest proximity to where a user interacted with your app to trigger
@@ -4612,6 +2429,12 @@ interface class ASWebAuthenticationPresentationContextProviding
       objc.ObjCProtocolMethod<UIWindow Function(ASWebAuthenticationSession)>(
     _protocol_ASWebAuthenticationPresentationContextProviding,
     _sel_presentationAnchorForWebAuthenticationSession_,
+    ffi.Native.addressOf<
+                ffi.NativeFunction<
+                    instancetype Function(ffi.Pointer<objc.ObjCObject>,
+                        ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObject>)>>(
+            _AuthenticationServicesIos_protocolTrampoline_xr62hr)
+        .cast(),
     objc.getProtocolMethodSignature(
       _protocol_ASWebAuthenticationPresentationContextProviding,
       _sel_presentationAnchorForWebAuthenticationSession_,
@@ -4676,7 +2499,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
   ASWebAuthenticationSession._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
       : super.castFromPointer(pointer, retain: retain, release: release) {
-    objc.checkOsVersion('ASWebAuthenticationSession',
+    objc.checkOsVersionInternal('ASWebAuthenticationSession',
         iOS: (false, (12, 0, 0)), macOS: (false, (10, 15, 0)));
   }
 
@@ -4707,7 +2530,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
       objc.NSString? callbackURLScheme,
       objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)>
           completionHandler) {
-    objc.checkOsVersion(
+    objc.checkOsVersionInternal(
         'ASWebAuthenticationSession.initWithURL:callbackURLScheme:completionHandler:',
         iOS: (false, (12, 0, 0)),
         macOS: (false, (10, 15, 0)));
@@ -4727,7 +2550,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
       ASWebAuthenticationSessionCallback callback,
       objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)>
           completionHandler) {
-    objc.checkOsVersion(
+    objc.checkOsVersionInternal(
         'ASWebAuthenticationSession.initWithURL:callback:completionHandler:',
         iOS: (false, (17, 4, 0)),
         macOS: (false, (14, 4, 0)));
@@ -4746,7 +2569,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
   /// 13.0, the desired window is inferred by the application's key window.
   ASWebAuthenticationPresentationContextProviding?
       get presentationContextProvider {
-    objc.checkOsVersion(
+    objc.checkOsVersionInternal(
         'ASWebAuthenticationSession.presentationContextProvider',
         iOS: (false, (13, 0, 0)),
         macOS: (false, (10, 15, 0)));
@@ -4763,7 +2586,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
   /// 13.0, the desired window is inferred by the application's key window.
   set presentationContextProvider(
       ASWebAuthenticationPresentationContextProviding? value) {
-    objc.checkOsVersion(
+    objc.checkOsVersionInternal(
         'ASWebAuthenticationSession.setPresentationContextProvider:',
         iOS: (false, (13, 0, 0)),
         macOS: (false, (10, 15, 0)));
@@ -4775,7 +2598,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
   /// @discussion Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser session.
   /// This value is NO by default. Setting this property after calling -[ASWebAuthenticationSession start] has no effect.
   bool get prefersEphemeralWebBrowserSession {
-    objc.checkOsVersion(
+    objc.checkOsVersionInternal(
         'ASWebAuthenticationSession.prefersEphemeralWebBrowserSession',
         iOS: (false, (13, 0, 0)),
         macOS: (false, (10, 15, 0)));
@@ -4787,7 +2610,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
   /// @discussion Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser session.
   /// This value is NO by default. Setting this property after calling -[ASWebAuthenticationSession start] has no effect.
   set prefersEphemeralWebBrowserSession(bool value) {
-    objc.checkOsVersion(
+    objc.checkOsVersionInternal(
         'ASWebAuthenticationSession.setPrefersEphemeralWebBrowserSession:',
         iOS: (false, (13, 0, 0)),
         macOS: (false, (10, 15, 0)));
@@ -4798,8 +2621,10 @@ class ASWebAuthenticationSession extends objc.NSObject {
   /// Any additional header fields to be set when loading the initial URL.
   /// All header field names must start with the "X-" prefix.
   objc.NSDictionary? get additionalHeaderFields {
-    objc.checkOsVersion('ASWebAuthenticationSession.additionalHeaderFields',
-        iOS: (false, (17, 4, 0)), macOS: (false, (14, 4, 0)));
+    objc.checkOsVersionInternal(
+        'ASWebAuthenticationSession.additionalHeaderFields',
+        iOS: (false, (17, 4, 0)),
+        macOS: (false, (14, 4, 0)));
     final _ret =
         _objc_msgSend_151sglz(this.ref.pointer, _sel_additionalHeaderFields);
     return _ret.address == 0
@@ -4810,8 +2635,10 @@ class ASWebAuthenticationSession extends objc.NSObject {
   /// Any additional header fields to be set when loading the initial URL.
   /// All header field names must start with the "X-" prefix.
   set additionalHeaderFields(objc.NSDictionary? value) {
-    objc.checkOsVersion('ASWebAuthenticationSession.setAdditionalHeaderFields:',
-        iOS: (false, (17, 4, 0)), macOS: (false, (14, 4, 0)));
+    objc.checkOsVersionInternal(
+        'ASWebAuthenticationSession.setAdditionalHeaderFields:',
+        iOS: (false, (17, 4, 0)),
+        macOS: (false, (14, 4, 0)));
     _objc_msgSend_xtuoz7(this.ref.pointer, _sel_setAdditionalHeaderFields_,
         value?.ref.pointer ?? ffi.nullptr);
   }
@@ -4819,7 +2646,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
   /// ! @abstract Returns whether the session can be successfully started. This property returns the same value as calling -start,
   /// but without the side effect of actually starting the session.
   bool get canStart {
-    objc.checkOsVersion('ASWebAuthenticationSession.canStart',
+    objc.checkOsVersionInternal('ASWebAuthenticationSession.canStart',
         iOS: (false, (13, 4, 0)), macOS: (false, (10, 15, 4)));
     return _objc_msgSend_91o635(this.ref.pointer, _sel_canStart);
   }
@@ -4829,7 +2656,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
   /// canceled session will fail.
   /// @result Returns YES if the session starts successfully.
   bool start() {
-    objc.checkOsVersion('ASWebAuthenticationSession.start',
+    objc.checkOsVersionInternal('ASWebAuthenticationSession.start',
         iOS: (false, (12, 0, 0)), macOS: (false, (10, 15, 0)));
     return _objc_msgSend_91o635(this.ref.pointer, _sel_start);
   }
@@ -4842,7 +2669,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
 
   /// init
   ASWebAuthenticationSession init() {
-    objc.checkOsVersion('ASWebAuthenticationSession.init',
+    objc.checkOsVersionInternal('ASWebAuthenticationSession.init',
         iOS: (false, (2, 0, 0)), macOS: (false, (10, 0, 0)));
     final _ret =
         _objc_msgSend_151sglz(this.ref.retainAndReturnPointer(), _sel_init);
@@ -4851,7 +2678,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
   }
 
   /// new
-  static ASWebAuthenticationSession new1() {
+  static ASWebAuthenticationSession new$() {
     final _ret =
         _objc_msgSend_151sglz(_class_ASWebAuthenticationSession, _sel_new);
     return ASWebAuthenticationSession.castFromPointer(_ret,
@@ -4876,7 +2703,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
   }
 
   /// self
-  ASWebAuthenticationSession self1() {
+  ASWebAuthenticationSession self$1() {
     final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_self);
     return ASWebAuthenticationSession.castFromPointer(_ret,
         retain: true, release: true);
@@ -4895,4 +2722,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
     return ASWebAuthenticationSession.castFromPointer(_ret,
         retain: true, release: true);
   }
+
+  /// Returns a new instance of ASWebAuthenticationSession constructed with the default `new` method.
+  factory ASWebAuthenticationSession() => new$();
 }

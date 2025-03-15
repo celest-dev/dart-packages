@@ -1,5 +1,6 @@
 #include <stdint.h>
 #import <Foundation/Foundation.h>
+#import <objc/message.h>
 #import <UIKit/UIKit.h>
 #import <UIKit/UIApplication.h>
 #import <UIKit/UIDevice.h>
@@ -12,68 +13,95 @@
 #error "This file must be compiled with ARC enabled"
 #endif
 
+typedef struct {
+  int64_t version;
+  void* (*newWaiter)(void);
+  void (*awaitWaiter)(void*);
+  void* (*currentIsolate)(void);
+  void (*enterIsolate)(void*);
+  void (*exitIsolate)(void);
+  int64_t (*getMainPortId)(void);
+  bool (*getCurrentThreadOwnsIsolate)(int64_t);
+} DOBJC_Context;
+
 id objc_retainBlock(id);
+
+#define BLOCKING_BLOCK_IMPL(ctx, BLOCK_SIG, INVOKE_DIRECT, INVOKE_LISTENER)    \
+  assert(ctx->version >= 1);                                                   \
+  void* targetIsolate = ctx->currentIsolate();                                 \
+  int64_t targetPort = ctx->getMainPortId == NULL ? 0 : ctx->getMainPortId();  \
+  return BLOCK_SIG {                                                           \
+    void* currentIsolate = ctx->currentIsolate();                              \
+    bool mayEnterIsolate =                                                     \
+        currentIsolate == NULL &&                                              \
+        ctx->getCurrentThreadOwnsIsolate != NULL &&                            \
+        ctx->getCurrentThreadOwnsIsolate(targetPort);                          \
+    if (currentIsolate == targetIsolate || mayEnterIsolate) {                  \
+      if (mayEnterIsolate) {                                                   \
+        ctx->enterIsolate(targetIsolate);                                      \
+      }                                                                        \
+      INVOKE_DIRECT;                                                           \
+      if (mayEnterIsolate) {                                                   \
+        ctx->exitIsolate();                                                    \
+      }                                                                        \
+    } else {                                                                   \
+      void* waiter = ctx->newWaiter();                                         \
+      INVOKE_LISTENER;                                                         \
+      ctx->awaitWaiter(waiter);                                                \
+    }                                                                          \
+  };
+
 
 Protocol* _AuthenticationServicesIos_UIResponderStandardEditActions(void) { return @protocol(UIResponderStandardEditActions); }
 
-typedef void  (^_ListenerTrampoline)(id arg0);
+typedef void  (^ListenerTrampoline)(id arg0);
 __attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline _AuthenticationServicesIos_wrapListenerBlock_xtuoz7(_ListenerTrampoline block) NS_RETURNS_RETAINED {
+ListenerTrampoline _AuthenticationServicesIos_wrapListenerBlock_xtuoz7(ListenerTrampoline block) NS_RETURNS_RETAINED {
   return ^void(id arg0) {
     objc_retainBlock(block);
     block((__bridge id)(__bridge_retained void*)(arg0));
   };
 }
 
-typedef void  (^_BlockingTrampoline)(void * waiter, id arg0);
+typedef void  (^BlockingTrampoline)(void * waiter, id arg0);
 __attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline _AuthenticationServicesIos_wrapBlockingBlock_xtuoz7(
-    _BlockingTrampoline block, _BlockingTrampoline listenerBlock,
-    void* (*newWaiter)(), void (*awaitWaiter)(void*)) NS_RETURNS_RETAINED {
-  NSThread *targetThread = [NSThread currentThread];
-  return ^void(id arg0) {
-    if ([NSThread currentThread] == targetThread) {
-      objc_retainBlock(block);
-      block(nil, (__bridge id)(__bridge_retained void*)(arg0));
-    } else {
-      void* waiter = newWaiter();
-      objc_retainBlock(listenerBlock);
-      listenerBlock(waiter, (__bridge id)(__bridge_retained void*)(arg0));
-      awaitWaiter(waiter);
-    }
-  };
+ListenerTrampoline _AuthenticationServicesIos_wrapBlockingBlock_xtuoz7(
+    BlockingTrampoline block, BlockingTrampoline listenerBlock,
+    DOBJC_Context* ctx) NS_RETURNS_RETAINED {
+  BLOCKING_BLOCK_IMPL(ctx, ^void(id arg0), {
+    objc_retainBlock(block);
+    block(nil, (__bridge id)(__bridge_retained void*)(arg0));
+  }, {
+    objc_retainBlock(listenerBlock);
+    listenerBlock(waiter, (__bridge id)(__bridge_retained void*)(arg0));
+  });
 }
 
 Protocol* _AuthenticationServicesIos_UIStateRestoring(void) { return @protocol(UIStateRestoring); }
 
 Protocol* _AuthenticationServicesIos_UISceneDelegate(void) { return @protocol(UISceneDelegate); }
 
-typedef void  (^_ListenerTrampoline1)(BOOL arg0);
+typedef void  (^ListenerTrampoline_1)(BOOL arg0);
 __attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline1 _AuthenticationServicesIos_wrapListenerBlock_1s56lr9(_ListenerTrampoline1 block) NS_RETURNS_RETAINED {
+ListenerTrampoline_1 _AuthenticationServicesIos_wrapListenerBlock_1s56lr9(ListenerTrampoline_1 block) NS_RETURNS_RETAINED {
   return ^void(BOOL arg0) {
     objc_retainBlock(block);
     block(arg0);
   };
 }
 
-typedef void  (^_BlockingTrampoline1)(void * waiter, BOOL arg0);
+typedef void  (^BlockingTrampoline_1)(void * waiter, BOOL arg0);
 __attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline1 _AuthenticationServicesIos_wrapBlockingBlock_1s56lr9(
-    _BlockingTrampoline1 block, _BlockingTrampoline1 listenerBlock,
-    void* (*newWaiter)(), void (*awaitWaiter)(void*)) NS_RETURNS_RETAINED {
-  NSThread *targetThread = [NSThread currentThread];
-  return ^void(BOOL arg0) {
-    if ([NSThread currentThread] == targetThread) {
-      objc_retainBlock(block);
-      block(nil, arg0);
-    } else {
-      void* waiter = newWaiter();
-      objc_retainBlock(listenerBlock);
-      listenerBlock(waiter, arg0);
-      awaitWaiter(waiter);
-    }
-  };
+ListenerTrampoline_1 _AuthenticationServicesIos_wrapBlockingBlock_1s56lr9(
+    BlockingTrampoline_1 block, BlockingTrampoline_1 listenerBlock,
+    DOBJC_Context* ctx) NS_RETURNS_RETAINED {
+  BLOCKING_BLOCK_IMPL(ctx, ^void(BOOL arg0), {
+    objc_retainBlock(block);
+    block(nil, arg0);
+  }, {
+    objc_retainBlock(listenerBlock);
+    listenerBlock(waiter, arg0);
+  });
 }
 
 Protocol* _AuthenticationServicesIos_UITraitEnvironment(void) { return @protocol(UITraitEnvironment); }
@@ -90,122 +118,46 @@ Protocol* _AuthenticationServicesIos_UICoordinateSpace(void) { return @protocol(
 
 Protocol* _AuthenticationServicesIos_UIFocusEnvironment(void) { return @protocol(UIFocusEnvironment); }
 
-typedef void  (^_ListenerTrampoline2)(void * arg0, id arg1);
-__attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline2 _AuthenticationServicesIos_wrapListenerBlock_18v1jvf(_ListenerTrampoline2 block) NS_RETURNS_RETAINED {
-  return ^void(void * arg0, id arg1) {
-    objc_retainBlock(block);
-    block(arg0, (__bridge id)(__bridge_retained void*)(arg1));
-  };
-}
-
-typedef void  (^_BlockingTrampoline2)(void * waiter, void * arg0, id arg1);
-__attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline2 _AuthenticationServicesIos_wrapBlockingBlock_18v1jvf(
-    _BlockingTrampoline2 block, _BlockingTrampoline2 listenerBlock,
-    void* (*newWaiter)(), void (*awaitWaiter)(void*)) NS_RETURNS_RETAINED {
-  NSThread *targetThread = [NSThread currentThread];
-  return ^void(void * arg0, id arg1) {
-    if ([NSThread currentThread] == targetThread) {
-      objc_retainBlock(block);
-      block(nil, arg0, (__bridge id)(__bridge_retained void*)(arg1));
-    } else {
-      void* waiter = newWaiter();
-      objc_retainBlock(listenerBlock);
-      listenerBlock(waiter, arg0, (__bridge id)(__bridge_retained void*)(arg1));
-      awaitWaiter(waiter);
-    }
-  };
-}
+Protocol* _AuthenticationServicesIos_UIFocusItem(void) { return @protocol(UIFocusItem); }
 
 Protocol* _AuthenticationServicesIos_UIFocusItemContainer(void) { return @protocol(UIFocusItemContainer); }
 
-typedef void  (^_ListenerTrampoline3)(void * arg0);
-__attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline3 _AuthenticationServicesIos_wrapListenerBlock_ovsamd(_ListenerTrampoline3 block) NS_RETURNS_RETAINED {
-  return ^void(void * arg0) {
-    objc_retainBlock(block);
-    block(arg0);
-  };
-}
-
-typedef void  (^_BlockingTrampoline3)(void * waiter, void * arg0);
-__attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline3 _AuthenticationServicesIos_wrapBlockingBlock_ovsamd(
-    _BlockingTrampoline3 block, _BlockingTrampoline3 listenerBlock,
-    void* (*newWaiter)(), void (*awaitWaiter)(void*)) NS_RETURNS_RETAINED {
-  NSThread *targetThread = [NSThread currentThread];
-  return ^void(void * arg0) {
-    if ([NSThread currentThread] == targetThread) {
-      objc_retainBlock(block);
-      block(nil, arg0);
-    } else {
-      void* waiter = newWaiter();
-      objc_retainBlock(listenerBlock);
-      listenerBlock(waiter, arg0);
-      awaitWaiter(waiter);
-    }
-  };
-}
-
-typedef void  (^_ListenerTrampoline4)(void * arg0, id arg1, id arg2);
-__attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline4 _AuthenticationServicesIos_wrapListenerBlock_fjrv01(_ListenerTrampoline4 block) NS_RETURNS_RETAINED {
-  return ^void(void * arg0, id arg1, id arg2) {
-    objc_retainBlock(block);
-    block(arg0, (__bridge id)(__bridge_retained void*)(arg1), (__bridge id)(__bridge_retained void*)(arg2));
-  };
-}
-
-typedef void  (^_BlockingTrampoline4)(void * waiter, void * arg0, id arg1, id arg2);
-__attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline4 _AuthenticationServicesIos_wrapBlockingBlock_fjrv01(
-    _BlockingTrampoline4 block, _BlockingTrampoline4 listenerBlock,
-    void* (*newWaiter)(), void (*awaitWaiter)(void*)) NS_RETURNS_RETAINED {
-  NSThread *targetThread = [NSThread currentThread];
-  return ^void(void * arg0, id arg1, id arg2) {
-    if ([NSThread currentThread] == targetThread) {
-      objc_retainBlock(block);
-      block(nil, arg0, (__bridge id)(__bridge_retained void*)(arg1), (__bridge id)(__bridge_retained void*)(arg2));
-    } else {
-      void* waiter = newWaiter();
-      objc_retainBlock(listenerBlock);
-      listenerBlock(waiter, arg0, (__bridge id)(__bridge_retained void*)(arg1), (__bridge id)(__bridge_retained void*)(arg2));
-      awaitWaiter(waiter);
-    }
-  };
-}
-
-Protocol* _AuthenticationServicesIos_UIFocusItem(void) { return @protocol(UIFocusItem); }
-
 Protocol* _AuthenticationServicesIos_CALayerDelegate(void) { return @protocol(CALayerDelegate); }
 
-typedef void  (^_ListenerTrampoline5)(id arg0, id arg1);
+typedef void  (^ListenerTrampoline_2)(id arg0, id arg1);
 __attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline5 _AuthenticationServicesIos_wrapListenerBlock_pfv6jd(_ListenerTrampoline5 block) NS_RETURNS_RETAINED {
+ListenerTrampoline_2 _AuthenticationServicesIos_wrapListenerBlock_pfv6jd(ListenerTrampoline_2 block) NS_RETURNS_RETAINED {
   return ^void(id arg0, id arg1) {
     objc_retainBlock(block);
     block((__bridge id)(__bridge_retained void*)(arg0), (__bridge id)(__bridge_retained void*)(arg1));
   };
 }
 
-typedef void  (^_BlockingTrampoline5)(void * waiter, id arg0, id arg1);
+typedef void  (^BlockingTrampoline_2)(void * waiter, id arg0, id arg1);
 __attribute__((visibility("default"))) __attribute__((used))
-_ListenerTrampoline5 _AuthenticationServicesIos_wrapBlockingBlock_pfv6jd(
-    _BlockingTrampoline5 block, _BlockingTrampoline5 listenerBlock,
-    void* (*newWaiter)(), void (*awaitWaiter)(void*)) NS_RETURNS_RETAINED {
-  NSThread *targetThread = [NSThread currentThread];
-  return ^void(id arg0, id arg1) {
-    if ([NSThread currentThread] == targetThread) {
-      objc_retainBlock(block);
-      block(nil, (__bridge id)(__bridge_retained void*)(arg0), (__bridge id)(__bridge_retained void*)(arg1));
-    } else {
-      void* waiter = newWaiter();
-      objc_retainBlock(listenerBlock);
-      listenerBlock(waiter, (__bridge id)(__bridge_retained void*)(arg0), (__bridge id)(__bridge_retained void*)(arg1));
-      awaitWaiter(waiter);
-    }
-  };
+ListenerTrampoline_2 _AuthenticationServicesIos_wrapBlockingBlock_pfv6jd(
+    BlockingTrampoline_2 block, BlockingTrampoline_2 listenerBlock,
+    DOBJC_Context* ctx) NS_RETURNS_RETAINED {
+  BLOCKING_BLOCK_IMPL(ctx, ^void(id arg0, id arg1), {
+    objc_retainBlock(block);
+    block(nil, (__bridge id)(__bridge_retained void*)(arg0), (__bridge id)(__bridge_retained void*)(arg1));
+  }, {
+    objc_retainBlock(listenerBlock);
+    listenerBlock(waiter, (__bridge id)(__bridge_retained void*)(arg0), (__bridge id)(__bridge_retained void*)(arg1));
+  });
+}
+
+typedef id  (^ProtocolTrampoline)(void * sel);
+__attribute__((visibility("default"))) __attribute__((used))
+id  _AuthenticationServicesIos_protocolTrampoline_1mbt9g9(id target, void * sel) {
+  return ((ProtocolTrampoline)((id (*)(id, SEL, SEL))objc_msgSend)(target, @selector(getDOBJCDartProtocolMethodForSelector:), sel))(sel);
+}
+
+typedef id  (^ProtocolTrampoline_1)(void * sel, id arg1);
+__attribute__((visibility("default"))) __attribute__((used))
+id  _AuthenticationServicesIos_protocolTrampoline_xr62hr(id target, void * sel, id arg1) {
+  return ((ProtocolTrampoline_1)((id (*)(id, SEL, SEL))objc_msgSend)(target, @selector(getDOBJCDartProtocolMethodForSelector:), sel))(sel, arg1);
 }
 
 Protocol* _AuthenticationServicesIos_ASWebAuthenticationPresentationContextProviding(void) { return @protocol(ASWebAuthenticationPresentationContextProviding); }
+#undef BLOCKING_BLOCK_IMPL

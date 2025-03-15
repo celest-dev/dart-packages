@@ -75,6 +75,9 @@ objc-protocols:
     # TODO: Needed to prevent compile errors currently. Try to remove.
     - UIFocusItem
     - AS.*
+  member-filter:
+    UIFocusItem:
+      include: []
 enums:
   include:
     - AS.*

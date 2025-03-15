@@ -39,7 +39,9 @@ final class _NativeAuthCallbackSessionWeb implements CallbackSession {
 
   @override
   Future<Never> get redirectUri async {
-    window.open(uri.toString(), '_self');
-    throw const NativeAuthException('Failed to redirect the user');
+    window.location.assign(uri.toString());
+    // Stall while the redirect occurs
+    await Completer().future;
+    throw StateError('unreachable');
   }
 }
