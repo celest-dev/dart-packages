@@ -32,7 +32,7 @@ jobs:
         working-directory: packages/native/storage
         run: dart format --set-exit-if-changed .
   test_darwin:
-    runs-on: macos-latest-xlarge
+    runs-on: macos-latest-xlarge # Tests timeout on smaller `macos-latest` runner
     timeout-minutes: 20
     steps:
       - name: Git Checkout
