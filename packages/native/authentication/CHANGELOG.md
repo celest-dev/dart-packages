@@ -1,3 +1,8 @@
+# 0.1.2
+
+- chore: Remove unused dependencies
+- chore: Add explicit `platforms` key to pubspec
+
 # 0.1.1+1
 
 - fix: Add default redirect scheme on Android
