@@ -1,6 +1,7 @@
 ## NEXT
 
-- fix: Don't namespace on Web
+- fix!: Don't set a default namespace on Web
+- fix!: Align namespace/scope prefix with `shared_preferences` on Web
 
 ## 0.2.3
 

@@ -10,20 +10,26 @@ import 'package:web/web.dart' as web;
 final class NativeLocalStoragePlatform extends NativeStorageBase
     implements NativeLocalStorage {
   NativeLocalStoragePlatform({
-    // Ignored on Web - namespacing only matters when the storage is shared
-    // across multiple applications, but on the web, each application (website)
-    // has its own local storage (partitioned by hostname/origin).
     String? namespace,
     this.scope,
-  });
+  }) : namespace = namespace ?? '';
 
   @override
-  final String namespace = '';
+  final String namespace;
 
   @override
   final String? scope;
 
-  late final String _prefix = scope == null ? '' : '$scope/';
+  String _calculatePrefix() {
+    return switch ((namespace, scope)) {
+      ('', null) => '',
+      ('', final String scope) => '$scope/',
+      (final String namespace, null) => '$namespace.',
+      (final String namespace, final String scope) => '$namespace.$scope/',
+    };
+  }
+
+  late final String _prefix = _calculatePrefix();
   final web.Storage _storage = web.window.localStorage;
 
   @override

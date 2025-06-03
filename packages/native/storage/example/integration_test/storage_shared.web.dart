@@ -13,15 +13,15 @@ void platformTests() {
       expect(item, 'value');
     });
 
-    test('LocalStorage should not use a provided namespace', () {
-      final storage = NativeLocalStorage(namespace: 'testNamespace');
+    test('LocalStorage should set prefix to align with shared_preferences', () {
+      final storage = NativeLocalStorage(namespace: 'flutter', scope: 'test');
       addTearDown(storage.clear);
 
-      final item = web.window.localStorage.getItem('key');
+      final item = web.window.localStorage.getItem('flutter.test/key');
       expect(item, isNull);
 
       storage.write('key', 'value');
-      final item2 = web.window.localStorage.getItem('key');
+      final item2 = web.window.localStorage.getItem('flutter.test/key');
       expect(item2, 'value');
     });
   });
