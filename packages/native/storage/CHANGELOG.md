@@ -1,3 +1,7 @@
+## NEXT
+
+- fix: Don't namespace on Web
+
 ## 0.2.3
 
 - chore: Bump dependencies
