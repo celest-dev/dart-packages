@@ -45,7 +45,8 @@ sealed class NativeStorage(
     }
 
     fun delete(key: String): String? {
-        val current = read("$prefix$key")
+        println("Deleting: $prefix$key")
+        val current = sharedPreferences.getString("$prefix$key", null)
         with(editor) {
             remove("$prefix$key")
             apply()

@@ -119,7 +119,8 @@ void sharedTests(NativeStorageType type, NativeStorageFactory factory_) {
                     reason: 'Value was written');
                 expect(storage.allKeys, equals([key]));
 
-                storage.delete(key);
+                final deletedValue = storage.delete(key);
+                expect(deletedValue, 'delete', reason: 'Value was deleted');
                 expect(storage.read(key), isNull, reason: 'Value was deleted');
                 expect(storage.allKeys, isEmpty);
               });

@@ -43,7 +43,7 @@ final class LocalStoragePlatformDarwin extends NativeLocalStoragePlatform {
 
   @override
   String? delete(String key) {
-    final existing = read('$_prefix$key');
+    final existing = read(key);
     _userDefaults.removeObjectForKey_(darwin.nsString('$_prefix$key'));
     return existing;
   }
