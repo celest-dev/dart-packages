@@ -1,3 +1,7 @@
+# NEXT
+
+- fix: Stringify NSURL correctly using `toDartString`
+
 # 0.1.2
 
 - chore: Remove unused dependencies
