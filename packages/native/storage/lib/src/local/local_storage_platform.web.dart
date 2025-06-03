@@ -45,7 +45,7 @@ final class NativeLocalStoragePlatform extends NativeStorageBase
     if (value != null) {
       _storage.removeItem('$_prefix$key');
     }
-    return null;
+    return value;
   }
 
   @override
