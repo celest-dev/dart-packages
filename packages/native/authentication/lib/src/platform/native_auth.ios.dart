@@ -76,7 +76,12 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
         return;
       }
       if (error != null) {
-        completion.completeError(error);
+        completion.completeError(
+          NativeAuthException(
+            'Completed with error',
+            underlyingError: error.localizedDescription.toDartString(),
+          ),
+        );
         return;
       }
       if (uri == null) {

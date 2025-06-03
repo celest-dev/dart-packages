@@ -84,7 +84,7 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
         completion.completeError(
           NativeAuthException(
             'Completed with error',
-            underlyingError: 'NSError: ${error.localizedDescription}',
+            underlyingError: error.localizedDescription.toDartString(),
           ),
         );
         return;
