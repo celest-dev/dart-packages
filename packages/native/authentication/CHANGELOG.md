@@ -2,6 +2,7 @@
 
 - fix: Stringify NSURL correctly using `toDartString`
 - chore: Improve error descriptions on iOS/macOS
+- chore: Use new callback APIs on iOS/macOS when available
 
 # 0.1.2
 
