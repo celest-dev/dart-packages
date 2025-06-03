@@ -129,15 +129,19 @@ extension on CallbackType {
   /// https://developer.apple.com/documentation/authenticationservices/aswebauthenticationsession/callback
   static const String supportsNewCallbacksVersion = '14.4';
 
-  /// Throws if the current macOS version does not support the new callback
-  /// schemes.
-  void _ensureNewCallbacksSupport() {
-    final supportsLatestApis = macosVersion.compare_options_(
+  /// Whether the current macOS version supports the new callback schemes.
+  static bool get _supportsNewCallbacks {
+    return macosVersion.compare_options_(
           supportsNewCallbacksVersion.toNSString(),
           objc.NSStringCompareOptions.NSNumericSearch,
         ) !=
         objc.NSComparisonResult.NSOrderedAscending;
-    if (!supportsLatestApis) {
+  }
+
+  /// Throws if the current macOS version does not support the new callback
+  /// schemes.
+  void _ensureNewCallbacksSupport() {
+    if (!_supportsNewCallbacks) {
       throw ArgumentError.value(
         this,
         'callbackScheme',
@@ -162,6 +166,15 @@ extension on CallbackType {
           'Localhost redirect scheme is not supported on this platform',
         );
       case CallbackTypeCustom(:final scheme):
+        if (_supportsNewCallbacks) {
+          return session.initWithURL_callback_completionHandler_(
+            url,
+            ASWebAuthenticationSessionCallback.callbackWithCustomScheme_(
+              scheme.toNSString(),
+            ),
+            completionHandler,
+          );
+        }
         return session.initWithURL_callbackURLScheme_completionHandler_(
           url,
           scheme.toNSString(),
