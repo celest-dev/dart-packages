@@ -71,7 +71,7 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
     final completion = Completer<Uri>();
     final completionHandler =
         ObjCBlock_ffiVoid_NSURL_NSError.listener((url, error) {
-      final uri = switch (url?.absoluteString?.toString()) {
+      final uri = switch (url?.absoluteString?.toDartString()) {
         final url? => Uri.tryParse(url),
         _ => null,
       };
