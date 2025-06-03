@@ -12,7 +12,7 @@ import 'package:win32_registry/win32_registry.dart';
 final class SecureStorageWindows extends NativeSecureStoragePlatform
     with NativeStorageWindows {
   SecureStorageWindows({
-    super.namespace,
+    String? namespace,
     super.scope,
   })  : namespaceOverride = namespace,
         super.base();

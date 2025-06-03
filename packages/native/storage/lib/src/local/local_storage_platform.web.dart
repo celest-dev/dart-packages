@@ -7,11 +7,12 @@ import 'package:native_storage/src/util/rescope.dart';
 import 'package:web/web.dart' as web;
 
 /// The browser implementation of [NativeLocalStorage].
-// ignore: invalid_use_of_visible_for_testing_member
 final class NativeLocalStoragePlatform extends NativeStorageBase
     implements NativeLocalStorage {
-  NativeLocalStoragePlatform({super.namespace, this.scope})
-      : namespace = namespace ?? web.window.location.hostname;
+  NativeLocalStoragePlatform({
+    String? namespace,
+    this.scope,
+  }) : namespace = namespace ?? '';
 
   @override
   final String namespace;
@@ -19,8 +20,16 @@ final class NativeLocalStoragePlatform extends NativeStorageBase
   @override
   final String? scope;
 
-  late final String _prefix =
-      scope == null ? '$namespace/' : '$namespace/$scope/';
+  String _calculatePrefix() {
+    return switch ((namespace, scope)) {
+      ('', null) => '',
+      ('', final String scope) => '$scope/',
+      (final String namespace, null) => '$namespace.',
+      (final String namespace, final String scope) => '$namespace.$scope/',
+    };
+  }
+
+  late final String _prefix = _calculatePrefix();
   final web.Storage _storage = web.window.localStorage;
 
   @override

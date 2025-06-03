@@ -35,7 +35,6 @@ abstract base class NativeLocalStoragePlatform extends NativeStorageBase
 
   @protected
   NativeLocalStoragePlatform.base({
-    required super.namespace,
     this.scope,
   });
 

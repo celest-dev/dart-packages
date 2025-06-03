@@ -1,3 +1,8 @@
+## NEXT
+
+- fix!: Don't set a default namespace on Web
+- fix!: Align namespace/scope prefix with `shared_preferences` on Web
+
 ## 0.2.3
 
 - chore: Bump dependencies

@@ -4,10 +4,6 @@ import 'package:native_storage/native_storage.dart';
 /// Base implementation for [NativeStorage].
 @internal
 abstract class NativeStorageBase implements NativeStorage {
-  NativeStorageBase({
-    required String? namespace,
-  });
-
   @visibleForTesting
   List<String> get allKeys;
 

@@ -23,7 +23,7 @@ final class NativeMemoryStorage extends NativeStorageBase
   }
 
   NativeMemoryStorage._({
-    super.namespace,
+    String? namespace,
     this.scope,
     Map<String, String>? storage,
   })  : namespace = namespace ?? 'default',

@@ -19,6 +19,7 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   test: ^1.24.9
+  web: ^1.1.1
 
 flutter:
   uses-material-design: true

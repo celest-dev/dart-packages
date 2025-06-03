@@ -4,7 +4,7 @@ import 'package:native_storage/src/native/android/android.dart';
 
 final class LocalStoragePlatformAndroid extends NativeLocalStoragePlatform {
   LocalStoragePlatformAndroid({
-    super.namespace,
+    String? namespace,
     super.scope,
   })  : _namespace = namespace,
         super.base();
