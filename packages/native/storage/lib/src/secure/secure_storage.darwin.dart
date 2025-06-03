@@ -9,13 +9,12 @@ import 'package:native_storage/src/native/darwin/darwin_ffi_helpers.dart';
 import 'package:native_storage/src/native/darwin/security.ffi.dart';
 import 'package:native_storage/src/secure/secure_storage_exception.dart';
 import 'package:native_storage/src/secure/secure_storage_platform.vm.dart';
-import 'package:native_storage/src/util/functional.dart';
 import 'package:native_storage/src/util/globals.dart';
 import 'package:path/path.dart' as p;
 
 final class SecureStorageDarwin extends NativeSecureStoragePlatform {
   SecureStorageDarwin({
-    super.namespace,
+    String? namespace,
     super.scope,
   })  : _namespace = namespace,
         super.base();
@@ -25,11 +24,9 @@ final class SecureStorageDarwin extends NativeSecureStoragePlatform {
   String _scoped(String key) => '$_prefix$key';
 
   @override
-  late final String namespace = lazy(() {
-    return _namespace ??
-        darwin.bundleIdentifier ??
-        p.basenameWithoutExtension(Platform.resolvedExecutable);
-  });
+  late final String namespace = _namespace ??
+      darwin.bundleIdentifier ??
+      p.basenameWithoutExtension(Platform.resolvedExecutable);
 
   Map<CFStringRef, Pointer> _baseQuery(Arena arena) {
     return {

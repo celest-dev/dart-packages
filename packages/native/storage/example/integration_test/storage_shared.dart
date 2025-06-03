@@ -6,6 +6,9 @@ import 'package:native_storage/native_storage.dart';
 import 'package:native_storage/src/native_storage_base.dart';
 import 'package:test/test.dart';
 
+export 'storage_shared.vm.dart'
+    if (dart.library.js_interop) 'storage_shared.web.dart';
+
 enum NativeStorageType {
   memory,
   secure,

@@ -6,4 +6,5 @@ void main() {
   sharedTests(NativeStorageType.memory, NativeMemoryStorage.new);
   sharedTests(NativeStorageType.secure, NativeSecureStorage.new);
   sharedTests(NativeStorageType.local, NativeLocalStorage.new);
+  platformTests();
 }

@@ -33,7 +33,6 @@ abstract base class NativeSecureStoragePlatform extends NativeStorageBase
 
   @protected
   NativeSecureStoragePlatform.base({
-    required super.namespace,
     this.scope,
   });
 
