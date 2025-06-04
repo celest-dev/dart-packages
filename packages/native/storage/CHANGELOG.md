@@ -1,4 +1,4 @@
-## NEXT
+## 0.3.0
 
 - fix!: Don't set a default namespace on Web
 - fix!: Align namespace/scope prefix with `shared_preferences` on Web
