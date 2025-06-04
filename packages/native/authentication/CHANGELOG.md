@@ -1,4 +1,4 @@
-# NEXT
+# 0.1.3
 
 - fix: Stringify NSURL correctly using `toDartString`
 - chore: Improve error descriptions on iOS/macOS
