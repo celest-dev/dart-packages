@@ -25,7 +25,7 @@ abstract class CallbackSession {
 final class NativeAuthCallbackSessionImpl extends CallbackSession {
   NativeAuthCallbackSessionImpl(
     this.id,
-    this._completer,
+    this.completer,
     this._cancel,
   );
 
@@ -36,11 +36,11 @@ final class NativeAuthCallbackSessionImpl extends CallbackSession {
 
   @override
   final int id;
-  final Completer<Uri> _completer;
+  final Completer<Uri> completer;
   final void Function() _cancel;
 
   @override
-  Future<Uri> get redirectUri => _completer.future;
+  Future<Uri> get redirectUri => completer.future;
 
   @override
   void cancel() => _cancel();

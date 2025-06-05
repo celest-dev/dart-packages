@@ -56,6 +56,7 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
   CallbackSession startCallback({
     required Uri uri,
     required CallbackType type,
+    bool preferEphemeralSession = false,
   }) {
     if (type is CallbackTypeLocalhost) {
       return super.startCallback(
@@ -102,8 +103,7 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
       completionHandler: completionHandler,
     );
     _currentCompletionHandler = completionHandler;
-    session.prefersEphemeralWebBrowserSession =
-        false; // TODO(dnys1): Make configurable
+    session.prefersEphemeralWebBrowserSession = preferEphemeralSession;
     session.presentationContextProvider = _presentationContextProvider;
     if (!session.start()) {
       logger?.severe('Failed to start ASWebAuthenticationSession');

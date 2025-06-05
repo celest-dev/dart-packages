@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
         android:label="native_auth_flutter_example"
         android:name="${applicationName}"
@@ -27,13 +26,10 @@
             </intent-filter>
         </activity>
 
-        <!-- Overrides the default redirect scheme as described here: 
-             https://github.com/openid/AppAuth-Android/blob/4df1ebac07436d7e8d68cbb98207cc40fe55a39d/README.md?plain=1#L282 -->
+        <!-- Fallback for clients which do not support Auth Tabs -->
         <activity
             android:name="dev.celest.native_authentication.CallbackReceiverActivity"
-            android:exported="true"
-            android:theme="@android:style/Theme.NoDisplay"
-            tools:node="replace">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

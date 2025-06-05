@@ -1,3 +1,8 @@
+# 0.1.4
+
+- feat: Migrate to [AuthTab](https://developer.chrome.com/docs/android/custom-tabs/guide-auth-tab) on Android
+- fix: Allow HTTPS callbacks on Android
+
 # 0.1.3
 
 - fix: Stringify NSURL correctly using `toDartString`

@@ -57,6 +57,7 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
   CallbackSession startCallback({
     required Uri uri,
     required CallbackType type,
+    bool preferEphemeralSession = false,
   }) {
     final url = objc.NSURL.URLWithString_(uri.toString().toNSString());
     if (url == null) {
@@ -97,7 +98,7 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
       completionHandler: completionHandler,
     );
     _currentCompletionHandler = completionHandler;
-    session.prefersEphemeralWebBrowserSession = true;
+    session.prefersEphemeralWebBrowserSession = preferEphemeralSession;
     session.presentationContextProvider = _presentationContextProvider;
     if (!session.start()) {
       logger?.severe('Failed to start ASWebAuthenticationSession');

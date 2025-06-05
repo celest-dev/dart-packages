@@ -27,11 +27,17 @@ abstract interface class NativeAuthentication {
   /// Starts an authentication flow by directing the user to the given [uri]
   /// and begins listening for callbacks to the app of the given [type].
   ///
+  /// On iOS, macOS and Android, [preferEphemeralSession] can be used to
+  /// indicate that the session should be ephemeral, meaning browser state
+  /// (like cookies) will not be shared with the system browser. Defaults to
+  /// `false`.
+  ///
   /// Returns a session object that can be used to await or cancel the ongoing
   /// flow.
   @useResult
   CallbackSession startCallback({
     required Uri uri,
     required CallbackType type,
+    bool preferEphemeralSession,
   });
 }

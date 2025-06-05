@@ -7,12 +7,13 @@
         <activity
             android:name=".CallbackManagerActivity"
             android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboard|keyboardHidden"
+            android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar"
             android:launchMode="singleTask" />
         <activity
             android:name=".CallbackReceiverActivity"
             android:exported="true"
-            android:theme="@android:style/Theme.NoDisplay">
+            android:theme="@style/Theme.AppCompat.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

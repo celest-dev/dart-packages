@@ -22,6 +22,7 @@ final class NativeAuthenticationAndroid extends NativeAuthenticationPlatform {
     android.$Callback(
       T: android.CallbackResult.type,
       onMessage: _redirectStreamController.add,
+      onMessage$async: true,
     ),
   );
   static final _nativeAuth = android.NativeAuthentication(
@@ -29,17 +30,17 @@ final class NativeAuthenticationAndroid extends NativeAuthenticationPlatform {
     _redirectCallback,
   );
 
-  final Logger _logger;
+  static final _pendingSessions = <int, NativeAuthCallbackSessionImpl>{};
 
-  CallbackSession? _currentSession;
-  Completer<Uri>? _currentCompleter;
+  final Logger _logger;
 
   void _listenForRedirects() {
     _redirectStreamController.stream.listen(
       (android.CallbackResult state) {
-        _logger.finest('Redirect result: $state');
-        _complete((completer) {
-          final sessionId = state.getId();
+        final sessionId = state.getId();
+        _logger.finest('Redirect result (id=$sessionId): $state');
+
+        _complete(sessionId, (completer) {
           final resultCode = state.getResultCode();
           switch (resultCode) {
             case android.NativeAuthentication.RESULT_OK:
@@ -52,29 +53,23 @@ final class NativeAuthenticationAndroid extends NativeAuthenticationPlatform {
                 ),
               );
             case android.NativeAuthentication.RESULT_FAILURE:
+              final message = state
+                      .getError()
+                      ?.getMessage()
+                      ?.toDartString(releaseOriginal: true) ??
+                  'An unknown error occurred';
+              final cause = state.getError()?.getCause();
               completer.completeError(
                 NativeAuthException(
-                  'Redirect failed (id=$sessionId)',
-                  underlyingError: state.getError(),
+                  'Redirect failed (id=$sessionId): $message',
+                  underlyingError: cause,
                 ),
               );
             default:
               completer.completeError(
-                StateError('Unknown result code ($resultCode): $state'),
+                StateError('Unknown result code (id=$sessionId): $resultCode'),
               );
           }
-        });
-      },
-      onError: (error, stackTrace) {
-        _logger.severe('Error in redirect stream', error);
-        _complete((completer) {
-          completer.completeError(
-            NativeAuthException(
-              'Unexpected error',
-              underlyingError: error,
-            ),
-            stackTrace,
-          );
         });
       },
       cancelOnError: false,
@@ -82,50 +77,49 @@ final class NativeAuthenticationAndroid extends NativeAuthenticationPlatform {
   }
 
   /// Completes the current redirect operation.
-  void _complete(void Function(Completer<Uri> completer) action) {
-    try {
-      final currentCompleter = _currentCompleter;
-      if (currentCompleter == null) {
-        return _logger.warning(
-          'Received redirect without a pending operation',
-        );
-      } else if (currentCompleter.isCompleted) {
-        return _logger.warning(
-          'Received redirect after the operation was completed',
-        );
-      }
-      action(currentCompleter);
-    } finally {
-      _currentCompleter = null;
-      _currentSession = null;
+  void _complete(
+    int sessionId,
+    void Function(Completer<Uri> completer) action,
+  ) {
+    final session = _pendingSessions.remove(sessionId);
+    if (session == null) {
+      return _logger.warning(
+        'Received redirect without a pending operation',
+      );
+    } else if (session.completer.isCompleted) {
+      return _logger.warning(
+        'Received redirect after the operation was completed',
+      );
     }
+    action(session.completer);
   }
 
   @override
   CallbackSession startCallback({
     required Uri uri,
     required CallbackType type,
+    bool preferEphemeralSession = false,
   }) {
-    if (type is! CallbackTypeCustom) {
-      throw UnsupportedError(
-        'Only custom redirect schemes are supported on this platform',
-      );
-    }
-    if (_currentSession case final currentSession?) {
-      throw NativeAuthException(
-        'Another redirect operation is in progress (id=${currentSession.id})',
-      );
-    }
+    final androidCallbackType = switch (type) {
+      CallbackTypeHttps(:final host, :final path) =>
+        android.CallbackType$Https(host.toJString(), path.toJString()),
+      CallbackTypeCustom(:final scheme) =>
+        android.CallbackType$CustomScheme(scheme.toJString()),
+      CallbackTypeLocalhost() => throw UnsupportedError(
+          'Only HTTPS and custom schemes are supported on this platform',
+        ),
+    };
     final sessionId = NativeAuthCallbackSessionImpl.nextId();
     final cancellationToken = _nativeAuth.startCallback(
       sessionId,
       android.Uri.parse(uri.toString().toJString())!,
+      androidCallbackType,
+      preferEphemeralSession,
     );
-    _currentCompleter = Completer<Uri>();
-    _logger.finer('Redirect flow started');
-    return _currentSession = NativeAuthCallbackSessionImpl(
+    _logger.finer('Redirect flow started (id=$sessionId)');
+    return _pendingSessions[sessionId] = NativeAuthCallbackSessionImpl(
       sessionId,
-      _currentCompleter!,
+      Completer(),
       cancellationToken.cancel,
     );
   }
