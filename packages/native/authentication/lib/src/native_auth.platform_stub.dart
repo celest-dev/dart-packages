@@ -8,6 +8,7 @@ final class NativeAuthenticationPlatform implements NativeAuthentication {
   CallbackSession startCallback({
     required Uri uri,
     required CallbackType type,
+    bool preferEphemeralSession = false,
   }) {
     throw UnsupportedError('Native auth is not supported on this platform');
   }

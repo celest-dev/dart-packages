@@ -17,7 +17,8 @@ classes:
   - dev.celest.native_authentication.Callback
   - dev.celest.native_authentication.CallbackSession
   - dev.celest.native_authentication.CallbackResult
-  
+  - dev.celest.native_authentication.CallbackType
+
   - java.lang.Runnable
   - java.lang.Exception
   - java.lang.Throwable

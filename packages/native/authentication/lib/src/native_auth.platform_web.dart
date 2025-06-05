@@ -21,6 +21,7 @@ final class NativeAuthenticationPlatform implements NativeAuthentication {
   CallbackSession startCallback({
     required Uri uri,
     required CallbackType type,
+    bool preferEphemeralSession = false,
   }) {
     return _NativeAuthCallbackSessionWeb(uri);
   }

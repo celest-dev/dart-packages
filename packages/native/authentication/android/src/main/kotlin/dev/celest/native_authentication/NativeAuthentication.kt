@@ -1,19 +1,10 @@
 package dev.celest.native_authentication
 
 import android.app.Activity
-import android.content.ComponentName
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
-import android.os.Bundle
 import android.os.CancellationSignal
 import androidx.annotation.UiThread
-import androidx.browser.customtabs.CustomTabsCallback
-import androidx.browser.customtabs.CustomTabsClient
-import androidx.browser.customtabs.CustomTabsServiceConnection
-import androidx.browser.customtabs.CustomTabsSession
-import androidx.browser.trusted.TrustedWebActivityDisplayMode
-import androidx.browser.trusted.TrustedWebActivityIntentBuilder
 import androidx.lifecycle.MutableLiveData
 import io.flutter.Log
 import io.flutter.embedding.android.FlutterActivity
@@ -44,10 +35,15 @@ class NativeAuthentication(
         /**
          * Keys used to communicate data between the different redirect activities via Intents.
          */
-        internal const val KEY_AUTH_INTENT = "NativeAuth.AUTHORIZATION_INTENT"
         internal const val KEY_AUTHORIZATION_STARTED = "NativeAuth.AUTHORIZATION_STARTED"
         internal const val KEY_AUTH_REQUEST_ID = "NativeAuth.AUTH_REQUEST_ID"
         internal const val KEY_AUTH_REQUEST_URI = "NativeAuth.AUTH_REQUEST_URI"
+        internal const val KEY_AUTH_CALLBACK_TYPE = "NativeAuth.AUTH_CALLBACK_TYPE"
+        internal const val KEY_AUTH_CALLBACK_SCHEME = "NativeAuth.AUTH_CALLBACK_SCHEME"
+        internal const val KEY_AUTH_CALLBACK_HOST = "NativeAuth.AUTH_CALLBACK_HOST"
+        internal const val KEY_AUTH_CALLBACK_PATH = "NativeAuth.AUTH_CALLBACK_PATH"
+        internal const val KEY_AUTH_PREFER_EPHEMERAL_SESSION =
+            "NativeAuth.AUTH_PREFER_EPHEMERAL_SESSION"
 
         /**
          * Possible result values of a redirect.
@@ -60,7 +56,6 @@ class NativeAuthentication(
     init {
         mainActivity.runOnUiThread {
             listenForRedirects()
-            bindCustomTabsService()
         }
     }
 
@@ -93,51 +88,6 @@ class NativeAuthentication(
     }
 
     /**
-     * Configure the Custom Tabs service on initialization to prevent delays when launching
-     * redirects via the browser.
-     */
-
-    private var customTabsClient: CustomTabsClient? = null
-    private var customTabsSession: CustomTabsSession? = null
-    private lateinit var customTabsConnection: CustomTabsServiceConnection
-
-    private fun bindCustomTabsService(): Boolean {
-        if (customTabsClient != null) {
-            return true
-        }
-        val packageName = CustomTabsClient.getPackageName(mainActivity, null)
-        if (packageName == null) {
-            Log.w(TAG, "Custom tabs service is unavailable")
-            return false
-        }
-        customTabsConnection = object : CustomTabsServiceConnection() {
-            override fun onCustomTabsServiceConnected(name: ComponentName, client: CustomTabsClient) {
-                Log.d(TAG, "onCustomTabsServiceConnected")
-                customTabsClient = client
-                client.warmup(0)
-                customTabsSession = client.newSession(CustomTabsCallback())
-            }
-
-            override fun onServiceDisconnected(name: ComponentName?) {
-                Log.d(TAG, "onServiceDisconnected")
-                customTabsClient = null
-                customTabsSession = null
-            }
-        }
-        return CustomTabsClient.bindCustomTabsService(
-            mainActivity, packageName,
-            customTabsConnection
-        )
-    }
-
-    private fun unbindCustomTabsService() {
-        if (customTabsClient == null) {
-            return
-        }
-        mainActivity.unbindService(customTabsConnection)
-    }
-
-    /**
      * Starts a callback session for the given URI.
      *
      * This function returns immediately with a unique session token. The result of the flow is
@@ -145,12 +95,16 @@ class NativeAuthentication(
      *
      * Every session is guaranteed to receive exactly one callback.
      */
-    fun startCallback(sessionId: Int, uri: Uri): CancellationSignal {
+    fun startCallback(
+        sessionId: Int,
+        uri: Uri,
+        callbackType: CallbackType,
+        preferEphemeralSession: Boolean
+    ): CancellationSignal {
         val cancellationSignal = CancellationSignal()
         val sessionData = CallbackSession(sessionId, uri, cancellationSignal)
 
-        val authIntent = createAuthIntent(sessionData)
-        val startIntent = createStartIntent(sessionData, authIntent)
+        val startIntent = createStartIntent(sessionData, callbackType, preferEphemeralSession)
         mainActivity.startActivity(startIntent)
         mainActivity.runOnUiThread {
             currentState.value =
@@ -161,40 +115,6 @@ class NativeAuthentication(
     }
 
     /**
-     * Create the Custom Tabs intent which will be launched from a separate task.
-     */
-    private fun createAuthIntent(session: CallbackSession): Intent {
-        val trustedWebIntent = TrustedWebActivityIntentBuilder(session.startUri)
-            .setDisplayMode(TrustedWebActivityDisplayMode.DefaultMode()) // ImmersiveMode?
-            .setAdditionalTrustedOrigins(mutableListOf()) // TODO
-        val intent = if (customTabsSession != null) {
-            Log.d(TAG, "Launching Trusted Web activity")
-            val launcher = trustedWebIntent.build(customTabsSession!!)
-            launcher.intent
-        } else {
-            Log.d(TAG, "Trusted Web provider unavailable. Launching Custom Tabs.")
-            val launcher = trustedWebIntent.buildCustomTabsIntent()
-            launcher.intent
-        }
-
-        // Fixes an issue for older Android versions where the custom tab will background the app on
-        // redirect. Setting `FLAG_ACTIVITY_NEW_TASK` is the only fix since Flutter specifies
-        // `android:launchMode="singleInstance"` in the manifest.
-        //
-        // See: https://stackoverflow.com/questions/36084681/chrome-custom-tabs-redirect-to-android-app-will-close-the-app
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        }
-        intent.putExtra(
-            Intent.EXTRA_REFERRER,
-            Uri.parse("android-app://${mainActivity.packageName}")
-        )
-        intent.data = session.startUri
-        return intent
-    }
-
-    /**
      * Create the intent to start the redirect task.
      *
      * The redirect task is managed independently from the main activity so that its lifecycle
@@ -202,15 +122,24 @@ class NativeAuthentication(
      */
     private fun createStartIntent(
         session: CallbackSession,
-        authIntent: Intent,
+        callbackType: CallbackType,
+        preferEphemeralSession: Boolean
     ): Intent {
         return Intent(mainActivity, CallbackManagerActivity::class.java).apply {
-            putExtra(KEY_AUTH_INTENT, authIntent)
+            putExtra(KEY_AUTH_CALLBACK_TYPE, callbackType.type)
+            when (callbackType) {
+                is CallbackType.Https -> {
+                    putExtra(KEY_AUTH_CALLBACK_HOST, callbackType.host)
+                    putExtra(KEY_AUTH_CALLBACK_PATH, callbackType.path)
+                }
+
+                is CallbackType.CustomScheme -> {
+                    putExtra(KEY_AUTH_CALLBACK_SCHEME, callbackType.scheme)
+                }
+            }
             putExtra(KEY_AUTH_REQUEST_URI, session.startUri)
             putExtra(KEY_AUTH_REQUEST_ID, session.id)
+            putExtra(KEY_AUTH_PREFER_EPHEMERAL_SESSION, preferEphemeralSession)
         }
     }
 }
-
-@Suppress("DEPRECATION") // Only used for debugging
-internal fun Bundle.toMap() = keySet().associateWith { get(it).toString() }

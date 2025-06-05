@@ -68,7 +68,15 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
   CallbackSession startCallback({
     required Uri uri,
     required CallbackType type,
+    bool preferEphemeralSession = false,
   }) {
+    if (preferEphemeralSession) {
+      logger?.warning(
+        'Ephemeral sessions are not supported on this platform. '
+        'Using a regular session instead.',
+      );
+    }
+
     final (port, expectedPath) = switch (type) {
       CallbackTypeLocalhost(:final port, :final path) => (port, path),
       CallbackTypeCustom() => throw ArgumentError.value(

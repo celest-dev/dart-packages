@@ -1,14 +1,32 @@
 package dev.celest.native_authentication
 
-import android.app.Activity
+import FeatureHelper
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
 import android.os.PersistableBundle
+import androidx.activity.result.ActivityResultLauncher
+import androidx.annotation.OptIn
 import androidx.annotation.UiThread
+import androidx.appcompat.app.AppCompatActivity
+import androidx.browser.auth.AuthTabIntent
+import androidx.browser.auth.ExperimentalAuthTab
+import androidx.browser.customtabs.CustomTabsClient
+import androidx.browser.customtabs.ExperimentalEphemeralBrowsing
+import dev.celest.native_authentication.NativeAuthentication.Companion.KEY_AUTH_CALLBACK_HOST
+import dev.celest.native_authentication.NativeAuthentication.Companion.KEY_AUTH_CALLBACK_PATH
+import dev.celest.native_authentication.NativeAuthentication.Companion.KEY_AUTH_CALLBACK_SCHEME
+import dev.celest.native_authentication.NativeAuthentication.Companion.KEY_AUTH_CALLBACK_TYPE
+import dev.celest.native_authentication.NativeAuthentication.Companion.KEY_AUTH_PREFER_EPHEMERAL_SESSION
 import io.flutter.Log
+
+sealed class CallbackType(val type: String) {
+    data class CustomScheme(val scheme: String) : CallbackType("CustomScheme")
+    data class Https(val host: String, val path: String) : CallbackType("Https")
+}
 
 /**
  * An identifying token for an ongoing redirect.
@@ -143,16 +161,50 @@ internal sealed class CallbackState {
  *       {@link AuthorizationException} as appropriate.
  *       The AuthorizationManagementActivity finishes, removing itself from the back stack.
  */
-class CallbackManagerActivity : Activity() {
+@OptIn(ExperimentalAuthTab::class, ExperimentalEphemeralBrowsing::class)
+class CallbackManagerActivity : AppCompatActivity() {
     companion object {
         const val TAG = "CallbackManagerActivity"
     }
 
     private var initialized = false
     private var authorizationStarted = false
-    private lateinit var authIntent: Intent
-    private lateinit var startUri: Uri
     private var sessionId: Int = -1
+    private lateinit var startUri: Uri
+    private lateinit var callbackType: CallbackType
+    private var preferEphemeralSession = true
+
+    private val launcher: ActivityResultLauncher<Intent> =
+        AuthTabIntent.registerActivityResultLauncher(this, this::handleAuthTabResult)
+
+    private fun handleAuthTabResult(result: AuthTabIntent.AuthResult) {
+        val callbackResult = when (result.resultCode) {
+            AuthTabIntent.RESULT_OK -> CallbackState.Success(
+                sessionId,
+                redirectUri = result.resultUri!!
+            )
+
+            AuthTabIntent.RESULT_CANCELED -> CallbackState.Canceled(
+                sessionId,
+            )
+
+            AuthTabIntent.RESULT_VERIFICATION_FAILED -> CallbackState.Failure(
+                sessionId,
+                error = Throwable("HTTPS verification failed")
+            )
+
+            AuthTabIntent.RESULT_VERIFICATION_TIMED_OUT -> CallbackState.Failure(
+                sessionId,
+                error = Throwable("HTTPS verification timed out")
+            )
+
+            else -> CallbackState.Failure(
+                sessionId,
+                error = Throwable("An unknown error occurred")
+            )
+        }
+        finishWithResult(callbackResult)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
@@ -183,18 +235,27 @@ class CallbackManagerActivity : Activity() {
             return fail("No stored state")
         }
 
-        @Suppress("DEPRECATION") // Replacement only available in API 33+
-        run {
-            authIntent = state.getParcelable(NativeAuthentication.KEY_AUTH_INTENT)
-                ?: return fail("Missing auth intent")
-            authorizationStarted = state.getBoolean(NativeAuthentication.KEY_AUTHORIZATION_STARTED, false)
-            startUri =
-                state.getParcelable(NativeAuthentication.KEY_AUTH_REQUEST_URI)
-                    ?: return fail("Missing start URI")
-            sessionId = state.getInt(NativeAuthentication.KEY_AUTH_REQUEST_ID)
+        val callbackTypeDiscriminator =
+            state.getString(KEY_AUTH_CALLBACK_TYPE)
+        val callbackScheme = state.getString(KEY_AUTH_CALLBACK_SCHEME)
+        val callbackHost = state.getString(KEY_AUTH_CALLBACK_HOST)
+        val callbackPath = state.getString(KEY_AUTH_CALLBACK_PATH)
+        callbackType = when (callbackTypeDiscriminator) {
+            "Https" -> CallbackType.Https(callbackHost!!, callbackPath!!)
+            "CustomScheme" -> CallbackType.CustomScheme(callbackScheme!!)
+            else -> {
+                return fail("Invalid callback type: $callbackTypeDiscriminator")
+            }
         }
+        authorizationStarted =
+            state.getBoolean(NativeAuthentication.KEY_AUTHORIZATION_STARTED, false)
+        startUri =
+            state.getUri(NativeAuthentication.KEY_AUTH_REQUEST_URI)
+                ?: return fail("Missing start URI")
+        sessionId = state.getInt(NativeAuthentication.KEY_AUTH_REQUEST_ID)
+        preferEphemeralSession =
+            state.getBoolean(KEY_AUTH_PREFER_EPHEMERAL_SESSION)
 
-        Log.d(TAG, "sessionState($sessionId): authorizationStarted=$authorizationStarted")
         initialized = true
         return true
     }
@@ -214,7 +275,7 @@ class CallbackManagerActivity : Activity() {
          */
         if (!authorizationStarted) {
             try {
-                startActivity(authIntent)
+                startAuthIntent()
                 authorizationStarted = true
                 NativeAuthentication.currentState.postValue(
                     CallbackState.Launched(sessionId)
@@ -238,6 +299,41 @@ class CallbackManagerActivity : Activity() {
             authorizationComplete()
         } else {
             authorizationCanceled()
+        }
+    }
+
+    private fun startAuthIntent() {
+        val customTabsPackage = CustomTabsClient.getPackageName(this, null)
+        val authTabsSupported = FeatureHelper.isAuthTabSupported(applicationContext)
+        val ephemeralBrowsingSupported =
+            FeatureHelper.isEphemeralBrowsingSupported(applicationContext)
+        Log.d(
+            TAG,
+            "Launching with features: authTabs=$authTabsSupported, " +
+                    "ephemeralBrowsing=$ephemeralBrowsingSupported, " +
+                    "customTabsPackage=$customTabsPackage"
+        )
+        val authTabIntent =
+            AuthTabIntent.Builder()
+                .setEphemeralBrowsingEnabled(preferEphemeralSession)
+                .build()
+        when (val callbackType = this.callbackType) {
+            is CallbackType.Https -> {
+                authTabIntent.launch(
+                    launcher,
+                    startUri,
+                    callbackType.host,
+                    callbackType.path
+                )
+            }
+
+            is CallbackType.CustomScheme -> {
+                authTabIntent.launch(
+                    launcher,
+                    startUri,
+                    callbackType.scheme
+                )
+            }
         }
     }
 
@@ -279,18 +375,29 @@ class CallbackManagerActivity : Activity() {
         )
     }
 
-    override fun onNewIntent(intent: Intent?) {
+    override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-        Log.d(TAG, "onNewIntent: intent=${intent}, intent.extras=${intent?.extras?.toMap()}")
+        Log.d(TAG, "onNewIntent: intent=${intent}, intent.extras=${intent.extras?.toMap()}")
         this.intent = intent
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putBoolean(NativeAuthentication.KEY_AUTHORIZATION_STARTED, authorizationStarted)
-        outState.putParcelable(NativeAuthentication.KEY_AUTH_INTENT, authIntent)
         outState.putParcelable(NativeAuthentication.KEY_AUTH_REQUEST_URI, startUri)
         outState.putInt(NativeAuthentication.KEY_AUTH_REQUEST_ID, sessionId)
+        outState.putString(KEY_AUTH_CALLBACK_TYPE, callbackType.type)
+        when (val callbackType = this.callbackType) {
+            is CallbackType.Https -> {
+                outState.putString(KEY_AUTH_CALLBACK_HOST, callbackType.host)
+                outState.putString(KEY_AUTH_CALLBACK_PATH, callbackType.path)
+            }
+
+            is CallbackType.CustomScheme -> {
+                outState.putString(KEY_AUTH_CALLBACK_SCHEME, callbackType.scheme)
+            }
+        }
+        outState.putBoolean(KEY_AUTH_PREFER_EPHEMERAL_SESSION, preferEphemeralSession)
     }
 }
 
@@ -319,7 +426,7 @@ class CallbackManagerActivity : Activity() {
  * </intent-filter>
  * ```
  */
-class CallbackReceiverActivity : Activity() {
+class CallbackReceiverActivity : AppCompatActivity() {
     companion object {
         const val TAG = "CallbackReceiverActivity"
     }
@@ -345,3 +452,14 @@ class CallbackReceiverActivity : Activity() {
         finish()
     }
 }
+
+private fun Bundle.getUri(key: String): Uri? {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+        @Suppress("DEPRECATION")
+        return getParcelable(key)
+    }
+    return getParcelable(key, Uri::class.java)
+}
+
+@Suppress("DEPRECATION")
+private fun Bundle.toMap() = keySet().associateWith { get(it).toString() }
