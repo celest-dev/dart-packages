@@ -164,9 +164,7 @@ extension on CallbackType {
           completionHandler: completionHandler,
         );
       case CallbackTypeLocalhost():
-        throw ArgumentError.value(
-          this,
-          'callbackScheme',
+        throw UnsupportedError(
           'Localhost scheme is not supported on iOS',
         );
       case CallbackTypeHttps(:final host, :final path):
