@@ -1,6 +1,8 @@
 ## 0.4.0
 
 - chore!: Migrate Android away from EncryptedSharedPreferences to SharedPreferences
+- chore: Bump `ffigen` dependency
+- chore: Bump minimum Dart SDK version to 3.6.0
 
 ## 0.3.0
 
