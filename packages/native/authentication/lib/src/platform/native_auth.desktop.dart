@@ -79,14 +79,10 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
 
     final (port, expectedPath) = switch (type) {
       CallbackTypeLocalhost(:final port, :final path) => (port, path),
-      CallbackTypeCustom() => throw ArgumentError.value(
-          type,
-          'callbackScheme',
+      CallbackTypeCustom() => throw UnsupportedError(
           'Custom schemes are not supported on this platform',
         ),
-      CallbackTypeHttps() => throw ArgumentError.value(
-          type,
-          'callbackScheme',
+      CallbackTypeHttps() => throw UnsupportedError(
           'HTTPS scheme is not supported on this platform',
         ),
     };
