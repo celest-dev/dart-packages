@@ -91,7 +91,7 @@ class Glib {
 
   void g_list_free_full(
     ffi.Pointer<GList> list,
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(gpointer)>> free_func,
+    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(gpointer data)>> free_func,
   ) {
     return _g_list_free_full(
       list,
@@ -104,11 +104,11 @@ class Glib {
               ffi.Void Function(
                   ffi.Pointer<GList>,
                   ffi.Pointer<
-                      ffi.NativeFunction<ffi.Void Function(gpointer)>>)>>(
+                      ffi.NativeFunction<ffi.Void Function(gpointer data)>>)>>(
       'g_list_free_full');
   late final _g_list_free_full = _g_list_free_fullPtr.asFunction<
       void Function(ffi.Pointer<GList>,
-          ffi.Pointer<ffi.NativeFunction<ffi.Void Function(gpointer)>>)>();
+          ffi.Pointer<ffi.NativeFunction<ffi.Void Function(gpointer data)>>)>();
 
   ffi.Pointer<GList> g_list_append(
     ffi.Pointer<GList> list,
@@ -168,7 +168,8 @@ class Glib {
     gpointer data,
     ffi.Pointer<
             ffi.NativeFunction<
-                gint Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>
+                gint Function(
+                    ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b)>>
         func,
   ) {
     return _g_list_insert_sorted(
@@ -185,8 +186,8 @@ class Glib {
               gpointer,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gint Function(ffi.Pointer<ffi.Void>,
-                          ffi.Pointer<ffi.Void>)>>)>>('g_list_insert_sorted');
+                      gint Function(ffi.Pointer<ffi.Void> a,
+                          ffi.Pointer<ffi.Void> b)>>)>>('g_list_insert_sorted');
   late final _g_list_insert_sorted = _g_list_insert_sortedPtr.asFunction<
       ffi.Pointer<GList> Function(
           ffi.Pointer<GList>,
@@ -194,15 +195,15 @@ class Glib {
           ffi.Pointer<
               ffi.NativeFunction<
                   gint Function(
-                      ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>();
+                      ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b)>>)>();
 
   ffi.Pointer<GList> g_list_insert_sorted_with_data(
     ffi.Pointer<GList> list,
     gpointer data,
     ffi.Pointer<
             ffi.NativeFunction<
-                gint Function(
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, gpointer)>>
+                gint Function(ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b,
+                    gpointer user_data)>>
         func,
     gpointer user_data,
   ) {
@@ -221,8 +222,8 @@ class Glib {
               gpointer,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gint Function(ffi.Pointer<ffi.Void>,
-                          ffi.Pointer<ffi.Void>, gpointer)>>,
+                      gint Function(ffi.Pointer<ffi.Void> a,
+                          ffi.Pointer<ffi.Void> b, gpointer user_data)>>,
               gpointer)>>('g_list_insert_sorted_with_data');
   late final _g_list_insert_sorted_with_data =
       _g_list_insert_sorted_with_dataPtr.asFunction<
@@ -231,8 +232,8 @@ class Glib {
               gpointer,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gint Function(ffi.Pointer<ffi.Void>,
-                          ffi.Pointer<ffi.Void>, gpointer)>>,
+                      gint Function(ffi.Pointer<ffi.Void> a,
+                          ffi.Pointer<ffi.Void> b, gpointer user_data)>>,
               gpointer)>();
 
   ffi.Pointer<GList> g_list_insert_before(
@@ -392,8 +393,8 @@ class Glib {
   ffi.Pointer<GList> g_list_copy_deep(
     ffi.Pointer<GList> list,
     ffi.Pointer<
-            ffi
-            .NativeFunction<gpointer Function(ffi.Pointer<ffi.Void>, gpointer)>>
+            ffi.NativeFunction<
+                gpointer Function(ffi.Pointer<ffi.Void> src, gpointer data)>>
         func,
     gpointer user_data,
   ) {
@@ -410,14 +411,15 @@ class Glib {
               ffi.Pointer<GList>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gpointer Function(ffi.Pointer<ffi.Void>, gpointer)>>,
+                      gpointer Function(
+                          ffi.Pointer<ffi.Void> src, gpointer data)>>,
               gpointer)>>('g_list_copy_deep');
   late final _g_list_copy_deep = _g_list_copy_deepPtr.asFunction<
       ffi.Pointer<GList> Function(
           ffi.Pointer<GList>,
           ffi.Pointer<
               ffi.NativeFunction<
-                  gpointer Function(ffi.Pointer<ffi.Void>, gpointer)>>,
+                  gpointer Function(ffi.Pointer<ffi.Void> src, gpointer data)>>,
           gpointer)>();
 
   ffi.Pointer<GList> g_list_nth(
@@ -476,7 +478,8 @@ class Glib {
     ffi.Pointer<ffi.Void> data,
     ffi.Pointer<
             ffi.NativeFunction<
-                gint Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>
+                gint Function(
+                    ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b)>>
         func,
   ) {
     return _g_list_find_custom(
@@ -493,8 +496,8 @@ class Glib {
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gint Function(ffi.Pointer<ffi.Void>,
-                          ffi.Pointer<ffi.Void>)>>)>>('g_list_find_custom');
+                      gint Function(ffi.Pointer<ffi.Void> a,
+                          ffi.Pointer<ffi.Void> b)>>)>>('g_list_find_custom');
   late final _g_list_find_custom = _g_list_find_customPtr.asFunction<
       ffi.Pointer<GList> Function(
           ffi.Pointer<GList>,
@@ -502,7 +505,7 @@ class Glib {
           ffi.Pointer<
               ffi.NativeFunction<
                   gint Function(
-                      ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>();
+                      ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b)>>)>();
 
   int g_list_position(
     ffi.Pointer<GList> list,
@@ -582,7 +585,10 @@ class Glib {
 
   void g_list_foreach(
     ffi.Pointer<GList> list,
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(gpointer, gpointer)>> func,
+    ffi.Pointer<
+            ffi.NativeFunction<
+                ffi.Void Function(gpointer data, gpointer user_data)>>
+        func,
     gpointer user_data,
   ) {
     return _g_list_foreach(
@@ -597,20 +603,23 @@ class Glib {
           ffi.Void Function(
               ffi.Pointer<GList>,
               ffi.Pointer<
-                  ffi.NativeFunction<ffi.Void Function(gpointer, gpointer)>>,
+                  ffi.NativeFunction<
+                      ffi.Void Function(gpointer data, gpointer user_data)>>,
               gpointer)>>('g_list_foreach');
   late final _g_list_foreach = _g_list_foreachPtr.asFunction<
       void Function(
           ffi.Pointer<GList>,
           ffi.Pointer<
-              ffi.NativeFunction<ffi.Void Function(gpointer, gpointer)>>,
+              ffi.NativeFunction<
+                  ffi.Void Function(gpointer data, gpointer user_data)>>,
           gpointer)>();
 
   ffi.Pointer<GList> g_list_sort(
     ffi.Pointer<GList> list,
     ffi.Pointer<
             ffi.NativeFunction<
-                gint Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>
+                gint Function(
+                    ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b)>>
         compare_func,
   ) {
     return _g_list_sort(
@@ -625,22 +634,22 @@ class Glib {
               ffi.Pointer<GList>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gint Function(ffi.Pointer<ffi.Void>,
-                          ffi.Pointer<ffi.Void>)>>)>>('g_list_sort');
+                      gint Function(ffi.Pointer<ffi.Void> a,
+                          ffi.Pointer<ffi.Void> b)>>)>>('g_list_sort');
   late final _g_list_sort = _g_list_sortPtr.asFunction<
       ffi.Pointer<GList> Function(
           ffi.Pointer<GList>,
           ffi.Pointer<
               ffi.NativeFunction<
                   gint Function(
-                      ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>();
+                      ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b)>>)>();
 
   ffi.Pointer<GList> g_list_sort_with_data(
     ffi.Pointer<GList> list,
     ffi.Pointer<
             ffi.NativeFunction<
-                gint Function(
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, gpointer)>>
+                gint Function(ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b,
+                    gpointer user_data)>>
         compare_func,
     gpointer user_data,
   ) {
@@ -657,16 +666,16 @@ class Glib {
               ffi.Pointer<GList>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gint Function(ffi.Pointer<ffi.Void>,
-                          ffi.Pointer<ffi.Void>, gpointer)>>,
+                      gint Function(ffi.Pointer<ffi.Void> a,
+                          ffi.Pointer<ffi.Void> b, gpointer user_data)>>,
               gpointer)>>('g_list_sort_with_data');
   late final _g_list_sort_with_data = _g_list_sort_with_dataPtr.asFunction<
       ffi.Pointer<GList> Function(
           ffi.Pointer<GList>,
           ffi.Pointer<
               ffi.NativeFunction<
-                  gint Function(
-                      ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, gpointer)>>,
+                  gint Function(ffi.Pointer<ffi.Void> a,
+                      ffi.Pointer<ffi.Void> b, gpointer user_data)>>,
           gpointer)>();
 
   gpointer g_list_nth_data(
@@ -688,12 +697,13 @@ class Glib {
 
   ffi.Pointer<GHashTable> g_hash_table_new(
     ffi.Pointer<
-            ffi.NativeFunction<ffi.UnsignedInt Function(ffi.Pointer<ffi.Void>)>>
+            ffi.NativeFunction<
+                ffi.UnsignedInt Function(ffi.Pointer<ffi.Void> key)>>
         hash_func,
     ffi.Pointer<
             ffi.NativeFunction<
                 gboolean Function(
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>
+                    ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b)>>
         key_equal_func,
   ) {
     return _g_hash_table_new(
@@ -707,20 +717,20 @@ class Glib {
           ffi.Pointer<GHashTable> Function(
               ffi.Pointer<
                   ffi.NativeFunction<
-                      ffi.UnsignedInt Function(ffi.Pointer<ffi.Void>)>>,
+                      ffi.UnsignedInt Function(ffi.Pointer<ffi.Void> key)>>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gboolean Function(ffi.Pointer<ffi.Void>,
-                          ffi.Pointer<ffi.Void>)>>)>>('g_hash_table_new');
+                      gboolean Function(ffi.Pointer<ffi.Void> a,
+                          ffi.Pointer<ffi.Void> b)>>)>>('g_hash_table_new');
   late final _g_hash_table_new = _g_hash_table_newPtr.asFunction<
       ffi.Pointer<GHashTable> Function(
           ffi.Pointer<
-              ffi
-              .NativeFunction<ffi.UnsignedInt Function(ffi.Pointer<ffi.Void>)>>,
+              ffi.NativeFunction<
+                  ffi.UnsignedInt Function(ffi.Pointer<ffi.Void> key)>>,
           ffi.Pointer<
               ffi.NativeFunction<
                   gboolean Function(
-                      ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>();
+                      ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b)>>)>();
 
   void g_hash_table_destroy(
     ffi.Pointer<GHashTable> hash_table,
@@ -962,8 +972,8 @@ class Glib {
     gpointer item,
     ffi.Pointer<
             ffi.NativeFunction<
-                gint Function(
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, gpointer)>>
+                gint Function(ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b,
+                    gpointer user_data)>>
         compare_func,
     gpointer user_data,
   ) {
@@ -982,8 +992,8 @@ class Glib {
               gpointer,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gint Function(ffi.Pointer<ffi.Void>,
-                          ffi.Pointer<ffi.Void>, gpointer)>>,
+                      gint Function(ffi.Pointer<ffi.Void> a,
+                          ffi.Pointer<ffi.Void> b, gpointer user_data)>>,
               gpointer)>>('g_list_store_insert_sorted');
   late final _g_list_store_insert_sorted =
       _g_list_store_insert_sortedPtr.asFunction<
@@ -992,16 +1002,16 @@ class Glib {
               gpointer,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gint Function(ffi.Pointer<ffi.Void>,
-                          ffi.Pointer<ffi.Void>, gpointer)>>,
+                      gint Function(ffi.Pointer<ffi.Void> a,
+                          ffi.Pointer<ffi.Void> b, gpointer user_data)>>,
               gpointer)>();
 
   void g_list_store_sort(
     ffi.Pointer<_GListStore> store,
     ffi.Pointer<
             ffi.NativeFunction<
-                gint Function(
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, gpointer)>>
+                gint Function(ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b,
+                    gpointer user_data)>>
         compare_func,
     gpointer user_data,
   ) {
@@ -1018,16 +1028,16 @@ class Glib {
               ffi.Pointer<_GListStore>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gint Function(ffi.Pointer<ffi.Void>,
-                          ffi.Pointer<ffi.Void>, gpointer)>>,
+                      gint Function(ffi.Pointer<ffi.Void> a,
+                          ffi.Pointer<ffi.Void> b, gpointer user_data)>>,
               gpointer)>>('g_list_store_sort');
   late final _g_list_store_sort = _g_list_store_sortPtr.asFunction<
       void Function(
           ffi.Pointer<_GListStore>,
           ffi.Pointer<
               ffi.NativeFunction<
-                  gint Function(
-                      ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, gpointer)>>,
+                  gint Function(ffi.Pointer<ffi.Void> a,
+                      ffi.Pointer<ffi.Void> b, gpointer user_data)>>,
           gpointer)>();
 
   void g_list_store_append(
@@ -1132,7 +1142,7 @@ class Glib {
     ffi.Pointer<
             ffi.NativeFunction<
                 gboolean Function(
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>
+                    ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b)>>
         equal_func,
     ffi.Pointer<ffi.UnsignedInt> position,
   ) {
@@ -1151,8 +1161,8 @@ class Glib {
                   gpointer,
                   ffi.Pointer<
                       ffi.NativeFunction<
-                          gboolean Function(
-                              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
+                          gboolean Function(ffi.Pointer<ffi.Void> a,
+                              ffi.Pointer<ffi.Void> b)>>,
                   ffi.Pointer<ffi.UnsignedInt>)>>(
       'g_list_store_find_with_equal_func');
   late final _g_list_store_find_with_equal_func =
@@ -1163,7 +1173,7 @@ class Glib {
               ffi.Pointer<
                   ffi.NativeFunction<
                       gboolean Function(
-                          ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
+                          ffi.Pointer<ffi.Void> a, ffi.Pointer<ffi.Void> b)>>,
               ffi.Pointer<ffi.UnsignedInt>)>();
 
   int g_list_store_find_with_equal_func_full(
@@ -1171,8 +1181,8 @@ class Glib {
     gpointer item,
     ffi.Pointer<
             ffi.NativeFunction<
-                gboolean Function(
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, gpointer)>>
+                gboolean Function(ffi.Pointer<ffi.Void> a,
+                    ffi.Pointer<ffi.Void> b, gpointer user_data)>>
         equal_func,
     gpointer user_data,
     ffi.Pointer<ffi.UnsignedInt> position,
@@ -1193,8 +1203,8 @@ class Glib {
                   gpointer,
                   ffi.Pointer<
                       ffi.NativeFunction<
-                          gboolean Function(ffi.Pointer<ffi.Void>,
-                              ffi.Pointer<ffi.Void>, gpointer)>>,
+                          gboolean Function(ffi.Pointer<ffi.Void> a,
+                              ffi.Pointer<ffi.Void> b, gpointer user_data)>>,
                   gpointer,
                   ffi.Pointer<ffi.UnsignedInt>)>>(
       'g_list_store_find_with_equal_func_full');
@@ -1205,11 +1215,16 @@ class Glib {
               gpointer,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      gboolean Function(ffi.Pointer<ffi.Void>,
-                          ffi.Pointer<ffi.Void>, gpointer)>>,
+                      gboolean Function(ffi.Pointer<ffi.Void> a,
+                          ffi.Pointer<ffi.Void> b, gpointer user_data)>>,
               gpointer,
               ffi.Pointer<ffi.UnsignedInt>)>();
 }
+
+typedef gint = ffi.Int;
+typedef Dartgint = int;
+typedef gboolean = gint;
+typedef gpointer = ffi.Pointer<ffi.Void>;
 
 final class GError extends ffi.Struct {
   @ffi.UnsignedInt()
@@ -1221,8 +1236,7 @@ final class GError extends ffi.Struct {
   external ffi.Pointer<pkg_ffi.Utf8> message;
 }
 
-typedef gint = ffi.Int;
-typedef Dartgint = int;
+final class _GData extends ffi.Opaque {}
 
 final class GList extends ffi.Struct {
   external gpointer data;
@@ -1232,31 +1246,9 @@ final class GList extends ffi.Struct {
   external ffi.Pointer<GList> prev;
 }
 
-typedef gpointer = ffi.Pointer<ffi.Void>;
-
 final class GHashTable extends ffi.Opaque {}
 
-typedef gboolean = gint;
-
 final class _GAllocator extends ffi.Opaque {}
-
-final class GObject extends ffi.Struct {
-  external _GTypeInstance g_type_instance;
-
-  /// (atomic)
-  @ffi.UnsignedInt()
-  external int ref_count;
-
-  external ffi.Pointer<_GData> qdata;
-}
-
-/// GTypeInstance:
-///
-/// An opaque structure used as the base of all type instances.
-final class _GTypeInstance extends ffi.Struct {
-  /// < private >
-  external ffi.Pointer<_GTypeClass> g_class;
-}
 
 /// Basic Type Structures
 /// /
@@ -1270,7 +1262,25 @@ final class _GTypeClass extends ffi.Struct {
   external int g_type;
 }
 
-final class _GData extends ffi.Opaque {}
+/// GTypeInstance:
+///
+/// An opaque structure used as the base of all type instances.
+final class _GTypeInstance extends ffi.Struct {
+  /// < private >
+  external ffi.Pointer<_GTypeClass> g_class;
+}
+
+final class GObject extends ffi.Struct {
+  external _GTypeInstance g_type_instance;
+
+  /// (atomic)
+  @ffi.UnsignedInt()
+  external int ref_count;
+
+  external ffi.Pointer<_GData> qdata;
+}
+
+final class _GCancellablePrivate extends ffi.Opaque {}
 
 final class GCancellable extends ffi.Struct {
   external GObject parent_instance;
@@ -1279,7 +1289,7 @@ final class GCancellable extends ffi.Struct {
   external ffi.Pointer<_GCancellablePrivate> priv;
 }
 
-final class _GCancellablePrivate extends ffi.Opaque {}
+final class _GApplicationPrivate extends ffi.Opaque {}
 
 final class _GApplication extends ffi.Struct {
   /// < private >
@@ -1287,8 +1297,6 @@ final class _GApplication extends ffi.Struct {
 
   external ffi.Pointer<_GApplicationPrivate> priv;
 }
-
-final class _GApplicationPrivate extends ffi.Opaque {}
 
 final class _GListModel extends ffi.Opaque {}
 
