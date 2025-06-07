@@ -13,6 +13,9 @@
 #error "This file must be compiled with ARC enabled"
 #endif
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+
 typedef struct {
   int64_t version;
   void* (*newWaiter)(void);
@@ -321,3 +324,5 @@ ListenerTrampoline_6 _AuthenticationServicesMacOS_wrapBlockingBlock_pfv6jd(
 
 Protocol* _AuthenticationServicesMacOS_ASWebAuthenticationPresentationContextProviding(void) { return @protocol(ASWebAuthenticationPresentationContextProviding); }
 #undef BLOCKING_BLOCK_IMPL
+
+#pragma clang diagnostic pop

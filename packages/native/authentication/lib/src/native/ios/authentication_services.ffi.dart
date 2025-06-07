@@ -612,8 +612,8 @@ extension UIAlternateApplicationIcons on UIApplication {
   }
 
   /// setAlternateIconName:completionHandler:
-  void setAlternateIconName_completionHandler_(objc.NSString? alternateIconName,
-      objc.ObjCBlock<ffi.Void Function(objc.NSError?)>? completionHandler) {
+  void setAlternateIconName(objc.NSString? alternateIconName,
+      {objc.ObjCBlock<ffi.Void Function(objc.NSError?)>? completionHandler}) {
     objc.checkOsVersionInternal(
         'UIApplication.setAlternateIconName:completionHandler:',
         iOS: (false, (10, 3, 0)));
@@ -706,8 +706,8 @@ extension UIStateRestoration on UIApplication {
   }
 
   /// registerObjectForStateRestoration:restorationIdentifier:
-  static void registerObjectForStateRestoration_restorationIdentifier_(
-      UIStateRestoring object, objc.NSString restorationIdentifier) {
+  static void registerObjectForStateRestoration(UIStateRestoring object,
+      {required objc.NSString restorationIdentifier}) {
     objc.checkOsVersionInternal(
         'UIApplication.registerObjectForStateRestoration:restorationIdentifier:',
         iOS: (false, (7, 0, 0)));
@@ -774,9 +774,9 @@ extension DefaultApplication on UIApplication {
   /// defaultStatusForCategory:error:
   ///
   /// iOS: introduced 18.2.0
-  UIApplicationCategoryDefaultStatus defaultStatusForCategory_error_(
+  UIApplicationCategoryDefaultStatus defaultStatusForCategory(
       UIApplicationCategory category,
-      ffi.Pointer<ffi.Pointer<objc.ObjCObject>> error) {
+      {required ffi.Pointer<ffi.Pointer<objc.ObjCObject>> error}) {
     objc.checkOsVersionInternal('UIApplication.defaultStatusForCategory:error:',
         iOS: (false, (18, 2, 0)));
     final _ret = _objc_msgSend_1yelsrr(this.ref.pointer,
@@ -1214,8 +1214,8 @@ class UIScene extends UIResponder {
   }
 
   /// initWithSession:connectionOptions:
-  UIScene initWithSession_connectionOptions_(
-      UISceneSession session, UISceneConnectionOptions connectionOptions) {
+  UIScene initWithSession(UISceneSession session,
+      {required UISceneConnectionOptions connectionOptions}) {
     objc.checkOsVersionInternal('UIScene.initWithSession:connectionOptions:',
         iOS: (false, (13, 0, 0)));
     final _ret = _objc_msgSend_15qeuct(
@@ -1259,10 +1259,9 @@ class UIScene extends UIResponder {
   }
 
   /// openURL:options:completionHandler:
-  void openURL_options_completionHandler_(
-      objc.NSURL url,
-      UISceneOpenExternalURLOptions? options,
-      objc.ObjCBlock<ffi.Void Function(ffi.Bool)>? completion) {
+  void openURL(objc.NSURL url,
+      {UISceneOpenExternalURLOptions? options,
+      objc.ObjCBlock<ffi.Void Function(ffi.Bool)>? completionHandler}) {
     objc.checkOsVersionInternal('UIScene.openURL:options:completionHandler:',
         iOS: (false, (13, 0, 0)));
     _objc_msgSend_18qun1e(
@@ -1270,7 +1269,7 @@ class UIScene extends UIResponder {
         _sel_openURL_options_completionHandler_,
         url.ref.pointer,
         options?.ref.pointer ?? ffi.nullptr,
-        completion?.ref.pointer ?? ffi.nullptr);
+        completionHandler?.ref.pointer ?? ffi.nullptr);
   }
 
   /// title
@@ -2127,7 +2126,7 @@ class ASWebAuthenticationSessionCallback extends objc.NSObject {
 
   /// Creates a callback object that matches against URLs with the given custom scheme.
   /// @param customScheme The custom scheme that the app expects in the callback URL.
-  static ASWebAuthenticationSessionCallback callbackWithCustomScheme_(
+  static ASWebAuthenticationSessionCallback callbackWithCustomScheme(
       objc.NSString customScheme) {
     objc.checkOsVersionInternal(
         'ASWebAuthenticationSessionCallback.callbackWithCustomScheme:',
@@ -2145,8 +2144,9 @@ class ASWebAuthenticationSessionCallback extends objc.NSObject {
   /// @param host The host that the app expects in the callback URL. The host must be associated with the
   /// app using associated web credentials domains.
   /// @param path The path that the app expects in the callback URL.
-  static ASWebAuthenticationSessionCallback callbackWithHTTPSHost_path_(
-      objc.NSString host, objc.NSString path) {
+  static ASWebAuthenticationSessionCallback callbackWithHTTPSHost(
+      objc.NSString host,
+      {required objc.NSString path}) {
     objc.checkOsVersionInternal(
         'ASWebAuthenticationSessionCallback.callbackWithHTTPSHost:path:',
         iOS: (false, (17, 4, 0)),
@@ -2163,7 +2163,7 @@ class ASWebAuthenticationSessionCallback extends objc.NSObject {
   /// Check whether a given main-frame navigation URL matches the callback expected by the client app. Handles all URL-based callback strategies, including custom schemes and HTTPS navigations.
   /// This is mainly meant for web browsers adopting the ASWebAuthenticationWebBrowser API, but may also be useful for other apps for debugging purposes.
   /// @param url The URL to check.
-  bool matchesURL_(objc.NSURL url) {
+  bool matchesURL(objc.NSURL url) {
     objc.checkOsVersionInternal(
         'ASWebAuthenticationSessionCallback.matchesURL:',
         iOS: (false, (17, 4, 0)),
@@ -2191,7 +2191,7 @@ class ASWebAuthenticationSessionCallback extends objc.NSObject {
   }
 
   /// allocWithZone:
-  static ASWebAuthenticationSessionCallback allocWithZone_(
+  static ASWebAuthenticationSessionCallback allocWithZone(
       ffi.Pointer<objc.NSZone> zone) {
     final _ret = _objc_msgSend_1cwp428(
         _class_ASWebAuthenticationSessionCallback, _sel_allocWithZone_, zone);
@@ -2525,11 +2525,10 @@ class ASWebAuthenticationSession extends objc.NSObject {
   ///
   /// iOS: introduced 12.0.0, deprecated 100000.0.0
   /// macOS: introduced 10.15.0, deprecated 100000.0.0
-  ASWebAuthenticationSession initWithURL_callbackURLScheme_completionHandler_(
-      objc.NSURL URL,
-      objc.NSString? callbackURLScheme,
-      objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)>
-          completionHandler) {
+  ASWebAuthenticationSession initWithURL(objc.NSURL URL,
+      {objc.NSString? callbackURLScheme,
+      required objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)>
+          completionHandler}) {
     objc.checkOsVersionInternal(
         'ASWebAuthenticationSession.initWithURL:callbackURLScheme:completionHandler:',
         iOS: (false, (12, 0, 0)),
@@ -2545,11 +2544,10 @@ class ASWebAuthenticationSession extends objc.NSObject {
   }
 
   /// initWithURL:callback:completionHandler:
-  ASWebAuthenticationSession initWithURL_callback_completionHandler_(
-      objc.NSURL URL,
-      ASWebAuthenticationSessionCallback callback,
-      objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)>
-          completionHandler) {
+  ASWebAuthenticationSession initWithURL$1(objc.NSURL URL,
+      {required ASWebAuthenticationSessionCallback callback,
+      required objc.ObjCBlock<ffi.Void Function(objc.NSURL?, objc.NSError?)>
+          completionHandler}) {
     objc.checkOsVersionInternal(
         'ASWebAuthenticationSession.initWithURL:callback:completionHandler:',
         iOS: (false, (17, 4, 0)),
@@ -2686,7 +2684,7 @@ class ASWebAuthenticationSession extends objc.NSObject {
   }
 
   /// allocWithZone:
-  static ASWebAuthenticationSession allocWithZone_(
+  static ASWebAuthenticationSession allocWithZone(
       ffi.Pointer<objc.NSZone> zone) {
     final _ret = _objc_msgSend_1cwp428(
         _class_ASWebAuthenticationSession, _sel_allocWithZone_, zone);

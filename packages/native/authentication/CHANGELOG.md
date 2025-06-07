@@ -1,3 +1,8 @@
+# 0.1.5
+
+- chore: Bump `ffigen` and `objective_c` dependencies
+- chore: Bump minimum Dart SDK version to 3.6.0
+
 # 0.1.4
 
 - feat: Migrate to [AuthTab](https://developer.chrome.com/docs/android/custom-tabs/guide-auth-tab) on Android
