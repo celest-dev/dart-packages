@@ -2222,6 +2222,29 @@ class CallbackType extends jni$_.JObject {
   /// The type which includes information such as the signature of this class.
   static const nullableType = $CallbackType$NullableType();
   static const type = $CallbackType$Type();
+  static final _id_getType = _class.instanceMethodId(
+    r'getType',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _getType = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public final java.lang.String getType()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString getType() {
+    return _getType(reference.pointer, _id_getType as jni$_.JMethodIDPtr)
+        .object<jni$_.JString>(const jni$_.JStringType());
+  }
 }
 
 final class $CallbackType$NullableType extends jni$_.JObjType<CallbackType?> {
