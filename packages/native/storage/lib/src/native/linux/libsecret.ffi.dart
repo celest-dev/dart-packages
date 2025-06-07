@@ -83,8 +83,8 @@ class Libsecret {
     ffi.Pointer<glib.GCancellable> cancellable,
     ffi.Pointer<
             ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<_GObject>,
-                    ffi.Pointer<_GAsyncResult>, glib.gpointer)>>
+                ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                    ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>
         callback,
     glib.gpointer user_data,
   ) {
@@ -113,8 +113,8 @@ class Libsecret {
               ffi.Pointer<glib.GCancellable>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      ffi.Void Function(ffi.Pointer<_GObject>,
-                          ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                      ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                          ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
               glib.gpointer)>>('secret_item_create');
   late final _secret_item_create = _secret_item_createPtr.asFunction<
       void Function(
@@ -127,8 +127,8 @@ class Libsecret {
           ffi.Pointer<glib.GCancellable>,
           ffi.Pointer<
               ffi.NativeFunction<
-                  ffi.Void Function(ffi.Pointer<_GObject>,
-                      ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                  ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                      ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
           glib.gpointer)>();
 
   ffi.Pointer<SecretItem> secret_item_create_finish(
@@ -201,8 +201,8 @@ class Libsecret {
     ffi.Pointer<glib.GCancellable> cancellable,
     ffi.Pointer<
             ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<_GObject>,
-                    ffi.Pointer<_GAsyncResult>, glib.gpointer)>>
+                ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                    ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>
         callback,
     glib.gpointer user_data,
   ) {
@@ -221,8 +221,8 @@ class Libsecret {
               ffi.Pointer<glib.GCancellable>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      ffi.Void Function(ffi.Pointer<_GObject>,
-                          ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                      ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                          ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
               glib.gpointer)>>('secret_item_delete');
   late final _secret_item_delete = _secret_item_deletePtr.asFunction<
       void Function(
@@ -230,8 +230,8 @@ class Libsecret {
           ffi.Pointer<glib.GCancellable>,
           ffi.Pointer<
               ffi.NativeFunction<
-                  ffi.Void Function(ffi.Pointer<_GObject>,
-                      ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                  ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                      ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
           glib.gpointer)>();
 
   int secret_item_delete_finish(
@@ -331,8 +331,8 @@ class Libsecret {
     ffi.Pointer<glib.GCancellable> cancellable,
     ffi.Pointer<
             ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<_GObject>,
-                    ffi.Pointer<_GAsyncResult>, glib.gpointer)>>
+                ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                    ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>
         callback,
     glib.gpointer user_data,
   ) {
@@ -351,8 +351,8 @@ class Libsecret {
               ffi.Pointer<glib.GCancellable>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      ffi.Void Function(ffi.Pointer<_GObject>,
-                          ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                      ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                          ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
               glib.gpointer)>>('secret_item_load_secret');
   late final _secret_item_load_secret = _secret_item_load_secretPtr.asFunction<
       void Function(
@@ -360,8 +360,8 @@ class Libsecret {
           ffi.Pointer<glib.GCancellable>,
           ffi.Pointer<
               ffi.NativeFunction<
-                  ffi.Void Function(ffi.Pointer<_GObject>,
-                      ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                  ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                      ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
           glib.gpointer)>();
 
   int secret_item_load_secret_finish(
@@ -417,8 +417,8 @@ class Libsecret {
     ffi.Pointer<glib.GCancellable> cancellable,
     ffi.Pointer<
             ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<_GObject>,
-                    ffi.Pointer<_GAsyncResult>, glib.gpointer)>>
+                ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                    ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>
         callback,
     glib.gpointer user_data,
   ) {
@@ -437,8 +437,8 @@ class Libsecret {
               ffi.Pointer<glib.GCancellable>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      ffi.Void Function(ffi.Pointer<_GObject>,
-                          ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                      ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                          ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
               glib.gpointer)>>('secret_item_load_secrets');
   late final _secret_item_load_secrets =
       _secret_item_load_secretsPtr.asFunction<
@@ -447,8 +447,8 @@ class Libsecret {
               ffi.Pointer<glib.GCancellable>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      ffi.Void Function(ffi.Pointer<_GObject>,
-                          ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                      ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                          ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
               glib.gpointer)>();
 
   int secret_item_load_secrets_finish(
@@ -501,8 +501,8 @@ class Libsecret {
     ffi.Pointer<glib.GCancellable> cancellable,
     ffi.Pointer<
             ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<_GObject>,
-                    ffi.Pointer<_GAsyncResult>, glib.gpointer)>>
+                ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                    ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>
         callback,
     glib.gpointer user_data,
   ) {
@@ -523,8 +523,8 @@ class Libsecret {
               ffi.Pointer<glib.GCancellable>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      ffi.Void Function(ffi.Pointer<_GObject>,
-                          ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                      ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                          ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
               glib.gpointer)>>('secret_item_set_secret');
   late final _secret_item_set_secret = _secret_item_set_secretPtr.asFunction<
       void Function(
@@ -533,8 +533,8 @@ class Libsecret {
           ffi.Pointer<glib.GCancellable>,
           ffi.Pointer<
               ffi.NativeFunction<
-                  ffi.Void Function(ffi.Pointer<_GObject>,
-                      ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                  ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                      ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
           glib.gpointer)>();
 
   int secret_item_set_secret_finish(
@@ -630,8 +630,8 @@ class Libsecret {
     ffi.Pointer<glib.GCancellable> cancellable,
     ffi.Pointer<
             ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<_GObject>,
-                    ffi.Pointer<_GAsyncResult>, glib.gpointer)>>
+                ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                    ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>
         callback,
     glib.gpointer user_data,
   ) {
@@ -654,8 +654,8 @@ class Libsecret {
               ffi.Pointer<glib.GCancellable>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      ffi.Void Function(ffi.Pointer<_GObject>,
-                          ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                      ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                          ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
               glib.gpointer)>>('secret_item_set_attributes');
   late final _secret_item_set_attributes =
       _secret_item_set_attributesPtr.asFunction<
@@ -666,8 +666,8 @@ class Libsecret {
               ffi.Pointer<glib.GCancellable>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      ffi.Void Function(ffi.Pointer<_GObject>,
-                          ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                      ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                          ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
               glib.gpointer)>();
 
   int secret_item_set_attributes_finish(
@@ -749,8 +749,8 @@ class Libsecret {
     ffi.Pointer<glib.GCancellable> cancellable,
     ffi.Pointer<
             ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<_GObject>,
-                    ffi.Pointer<_GAsyncResult>, glib.gpointer)>>
+                ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                    ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>
         callback,
     glib.gpointer user_data,
   ) {
@@ -771,8 +771,8 @@ class Libsecret {
               ffi.Pointer<glib.GCancellable>,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      ffi.Void Function(ffi.Pointer<_GObject>,
-                          ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                      ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                          ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
               glib.gpointer)>>('secret_item_set_label');
   late final _secret_item_set_label = _secret_item_set_labelPtr.asFunction<
       void Function(
@@ -781,8 +781,8 @@ class Libsecret {
           ffi.Pointer<glib.GCancellable>,
           ffi.Pointer<
               ffi.NativeFunction<
-                  ffi.Void Function(ffi.Pointer<_GObject>,
-                      ffi.Pointer<_GAsyncResult>, glib.gpointer)>>,
+                  ffi.Void Function(ffi.Pointer<_GObject> source_object,
+                      ffi.Pointer<_GAsyncResult> res, glib.gpointer data)>>,
           glib.gpointer)>();
 
   int secret_item_set_label_finish(
@@ -1034,6 +1034,38 @@ class Libsecret {
       .asFunction<void Function(ffi.Pointer<pkg_ffi.Utf8>)>();
 }
 
+final class _GData extends ffi.Opaque {}
+
+/// Basic Type Structures
+/// /
+/// /**
+/// GTypeClass:
+///
+/// An opaque structure used as the base of all classes.
+final class _GTypeClass extends ffi.Struct {
+  /// < private >
+  @ffi.UnsignedLong()
+  external int g_type;
+}
+
+/// GTypeInstance:
+///
+/// An opaque structure used as the base of all type instances.
+final class _GTypeInstance extends ffi.Struct {
+  /// < private >
+  external ffi.Pointer<_GTypeClass> g_class;
+}
+
+final class _GObject extends ffi.Struct {
+  external _GTypeInstance g_type_instance;
+
+  /// (atomic)
+  @ffi.UnsignedInt()
+  external int ref_count;
+
+  external ffi.Pointer<_GData> qdata;
+}
+
 enum SecretSchemaAttributeType {
   SECRET_SCHEMA_ATTRIBUTE_STRING(0),
   SECRET_SCHEMA_ATTRIBUTE_INTEGER(1),
@@ -1047,7 +1079,7 @@ enum SecretSchemaAttributeType {
         1 => SECRET_SCHEMA_ATTRIBUTE_INTEGER,
         2 => SECRET_SCHEMA_ATTRIBUTE_BOOLEAN,
         _ => throw ArgumentError(
-            "Unknown value for SecretSchemaAttributeType: $value"),
+            'Unknown value for SecretSchemaAttributeType: $value'),
       };
 }
 
@@ -1071,7 +1103,7 @@ enum SecretSchemaFlags {
   static SecretSchemaFlags fromValue(int value) => switch (value) {
         0 => SECRET_SCHEMA_NONE,
         2 => SECRET_SCHEMA_DONT_MATCH_NAME,
-        _ => throw ArgumentError("Unknown value for SecretSchemaFlags: $value"),
+        _ => throw ArgumentError('Unknown value for SecretSchemaFlags: $value'),
       };
 }
 
@@ -1105,14 +1137,9 @@ final class SecretSchema extends ffi.Struct {
   external glib.gpointer reserved7;
 }
 
-typedef SecretItem = _SecretItem;
+final class _GAsyncResult extends ffi.Opaque {}
 
-final class _SecretItem extends ffi.Struct {
-  external _GDBusProxy parent_instance;
-
-  /// < private >
-  external ffi.Pointer<_SecretItemPrivate> pv;
-}
+final class _GDBusProxyPrivate extends ffi.Opaque {}
 
 final class _GDBusProxy extends ffi.Struct {
   /// < private >
@@ -1120,93 +1147,6 @@ final class _GDBusProxy extends ffi.Struct {
 
   external ffi.Pointer<_GDBusProxyPrivate> priv;
 }
-
-final class _GObject extends ffi.Struct {
-  external _GTypeInstance g_type_instance;
-
-  /// (atomic)
-  @ffi.UnsignedInt()
-  external int ref_count;
-
-  external ffi.Pointer<_GData> qdata;
-}
-
-/// GTypeInstance:
-///
-/// An opaque structure used as the base of all type instances.
-final class _GTypeInstance extends ffi.Struct {
-  /// < private >
-  external ffi.Pointer<_GTypeClass> g_class;
-}
-
-/// Basic Type Structures
-/// /
-/// /**
-/// GTypeClass:
-///
-/// An opaque structure used as the base of all classes.
-final class _GTypeClass extends ffi.Struct {
-  /// < private >
-  @ffi.UnsignedLong()
-  external int g_type;
-}
-
-final class _GData extends ffi.Opaque {}
-
-final class _GDBusProxyPrivate extends ffi.Opaque {}
-
-final class _SecretItemPrivate extends ffi.Opaque {}
-
-final class _SecretCollection extends ffi.Struct {
-  external _GDBusProxy parent;
-
-  /// < private >
-  external ffi.Pointer<_SecretCollectionPrivate> pv;
-}
-
-final class _SecretCollectionPrivate extends ffi.Opaque {}
-
-final class _SecretValue extends ffi.Opaque {}
-
-enum SecretItemCreateFlags {
-  SECRET_ITEM_CREATE_NONE(0),
-  SECRET_ITEM_CREATE_REPLACE(2);
-
-  final int value;
-  const SecretItemCreateFlags(this.value);
-
-  static SecretItemCreateFlags fromValue(int value) => switch (value) {
-        0 => SECRET_ITEM_CREATE_NONE,
-        2 => SECRET_ITEM_CREATE_REPLACE,
-        _ => throw ArgumentError(
-            "Unknown value for SecretItemCreateFlags: $value"),
-      };
-}
-
-final class _GAsyncResult extends ffi.Opaque {}
-
-enum SecretItemFlags {
-  SECRET_ITEM_NONE(0),
-  SECRET_ITEM_LOAD_SECRET(2);
-
-  final int value;
-  const SecretItemFlags(this.value);
-
-  static SecretItemFlags fromValue(int value) => switch (value) {
-        0 => SECRET_ITEM_NONE,
-        2 => SECRET_ITEM_LOAD_SECRET,
-        _ => throw ArgumentError("Unknown value for SecretItemFlags: $value"),
-      };
-}
-
-final class _SecretService extends ffi.Struct {
-  external _GDBusProxy parent;
-
-  /// < private >
-  external ffi.Pointer<_SecretServicePrivate> pv;
-}
-
-final class _SecretServicePrivate extends ffi.Opaque {}
 
 enum SecretSearchFlags {
   SECRET_SEARCH_NONE(0),
@@ -1222,7 +1162,67 @@ enum SecretSearchFlags {
         2 => SECRET_SEARCH_ALL,
         4 => SECRET_SEARCH_UNLOCK,
         8 => SECRET_SEARCH_LOAD_SECRETS,
-        _ => throw ArgumentError("Unknown value for SecretSearchFlags: $value"),
+        _ => throw ArgumentError('Unknown value for SecretSearchFlags: $value'),
+      };
+}
+
+final class _SecretValue extends ffi.Opaque {}
+
+final class _SecretCollectionPrivate extends ffi.Opaque {}
+
+final class _SecretCollection extends ffi.Struct {
+  external _GDBusProxy parent;
+
+  /// < private >
+  external ffi.Pointer<_SecretCollectionPrivate> pv;
+}
+
+final class _SecretServicePrivate extends ffi.Opaque {}
+
+final class _SecretService extends ffi.Struct {
+  external _GDBusProxy parent;
+
+  /// < private >
+  external ffi.Pointer<_SecretServicePrivate> pv;
+}
+
+final class _SecretItemPrivate extends ffi.Opaque {}
+
+final class _SecretItem extends ffi.Struct {
+  external _GDBusProxy parent_instance;
+
+  /// < private >
+  external ffi.Pointer<_SecretItemPrivate> pv;
+}
+
+typedef SecretItem = _SecretItem;
+
+enum SecretItemFlags {
+  SECRET_ITEM_NONE(0),
+  SECRET_ITEM_LOAD_SECRET(2);
+
+  final int value;
+  const SecretItemFlags(this.value);
+
+  static SecretItemFlags fromValue(int value) => switch (value) {
+        0 => SECRET_ITEM_NONE,
+        2 => SECRET_ITEM_LOAD_SECRET,
+        _ => throw ArgumentError('Unknown value for SecretItemFlags: $value'),
+      };
+}
+
+enum SecretItemCreateFlags {
+  SECRET_ITEM_CREATE_NONE(0),
+  SECRET_ITEM_CREATE_REPLACE(2);
+
+  final int value;
+  const SecretItemCreateFlags(this.value);
+
+  static SecretItemCreateFlags fromValue(int value) => switch (value) {
+        0 => SECRET_ITEM_CREATE_NONE,
+        2 => SECRET_ITEM_CREATE_REPLACE,
+        _ => throw ArgumentError(
+            'Unknown value for SecretItemCreateFlags: $value'),
       };
 }
 

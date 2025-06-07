@@ -2953,6 +2953,8 @@ const int errSecCertificateIsCA = -67902;
 
 const int errSecCertificateDuplicateExtension = -67903;
 
+const int errSecMissingQualifiedCertStatement = -67904;
+
 const int errSecSuccess$1 = 0;
 
 const int errSecUnimplemented$1 = -4;
@@ -3719,6 +3721,8 @@ const int errSecCertificateIsCA$1 = -67902;
 
 const int errSecCertificateDuplicateExtension$1 = -67903;
 
+const int errSecMissingQualifiedCertStatement$1 = -67904;
+
 const int errSecSuccess$2 = 0;
 
 const int errSecUnimplemented$2 = -4;
@@ -4484,3 +4488,5 @@ const int errSecCertificateValidityPeriodTooLong$2 = -67901;
 const int errSecCertificateIsCA$2 = -67902;
 
 const int errSecCertificateDuplicateExtension$2 = -67903;
+
+const int errSecMissingQualifiedCertStatement$2 = -67904;
