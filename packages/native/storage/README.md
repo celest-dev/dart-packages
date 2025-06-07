@@ -57,10 +57,16 @@ The platform implementations for `NativeSecureStorage` are:
 | Platform | Implementation |
 | -------- | -------------- |
 | iOS/macOS | [Keychain](https://developer.apple.com/documentation/security/keychain_services) |
-| Android | [EncryptedSharedPreferences](https://developer.android.com/reference/androidx/security/crypto/EncryptedSharedPreferences) |
+| Android | [SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences)\* |
 | Linux | [libsecret](https://wiki.gnome.org/Projects/Libsecret) |
 | Windows | [Security and Identity API](https://learn.microsoft.com/en-us/windows/win32/api/dpapi/) |
 | Web | In-Memory (See [Web support](#web)) |
+
+> \* This package used to use [EncryptedSharedPreferences]() which has been deprecated by the JetBrains team. 
+> With modern Android versions (Android 10 and higher), file-based encryption is enforced by the operating system and so, 
+> `SharedPreferences` is now sufficient for storing sensitive information.
+>
+> Given this, the package now requires a minimum Android SDK version of 29 (Android 10) to use the secure storage APIs.
 
 ### Isolated Storage
 
