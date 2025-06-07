@@ -30,13 +30,13 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
       final connectedScenes =
           UIApplication.getSharedApplication().connectedScenes.allObjects;
       for (var sceneId = 0; sceneId < connectedScenes.count; sceneId++) {
-        final scene = connectedScenes.objectAtIndex_(sceneId);
+        final scene = connectedScenes.objectAtIndex(sceneId);
         if (!UIWindowScene.isInstance(scene)) {
           continue;
         }
         final windows = UIWindowScene.castFrom(scene).windows;
         for (var windowId = 0; windowId < windows.count; windowId++) {
-          final window = UIWindow.castFrom(windows.objectAtIndex_(windowId));
+          final window = UIWindow.castFrom(windows.objectAtIndex(windowId));
           if (window.keyWindow) {
             return window;
           }
@@ -59,7 +59,7 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
     required CallbackType type,
     bool preferEphemeralSession = false,
   }) {
-    final url = objc.NSURL.URLWithString_(uri.toString().toNSString());
+    final url = objc.NSURL.URLWithString(uri.toString().toNSString());
     if (url == null) {
       logger?.severe('Invalid URL: $uri');
       throw NativeAuthException('Invalid URL: $uri');
@@ -126,9 +126,9 @@ extension on CallbackType {
 
   /// Whether the current iOS version supports the new callback schemes.
   static bool get _supportsNewCallbacks {
-    return iosVersion.compare_options_(
+    return iosVersion.compare$1(
           supportsNewCallbacksVersion.toNSString(),
-          objc.NSStringCompareOptions.NSNumericSearch,
+          options: objc.NSStringCompareOptions.NSNumericSearch,
         ) !=
         objc.NSComparisonResult.NSOrderedAscending;
   }
@@ -157,18 +157,19 @@ extension on CallbackType {
     switch (this) {
       case CallbackTypeCustom(:final scheme):
         if (_supportsNewCallbacks) {
-          return session.initWithURL_callback_completionHandler_(
+          return session.initWithURL$1(
             url,
-            ASWebAuthenticationSessionCallback.callbackWithCustomScheme_(
+            callback:
+                ASWebAuthenticationSessionCallback.callbackWithCustomScheme(
               scheme.toNSString(),
             ),
-            completionHandler,
+            completionHandler: completionHandler,
           );
         }
-        return session.initWithURL_callbackURLScheme_completionHandler_(
+        return session.initWithURL(
           url,
-          scheme.toNSString(),
-          completionHandler,
+          callbackURLScheme: scheme.toNSString(),
+          completionHandler: completionHandler,
         );
       case CallbackTypeLocalhost():
         throw ArgumentError.value(
@@ -178,13 +179,13 @@ extension on CallbackType {
         );
       case CallbackTypeHttps(:final host, :final path):
         _ensureNewCallbacksSupport();
-        return session.initWithURL_callback_completionHandler_(
+        return session.initWithURL$1(
           url,
-          ASWebAuthenticationSessionCallback.callbackWithHTTPSHost_path_(
+          callback: ASWebAuthenticationSessionCallback.callbackWithHTTPSHost(
             host.toNSString(),
-            path.toNSString(),
+            path: path.toNSString(),
           ),
-          completionHandler,
+          completionHandler: completionHandler,
         );
     }
   }
