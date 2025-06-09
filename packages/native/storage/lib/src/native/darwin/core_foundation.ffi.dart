@@ -2508,11 +2508,10 @@ typedef DartCFIndex = int;
 
 /// Base "type" of all "CF objects", and polymorphic functions on them
 typedef CFTypeRef = ffi.Pointer<ffi.Void>;
-
-final class CFString extends ffi.Opaque {}
-
 typedef CFStringRef = ffi.Pointer<CFString>;
 typedef CFMutableStringRef = ffi.Pointer<CFString>;
+
+final class CFString extends ffi.Opaque {}
 
 /// Type to mean any instance of a property list type;
 /// currently, CFString, CFData, CFNumber, CFBoolean, CFDate,

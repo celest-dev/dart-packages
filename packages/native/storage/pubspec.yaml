@@ -4,8 +4,8 @@ version: 0.4.0
 repository: https://github.com/celest-dev/dart-packages/tree/main/packages/native/storage
 
 environment:
-  sdk: ^3.3.0
-  flutter: ">=3.19.0"
+  sdk: ^3.6.0
+  flutter: ">=3.27.0"
 
 # Explicitly declare platform support to help `pana`
 platforms:
@@ -31,7 +31,7 @@ dependencies:
   xdg_directories: ^1.0.4
 
 dev_dependencies:
-  ffigen: ^18.0.0
+  ffigen: ^19.0.0
   jnigen: ^0.14.2
   lints: ^5.0.0
   test: ^1.24.0
