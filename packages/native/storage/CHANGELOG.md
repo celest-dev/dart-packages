@@ -1,3 +1,7 @@
+## 0.4.0
+
+- chore!: Migrate Android away from EncryptedSharedPreferences to SharedPreferences
+
 ## 0.3.0
 
 - fix!: Don't set a default namespace on Web

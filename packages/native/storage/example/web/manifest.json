@@ -1,6 +1,6 @@
 {
-    "name": "platform_storage_example",
-    "short_name": "platform_storage_example",
+    "name": "native_storage_example",
+    "short_name": "native_storage_example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
