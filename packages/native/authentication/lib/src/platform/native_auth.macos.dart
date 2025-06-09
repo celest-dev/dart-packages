@@ -29,7 +29,7 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
       final windows = objc.NSArray.castFrom(windowsId);
       NSWindow? keyWindow;
       for (var i = 0; i < windows.count; i++) {
-        final windowId = windows.objectAtIndex_(i);
+        final windowId = windows.objectAtIndex(i);
         if (!NSWindow.isInstance(windowId)) {
           continue;
         }
@@ -64,7 +64,7 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
         type: type,
       );
     }
-    final url = objc.NSURL.URLWithString_(uri.toString().toNSString());
+    final url = objc.NSURL.URLWithString(uri.toString().toNSString());
     if (url == null) {
       logger?.severe('Invalid URL: $uri');
       throw NativeAuthException('Invalid URL: $uri');
@@ -131,9 +131,9 @@ extension on CallbackType {
 
   /// Whether the current macOS version supports the new callback schemes.
   static bool get _supportsNewCallbacks {
-    return macosVersion.compare_options_(
+    return macosVersion.compare$1(
           supportsNewCallbacksVersion.toNSString(),
-          objc.NSStringCompareOptions.NSNumericSearch,
+          options: objc.NSStringCompareOptions.NSNumericSearch,
         ) !=
         objc.NSComparisonResult.NSOrderedAscending;
   }
@@ -167,28 +167,29 @@ extension on CallbackType {
         );
       case CallbackTypeCustom(:final scheme):
         if (_supportsNewCallbacks) {
-          return session.initWithURL_callback_completionHandler_(
+          return session.initWithURL$1(
             url,
-            ASWebAuthenticationSessionCallback.callbackWithCustomScheme_(
+            callback:
+                ASWebAuthenticationSessionCallback.callbackWithCustomScheme(
               scheme.toNSString(),
             ),
-            completionHandler,
+            completionHandler: completionHandler,
           );
         }
-        return session.initWithURL_callbackURLScheme_completionHandler_(
+        return session.initWithURL(
           url,
-          scheme.toNSString(),
-          completionHandler,
+          callbackURLScheme: scheme.toNSString(),
+          completionHandler: completionHandler,
         );
       case CallbackTypeHttps(:final host, :final path):
         _ensureNewCallbacksSupport();
-        return session.initWithURL_callback_completionHandler_(
+        return session.initWithURL$1(
           url,
-          ASWebAuthenticationSessionCallback.callbackWithHTTPSHost_path_(
+          callback: ASWebAuthenticationSessionCallback.callbackWithHTTPSHost(
             host.toNSString(),
-            path.toNSString(),
+            path: path.toNSString(),
           ),
-          completionHandler,
+          completionHandler: completionHandler,
         );
     }
   }
