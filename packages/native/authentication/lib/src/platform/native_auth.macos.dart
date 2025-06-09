@@ -6,6 +6,7 @@ import 'package:native_authentication/src/model/callback_session.dart';
 import 'package:native_authentication/src/native/macos/authentication_services.ffi.dart';
 import 'package:native_authentication/src/platform/native_auth.desktop.dart';
 import 'package:objective_c/objective_c.dart' as objc;
+import 'package:pub_semver/pub_semver.dart';
 
 // ignore: camel_case_types
 typedef _ObjCBlock_ffiVoid_NSURL_NSError
@@ -127,32 +128,23 @@ extension on CallbackType {
   /// The version of macOS that supports the latest callback schemes (HTTPS).
   ///
   /// https://developer.apple.com/documentation/authenticationservices/aswebauthenticationsession/callback
-  static const String supportsNewCallbacksVersion = '14.4';
+  static final Version supportsNewCallbacksVersion = Version(14, 4, 0);
 
   /// Whether the current macOS version supports the new callback schemes.
   static bool get _supportsNewCallbacks {
-    return macosVersion.compare$1(
-          supportsNewCallbacksVersion.toNSString(),
-          options: objc.NSStringCompareOptions.NSNumericSearch,
-        ) !=
-        objc.NSComparisonResult.NSOrderedAscending;
+    return objc.checkOSVersion(macOS: supportsNewCallbacksVersion);
   }
 
   /// Throws if the current macOS version does not support the new callback
   /// schemes.
   void _ensureNewCallbacksSupport() {
     if (!_supportsNewCallbacks) {
-      throw ArgumentError.value(
-        this,
-        'callbackScheme',
+      throw UnsupportedError(
         'HTTPS scheme is only supported on macOS >=$supportsNewCallbacksVersion. '
-            'Current version: $macosVersion',
+        'Current version: ${objc.osVersion}',
       );
     }
   }
-
-  static objc.NSString get macosVersion =>
-      NSProcessInfo.getProcessInfo().operatingSystemVersionString;
 
   ASWebAuthenticationSession session({
     required objc.NSURL url,
