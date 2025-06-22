@@ -10,6 +10,10 @@ void main() {
   Logger.root.onRecord.listen((record) {
     // ignore: avoid_print
     print('${record.level.name}: ${record.time}: ${record.message}');
+    if (record.error != null) {
+      // ignore: avoid_print
+      print(record.error);
+    }
   });
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 

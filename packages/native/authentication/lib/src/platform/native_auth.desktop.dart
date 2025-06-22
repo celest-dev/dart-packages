@@ -1,10 +1,14 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:ffi';
 import 'dart:io';
 
+import 'package:ffi/ffi.dart';
 import 'package:logging/logging.dart';
 import 'package:native_authentication/native_authentication.dart';
 import 'package:native_authentication/src/model/callback_session.dart';
+import 'package:native_authentication/src/native/linux/glib.ffi.dart';
+import 'package:native_authentication/src/native/linux/linux.dart';
 import 'package:native_authentication/src/native_auth.platform_io.dart';
 import 'package:stream_transform/stream_transform.dart';
 
@@ -21,6 +25,12 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
     if (Platform.isWindows) {
       command = 'powershell';
     } else if (Platform.isLinux) {
+      if (await _launchUrlLinux(url)) {
+        return;
+      }
+      logger.finest(
+        'Failed to launch URL using GLib. Falling back to xdg-open.',
+      );
       command = 'xdg-open';
     } else if (Platform.isMacOS) {
       command = 'open';
@@ -49,6 +59,56 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
         underlyingError: e,
       );
     }
+  }
+
+  /// Attempts to launch the URL using the Linux GLib API.
+  Future<bool> _launchUrlLinux(String url) async {
+    return using((arena) async {
+      NativeCallable<
+              Void Function(
+                  Pointer<GObject>, Pointer<GAsyncResult>, Pointer<Void>)>?
+          nativeCallback;
+      try {
+        final completer = Completer<bool>();
+
+        void callback(
+          Pointer<GObject> source,
+          Pointer<GAsyncResult> result,
+          gpointer userData,
+        ) {
+          final error = arena<Pointer<GError>>();
+          final success = linux.gio.g_app_info_launch_default_for_uri_finish(
+            result,
+            error,
+          );
+
+          if (success == 0) {
+            final errorMessage = error.value.ref.message.toDartString();
+            logger.warning('Failed to launch URL with GLib: $errorMessage');
+            linux.glib.g_error_free(error.value);
+            completer.complete(false);
+          } else {
+            completer.complete(true);
+          }
+        }
+
+        nativeCallback = NativeCallable.listener(callback);
+        linux.gio.g_app_info_launch_default_for_uri_async(
+          /* uri         */ url.toNativeUtf8(allocator: arena).cast<Char>(),
+          /* context     */ nullptr,
+          /* cancellable */ nullptr,
+          /* callback    */ nativeCallback.nativeFunction,
+          /* user_data   */ nullptr,
+        );
+
+        return completer.future;
+      } on Object catch (e) {
+        logger.fine('Failed to find GLib', e);
+        return false;
+      } finally {
+        nativeCallback?.close();
+      }
+    });
   }
 
   Future<void> _respond(
