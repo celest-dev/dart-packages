@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:meta/meta.dart';
 
@@ -15,7 +14,7 @@ abstract class CallbackSession {
   void cancel();
 
   @override
-  int get hashCode => Object.hash(CallbackSession, id);
+  int get hashCode => id.hashCode;
 
   @override
   bool operator ==(Object other) => other is CallbackSession && other.id == id;
@@ -29,10 +28,10 @@ final class NativeAuthCallbackSessionImpl extends CallbackSession {
     this._cancel,
   );
 
-  static final Random _random = Random();
+  static int _nextId = 1;
 
   @internal
-  static int nextId() => _random.nextInt(1 << 10);
+  static int nextId() => _nextId++;
 
   @override
   final int id;

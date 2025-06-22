@@ -48,9 +48,7 @@ final class NativeAuthenticationAndroid extends NativeAuthenticationPlatform {
               completer.complete(Uri.parse(url));
             case android.NativeAuthentication.RESULT_CANCELED:
               completer.completeError(
-                NativeAuthException(
-                  'Redirect canceled by user (id=$sessionId)',
-                ),
+                NativeAuthCanceledException(sessionId),
               );
             case android.NativeAuthentication.RESULT_FAILURE:
               final message = state
