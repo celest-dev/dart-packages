@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       return localhost;
     }
     return switch (Platform.operatingSystem) {
-      'ios' || 'android' || 'macos' => const CallbackType.custom('celest'),
+      'ios' || 'android' || 'macos' => const CallbackType.custom('myapp'),
       _ => localhost,
     };
   }

@@ -22,6 +22,23 @@ abstract interface class NativeAuthException {
   Object? get underlyingError;
 }
 
+/// Thrown when the user cancels the native authentication process.
+final class NativeAuthCanceledException implements NativeAuthException {
+  /// Creates a new [NativeAuthCanceledException] with the given [message].
+  const NativeAuthCanceledException(this.id);
+
+  final int id;
+
+  @override
+  String get message => 'Redirect canceled by user (id=$id)';
+
+  @override
+  Object? get underlyingError => null;
+
+  @override
+  String toString() => message;
+}
+
 class _NativeAuthExceptionImpl implements NativeAuthException {
   const _NativeAuthExceptionImpl(
     this.message, {
