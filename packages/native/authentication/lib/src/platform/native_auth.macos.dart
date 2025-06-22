@@ -23,7 +23,7 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
     presentationAnchorForWebAuthenticationSession_: (session) {
       final windowsId = NSApplication.getSharedApplication().windows;
       if (!objc.NSArray.isInstance(windowsId)) {
-        logger?.severe('Failed to get application windows');
+        logger.severe('Failed to get application windows');
         session.cancel();
         return NSWindow.castFromPointer(nullptr);
       }
@@ -40,7 +40,7 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
         }
       }
       if (keyWindow == null) {
-        logger?.severe('Failed to get key window');
+        logger.severe('Failed to get key window');
         session.cancel();
         return NSWindow.castFromPointer(nullptr);
       }
@@ -65,11 +65,16 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
         type: type,
       );
     }
+
     final url = objc.NSURL.URLWithString(uri.toString().toNSString());
+    ASWebAuthenticationSessionErrorCode
+        .ASWebAuthenticationSessionErrorCodePresentationContextNotProvided;
     if (url == null) {
-      logger?.severe('Invalid URL: $uri');
+      logger.severe('Invalid URL: $uri');
       throw NativeAuthException('Invalid URL: $uri');
     }
+
+    final sessionId = NativeAuthCallbackSessionImpl.nextId();
     final completion = Completer<Uri>();
     final completionHandler =
         ObjCBlock_ffiVoid_NSURL_NSError.listener((url, error) {
@@ -77,28 +82,34 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
         final url? => Uri.tryParse(url),
         _ => null,
       };
-      logger?.fine('Redirect completion: url=$uri, error=$error');
+      logger.finest('Redirect completion: url=$uri, error=$error');
       if (completion.isCompleted) {
-        logger?.finer('Completion already called. Ignoring.');
+        logger.finer('Completion already called. Ignoring.');
         return;
       }
       if (error != null) {
-        completion.completeError(
+        if (error.code ==
+            ASWebAuthenticationSessionErrorCode
+                .ASWebAuthenticationSessionErrorCodeCanceledLogin.value) {
+          return completion.completeError(
+            NativeAuthCanceledException(sessionId),
+          );
+        }
+        return completion.completeError(
           NativeAuthException(
             'Completed with error',
             underlyingError: error.localizedDescription.toDartString(),
           ),
         );
-        return;
       }
       if (uri == null) {
-        completion.completeError(
+        return completion.completeError(
           const NativeAuthException('Completed with invalid redirect URL'),
         );
-        return;
       }
       completion.complete(uri);
     });
+
     final session = type.session(
       url: url,
       completionHandler: completionHandler,
@@ -107,17 +118,16 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
     session.prefersEphemeralWebBrowserSession = preferEphemeralSession;
     session.presentationContextProvider = _presentationContextProvider;
     if (!session.start()) {
-      logger?.severe('Failed to start ASWebAuthenticationSession');
+      logger.severe('Failed to start ASWebAuthenticationSession');
       _cleanUp();
       throw const NativeAuthException(
         'Failed to start ASWebAuthenticationSession',
       );
     }
-    logger?.fine('Started ASWebAuthenticationSession');
+    logger.fine('Started ASWebAuthenticationSession');
     completion.future.whenComplete(_cleanUp).ignore();
     return NativeAuthCallbackSessionImpl(
-      // ignore: invalid_use_of_internal_member
-      NativeAuthCallbackSessionImpl.nextId(),
+      sessionId,
       completion,
       session.cancel,
     );

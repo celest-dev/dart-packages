@@ -3,19 +3,10 @@ import 'dart:async';
 import 'package:logging/logging.dart';
 import 'package:native_authentication/native_authentication.dart';
 import 'package:native_authentication/src/model/callback_session.dart';
-import 'package:path/path.dart';
 import 'package:web/web.dart';
 
 final class NativeAuthenticationPlatform implements NativeAuthentication {
   NativeAuthenticationPlatform({Logger? logger});
-
-  /// The base URL, to which all local paths are relative.
-  // ignore: unused_element
-  String get _baseUrl {
-    final baseElement = document.querySelector('base');
-    final basePath = baseElement?.getAttribute('href') ?? '/';
-    return url.join(window.location.origin, basePath);
-  }
 
   @override
   CallbackSession startCallback({

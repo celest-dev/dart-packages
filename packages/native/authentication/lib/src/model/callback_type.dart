@@ -118,6 +118,6 @@ final class CallbackTypeCustom extends CallbackType {
 
   @override
   String toString() {
-    return '$scheme:$host$path';
+    return '$scheme://$host$path';
   }
 }
