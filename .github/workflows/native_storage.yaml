@@ -50,6 +50,8 @@ jobs:
       - name: Get Packages (Example)
         working-directory: packages/native/storage/example
         run: flutter pub get
+      - name: Download iOS Platform
+        run: xcodebuild -downloadPlatform iOS
       - name: Setup iOS Simulator
         run: |
           RUNTIME=$(xcrun simctl list runtimes | grep 'iOS 18' | tail -n 1 | cut -d' ' -f 7)

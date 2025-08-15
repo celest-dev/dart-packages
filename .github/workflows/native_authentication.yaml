@@ -17,7 +17,7 @@ defaults:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-latest-xlarge
     timeout-minutes: 25
     steps:
       - name: Git Checkout
@@ -33,6 +33,8 @@ jobs:
         run: dart analyze --fatal-infos --fatal-warnings
       - name: Format
         run: dart format --set-exit-if-changed .
+      - name: Download iOS Platform
+        run: xcodebuild -downloadPlatform iOS
       - name: Build Example (iOS)
         run: flutter build ios --no-codesign
         working-directory: packages/native/authentication/example
@@ -58,6 +60,8 @@ jobs:
       - name: Get Packages (Example)
         working-directory: packages/native/authentication/example
         run: flutter pub get
+      - name: Download iOS Platform
+        run: xcodebuild -downloadPlatform iOS
       - name: Setup iOS Simulator
         run: |
           RUNTIME=$(xcrun simctl list runtimes | grep 'iOS 18' | tail -n 1 | cut -d' ' -f 7)
@@ -97,11 +101,11 @@ jobs:
           api-level: 35
           arch: x86_64
           script: cd packages/native/authentication/example && flutter test -d emulator integration_test/integration_test.dart
-      - name: Test (API 21)
+      - name: Test (API 24)
         uses: ReactiveCircus/android-emulator-runner@1dcd0090116d15e7c562f8db72807de5e036a4ed # 2.34.0
         with:
           # Minimum supported API level
-          api-level: 21
+          api-level: 24
           arch: x86_64
           script: cd packages/native/authentication/example && flutter test -d emulator integration_test/integration_test.dart
   test_linux:
