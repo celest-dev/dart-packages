@@ -1,3 +1,7 @@
+# NEXT
+
+- Adds a `NativeAuthCanceledException` type which is thrown when the user cancels the authentication flow.
+
 # 0.1.5
 
 - chore: Bump `ffigen` and `objective_c` dependencies

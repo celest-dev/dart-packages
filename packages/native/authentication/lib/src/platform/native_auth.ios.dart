@@ -18,7 +18,7 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
       : logger = logger ?? Logger('NativeAuthentication'),
         super.base();
 
-  final Logger? logger;
+  final Logger logger;
 
   // Hold strong references to the callbacks to prevent them from being
   // garbage collected.
@@ -43,7 +43,7 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
           }
         }
       }
-      logger?.severe('Failed to get key window');
+      logger.severe('Failed to get key window');
       session.cancel();
       return UIWindow.castFromPointer(nullptr);
     },
@@ -62,9 +62,11 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
   }) {
     final url = objc.NSURL.URLWithString(uri.toString().toNSString());
     if (url == null) {
-      logger?.severe('Invalid URL: $uri');
+      logger.severe('Invalid URL: $uri');
       throw NativeAuthException('Invalid URL: $uri');
     }
+
+    final sessionId = NativeAuthCallbackSessionImpl.nextId();
     final completion = Completer<Uri>();
     final completionHandler =
         ObjCBlock_ffiVoid_NSURL_NSError.listener((url, error) {
@@ -72,28 +74,34 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
         final url? => Uri.tryParse(url),
         _ => null,
       };
-      logger?.fine('Redirect completion: url=$uri, error=$error');
+      logger.finest('Redirect completion: url=$uri, error=$error');
       if (completion.isCompleted) {
-        logger?.finer('Completion already called. Ignoring.');
+        logger.finer('Completion already called. Ignoring.');
         return;
       }
       if (error != null) {
-        completion.completeError(
+        if (error.code ==
+            ASWebAuthenticationSessionErrorCode
+                .ASWebAuthenticationSessionErrorCodeCanceledLogin.value) {
+          return completion.completeError(
+            NativeAuthCanceledException(sessionId),
+          );
+        }
+        return completion.completeError(
           NativeAuthException(
             'Completed with error',
             underlyingError: error.localizedDescription.toDartString(),
           ),
         );
-        return;
       }
       if (uri == null) {
-        completion.completeError(
+        return completion.completeError(
           const NativeAuthException('Completed with invalid redirect URL'),
         );
-        return;
       }
       completion.complete(uri);
     });
+
     final session = type.session(
       url: url,
       completionHandler: completionHandler,
@@ -102,17 +110,16 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
     session.prefersEphemeralWebBrowserSession = preferEphemeralSession;
     session.presentationContextProvider = _presentationContextProvider;
     if (!session.start()) {
-      logger?.severe('Failed to start ASWebAuthenticationSession');
+      logger.severe('Failed to start ASWebAuthenticationSession');
       _cleanUp();
       throw const NativeAuthException(
         'Failed to start ASWebAuthenticationSession',
       );
     }
-    logger?.fine('Started ASWebAuthenticationSession');
+    logger.fine('Started ASWebAuthenticationSession');
     completion.future.whenComplete(_cleanUp).ignore();
     return NativeAuthCallbackSessionImpl(
-      // ignore: invalid_use_of_internal_member
-      NativeAuthCallbackSessionImpl.nextId(),
+      sessionId,
       completion,
       session.cancel,
     );

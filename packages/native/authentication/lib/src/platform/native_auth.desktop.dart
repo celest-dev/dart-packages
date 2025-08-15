@@ -13,7 +13,7 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
       : logger = logger ?? Logger('NativeAuthentication'),
         super.base();
 
-  final Logger? logger;
+  final Logger logger;
 
   /// Launches the given URL using the platform's default browser.
   Future<void> _launchUrl(String url) async {
@@ -71,7 +71,7 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
     bool preferEphemeralSession = false,
   }) {
     if (preferEphemeralSession) {
-      logger?.warning(
+      logger.warning(
         'Ephemeral sessions are not supported on this platform. '
         'Using a regular session instead.',
       );
@@ -97,22 +97,26 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
       );
     });
 
+    final sessionId = NativeAuthCallbackSessionImpl.nextId();
     final callbackCompleter = Completer<Uri>();
     final cancelSignal = Completer<void>();
     callbackCompleter.complete(
       server.then((server) async {
         await _launchUrl(uri.toString());
-        logger?.fine('Listening for callback on $type');
+        logger.fine('Listening for callback on $type');
         return _listenForCallback(
           server,
           expectedPath,
-          cancelSignal.future,
+          cancelSignal.future.then((_) {
+            logger.fine('Callback session $sessionId was cancelled');
+            throw NativeAuthCanceledException(sessionId);
+          }),
         );
       }),
     );
 
     return NativeAuthCallbackSessionImpl(
-      NativeAuthCallbackSessionImpl.nextId(),
+      sessionId,
       callbackCompleter,
       cancelSignal.complete,
     );
@@ -123,16 +127,10 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
     String expectedPath,
     Future<void> cancelSignal,
   ) async {
-    cancelSignal = cancelSignal.then((_) {
-      logger?.severe('Authorization flow was cancelled by user');
-      throw const NativeAuthException(
-        'Authorization flow was cancelled by user',
-      );
-    });
     try {
       late Uri result;
       await for (final request in server.takeUntil(cancelSignal)) {
-        logger?.fine('${request.method} ${request.uri.path}');
+        logger.fine('${request.method} ${request.uri.path}');
         if (request.method != 'GET') {
           await _respond(
             request,
