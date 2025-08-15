@@ -7,6 +7,9 @@ void main() {
     logger: Logger.root
       ..onRecord.listen((record) {
         print('${record.level.name}: ${record.message}');
+        if (record.error != null) {
+          print(record.error);
+        }
       }),
   );
   test('', () {
