@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/objective_c/macos
 
 SPEC CHECKSUMS:
-  FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
+  FlutterMacOS: d0db08ddef1a9af05a5ec4b724367152bb0500b1
   native_authentication: e98f968601d32af65f26cab7ca987e3f369567b5
   objective_c: ec13431e45ba099cb734eb2829a5c1cd37986cba
 
