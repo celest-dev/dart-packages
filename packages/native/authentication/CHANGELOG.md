@@ -1,9 +1,6 @@
-# NEXT
-
-- Adds a `NativeAuthCanceledException` type which is thrown when the user cancels the authentication flow.
-
 # 0.1.5
 
+- feat: Adds a `NativeAuthCanceledException` type which is thrown when the user cancels the authentication flow.
 - chore: Bump `ffigen` and `objective_c` dependencies
 - chore: Bump minimum Dart SDK version to 3.6.0
 - chore: Use version comparison tool from `objective_c` package
