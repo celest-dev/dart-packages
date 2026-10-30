@@ -10,9 +10,7 @@ import 'package:native_authentication/src/platform/native_auth.macos.dart';
 
 abstract base class NativeAuthenticationPlatform
     implements NativeAuthentication {
-  factory NativeAuthenticationPlatform({
-    Logger? logger,
-  }) {
+  factory NativeAuthenticationPlatform({Logger? logger}) {
     if (const bool.fromEnvironment('dart.library.ui')) {
       if (Platform.isAndroid) {
         return NativeAuthenticationAndroid(logger: logger);

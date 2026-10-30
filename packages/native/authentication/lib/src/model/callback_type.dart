@@ -9,10 +9,8 @@ sealed class CallbackType {
   const CallbackType();
 
   /// {@macro native_auth.callback_type_localhost}
-  const factory CallbackType.localhost({
-    int port,
-    String path,
-  }) = CallbackTypeLocalhost;
+  const factory CallbackType.localhost({int port, String path}) =
+      CallbackTypeLocalhost;
 
   /// {@macro native_auth.callback_type_https}
   const factory CallbackType.https({
@@ -21,11 +19,8 @@ sealed class CallbackType {
   }) = CallbackTypeHttps;
 
   /// {@macro native_auth.callback_type_custom}
-  const factory CallbackType.custom(
-    String scheme, {
-    String host,
-    String path,
-  }) = CallbackTypeCustom;
+  const factory CallbackType.custom(String scheme, {String host, String path}) =
+      CallbackTypeCustom;
 }
 
 /// {@template native_auth.callback_type_localhost}
@@ -67,10 +62,8 @@ final class CallbackTypeLocalhost extends CallbackType {
 /// {@endtemplate}
 final class CallbackTypeHttps extends CallbackType {
   /// {@macro native_auth.callback_type_https}
-  const CallbackTypeHttps({
-    required this.host,
-    required this.path,
-  }) : assert(path != '', 'path must not be empty');
+  const CallbackTypeHttps({required this.host, required this.path})
+    : assert(path != '', 'path must not be empty');
 
   /// The host (domain) to use for the redirect URI, e.g. `example.com`.
   final String host;
@@ -93,11 +86,7 @@ final class CallbackTypeHttps extends CallbackType {
 /// {@endtemplate}
 final class CallbackTypeCustom extends CallbackType {
   /// {@macro native_auth.callback_type_custom}
-  const CallbackTypeCustom(
-    this.scheme, {
-    this.host = '*',
-    this.path = '/*',
-  });
+  const CallbackTypeCustom(this.scheme, {this.host = '*', this.path = '/*'});
 
   /// The custom scheme to use for the redirect URI.
   final String scheme;

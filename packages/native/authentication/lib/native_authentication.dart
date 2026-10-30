@@ -19,9 +19,7 @@ export 'src/model/oauth_result.dart';
 /// {@endtemplate}
 abstract interface class NativeAuthentication {
   /// {@macro native_authentication.native_authentication}
-  factory NativeAuthentication({
-    Logger? logger,
-  }) =>
+  factory NativeAuthentication({Logger? logger}) =>
       NativeAuthenticationPlatform(logger: logger);
 
   /// Starts an authentication flow by directing the user to the given [uri]

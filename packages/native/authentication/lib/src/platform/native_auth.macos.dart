@@ -9,8 +9,8 @@ import 'package:objective_c/objective_c.dart' as objc;
 import 'package:pub_semver/pub_semver.dart';
 
 // ignore: camel_case_types
-typedef _ObjCBlock_ffiVoid_NSURL_NSError
-    = objc.ObjCBlock<Void Function(objc.NSURL?, objc.NSError?)>;
+typedef _ObjCBlock_ffiVoid_NSURL_NSError =
+    objc.ObjCBlock<Void Function(objc.NSURL?, objc.NSError?)>;
 
 final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
   NativeAuthenticationMacOs({super.logger});
@@ -20,33 +20,33 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
   _ObjCBlock_ffiVoid_NSURL_NSError? _currentCompletionHandler;
   late final _presentationContextProvider =
       ASWebAuthenticationPresentationContextProviding.implement(
-    presentationAnchorForWebAuthenticationSession_: (session) {
-      final windowsId = NSApplication.getSharedApplication().windows;
-      if (!objc.NSArray.isInstance(windowsId)) {
-        logger.severe('Failed to get application windows');
-        session.cancel();
-        return NSWindow.castFromPointer(nullptr);
-      }
-      final windows = objc.NSArray.castFrom(windowsId);
-      NSWindow? keyWindow;
-      for (var i = 0; i < windows.count; i++) {
-        final windowId = windows.objectAtIndex(i);
-        if (!NSWindow.isInstance(windowId)) {
-          continue;
-        }
-        final window = NSWindow.castFrom(windowId);
-        if (window.keyWindow || keyWindow == null) {
-          keyWindow = window;
-        }
-      }
-      if (keyWindow == null) {
-        logger.severe('Failed to get key window');
-        session.cancel();
-        return NSWindow.castFromPointer(nullptr);
-      }
-      return keyWindow;
-    },
-  );
+        presentationAnchorForWebAuthenticationSession_: (session) {
+          final windowsId = NSApplication.getSharedApplication().windows;
+          if (!objc.NSArray.isInstance(windowsId)) {
+            logger.severe('Failed to get application windows');
+            session.cancel();
+            return NSWindow.castFromPointer(nullptr);
+          }
+          final windows = objc.NSArray.castFrom(windowsId);
+          NSWindow? keyWindow;
+          for (var i = 0; i < windows.count; i++) {
+            final windowId = windows.objectAtIndex(i);
+            if (!NSWindow.isInstance(windowId)) {
+              continue;
+            }
+            final window = NSWindow.castFrom(windowId);
+            if (window.keyWindow || keyWindow == null) {
+              keyWindow = window;
+            }
+          }
+          if (keyWindow == null) {
+            logger.severe('Failed to get key window');
+            session.cancel();
+            return NSWindow.castFromPointer(nullptr);
+          }
+          return keyWindow;
+        },
+      );
 
   void _cleanUp() {
     _currentCompletionHandler?.ref.release();
@@ -60,10 +60,7 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
     bool preferEphemeralSession = false,
   }) {
     if (type is CallbackTypeLocalhost) {
-      return super.startCallback(
-        uri: uri,
-        type: type,
-      );
+      return super.startCallback(uri: uri, type: type);
     }
 
     final url = objc.NSURL.URLWithString(uri.toString().toNSString());
@@ -76,8 +73,10 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
 
     final sessionId = NativeAuthCallbackSessionImpl.nextId();
     final completion = Completer<Uri>();
-    final completionHandler =
-        ObjCBlock_ffiVoid_NSURL_NSError.listener((url, error) {
+    final completionHandler = ObjCBlock_ffiVoid_NSURL_NSError.listener((
+      url,
+      error,
+    ) {
       final uri = switch (url?.absoluteString?.toDartString()) {
         final url? => Uri.tryParse(url),
         _ => null,
@@ -90,7 +89,8 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
       if (error != null) {
         if (error.code ==
             ASWebAuthenticationSessionErrorCode
-                .ASWebAuthenticationSessionErrorCodeCanceledLogin.value) {
+                .ASWebAuthenticationSessionErrorCodeCanceledLogin
+                .value) {
           return completion.completeError(
             NativeAuthCanceledException(sessionId),
           );
@@ -126,11 +126,7 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
     }
     logger.fine('Started ASWebAuthenticationSession');
     completion.future.whenComplete(_cleanUp).ignore();
-    return NativeAuthCallbackSessionImpl(
-      sessionId,
-      completion,
-      session.cancel,
-    );
+    return NativeAuthCallbackSessionImpl(sessionId, completion, session.cancel);
   }
 }
 
@@ -173,8 +169,8 @@ extension on CallbackType {
             url,
             callback:
                 ASWebAuthenticationSessionCallback.callbackWithCustomScheme(
-              scheme.toNSString(),
-            ),
+                  scheme.toNSString(),
+                ),
             completionHandler: completionHandler,
           );
         }
