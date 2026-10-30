@@ -14,7 +14,7 @@ Wraps ASWebAuthenticationSession for macOS.
   s.dependency       'FlutterMacOS'
 
   s.source           = { :path => '.' }
-  s.source_files     = 'Classes/**/*'
+  s.source_files     = 'native_authentication/Sources/native_authentication/**/*.{h,m}'
   s.requires_arc     = true
   s.frameworks       = 'AuthenticationServices', 'AppKit'
 

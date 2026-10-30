@@ -9,7 +9,7 @@ external-versions:
     min: 14.5.0
 output: 
   bindings: "lib/src/native/macos/authentication_services.ffi.dart"
-  objc-bindings: "macos/Classes/AuthenticationServices.ffi.m"
+  objc-bindings: "macos/native_authentication/Sources/native_authentication/AuthenticationServices.ffi.m"
 compiler-opts:
   - "-F/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
   - "-F/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Cryptexes/OS/System/Library/Frameworks"
