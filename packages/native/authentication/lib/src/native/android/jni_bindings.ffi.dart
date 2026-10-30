@@ -603,9 +603,9 @@ abstract base mixin class $Callback<$T extends jni$_.JObject?> {
 final class _$Callback<$T extends jni$_.JObject?> with $Callback<$T> {
   _$Callback({
     required this.T,
-    required void Function($T object) onMessage,
+    required this._onMessage,
     this.onMessage$async = false,
-  }) : _onMessage = onMessage;
+  });
 
   @core$_.override
   final jni$_.JObjType<$T> T;
@@ -2450,9 +2450,9 @@ abstract base mixin class $Runnable {
 
 final class _$Runnable with $Runnable {
   _$Runnable({
-    required void Function() run,
+    required this._run,
     this.run$async = false,
-  }) : _run = run;
+  });
 
   final void Function() _run;
   final bool run$async;
@@ -3406,9 +3406,9 @@ abstract base mixin class $Activity$ScreenCaptureCallback {
 final class _$Activity$ScreenCaptureCallback
     with $Activity$ScreenCaptureCallback {
   _$Activity$ScreenCaptureCallback({
-    required void Function() onScreenCaptured,
+    required this._onScreenCaptured,
     this.onScreenCaptured$async = false,
-  }) : _onScreenCaptured = onScreenCaptured;
+  });
 
   final void Function() _onScreenCaptured;
   final bool onScreenCaptured$async;
@@ -21721,9 +21721,9 @@ abstract base mixin class $CancellationSignal$OnCancelListener {
 final class _$CancellationSignal$OnCancelListener
     with $CancellationSignal$OnCancelListener {
   _$CancellationSignal$OnCancelListener({
-    required void Function() onCancel,
+    required this._onCancel,
     this.onCancel$async = false,
-  }) : _onCancel = onCancel;
+  });
 
   final void Function() _onCancel;
   final bool onCancel$async;

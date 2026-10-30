@@ -1,3 +1,9 @@
+# 0.1.6
+
+- feat: Adds Swift Package Manager support on iOS and macOS
+- chore: Migrates to built-in Kotlin on Android
+- chore: Bump minimum SDK versions to Flutter 3.44 and Dart 3.12, which built-in Kotlin requires
+
 # 0.1.5
 
 - feat: Adds a `NativeAuthCanceledException` type which is thrown when the user cancels the authentication flow.

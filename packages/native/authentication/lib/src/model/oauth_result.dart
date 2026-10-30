@@ -328,7 +328,7 @@ final class OAuthCode implements OAuthResult {
 
   @override
   Map<String, String> toJson() => {
-        if (state case final state?) 'state': state,
+        'state': ?state,
         'code': code,
       };
 }
@@ -364,11 +364,10 @@ final class OAuthException implements OAuthResult, NativeAuthException {
 
   @override
   Map<String, String> toJson() => {
-        if (state case final state?) 'state': state,
+        'state': ?state,
         'error': error,
-        if (errorDescription case final errorDescription?)
-          'error_description': errorDescription,
-        if (errorUri case final errorUri?) 'error_uri': errorUri,
+        'error_description': ?errorDescription,
+        'error_uri': ?errorUri,
       };
 
   @override
