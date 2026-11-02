@@ -15,8 +15,10 @@ final class LinuxCommon {
     if (Platform.isMacOS) '/opt/homebrew/lib/libglib-2.0.dylib',
   ]);
 
-  late final Glib gio = Glib(searchDylib('gio', [
-    'libgio-2.0.so.0',
-    if (Platform.isMacOS) '/opt/homebrew/lib/libgio-2.0.dylib',
-  ]));
+  late final Glib gio = Glib(
+    searchDylib('gio', [
+      'libgio-2.0.so.0',
+      if (Platform.isMacOS) '/opt/homebrew/lib/libgio-2.0.dylib',
+    ]),
+  );
 }

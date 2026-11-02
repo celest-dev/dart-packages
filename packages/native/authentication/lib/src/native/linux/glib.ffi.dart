@@ -15,30 +15,26 @@ import 'package:ffi/ffi.dart' as pkg_ffi;
 class Glib {
   /// Holds the symbol lookup function.
   final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
-      _lookup;
+  _lookup;
 
   /// The symbols are looked up in [dynamicLibrary].
   Glib(ffi.DynamicLibrary dynamicLibrary) : _lookup = dynamicLibrary.lookup;
 
   /// The symbols are looked up with [lookup].
   Glib.fromLookup(
-      ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
-          lookup)
-      : _lookup = lookup;
+    ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName) lookup,
+  ) : _lookup = lookup;
 
-  void g_error_free(
-    ffi.Pointer<GError> error,
-  ) {
-    return _g_error_free(
-      error,
-    );
+  void g_error_free(ffi.Pointer<GError> error) {
+    return _g_error_free(error);
   }
 
   late final _g_error_freePtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GError>)>>(
-          'g_error_free');
-  late final _g_error_free =
-      _g_error_freePtr.asFunction<void Function(ffi.Pointer<GError>)>();
+        'g_error_free',
+      );
+  late final _g_error_free = _g_error_freePtr
+      .asFunction<void Function(ffi.Pointer<GError>)>();
 
   void g_app_info_launch_default_for_uri_async(
     ffi.Pointer<ffi.Char> uri,
@@ -56,38 +52,54 @@ class Glib {
     );
   }
 
-  late final _g_app_info_launch_default_for_uri_asyncPtr = _lookup<
-      ffi.NativeFunction<
+  late final _g_app_info_launch_default_for_uri_asyncPtr =
+      _lookup<
+        ffi.NativeFunction<
           ffi.Void Function(
+            ffi.Pointer<ffi.Char>,
+            ffi.Pointer<_GAppLaunchContext>,
+            ffi.Pointer<GCancellable>,
+            GAsyncReadyCallback,
+            gpointer,
+          )
+        >
+      >('g_app_info_launch_default_for_uri_async');
+  late final _g_app_info_launch_default_for_uri_async =
+      _g_app_info_launch_default_for_uri_asyncPtr
+          .asFunction<
+            void Function(
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<_GAppLaunchContext>,
               ffi.Pointer<GCancellable>,
               GAsyncReadyCallback,
-              gpointer)>>('g_app_info_launch_default_for_uri_async');
-  late final _g_app_info_launch_default_for_uri_async =
-      _g_app_info_launch_default_for_uri_asyncPtr.asFunction<
-          void Function(ffi.Pointer<ffi.Char>, ffi.Pointer<_GAppLaunchContext>,
-              ffi.Pointer<GCancellable>, GAsyncReadyCallback, gpointer)>();
+              gpointer,
+            )
+          >();
 
   int g_app_info_launch_default_for_uri_finish(
     ffi.Pointer<GAsyncResult> result,
     ffi.Pointer<ffi.Pointer<GError>> error,
   ) {
-    return _g_app_info_launch_default_for_uri_finish(
-      result,
-      error,
-    );
+    return _g_app_info_launch_default_for_uri_finish(result, error);
   }
 
-  late final _g_app_info_launch_default_for_uri_finishPtr = _lookup<
-          ffi.NativeFunction<
-              gboolean Function(ffi.Pointer<GAsyncResult>,
-                  ffi.Pointer<ffi.Pointer<GError>>)>>(
-      'g_app_info_launch_default_for_uri_finish');
+  late final _g_app_info_launch_default_for_uri_finishPtr =
+      _lookup<
+        ffi.NativeFunction<
+          gboolean Function(
+            ffi.Pointer<GAsyncResult>,
+            ffi.Pointer<ffi.Pointer<GError>>,
+          )
+        >
+      >('g_app_info_launch_default_for_uri_finish');
   late final _g_app_info_launch_default_for_uri_finish =
-      _g_app_info_launch_default_for_uri_finishPtr.asFunction<
-          int Function(
-              ffi.Pointer<GAsyncResult>, ffi.Pointer<ffi.Pointer<GError>>)>();
+      _g_app_info_launch_default_for_uri_finishPtr
+          .asFunction<
+            int Function(
+              ffi.Pointer<GAsyncResult>,
+              ffi.Pointer<ffi.Pointer<GError>>,
+            )
+          >();
 
   ffi.Pointer<_GApplication> g_application_get_default() {
     return _g_application_get_default();
@@ -95,7 +107,8 @@ class Glib {
 
   late final _g_application_get_defaultPtr =
       _lookup<ffi.NativeFunction<ffi.Pointer<_GApplication> Function()>>(
-          'g_application_get_default');
+        'g_application_get_default',
+      );
   late final _g_application_get_default = _g_application_get_defaultPtr
       .asFunction<ffi.Pointer<_GApplication> Function()>();
 }
@@ -208,7 +221,13 @@ final class _GApplication extends ffi.Struct {
 /// The asynchronous operation is guaranteed to have held a reference to
 /// @source_object from the time when the `*_async()` function was called, until
 /// after this callback returns.
-typedef GAsyncReadyCallback = ffi.Pointer<
-    ffi.NativeFunction<
-        ffi.Void Function(ffi.Pointer<GObject> source_object,
-            ffi.Pointer<GAsyncResult> res, gpointer data)>>;
+typedef GAsyncReadyCallback =
+    ffi.Pointer<
+      ffi.NativeFunction<
+        ffi.Void Function(
+          ffi.Pointer<GObject> source_object,
+          ffi.Pointer<GAsyncResult> res,
+          gpointer data,
+        )
+      >
+    >;

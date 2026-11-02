@@ -9,10 +9,8 @@ abstract interface class NativeAuthException {
   /// [underlyingError].
   ///
   /// {@macro native_auth.native_auth_exception}
-  const factory NativeAuthException(
-    String message, {
-    Object? underlyingError,
-  }) = _NativeAuthExceptionImpl;
+  const factory NativeAuthException(String message, {Object? underlyingError}) =
+      _NativeAuthExceptionImpl;
 
   /// The error message.
   String get message;
@@ -40,10 +38,7 @@ final class NativeAuthCanceledException implements NativeAuthException {
 }
 
 class _NativeAuthExceptionImpl implements NativeAuthException {
-  const _NativeAuthExceptionImpl(
-    this.message, {
-    this.underlyingError,
-  });
+  const _NativeAuthExceptionImpl(this.message, {this.underlyingError});
 
   @override
   final String message;

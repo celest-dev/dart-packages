@@ -22,11 +22,7 @@ abstract class CallbackSession {
 
 @internal
 final class NativeAuthCallbackSessionImpl extends CallbackSession {
-  NativeAuthCallbackSessionImpl(
-    this.id,
-    this.completer,
-    this._cancel,
-  );
+  NativeAuthCallbackSessionImpl(this.id, this.completer, this._cancel);
 
   static int _nextId = 1;
 

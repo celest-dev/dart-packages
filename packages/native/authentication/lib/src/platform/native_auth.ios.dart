@@ -10,13 +10,13 @@ import 'package:objective_c/objective_c.dart' as objc;
 import 'package:pub_semver/pub_semver.dart';
 
 // ignore: camel_case_types
-typedef _ObjCBlock_ffiVoid_NSURL_NSError
-    = objc.ObjCBlock<Void Function(objc.NSURL?, objc.NSError?)>;
+typedef _ObjCBlock_ffiVoid_NSURL_NSError =
+    objc.ObjCBlock<Void Function(objc.NSURL?, objc.NSError?)>;
 
 final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
   NativeAuthenticationIos({Logger? logger})
-      : logger = logger ?? Logger('NativeAuthentication'),
-        super.base();
+    : logger = logger ?? Logger('NativeAuthentication'),
+      super.base();
 
   final Logger logger;
 
@@ -24,30 +24,30 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
   // garbage collected.
   _ObjCBlock_ffiVoid_NSURL_NSError? _currentCompletionHandler;
   late final _presentationContextProvider =
-      ASWebAuthenticationPresentationContextProviding.implement(
-    presentationAnchorForWebAuthenticationSession_: (session) {
-      // Best way to get the key window in iOS 13+.
-      // https://stackoverflow.com/questions/57134259/how-to-resolve-keywindow-was-deprecated-in-ios-13-0
-      final connectedScenes =
-          UIApplication.getSharedApplication().connectedScenes.allObjects;
-      for (var sceneId = 0; sceneId < connectedScenes.count; sceneId++) {
-        final scene = connectedScenes.objectAtIndex(sceneId);
-        if (!UIWindowScene.isInstance(scene)) {
-          continue;
-        }
-        final windows = UIWindowScene.castFrom(scene).windows;
-        for (var windowId = 0; windowId < windows.count; windowId++) {
-          final window = UIWindow.castFrom(windows.objectAtIndex(windowId));
-          if (window.keyWindow) {
-            return window;
+      ASWebAuthenticationPresentationContextProviding$Builder.implement(
+        presentationAnchorForWebAuthenticationSession_: (session) {
+          // Best way to get the key window in iOS 13+.
+          // https://stackoverflow.com/questions/57134259/how-to-resolve-keywindow-was-deprecated-in-ios-13-0
+          final connectedScenes =
+              UIApplication.getSharedApplication().connectedScenes.allObjects;
+          for (var sceneId = 0; sceneId < connectedScenes.count; sceneId++) {
+            final scene = connectedScenes.objectAtIndex(sceneId);
+            if (!UIWindowScene.isA(scene)) {
+              continue;
+            }
+            final windows = UIWindowScene.as(scene).windows;
+            for (var windowId = 0; windowId < windows.count; windowId++) {
+              final window = UIWindow.as(windows.objectAtIndex(windowId));
+              if (window.isKeyWindow) {
+                return window;
+              }
+            }
           }
-        }
-      }
-      logger.severe('Failed to get key window');
-      session.cancel();
-      return UIWindow.castFromPointer(nullptr);
-    },
-  );
+          logger.severe('Failed to get key window');
+          session.cancel();
+          return UIWindow.fromPointer(nullptr);
+        },
+      );
 
   void _cleanUp() {
     _currentCompletionHandler?.ref.release();
@@ -68,8 +68,10 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
 
     final sessionId = NativeAuthCallbackSessionImpl.nextId();
     final completion = Completer<Uri>();
-    final completionHandler =
-        ObjCBlock_ffiVoid_NSURL_NSError.listener((url, error) {
+    final completionHandler = ObjCBlock_ffiVoid_NSURL_NSError.listener((
+      url,
+      error,
+    ) {
       final uri = switch (url?.absoluteString?.toDartString()) {
         final url? => Uri.tryParse(url),
         _ => null,
@@ -82,7 +84,8 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
       if (error != null) {
         if (error.code ==
             ASWebAuthenticationSessionErrorCode
-                .ASWebAuthenticationSessionErrorCodeCanceledLogin.value) {
+                .ASWebAuthenticationSessionErrorCodeCanceledLogin
+                .value) {
           return completion.completeError(
             NativeAuthCanceledException(sessionId),
           );
@@ -118,11 +121,7 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
     }
     logger.fine('Started ASWebAuthenticationSession');
     completion.future.whenComplete(_cleanUp).ignore();
-    return NativeAuthCallbackSessionImpl(
-      sessionId,
-      completion,
-      session.cancel,
-    );
+    return NativeAuthCallbackSessionImpl(sessionId, completion, session.cancel);
   }
 }
 
@@ -156,27 +155,27 @@ extension on CallbackType {
     switch (this) {
       case CallbackTypeCustom(:final scheme):
         if (_supportsNewCallbacks) {
-          return session.initWithURL$1(
+          return session.initWithURL(
             url,
             callback:
                 ASWebAuthenticationSessionCallback.callbackWithCustomScheme(
-              scheme.toNSString(),
-            ),
+                  scheme.toNSString(),
+                ),
             completionHandler: completionHandler,
           );
         }
-        return session.initWithURL(
+        // Needed below the OS version that added callbacks.
+        // ignore: deprecated_member_use
+        return session.initWithURL$1(
           url,
           callbackURLScheme: scheme.toNSString(),
           completionHandler: completionHandler,
         );
       case CallbackTypeLocalhost():
-        throw UnsupportedError(
-          'Localhost scheme is not supported on iOS',
-        );
+        throw UnsupportedError('Localhost scheme is not supported on iOS');
       case CallbackTypeHttps(:final host, :final path):
         _ensureNewCallbacksSupport();
-        return session.initWithURL$1(
+        return session.initWithURL(
           url,
           callback: ASWebAuthenticationSessionCallback.callbackWithHTTPSHost(
             host.toNSString(),

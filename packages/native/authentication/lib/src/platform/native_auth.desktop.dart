@@ -14,8 +14,8 @@ import 'package:stream_transform/stream_transform.dart';
 
 base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
   NativeAuthenticationDesktop({Logger? logger})
-      : logger = logger ?? Logger('NativeAuthentication'),
-        super.base();
+    : logger = logger ?? Logger('NativeAuthentication'),
+      super.base();
 
   final Logger logger;
 
@@ -54,10 +54,7 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
         );
       }
     } on Exception catch (e) {
-      throw NativeAuthException(
-        couldNotLaunch,
-        underlyingError: e,
-      );
+      throw NativeAuthException(couldNotLaunch, underlyingError: e);
     }
   }
 
@@ -65,9 +62,9 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
   Future<bool> _launchUrlLinux(String url) async {
     return using((arena) async {
       NativeCallable<
-              Void Function(
-                  Pointer<GObject>, Pointer<GAsyncResult>, Pointer<Void>)>?
-          nativeCallback;
+        Void Function(Pointer<GObject>, Pointer<GAsyncResult>, Pointer<Void>)
+      >?
+      nativeCallback;
       try {
         final completer = Completer<bool>();
 
@@ -101,7 +98,7 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
           /* user_data   */ nullptr,
         );
 
-        return completer.future;
+        return await completer.future;
       } on Object catch (e) {
         logger.fine('Failed to find GLib', e);
         return false;
@@ -140,22 +137,23 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
     final (port, expectedPath) = switch (type) {
       CallbackTypeLocalhost(:final port, :final path) => (port, path),
       CallbackTypeCustom() => throw UnsupportedError(
-          'Custom schemes are not supported on this platform',
-        ),
+        'Custom schemes are not supported on this platform',
+      ),
       CallbackTypeHttps() => throw UnsupportedError(
-          'HTTPS scheme is not supported on this platform',
-        ),
+        'HTTPS scheme is not supported on this platform',
+      ),
     };
 
-    final Future<HttpServer> server = HttpServer.bind(
-      InternetAddress.loopbackIPv4,
-      port,
-    ).onError<Object>((error, stack) {
-      throw NativeAuthException(
-        'Failed to bind to http://localhost:$port',
-        underlyingError: error,
-      );
-    });
+    final Future<HttpServer> server =
+        HttpServer.bind(InternetAddress.loopbackIPv4, port).onError<Object>((
+          error,
+          stack,
+        ) {
+          throw NativeAuthException(
+            'Failed to bind to http://localhost:$port',
+            underlyingError: error,
+          );
+        });
 
     final sessionId = NativeAuthCallbackSessionImpl.nextId();
     final callbackCompleter = Completer<Uri>();
@@ -203,11 +201,7 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
         result = request.requestedUri;
         if (expectedPath != '/*') {
           if (result.path != expectedPath) {
-            await _respond(
-              request,
-              HttpStatus.notFound,
-              'Not found',
-            );
+            await _respond(request, HttpStatus.notFound, 'Not found');
             continue;
           }
         }
@@ -216,9 +210,7 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
           request,
           HttpStatus.ok,
           _htmlForParams(result.queryParameters, signIn: true),
-          headers: {
-            HttpHeaders.contentTypeHeader: 'text/html',
-          },
+          headers: {HttpHeaders.contentTypeHeader: 'text/html'},
         );
         break;
       }
@@ -233,7 +225,8 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
     }
   }
 
-  static String _html(String pageTitle, String title, String message) => '''
+  static String _html(String pageTitle, String title, String message) =>
+      '''
 <!DOCTYPE html>
 <html lang="en">
   <head>

@@ -8,21 +8,24 @@ import 'package:native_authentication/src/model/exception.dart';
 extension type const OAuthErrorCode(String wireName) implements String {
   /// The request is missing a required parameter, includes an invalid parameter
   /// value, includes a parameter more than once, or is otherwise malformed.
-  static const OAuthErrorCode invalidRequest =
-      OAuthErrorCode('invalid_request');
+  static const OAuthErrorCode invalidRequest = OAuthErrorCode(
+    'invalid_request',
+  );
 
   /// The client is not authorized to request an authorization code using this
   /// method.
-  static const OAuthErrorCode unauthorizedClient =
-      OAuthErrorCode('unauthorized_client');
+  static const OAuthErrorCode unauthorizedClient = OAuthErrorCode(
+    'unauthorized_client',
+  );
 
   /// The resource owner or authorization server denied the request.
   static const OAuthErrorCode accessDenied = OAuthErrorCode('access_denied');
 
   /// The authorization server does not support obtaining an authorization code
   /// using this method.
-  static const OAuthErrorCode unsupportedResponseType =
-      OAuthErrorCode('unsupported_response_type');
+  static const OAuthErrorCode unsupportedResponseType = OAuthErrorCode(
+    'unsupported_response_type',
+  );
 
   /// The requested scope is invalid, unknown, or malformed.
   static const OAuthErrorCode invalidScope = OAuthErrorCode('invalid_scope');
@@ -39,8 +42,9 @@ extension type const OAuthErrorCode(String wireName) implements String {
   ///
   /// (This error code is needed because a 503 Service Unavailable HTTP status
   /// code cannot be returned to the client via an HTTP redirect.)
-  static const OAuthErrorCode temporarilyUnavailable =
-      OAuthErrorCode('temporarily_unavailable');
+  static const OAuthErrorCode temporarilyUnavailable = OAuthErrorCode(
+    'temporarily_unavailable',
+  );
 
   /// The Authorization Server requires End-User interaction of some form to
   /// proceed.
@@ -48,8 +52,9 @@ extension type const OAuthErrorCode(String wireName) implements String {
   /// This error MAY be returned when the `prompt` parameter value in the
   /// Authentication Request is `none`, but the Authentication Request cannot be
   /// completed without displaying a user interface for End-User interaction.
-  static const OAuthErrorCode interactionRequired =
-      OAuthErrorCode('interaction_required');
+  static const OAuthErrorCode interactionRequired = OAuthErrorCode(
+    'interaction_required',
+  );
 
   /// The Authorization Server requires End-User authentication.
   ///
@@ -66,21 +71,24 @@ extension type const OAuthErrorCode(String wireName) implements String {
   /// Authentication Request is `none`, but the Authentication Request cannot be
   /// completed without displaying a user interface to prompt for a session to
   /// use.
-  static const OAuthErrorCode accountSelectionRequired =
-      OAuthErrorCode('account_selection_required');
+  static const OAuthErrorCode accountSelectionRequired = OAuthErrorCode(
+    'account_selection_required',
+  );
 
   /// The Authorization Server requires End-User consent.
   ///
   /// This error MAY be returned when the `prompt` parameter value in the
   /// Authentication Request is `none`, but the Authentication Request cannot be
   /// completed without displaying a user interface for End-User consent.
-  static const OAuthErrorCode consentRequired =
-      OAuthErrorCode('consent_required');
+  static const OAuthErrorCode consentRequired = OAuthErrorCode(
+    'consent_required',
+  );
 
   /// The OP does not support use of the `request` parameter defined in
   /// [Section 6](https://openid.net/specs/openid-connect-core-1_0.html#JWTRequests).
-  static const OAuthErrorCode requestNotSupported =
-      OAuthErrorCode('request_not_supported');
+  static const OAuthErrorCode requestNotSupported = OAuthErrorCode(
+    'request_not_supported',
+  );
 
   /// The assertion presented is invalid.
   ///
@@ -98,8 +106,9 @@ extension type const OAuthErrorCode(String wireName) implements String {
 
   /// The authenticated client is not authorized to use this authorization grant
   /// type.
-  static const OAuthErrorCode unsupportedGrantType =
-      OAuthErrorCode('unsupported_grant_type');
+  static const OAuthErrorCode unsupportedGrantType = OAuthErrorCode(
+    'unsupported_grant_type',
+  );
 
   // Additional error codes as defined in
   // https://www.rfc-editor.org/rfc/rfc8628#section-3.5
@@ -109,8 +118,9 @@ extension type const OAuthErrorCode(String wireName) implements String {
   /// completed the user-interaction steps.
   ///
   /// https://www.rfc-editor.org/rfc/rfc8628#section-3.5
-  static const OAuthErrorCode authorizationPending =
-      OAuthErrorCode('authorization_pending');
+  static const OAuthErrorCode authorizationPending = OAuthErrorCode(
+    'authorization_pending',
+  );
 
   /// A variant of "authorization_pending", the authorization request is still
   /// pending and polling should continue, but the interval MUST be increased
@@ -138,65 +148,64 @@ extension type const OAuthErrorCode(String wireName) implements String {
 
   /// The user-facing description of the error.
   String get description => switch (this) {
-        invalidRequest =>
-          'The request is missing a required parameter, includes an '
-              'invalid parameter value, includes a parameter more than once, or '
-              'is otherwise malformed.',
-        unauthorizedClient =>
-          'The client is not authorized to request an authorization code using '
-              'this method.',
-        accessDenied =>
-          'The resource owner or authorization server denied the request.',
-        unsupportedResponseType =>
-          'The authorization server does not support obtaining an authorization '
-              'code using this method.',
-        invalidScope =>
-          'The requested scope is invalid, unknown, or malformed.',
-        serverError =>
-          'The authorization server encountered an unexpected condition that '
-              'prevented it from fulfilling the request.',
-        temporarilyUnavailable =>
-          'The authorization server is currently unable to handle the request '
-              'due to a temporary overloading or maintenance of the server.',
-        interactionRequired =>
-          'The authorization server requires user interaction of some form to '
-              'proceed. This error is typically returned when a user is not '
-              'authenticated, or when consent is needed.',
-        loginRequired =>
-          'The authorization server requires the user to log in. This error is '
-              'typically returned when a user is not authenticated.',
-        accountSelectionRequired =>
-          'The authorization server requires the user to select a user account. '
-              'This error is typically returned when a user is authenticated but '
-              'needs to select a user account.',
-        consentRequired =>
-          'The authorization server requires the user to consent to a request. '
-              'This error is typically returned when a user is authenticated but '
-              'has not consented to a request.',
-        requestNotSupported =>
-          'The authorization server does not support the request. This error '
-              'is typically returned when an authorization server does not support '
-              'a requested feature, such as `prompt=none`.',
-        invalidClient =>
-          'Client authentication failed (e.g., unknown client, no client '
-              'authentication included, or unsupported authentication method).',
-        invalidGrant =>
-          'The provided authorization grant (e.g., authorization code, resource '
-              'owner credentials) or refresh token is invalid, expired, revoked, '
-              'does not match the redirection URI used in the authorization request, '
-              'or was issued to another client.',
-        unsupportedGrantType =>
-          'The authorization grant type is not supported by the authorization '
-              'server.',
-        authorizationPending =>
-          'The authorization request is still pending as the end-user has not '
-              'yet completed the user interaction steps.',
-        slowDown =>
-          'The client should slow down the poll requests to the token endpoint.',
-        expiredToken => 'The authorization server has expired the token.',
-        invalidTarget => 'The requested target or audience is invalid.',
-        _ => 'An unknown error occurred.',
-      };
+    invalidRequest =>
+      'The request is missing a required parameter, includes an '
+          'invalid parameter value, includes a parameter more than once, or '
+          'is otherwise malformed.',
+    unauthorizedClient =>
+      'The client is not authorized to request an authorization code using '
+          'this method.',
+    accessDenied =>
+      'The resource owner or authorization server denied the request.',
+    unsupportedResponseType =>
+      'The authorization server does not support obtaining an authorization '
+          'code using this method.',
+    invalidScope => 'The requested scope is invalid, unknown, or malformed.',
+    serverError =>
+      'The authorization server encountered an unexpected condition that '
+          'prevented it from fulfilling the request.',
+    temporarilyUnavailable =>
+      'The authorization server is currently unable to handle the request '
+          'due to a temporary overloading or maintenance of the server.',
+    interactionRequired =>
+      'The authorization server requires user interaction of some form to '
+          'proceed. This error is typically returned when a user is not '
+          'authenticated, or when consent is needed.',
+    loginRequired =>
+      'The authorization server requires the user to log in. This error is '
+          'typically returned when a user is not authenticated.',
+    accountSelectionRequired =>
+      'The authorization server requires the user to select a user account. '
+          'This error is typically returned when a user is authenticated but '
+          'needs to select a user account.',
+    consentRequired =>
+      'The authorization server requires the user to consent to a request. '
+          'This error is typically returned when a user is authenticated but '
+          'has not consented to a request.',
+    requestNotSupported =>
+      'The authorization server does not support the request. This error '
+          'is typically returned when an authorization server does not support '
+          'a requested feature, such as `prompt=none`.',
+    invalidClient =>
+      'Client authentication failed (e.g., unknown client, no client '
+          'authentication included, or unsupported authentication method).',
+    invalidGrant =>
+      'The provided authorization grant (e.g., authorization code, resource '
+          'owner credentials) or refresh token is invalid, expired, revoked, '
+          'does not match the redirection URI used in the authorization request, '
+          'or was issued to another client.',
+    unsupportedGrantType =>
+      'The authorization grant type is not supported by the authorization '
+          'server.',
+    authorizationPending =>
+      'The authorization request is still pending as the end-user has not '
+          'yet completed the user interaction steps.',
+    slowDown =>
+      'The client should slow down the poll requests to the token endpoint.',
+    expiredToken => 'The authorization server has expired the token.',
+    invalidTarget => 'The requested target or audience is invalid.',
+    _ => 'An unknown error occurred.',
+  };
 }
 
 /// {@template native_auth.oauth_parameters}
@@ -216,14 +225,14 @@ sealed class OAuthResult {
     });
     return switch (json) {
       {'state': final String state, 'code': final String code} => OAuthCode(
-          state: state,
-          code: code,
-        ),
+        state: state,
+        code: code,
+      ),
       {
         'state': final String state,
         'error': final String error,
         'error_description': final String? errorDescription,
-        'error_uri': final String? errorUri
+        'error_uri': final String? errorUri,
       } =>
         OAuthException(
           state: state,
@@ -232,10 +241,10 @@ sealed class OAuthResult {
           errorUri: errorUri,
         ),
       _ => throw ArgumentError.value(
-          json,
-          'json',
-          'Invalid OAuth parameters. Expected one of `code` or `error`.',
-        ),
+        json,
+        'json',
+        'Invalid OAuth parameters. Expected one of `code` or `error`.',
+      ),
     };
   }
 
@@ -306,10 +315,7 @@ sealed class OAuthResult {
 }
 
 final class OAuthCode implements OAuthResult {
-  const OAuthCode({
-    this.state,
-    required this.code,
-  });
+  const OAuthCode({this.state, required this.code});
 
   @override
   final String? state;
@@ -327,10 +333,7 @@ final class OAuthCode implements OAuthResult {
   String? get errorUri => null;
 
   @override
-  Map<String, String> toJson() => {
-        if (state case final state?) 'state': state,
-        'code': code,
-      };
+  Map<String, String> toJson() => {'state': ?state, 'code': code};
 }
 
 final class OAuthException implements OAuthResult, NativeAuthException {
@@ -364,12 +367,11 @@ final class OAuthException implements OAuthResult, NativeAuthException {
 
   @override
   Map<String, String> toJson() => {
-        if (state case final state?) 'state': state,
-        'error': error,
-        if (errorDescription case final errorDescription?)
-          'error_description': errorDescription,
-        if (errorUri case final errorUri?) 'error_uri': errorUri,
-      };
+    'state': ?state,
+    'error': error,
+    'error_description': ?errorDescription,
+    'error_uri': ?errorUri,
+  };
 
   @override
   String toString() {
