@@ -19,30 +19,30 @@ final class NativeAuthenticationMacOs extends NativeAuthenticationDesktop {
   // garbage collected.
   _ObjCBlock_ffiVoid_NSURL_NSError? _currentCompletionHandler;
   late final _presentationContextProvider =
-      ASWebAuthenticationPresentationContextProviding.implement(
+      ASWebAuthenticationPresentationContextProviding$Builder.implement(
         presentationAnchorForWebAuthenticationSession_: (session) {
           final windowsId = NSApplication.getSharedApplication().windows;
-          if (!objc.NSArray.isInstance(windowsId)) {
+          if (!objc.NSArray.isA(windowsId)) {
             logger.severe('Failed to get application windows');
             session.cancel();
-            return NSWindow.castFromPointer(nullptr);
+            return NSWindow.fromPointer(nullptr);
           }
-          final windows = objc.NSArray.castFrom(windowsId);
+          final windows = objc.NSArray.as(windowsId);
           NSWindow? keyWindow;
           for (var i = 0; i < windows.count; i++) {
             final windowId = windows.objectAtIndex(i);
-            if (!NSWindow.isInstance(windowId)) {
+            if (!NSWindow.isA(windowId)) {
               continue;
             }
-            final window = NSWindow.castFrom(windowId);
-            if (window.keyWindow || keyWindow == null) {
+            final window = NSWindow.as(windowId);
+            if (window.isKeyWindow || keyWindow == null) {
               keyWindow = window;
             }
           }
           if (keyWindow == null) {
             logger.severe('Failed to get key window');
             session.cancel();
-            return NSWindow.castFromPointer(nullptr);
+            return NSWindow.fromPointer(nullptr);
           }
           return keyWindow;
         },
@@ -165,7 +165,7 @@ extension on CallbackType {
         );
       case CallbackTypeCustom(:final scheme):
         if (_supportsNewCallbacks) {
-          return session.initWithURL$1(
+          return session.initWithURL(
             url,
             callback:
                 ASWebAuthenticationSessionCallback.callbackWithCustomScheme(
@@ -174,14 +174,16 @@ extension on CallbackType {
             completionHandler: completionHandler,
           );
         }
-        return session.initWithURL(
+        // Needed below the OS version that added callbacks.
+        // ignore: deprecated_member_use
+        return session.initWithURL$1(
           url,
           callbackURLScheme: scheme.toNSString(),
           completionHandler: completionHandler,
         );
       case CallbackTypeHttps(:final host, :final path):
         _ensureNewCallbacksSupport();
-        return session.initWithURL$1(
+        return session.initWithURL(
           url,
           callback: ASWebAuthenticationSessionCallback.callbackWithHTTPSHost(
             host.toNSString(),

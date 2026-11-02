@@ -1,3 +1,8 @@
+# 0.1.7
+
+- chore: Bump `ffigen` to 23.0.0 and `objective_c` to 9.6.2, which builds through native assets instead of CocoaPods, and regenerate the bindings
+- fix: Await the GLib launch callback on Linux before closing it
+
 # 0.1.6
 
 - feat: Adds Swift Package Manager support on iOS and macOS

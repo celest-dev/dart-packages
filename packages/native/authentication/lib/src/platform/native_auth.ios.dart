@@ -24,7 +24,7 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
   // garbage collected.
   _ObjCBlock_ffiVoid_NSURL_NSError? _currentCompletionHandler;
   late final _presentationContextProvider =
-      ASWebAuthenticationPresentationContextProviding.implement(
+      ASWebAuthenticationPresentationContextProviding$Builder.implement(
         presentationAnchorForWebAuthenticationSession_: (session) {
           // Best way to get the key window in iOS 13+.
           // https://stackoverflow.com/questions/57134259/how-to-resolve-keywindow-was-deprecated-in-ios-13-0
@@ -32,20 +32,20 @@ final class NativeAuthenticationIos extends NativeAuthenticationPlatform {
               UIApplication.getSharedApplication().connectedScenes.allObjects;
           for (var sceneId = 0; sceneId < connectedScenes.count; sceneId++) {
             final scene = connectedScenes.objectAtIndex(sceneId);
-            if (!UIWindowScene.isInstance(scene)) {
+            if (!UIWindowScene.isA(scene)) {
               continue;
             }
-            final windows = UIWindowScene.castFrom(scene).windows;
+            final windows = UIWindowScene.as(scene).windows;
             for (var windowId = 0; windowId < windows.count; windowId++) {
-              final window = UIWindow.castFrom(windows.objectAtIndex(windowId));
-              if (window.keyWindow) {
+              final window = UIWindow.as(windows.objectAtIndex(windowId));
+              if (window.isKeyWindow) {
                 return window;
               }
             }
           }
           logger.severe('Failed to get key window');
           session.cancel();
-          return UIWindow.castFromPointer(nullptr);
+          return UIWindow.fromPointer(nullptr);
         },
       );
 
@@ -155,7 +155,7 @@ extension on CallbackType {
     switch (this) {
       case CallbackTypeCustom(:final scheme):
         if (_supportsNewCallbacks) {
-          return session.initWithURL$1(
+          return session.initWithURL(
             url,
             callback:
                 ASWebAuthenticationSessionCallback.callbackWithCustomScheme(
@@ -164,7 +164,9 @@ extension on CallbackType {
             completionHandler: completionHandler,
           );
         }
-        return session.initWithURL(
+        // Needed below the OS version that added callbacks.
+        // ignore: deprecated_member_use
+        return session.initWithURL$1(
           url,
           callbackURLScheme: scheme.toNSString(),
           completionHandler: completionHandler,
@@ -173,7 +175,7 @@ extension on CallbackType {
         throw UnsupportedError('Localhost scheme is not supported on iOS');
       case CallbackTypeHttps(:final host, :final path):
         _ensureNewCallbacksSupport();
-        return session.initWithURL$1(
+        return session.initWithURL(
           url,
           callback: ASWebAuthenticationSessionCallback.callbackWithHTTPSHost(
             host.toNSString(),

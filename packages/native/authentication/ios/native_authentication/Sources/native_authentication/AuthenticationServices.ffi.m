@@ -25,15 +25,18 @@ typedef struct {
   void (*exitIsolate)(void);
   int64_t (*getMainPortId)(void);
   bool (*getCurrentThreadOwnsIsolate)(int64_t);
+  void (*invokeListenerPortBlock)(int64_t port, void*);
+  void (*invokeBlockingPortBlock)(int64_t port, void*, void*);
 } DOBJC_Context;
 
 id objc_retainBlock(id);
 
-#define BLOCKING_BLOCK_IMPL(ctx, BLOCK_SIG, INVOKE_DIRECT, INVOKE_LISTENER)    \
+#define BLOCKING_BLOCK_IMPL(ctx, TYPE, SIG, INVOKE_DIRECT, INVOKE_LISTENER)    \
   assert(ctx->version >= 1);                                                   \
   void* targetIsolate = ctx->currentIsolate();                                 \
   int64_t targetPort = ctx->getMainPortId == NULL ? 0 : ctx->getMainPortId();  \
-  return BLOCK_SIG {                                                           \
+  __block __weak TYPE weakSelfBlock = nil;                                     \
+  TYPE strongSelfBlock = [SIG {                                                \
     void* currentIsolate = ctx->currentIsolate();                              \
     bool mayEnterIsolate =                                                     \
         currentIsolate == NULL &&                                              \
@@ -49,120 +52,169 @@ id objc_retainBlock(id);
       }                                                                        \
     } else {                                                                   \
       void* waiter = ctx->newWaiter();                                         \
+      TYPE selfRetain = [weakSelfBlock copy];                                  \
       INVOKE_LISTENER;                                                         \
       ctx->awaitWaiter(waiter);                                                \
+      (void)selfRetain;                                                        \
     }                                                                          \
-  };
+  } copy];                                                                     \
+  weakSelfBlock = strongSelfBlock;                                             \
+  return strongSelfBlock;
 
 
-Protocol* _AuthenticationServicesIos_UIResponderStandardEditActions(void) { return @protocol(UIResponderStandardEditActions); }
-
-typedef void  (^ListenerTrampoline)(id arg0);
 __attribute__((visibility("default"))) __attribute__((used))
-ListenerTrampoline _AuthenticationServicesIos_wrapListenerBlock_xtuoz7(ListenerTrampoline block) NS_RETURNS_RETAINED {
-  return ^void(id arg0) {
-    objc_retainBlock(block);
-    block((__bridge id)(__bridge_retained void*)(arg0));
-  };
+Protocol* _qgqpqy_ASWebAuthenticationPresentationContextProviding(void) { return @protocol(ASWebAuthenticationPresentationContextProviding); }
+
+typedef id  (^_ProtocolTrampoline)(void * sel, id arg1);
+__attribute__((visibility("default"))) __attribute__((used))
+id  _qgqpqy_protocolTrampoline_xr62hr(id target, void * sel, id arg1) {
+  return ((_ProtocolTrampoline)((id (*)(id, SEL, SEL))objc_msgSend)(target, @selector(getDOBJCDartProtocolMethodForSelector:), sel))(sel, arg1);
 }
 
-typedef void  (^BlockingTrampoline)(void * waiter, id arg0);
+__attribute__((visibility("default")))
+@interface _qgqpqy_BlockArgs_xtuoz7 : NSObject
+@property (copy) id block;
+@property (strong) id arg0;
+@end
+@implementation _qgqpqy_BlockArgs_xtuoz7
+@end
+
+typedef void  (^_ListenerTrampoline)(id arg0);
 __attribute__((visibility("default"))) __attribute__((used))
-ListenerTrampoline _AuthenticationServicesIos_wrapBlockingBlock_xtuoz7(
-    BlockingTrampoline block, BlockingTrampoline listenerBlock,
-    DOBJC_Context* ctx) NS_RETURNS_RETAINED {
-  BLOCKING_BLOCK_IMPL(ctx, ^void(id arg0), {
-    objc_retainBlock(block);
-    block(nil, (__bridge id)(__bridge_retained void*)(arg0));
+_ListenerTrampoline _qgqpqy_wrapListenerBlock_xtuoz7(
+    int64_t port, DOBJC_Context* ctx) NS_RETURNS_RETAINED {
+  __block __weak _ListenerTrampoline weakSelfBlock = nil;
+  _ListenerTrampoline strongSelfBlock = [^void(id arg0) {
+    @autoreleasepool {
+      _qgqpqy_BlockArgs_xtuoz7* args = [[_qgqpqy_BlockArgs_xtuoz7 alloc] init];
+      args.block = weakSelfBlock;
+      args.arg0 = arg0;
+      ctx->invokeListenerPortBlock(port, (__bridge_retained void*)args);
+    }
+  } copy];
+  weakSelfBlock = strongSelfBlock;
+  return strongSelfBlock;
+}
+
+typedef void  (^_BlockingTrampoline)(void * waiter, id arg0);
+__attribute__((visibility("default"))) __attribute__((used))
+_ListenerTrampoline _qgqpqy_wrapBlockingBlock_xtuoz7(int64_t port, DOBJC_Context* ctx,
+    void (*directInvoke)(void*)) NS_RETURNS_RETAINED {
+  BLOCKING_BLOCK_IMPL(ctx, _ListenerTrampoline, ^void(id arg0), {
+    @autoreleasepool {
+      _qgqpqy_BlockArgs_xtuoz7* args = [[_qgqpqy_BlockArgs_xtuoz7 alloc] init];
+      args.block = weakSelfBlock;
+      args.arg0 = arg0;
+      directInvoke((__bridge_retained void*)args);
+    }
   }, {
-    objc_retainBlock(listenerBlock);
-    listenerBlock(waiter, (__bridge id)(__bridge_retained void*)(arg0));
+    @autoreleasepool {
+      _qgqpqy_BlockArgs_xtuoz7* args = [[_qgqpqy_BlockArgs_xtuoz7 alloc] init];
+      args.block = weakSelfBlock;
+      args.arg0 = arg0;
+      ctx->invokeBlockingPortBlock(port, (__bridge_retained void*)args, waiter);
+    }
   });
 }
 
-Protocol* _AuthenticationServicesIos_UIStateRestoring(void) { return @protocol(UIStateRestoring); }
+__attribute__((visibility("default")))
+@interface _qgqpqy_BlockArgs_pfv6jd : NSObject
+@property (copy) id block;
+@property (strong) id arg0;
+@property (strong) id arg1;
+@end
+@implementation _qgqpqy_BlockArgs_pfv6jd
+@end
 
-Protocol* _AuthenticationServicesIos_UISceneDelegate(void) { return @protocol(UISceneDelegate); }
-
-typedef void  (^ListenerTrampoline_1)(BOOL arg0);
+typedef void  (^_ListenerTrampoline_1)(id arg0, id arg1);
 __attribute__((visibility("default"))) __attribute__((used))
-ListenerTrampoline_1 _AuthenticationServicesIos_wrapListenerBlock_1s56lr9(ListenerTrampoline_1 block) NS_RETURNS_RETAINED {
-  return ^void(BOOL arg0) {
-    objc_retainBlock(block);
-    block(arg0);
-  };
+_ListenerTrampoline_1 _qgqpqy_wrapListenerBlock_pfv6jd(
+    int64_t port, DOBJC_Context* ctx) NS_RETURNS_RETAINED {
+  __block __weak _ListenerTrampoline_1 weakSelfBlock = nil;
+  _ListenerTrampoline_1 strongSelfBlock = [^void(id arg0, id arg1) {
+    @autoreleasepool {
+      _qgqpqy_BlockArgs_pfv6jd* args = [[_qgqpqy_BlockArgs_pfv6jd alloc] init];
+      args.block = weakSelfBlock;
+      args.arg0 = arg0;
+      args.arg1 = arg1;
+      ctx->invokeListenerPortBlock(port, (__bridge_retained void*)args);
+    }
+  } copy];
+  weakSelfBlock = strongSelfBlock;
+  return strongSelfBlock;
 }
 
-typedef void  (^BlockingTrampoline_1)(void * waiter, BOOL arg0);
+typedef void  (^_BlockingTrampoline_1)(void * waiter, id arg0, id arg1);
 __attribute__((visibility("default"))) __attribute__((used))
-ListenerTrampoline_1 _AuthenticationServicesIos_wrapBlockingBlock_1s56lr9(
-    BlockingTrampoline_1 block, BlockingTrampoline_1 listenerBlock,
-    DOBJC_Context* ctx) NS_RETURNS_RETAINED {
-  BLOCKING_BLOCK_IMPL(ctx, ^void(BOOL arg0), {
-    objc_retainBlock(block);
-    block(nil, arg0);
+_ListenerTrampoline_1 _qgqpqy_wrapBlockingBlock_pfv6jd(int64_t port, DOBJC_Context* ctx,
+    void (*directInvoke)(void*)) NS_RETURNS_RETAINED {
+  BLOCKING_BLOCK_IMPL(ctx, _ListenerTrampoline_1, ^void(id arg0, id arg1), {
+    @autoreleasepool {
+      _qgqpqy_BlockArgs_pfv6jd* args = [[_qgqpqy_BlockArgs_pfv6jd alloc] init];
+      args.block = weakSelfBlock;
+      args.arg0 = arg0;
+      args.arg1 = arg1;
+      directInvoke((__bridge_retained void*)args);
+    }
   }, {
-    objc_retainBlock(listenerBlock);
-    listenerBlock(waiter, arg0);
+    @autoreleasepool {
+      _qgqpqy_BlockArgs_pfv6jd* args = [[_qgqpqy_BlockArgs_pfv6jd alloc] init];
+      args.block = weakSelfBlock;
+      args.arg0 = arg0;
+      args.arg1 = arg1;
+      ctx->invokeBlockingPortBlock(port, (__bridge_retained void*)args, waiter);
+    }
   });
 }
 
-Protocol* _AuthenticationServicesIos_UITraitEnvironment(void) { return @protocol(UITraitEnvironment); }
+__attribute__((visibility("default")))
+@interface _qgqpqy_BlockArgs_1s56lr9 : NSObject
+@property (copy) id block;
+@property BOOL arg0;
+@end
+@implementation _qgqpqy_BlockArgs_1s56lr9
+@end
 
-Protocol* _AuthenticationServicesIos_UITraitChangeObservable(void) { return @protocol(UITraitChangeObservable); }
-
-Protocol* _AuthenticationServicesIos_UIAppearance(void) { return @protocol(UIAppearance); }
-
-Protocol* _AuthenticationServicesIos_UIAppearanceContainer(void) { return @protocol(UIAppearanceContainer); }
-
-Protocol* _AuthenticationServicesIos_UIDynamicItem(void) { return @protocol(UIDynamicItem); }
-
-Protocol* _AuthenticationServicesIos_UICoordinateSpace(void) { return @protocol(UICoordinateSpace); }
-
-Protocol* _AuthenticationServicesIos_UIFocusEnvironment(void) { return @protocol(UIFocusEnvironment); }
-
-Protocol* _AuthenticationServicesIos_UIFocusItem(void) { return @protocol(UIFocusItem); }
-
-Protocol* _AuthenticationServicesIos_UIFocusItemContainer(void) { return @protocol(UIFocusItemContainer); }
-
-Protocol* _AuthenticationServicesIos_CALayerDelegate(void) { return @protocol(CALayerDelegate); }
-
-typedef void  (^ListenerTrampoline_2)(id arg0, id arg1);
+typedef void  (^_ListenerTrampoline_2)(BOOL arg0);
 __attribute__((visibility("default"))) __attribute__((used))
-ListenerTrampoline_2 _AuthenticationServicesIos_wrapListenerBlock_pfv6jd(ListenerTrampoline_2 block) NS_RETURNS_RETAINED {
-  return ^void(id arg0, id arg1) {
-    objc_retainBlock(block);
-    block((__bridge id)(__bridge_retained void*)(arg0), (__bridge id)(__bridge_retained void*)(arg1));
-  };
+_ListenerTrampoline_2 _qgqpqy_wrapListenerBlock_1s56lr9(
+    int64_t port, DOBJC_Context* ctx) NS_RETURNS_RETAINED {
+  __block __weak _ListenerTrampoline_2 weakSelfBlock = nil;
+  _ListenerTrampoline_2 strongSelfBlock = [^void(BOOL arg0) {
+    @autoreleasepool {
+      _qgqpqy_BlockArgs_1s56lr9* args = [[_qgqpqy_BlockArgs_1s56lr9 alloc] init];
+      args.block = weakSelfBlock;
+      args.arg0 = arg0;
+      ctx->invokeListenerPortBlock(port, (__bridge_retained void*)args);
+    }
+  } copy];
+  weakSelfBlock = strongSelfBlock;
+  return strongSelfBlock;
 }
 
-typedef void  (^BlockingTrampoline_2)(void * waiter, id arg0, id arg1);
+typedef void  (^_BlockingTrampoline_2)(void * waiter, BOOL arg0);
 __attribute__((visibility("default"))) __attribute__((used))
-ListenerTrampoline_2 _AuthenticationServicesIos_wrapBlockingBlock_pfv6jd(
-    BlockingTrampoline_2 block, BlockingTrampoline_2 listenerBlock,
-    DOBJC_Context* ctx) NS_RETURNS_RETAINED {
-  BLOCKING_BLOCK_IMPL(ctx, ^void(id arg0, id arg1), {
-    objc_retainBlock(block);
-    block(nil, (__bridge id)(__bridge_retained void*)(arg0), (__bridge id)(__bridge_retained void*)(arg1));
+_ListenerTrampoline_2 _qgqpqy_wrapBlockingBlock_1s56lr9(int64_t port, DOBJC_Context* ctx,
+    void (*directInvoke)(void*)) NS_RETURNS_RETAINED {
+  BLOCKING_BLOCK_IMPL(ctx, _ListenerTrampoline_2, ^void(BOOL arg0), {
+    @autoreleasepool {
+      _qgqpqy_BlockArgs_1s56lr9* args = [[_qgqpqy_BlockArgs_1s56lr9 alloc] init];
+      args.block = weakSelfBlock;
+      args.arg0 = arg0;
+      directInvoke((__bridge_retained void*)args);
+    }
   }, {
-    objc_retainBlock(listenerBlock);
-    listenerBlock(waiter, (__bridge id)(__bridge_retained void*)(arg0), (__bridge id)(__bridge_retained void*)(arg1));
+    @autoreleasepool {
+      _qgqpqy_BlockArgs_1s56lr9* args = [[_qgqpqy_BlockArgs_1s56lr9 alloc] init];
+      args.block = weakSelfBlock;
+      args.arg0 = arg0;
+      ctx->invokeBlockingPortBlock(port, (__bridge_retained void*)args, waiter);
+    }
   });
 }
 
-typedef id  (^ProtocolTrampoline)(void * sel);
 __attribute__((visibility("default"))) __attribute__((used))
-id  _AuthenticationServicesIos_protocolTrampoline_1mbt9g9(id target, void * sel) {
-  return ((ProtocolTrampoline)((id (*)(id, SEL, SEL))objc_msgSend)(target, @selector(getDOBJCDartProtocolMethodForSelector:), sel))(sel);
-}
-
-typedef id  (^ProtocolTrampoline_1)(void * sel, id arg1);
-__attribute__((visibility("default"))) __attribute__((used))
-id  _AuthenticationServicesIos_protocolTrampoline_xr62hr(id target, void * sel, id arg1) {
-  return ((ProtocolTrampoline_1)((id (*)(id, SEL, SEL))objc_msgSend)(target, @selector(getDOBJCDartProtocolMethodForSelector:), sel))(sel, arg1);
-}
-
-Protocol* _AuthenticationServicesIos_ASWebAuthenticationPresentationContextProviding(void) { return @protocol(ASWebAuthenticationPresentationContextProviding); }
+Protocol* _qgqpqy_UIFocusItem(void) { return @protocol(UIFocusItem); }
 #undef BLOCKING_BLOCK_IMPL
 
 #pragma clang diagnostic pop

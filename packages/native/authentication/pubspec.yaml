@@ -1,6 +1,6 @@
 name: native_authentication
 description: Native bindings for platform-specific authentication APIs like ASWebAuthenticationSession and Chrome Custom Tabs.
-version: 0.1.6
+version: 0.1.7
 repository: https://github.com/celest-dev/dart-packages/tree/main/packages/native/authentication
 
 environment:
@@ -21,14 +21,14 @@ dependencies:
   jni: ^0.14.0
   logging: ^1.2.0
   meta: ^1.12.0
-  objective_c: ^8.0.0
+  objective_c: ^9.6.2
   path: ^1.9.0
   pub_semver: ^2.2.0
   stream_transform: ^2.1.0
   web: ^1.0.0
 
 dev_dependencies:
-  ffigen: ^19.0.0
+  ffigen: ^23.0.0
   test: ^1.20.0
   lints: ^6.0.0
   jnigen: ^0.14.1
