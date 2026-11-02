@@ -98,7 +98,7 @@ base class NativeAuthenticationDesktop extends NativeAuthenticationPlatform {
           /* user_data   */ nullptr,
         );
 
-        return completer.future;
+        return await completer.future;
       } on Object catch (e) {
         logger.fine('Failed to find GLib', e);
         return false;
